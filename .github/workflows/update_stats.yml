@@ -1,0 +1,52 @@
+name: Automated Tuesday Stats Update
+
+on:
+  schedule:
+    # Runs every Tuesday at 13:00 UTC (6:00 AM MST / 9:00 AM EST)
+    - cron: '0 13 * * 2'
+  workflow_dispatch: # Allows manual 1-click execution from GitHub Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Ingest ESPN Data & Rebuild data.json
+        env:
+          ESPN_LEAGUE_ID: ${{ secrets.ESPN_LEAGUE_ID }}
+          ESPN_SWID: ${{ secrets.ESPN_SWID }}
+          ESPN_S2: ${{ secrets.ESPN_S2 }}
+        run: |
+          python extract_history.py
+          python generate_site_data.py
+
+      - name: Commit and Push Updated data.json
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Check if data.json was modified
+          if [ -n "$(git status --porcelain data.json)" ]; then
+            git add data.json
+            git commit -m "chore(data): auto-update weekly stats and box scores [skip ci]"
+            git push
+          else
+            echo "No data changes detected. Skipping commit."
+          fi
