@@ -1,0 +1,24 @@
+{
+  "name": "Fantasy League History & Vault",
+  "short_name": "League Vault",
+  "description": "Historical archives, weekly matchups, and stat analytics for ESPN Fantasy Football",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#020617",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
