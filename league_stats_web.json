@@ -1,0 +1,3541 @@
+{
+  "all_time_standings": [
+    {
+      "team": "- Apex",
+      "Games": 17,
+      "Wins": 11,
+      "Losses": 6,
+      "Ties": 0,
+      "Points_For": 2247.2,
+      "Points_Against": 1886.32,
+      "Win_Pct": 0.65,
+      "Avg_PPG": 132.19,
+      "Avg_PAPG": 110.96
+    },
+    {
+      "team": "GoPackGo !",
+      "Games": 99,
+      "Wins": 62,
+      "Losses": 37,
+      "Ties": 0,
+      "Points_For": 12246.78,
+      "Points_Against": 11611.01,
+      "Win_Pct": 0.63,
+      "Avg_PPG": 123.7,
+      "Avg_PAPG": 117.28
+    },
+    {
+      "team": "S\u00e9nior Quack",
+      "Games": 66,
+      "Wins": 39,
+      "Losses": 27,
+      "Ties": 0,
+      "Points_For": 8258.73,
+      "Points_Against": 8046.16,
+      "Win_Pct": 0.59,
+      "Avg_PPG": 125.13,
+      "Avg_PAPG": 121.91
+    },
+    {
+      "team": "- HORIZON -",
+      "Games": 33,
+      "Wins": 19,
+      "Losses": 13,
+      "Ties": 1,
+      "Points_For": 4035.96,
+      "Points_Against": 3721.62,
+      "Win_Pct": 0.59,
+      "Avg_PPG": 122.3,
+      "Avg_PAPG": 112.78
+    },
+    {
+      "team": "-Ladiesman217-",
+      "Games": 17,
+      "Wins": 10,
+      "Losses": 7,
+      "Ties": 0,
+      "Points_For": 2069.5,
+      "Points_Against": 1962.0,
+      "Win_Pct": 0.59,
+      "Avg_PPG": 121.74,
+      "Avg_PAPG": 115.41
+    },
+    {
+      "team": "1.21 JJWatts",
+      "Games": 17,
+      "Wins": 10,
+      "Losses": 7,
+      "Ties": 0,
+      "Points_For": 1989.48,
+      "Points_Against": 1864.46,
+      "Win_Pct": 0.59,
+      "Avg_PPG": 117.03,
+      "Avg_PAPG": 109.67
+    },
+    {
+      "team": "Riddled With ANXIETY ",
+      "Games": 100,
+      "Wins": 57,
+      "Losses": 43,
+      "Ties": 0,
+      "Points_For": 12305.74,
+      "Points_Against": 11907.2,
+      "Win_Pct": 0.57,
+      "Avg_PPG": 123.06,
+      "Avg_PAPG": 119.07
+    },
+    {
+      "team": "Holm Girl",
+      "Games": 16,
+      "Wins": 9,
+      "Losses": 7,
+      "Ties": 0,
+      "Points_For": 2096.75,
+      "Points_Against": 2105.35,
+      "Win_Pct": 0.56,
+      "Avg_PPG": 131.05,
+      "Avg_PAPG": 131.58
+    },
+    {
+      "team": "L\u00d8ST H\u00d8PE",
+      "Games": 34,
+      "Wins": 19,
+      "Losses": 15,
+      "Ties": 0,
+      "Points_For": 4212.66,
+      "Points_Against": 4006.6,
+      "Win_Pct": 0.56,
+      "Avg_PPG": 123.9,
+      "Avg_PAPG": 117.84
+    },
+    {
+      "team": "Mac Attack",
+      "Games": 67,
+      "Wins": 37,
+      "Losses": 30,
+      "Ties": 0,
+      "Points_For": 8297.57,
+      "Points_Against": 8027.83,
+      "Win_Pct": 0.55,
+      "Avg_PPG": 123.84,
+      "Avg_PAPG": 119.82
+    },
+    {
+      "team": "Fantasy Legend",
+      "Games": 101,
+      "Wins": 55,
+      "Losses": 46,
+      "Ties": 0,
+      "Points_For": 12203.97,
+      "Points_Against": 11838.56,
+      "Win_Pct": 0.54,
+      "Avg_PPG": 120.83,
+      "Avg_PAPG": 117.21
+    },
+    {
+      "team": "Fitz Like a Glove",
+      "Games": 17,
+      "Wins": 9,
+      "Losses": 8,
+      "Ties": 0,
+      "Points_For": 2047.4,
+      "Points_Against": 2057.46,
+      "Win_Pct": 0.53,
+      "Avg_PPG": 120.44,
+      "Avg_PAPG": 121.03
+    },
+    {
+      "team": "New Rhules",
+      "Games": 50,
+      "Wins": 26,
+      "Losses": 24,
+      "Ties": 0,
+      "Points_For": 6145.67,
+      "Points_Against": 5940.16,
+      "Win_Pct": 0.52,
+      "Avg_PPG": 122.91,
+      "Avg_PAPG": 118.8
+    },
+    {
+      "team": "Frost Warning",
+      "Games": 68,
+      "Wins": 35,
+      "Losses": 33,
+      "Ties": 0,
+      "Points_For": 8168.34,
+      "Points_Against": 7877.82,
+      "Win_Pct": 0.51,
+      "Avg_PPG": 120.12,
+      "Avg_PAPG": 115.85
+    },
+    {
+      "team": "Cherry Bombs",
+      "Games": 17,
+      "Wins": 8,
+      "Losses": 9,
+      "Ties": 0,
+      "Points_For": 2087.4,
+      "Points_Against": 1971.55,
+      "Win_Pct": 0.47,
+      "Avg_PPG": 122.79,
+      "Avg_PAPG": 115.97
+    },
+    {
+      "team": "2020 Quaran-team",
+      "Games": 17,
+      "Wins": 8,
+      "Losses": 9,
+      "Ties": 0,
+      "Points_For": 2017.0,
+      "Points_Against": 2044.48,
+      "Win_Pct": 0.47,
+      "Avg_PPG": 118.65,
+      "Avg_PAPG": 120.26
+    },
+    {
+      "team": "Bandito Burrito",
+      "Games": 119,
+      "Wins": 54,
+      "Losses": 65,
+      "Ties": 0,
+      "Points_For": 13837.85,
+      "Points_Against": 14484.64,
+      "Win_Pct": 0.45,
+      "Avg_PPG": 116.28,
+      "Avg_PAPG": 121.72
+    },
+    {
+      "team": "OCD  Mama",
+      "Games": 119,
+      "Wins": 52,
+      "Losses": 66,
+      "Ties": 1,
+      "Points_For": 14511.49,
+      "Points_Against": 14703.59,
+      "Win_Pct": 0.44,
+      "Avg_PPG": 121.95,
+      "Avg_PAPG": 123.56
+    },
+    {
+      "team": "- pAtRiOtS fAn",
+      "Games": 34,
+      "Wins": 15,
+      "Losses": 19,
+      "Ties": 0,
+      "Points_For": 4190.64,
+      "Points_Against": 4090.0,
+      "Win_Pct": 0.44,
+      "Avg_PPG": 123.25,
+      "Avg_PAPG": 120.29
+    },
+    {
+      "team": "Blatant Rule Breaker",
+      "Games": 17,
+      "Wins": 7,
+      "Losses": 10,
+      "Ties": 0,
+      "Points_For": 1918.95,
+      "Points_Against": 2052.85,
+      "Win_Pct": 0.41,
+      "Avg_PPG": 112.88,
+      "Avg_PAPG": 120.76
+    },
+    {
+      "team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "Games": 119,
+      "Wins": 47,
+      "Losses": 72,
+      "Ties": 0,
+      "Points_For": 13516.68,
+      "Points_Against": 14741.65,
+      "Win_Pct": 0.39,
+      "Avg_PPG": 113.59,
+      "Avg_PAPG": 123.88
+    },
+    {
+      "team": "Radical",
+      "Games": 17,
+      "Wins": 5,
+      "Losses": 12,
+      "Ties": 0,
+      "Points_For": 1738.7,
+      "Points_Against": 1996.25,
+      "Win_Pct": 0.29,
+      "Avg_PPG": 102.28,
+      "Avg_PAPG": 117.43
+    },
+    {
+      "team": "Triple-T-",
+      "Games": 17,
+      "Wins": 4,
+      "Losses": 13,
+      "Ties": 0,
+      "Points_For": 1839.05,
+      "Points_Against": 2158.65,
+      "Win_Pct": 0.24,
+      "Avg_PPG": 108.18,
+      "Avg_PAPG": 126.98
+    },
+    {
+      "team": "JJ Bailey",
+      "Games": 17,
+      "Wins": 4,
+      "Losses": 13,
+      "Ties": 0,
+      "Points_For": 1499.16,
+      "Points_Against": 2145.26,
+      "Win_Pct": 0.24,
+      "Avg_PPG": 88.19,
+      "Avg_PAPG": 126.19
+    },
+    {
+      "team": "\u0110R\u0118\u0104M \u00c7R\u0172\u015eH\u0118R\ud83c\udf1f",
+      "Games": 17,
+      "Wins": 3,
+      "Losses": 14,
+      "Ties": 0,
+      "Points_For": 1879.48,
+      "Points_Against": 2120.68,
+      "Win_Pct": 0.18,
+      "Avg_PPG": 110.56,
+      "Avg_PAPG": 124.75
+    }
+  ],
+  "head_to_head": [
+    {
+      "team": "- Apex",
+      "opponent": "1.21 JJWatts",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "- Apex",
+      "opponent": "Bandito Burrito",
+      "Wins": 0,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "0-2"
+    },
+    {
+      "team": "- Apex",
+      "opponent": "Fantasy Legend",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "- Apex",
+      "opponent": "Frost Warning",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "- Apex",
+      "opponent": "GoPackGo !",
+      "Wins": 2,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "2-1"
+    },
+    {
+      "team": "- Apex",
+      "opponent": "JJ Bailey",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "- Apex",
+      "opponent": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "- Apex",
+      "opponent": "L\u00d8ST H\u00d8PE",
+      "Wins": 2,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "2-0"
+    },
+    {
+      "team": "- Apex",
+      "opponent": "Mac Attack",
+      "Wins": 2,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "2-0"
+    },
+    {
+      "team": "- Apex",
+      "opponent": "OCD  Mama",
+      "Wins": 2,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "2-0"
+    },
+    {
+      "team": "- Apex",
+      "opponent": "Riddled With ANXIETY ",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "- HORIZON -",
+      "opponent": "Bandito Burrito",
+      "Wins": 4,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "4-0"
+    },
+    {
+      "team": "- HORIZON -",
+      "opponent": "Fantasy Legend",
+      "Wins": 2,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "2-2"
+    },
+    {
+      "team": "- HORIZON -",
+      "opponent": "Frost Warning",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "- HORIZON -",
+      "opponent": "GoPackGo !",
+      "Wins": 1,
+      "Losses": 4,
+      "Ties": 0,
+      "Total_Games": 5,
+      "Record": "1-4"
+    },
+    {
+      "team": "- HORIZON -",
+      "opponent": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "Wins": 3,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "3-1"
+    },
+    {
+      "team": "- HORIZON -",
+      "opponent": "Mac Attack",
+      "Wins": 2,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "2-1"
+    },
+    {
+      "team": "- HORIZON -",
+      "opponent": "New Rhules",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "- HORIZON -",
+      "opponent": "OCD  Mama",
+      "Wins": 3,
+      "Losses": 0,
+      "Ties": 1,
+      "Total_Games": 4,
+      "Record": "3-0-1"
+    },
+    {
+      "team": "- HORIZON -",
+      "opponent": "Riddled With ANXIETY ",
+      "Wins": 2,
+      "Losses": 3,
+      "Ties": 0,
+      "Total_Games": 5,
+      "Record": "2-3"
+    },
+    {
+      "team": "- HORIZON -",
+      "opponent": "S\u00e9nior Quack",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "- pAtRiOtS fAn",
+      "opponent": "2020 Quaran-team",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "- pAtRiOtS fAn",
+      "opponent": "Bandito Burrito",
+      "Wins": 2,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "2-0"
+    },
+    {
+      "team": "- pAtRiOtS fAn",
+      "opponent": "Fantasy Legend",
+      "Wins": 2,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "2-2"
+    },
+    {
+      "team": "- pAtRiOtS fAn",
+      "opponent": "Fitz Like a Glove",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "- pAtRiOtS fAn",
+      "opponent": "Frost Warning",
+      "Wins": 3,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "3-1"
+    },
+    {
+      "team": "- pAtRiOtS fAn",
+      "opponent": "GoPackGo !",
+      "Wins": 1,
+      "Losses": 3,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "1-3"
+    },
+    {
+      "team": "- pAtRiOtS fAn",
+      "opponent": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "Wins": 2,
+      "Losses": 6,
+      "Ties": 0,
+      "Total_Games": 8,
+      "Record": "2-6"
+    },
+    {
+      "team": "- pAtRiOtS fAn",
+      "opponent": "L\u00d8ST H\u00d8PE",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "- pAtRiOtS fAn",
+      "opponent": "OCD  Mama",
+      "Wins": 2,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "2-2"
+    },
+    {
+      "team": "- pAtRiOtS fAn",
+      "opponent": "Riddled With ANXIETY ",
+      "Wins": 0,
+      "Losses": 4,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "0-4"
+    },
+    {
+      "team": "- pAtRiOtS fAn",
+      "opponent": "\u0110R\u0118\u0104M \u00c7R\u0172\u015eH\u0118R\ud83c\udf1f",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "-Ladiesman217-",
+      "opponent": "Bandito Burrito",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "-Ladiesman217-",
+      "opponent": "Blatant Rule Breaker",
+      "Wins": 2,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "2-0"
+    },
+    {
+      "team": "-Ladiesman217-",
+      "opponent": "Cherry Bombs",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "-Ladiesman217-",
+      "opponent": "Holm Girl",
+      "Wins": 2,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "2-1"
+    },
+    {
+      "team": "-Ladiesman217-",
+      "opponent": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "-Ladiesman217-",
+      "opponent": "New Rhules",
+      "Wins": 0,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "0-2"
+    },
+    {
+      "team": "-Ladiesman217-",
+      "opponent": "OCD  Mama",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "-Ladiesman217-",
+      "opponent": "Radical",
+      "Wins": 2,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "2-0"
+    },
+    {
+      "team": "-Ladiesman217-",
+      "opponent": "S\u00e9nior Quack",
+      "Wins": 1,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "1-2"
+    },
+    {
+      "team": "1.21 JJWatts",
+      "opponent": "- Apex",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "1.21 JJWatts",
+      "opponent": "Bandito Burrito",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "1.21 JJWatts",
+      "opponent": "Fantasy Legend",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "1.21 JJWatts",
+      "opponent": "Frost Warning",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "1.21 JJWatts",
+      "opponent": "GoPackGo !",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "1.21 JJWatts",
+      "opponent": "JJ Bailey",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "1.21 JJWatts",
+      "opponent": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "1.21 JJWatts",
+      "opponent": "L\u00d8ST H\u00d8PE",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "1.21 JJWatts",
+      "opponent": "Mac Attack",
+      "Wins": 1,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "1-2"
+    },
+    {
+      "team": "1.21 JJWatts",
+      "opponent": "OCD  Mama",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "1.21 JJWatts",
+      "opponent": "Riddled With ANXIETY ",
+      "Wins": 2,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "2-0"
+    },
+    {
+      "team": "2020 Quaran-team",
+      "opponent": "- pAtRiOtS fAn",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "2020 Quaran-team",
+      "opponent": "Bandito Burrito",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "2020 Quaran-team",
+      "opponent": "Fantasy Legend",
+      "Wins": 2,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "2-2"
+    },
+    {
+      "team": "2020 Quaran-team",
+      "opponent": "Frost Warning",
+      "Wins": 2,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "2-0"
+    },
+    {
+      "team": "2020 Quaran-team",
+      "opponent": "GoPackGo !",
+      "Wins": 0,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "0-2"
+    },
+    {
+      "team": "2020 Quaran-team",
+      "opponent": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "Wins": 2,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "2-0"
+    },
+    {
+      "team": "2020 Quaran-team",
+      "opponent": "L\u00d8ST H\u00d8PE",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "2020 Quaran-team",
+      "opponent": "OCD  Mama",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "2020 Quaran-team",
+      "opponent": "Riddled With ANXIETY ",
+      "Wins": 0,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "0-2"
+    },
+    {
+      "team": "Bandito Burrito",
+      "opponent": "- Apex",
+      "Wins": 2,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "2-0"
+    },
+    {
+      "team": "Bandito Burrito",
+      "opponent": "- HORIZON -",
+      "Wins": 0,
+      "Losses": 4,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "0-4"
+    },
+    {
+      "team": "Bandito Burrito",
+      "opponent": "- pAtRiOtS fAn",
+      "Wins": 0,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "0-2"
+    },
+    {
+      "team": "Bandito Burrito",
+      "opponent": "-Ladiesman217-",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "Bandito Burrito",
+      "opponent": "1.21 JJWatts",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "Bandito Burrito",
+      "opponent": "2020 Quaran-team",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "Bandito Burrito",
+      "opponent": "Blatant Rule Breaker",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Bandito Burrito",
+      "opponent": "Cherry Bombs",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Bandito Burrito",
+      "opponent": "Fantasy Legend",
+      "Wins": 4,
+      "Losses": 10,
+      "Ties": 0,
+      "Total_Games": 14,
+      "Record": "4-10"
+    },
+    {
+      "team": "Bandito Burrito",
+      "opponent": "Fitz Like a Glove",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Bandito Burrito",
+      "opponent": "Frost Warning",
+      "Wins": 5,
+      "Losses": 6,
+      "Ties": 0,
+      "Total_Games": 11,
+      "Record": "5-6"
+    },
+    {
+      "team": "Bandito Burrito",
+      "opponent": "GoPackGo !",
+      "Wins": 4,
+      "Losses": 4,
+      "Ties": 0,
+      "Total_Games": 8,
+      "Record": "4-4"
+    },
+    {
+      "team": "Bandito Burrito",
+      "opponent": "Holm Girl",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "Bandito Burrito",
+      "opponent": "JJ Bailey",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "Bandito Burrito",
+      "opponent": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "Wins": 7,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 9,
+      "Record": "7-2"
+    },
+    {
+      "team": "Bandito Burrito",
+      "opponent": "L\u00d8ST H\u00d8PE",
+      "Wins": 0,
+      "Losses": 4,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "0-4"
+    },
+    {
+      "team": "Bandito Burrito",
+      "opponent": "Mac Attack",
+      "Wins": 1,
+      "Losses": 5,
+      "Ties": 0,
+      "Total_Games": 6,
+      "Record": "1-5"
+    },
+    {
+      "team": "Bandito Burrito",
+      "opponent": "New Rhules",
+      "Wins": 5,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 7,
+      "Record": "5-2"
+    },
+    {
+      "team": "Bandito Burrito",
+      "opponent": "OCD  Mama",
+      "Wins": 9,
+      "Losses": 8,
+      "Ties": 0,
+      "Total_Games": 17,
+      "Record": "9-8"
+    },
+    {
+      "team": "Bandito Burrito",
+      "opponent": "Radical",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "Bandito Burrito",
+      "opponent": "Riddled With ANXIETY ",
+      "Wins": 2,
+      "Losses": 5,
+      "Ties": 0,
+      "Total_Games": 7,
+      "Record": "2-5"
+    },
+    {
+      "team": "Bandito Burrito",
+      "opponent": "S\u00e9nior Quack",
+      "Wins": 5,
+      "Losses": 7,
+      "Ties": 0,
+      "Total_Games": 12,
+      "Record": "5-7"
+    },
+    {
+      "team": "Bandito Burrito",
+      "opponent": "Triple-T-",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Bandito Burrito",
+      "opponent": "\u0110R\u0118\u0104M \u00c7R\u0172\u015eH\u0118R\ud83c\udf1f",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Blatant Rule Breaker",
+      "opponent": "-Ladiesman217-",
+      "Wins": 0,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "0-2"
+    },
+    {
+      "team": "Blatant Rule Breaker",
+      "opponent": "Bandito Burrito",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Blatant Rule Breaker",
+      "opponent": "Cherry Bombs",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Blatant Rule Breaker",
+      "opponent": "Holm Girl",
+      "Wins": 0,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "0-2"
+    },
+    {
+      "team": "Blatant Rule Breaker",
+      "opponent": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "Wins": 2,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "2-1"
+    },
+    {
+      "team": "Blatant Rule Breaker",
+      "opponent": "New Rhules",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "Blatant Rule Breaker",
+      "opponent": "OCD  Mama",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "Blatant Rule Breaker",
+      "opponent": "Radical",
+      "Wins": 1,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "1-2"
+    },
+    {
+      "team": "Blatant Rule Breaker",
+      "opponent": "S\u00e9nior Quack",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "Cherry Bombs",
+      "opponent": "-Ladiesman217-",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "Cherry Bombs",
+      "opponent": "Bandito Burrito",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Cherry Bombs",
+      "opponent": "Blatant Rule Breaker",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Cherry Bombs",
+      "opponent": "Holm Girl",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "Cherry Bombs",
+      "opponent": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "Wins": 2,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "2-1"
+    },
+    {
+      "team": "Cherry Bombs",
+      "opponent": "New Rhules",
+      "Wins": 0,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "0-2"
+    },
+    {
+      "team": "Cherry Bombs",
+      "opponent": "OCD  Mama",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Cherry Bombs",
+      "opponent": "Radical",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Cherry Bombs",
+      "opponent": "S\u00e9nior Quack",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Fantasy Legend",
+      "opponent": "- Apex",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "Fantasy Legend",
+      "opponent": "- HORIZON -",
+      "Wins": 2,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "2-2"
+    },
+    {
+      "team": "Fantasy Legend",
+      "opponent": "- pAtRiOtS fAn",
+      "Wins": 2,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "2-2"
+    },
+    {
+      "team": "Fantasy Legend",
+      "opponent": "1.21 JJWatts",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "Fantasy Legend",
+      "opponent": "2020 Quaran-team",
+      "Wins": 2,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "2-2"
+    },
+    {
+      "team": "Fantasy Legend",
+      "opponent": "Bandito Burrito",
+      "Wins": 10,
+      "Losses": 4,
+      "Ties": 0,
+      "Total_Games": 14,
+      "Record": "10-4"
+    },
+    {
+      "team": "Fantasy Legend",
+      "opponent": "Fitz Like a Glove",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Fantasy Legend",
+      "opponent": "Frost Warning",
+      "Wins": 3,
+      "Losses": 5,
+      "Ties": 0,
+      "Total_Games": 8,
+      "Record": "3-5"
+    },
+    {
+      "team": "Fantasy Legend",
+      "opponent": "GoPackGo !",
+      "Wins": 5,
+      "Losses": 4,
+      "Ties": 0,
+      "Total_Games": 9,
+      "Record": "5-4"
+    },
+    {
+      "team": "Fantasy Legend",
+      "opponent": "JJ Bailey",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "Fantasy Legend",
+      "opponent": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "Wins": 4,
+      "Losses": 7,
+      "Ties": 0,
+      "Total_Games": 11,
+      "Record": "4-7"
+    },
+    {
+      "team": "Fantasy Legend",
+      "opponent": "L\u00d8ST H\u00d8PE",
+      "Wins": 2,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "2-1"
+    },
+    {
+      "team": "Fantasy Legend",
+      "opponent": "Mac Attack",
+      "Wins": 6,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 8,
+      "Record": "6-2"
+    },
+    {
+      "team": "Fantasy Legend",
+      "opponent": "New Rhules",
+      "Wins": 2,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "2-1"
+    },
+    {
+      "team": "Fantasy Legend",
+      "opponent": "OCD  Mama",
+      "Wins": 5,
+      "Losses": 5,
+      "Ties": 0,
+      "Total_Games": 10,
+      "Record": "5-5"
+    },
+    {
+      "team": "Fantasy Legend",
+      "opponent": "Riddled With ANXIETY ",
+      "Wins": 5,
+      "Losses": 5,
+      "Ties": 0,
+      "Total_Games": 10,
+      "Record": "5-5"
+    },
+    {
+      "team": "Fantasy Legend",
+      "opponent": "S\u00e9nior Quack",
+      "Wins": 2,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "2-2"
+    },
+    {
+      "team": "Fantasy Legend",
+      "opponent": "Triple-T-",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Fantasy Legend",
+      "opponent": "\u0110R\u0118\u0104M \u00c7R\u0172\u015eH\u0118R\ud83c\udf1f",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Fitz Like a Glove",
+      "opponent": "- pAtRiOtS fAn",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "Fitz Like a Glove",
+      "opponent": "Bandito Burrito",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Fitz Like a Glove",
+      "opponent": "Fantasy Legend",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Fitz Like a Glove",
+      "opponent": "Frost Warning",
+      "Wins": 0,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "0-2"
+    },
+    {
+      "team": "Fitz Like a Glove",
+      "opponent": "GoPackGo !",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Fitz Like a Glove",
+      "opponent": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Fitz Like a Glove",
+      "opponent": "OCD  Mama",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "Fitz Like a Glove",
+      "opponent": "Riddled With ANXIETY ",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Fitz Like a Glove",
+      "opponent": "\u0110R\u0118\u0104M \u00c7R\u0172\u015eH\u0118R\ud83c\udf1f",
+      "Wins": 3,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "3-0"
+    },
+    {
+      "team": "Frost Warning",
+      "opponent": "- Apex",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "Frost Warning",
+      "opponent": "- HORIZON -",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "Frost Warning",
+      "opponent": "- pAtRiOtS fAn",
+      "Wins": 1,
+      "Losses": 3,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "1-3"
+    },
+    {
+      "team": "Frost Warning",
+      "opponent": "1.21 JJWatts",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Frost Warning",
+      "opponent": "2020 Quaran-team",
+      "Wins": 0,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "0-2"
+    },
+    {
+      "team": "Frost Warning",
+      "opponent": "Bandito Burrito",
+      "Wins": 6,
+      "Losses": 5,
+      "Ties": 0,
+      "Total_Games": 11,
+      "Record": "6-5"
+    },
+    {
+      "team": "Frost Warning",
+      "opponent": "Fantasy Legend",
+      "Wins": 5,
+      "Losses": 3,
+      "Ties": 0,
+      "Total_Games": 8,
+      "Record": "5-3"
+    },
+    {
+      "team": "Frost Warning",
+      "opponent": "Fitz Like a Glove",
+      "Wins": 2,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "2-0"
+    },
+    {
+      "team": "Frost Warning",
+      "opponent": "GoPackGo !",
+      "Wins": 2,
+      "Losses": 5,
+      "Ties": 0,
+      "Total_Games": 7,
+      "Record": "2-5"
+    },
+    {
+      "team": "Frost Warning",
+      "opponent": "JJ Bailey",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "Frost Warning",
+      "opponent": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "Wins": 4,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 6,
+      "Record": "4-2"
+    },
+    {
+      "team": "Frost Warning",
+      "opponent": "L\u00d8ST H\u00d8PE",
+      "Wins": 2,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "2-1"
+    },
+    {
+      "team": "Frost Warning",
+      "opponent": "Mac Attack",
+      "Wins": 2,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "2-0"
+    },
+    {
+      "team": "Frost Warning",
+      "opponent": "OCD  Mama",
+      "Wins": 4,
+      "Losses": 3,
+      "Ties": 0,
+      "Total_Games": 7,
+      "Record": "4-3"
+    },
+    {
+      "team": "Frost Warning",
+      "opponent": "Riddled With ANXIETY ",
+      "Wins": 1,
+      "Losses": 7,
+      "Ties": 0,
+      "Total_Games": 8,
+      "Record": "1-7"
+    },
+    {
+      "team": "Frost Warning",
+      "opponent": "S\u00e9nior Quack",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "Frost Warning",
+      "opponent": "\u0110R\u0118\u0104M \u00c7R\u0172\u015eH\u0118R\ud83c\udf1f",
+      "Wins": 2,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "2-0"
+    },
+    {
+      "team": "GoPackGo !",
+      "opponent": "- Apex",
+      "Wins": 1,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "1-2"
+    },
+    {
+      "team": "GoPackGo !",
+      "opponent": "- HORIZON -",
+      "Wins": 4,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 5,
+      "Record": "4-1"
+    },
+    {
+      "team": "GoPackGo !",
+      "opponent": "- pAtRiOtS fAn",
+      "Wins": 3,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "3-1"
+    },
+    {
+      "team": "GoPackGo !",
+      "opponent": "1.21 JJWatts",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "GoPackGo !",
+      "opponent": "2020 Quaran-team",
+      "Wins": 2,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "2-0"
+    },
+    {
+      "team": "GoPackGo !",
+      "opponent": "Bandito Burrito",
+      "Wins": 4,
+      "Losses": 4,
+      "Ties": 0,
+      "Total_Games": 8,
+      "Record": "4-4"
+    },
+    {
+      "team": "GoPackGo !",
+      "opponent": "Fantasy Legend",
+      "Wins": 4,
+      "Losses": 5,
+      "Ties": 0,
+      "Total_Games": 9,
+      "Record": "4-5"
+    },
+    {
+      "team": "GoPackGo !",
+      "opponent": "Fitz Like a Glove",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "GoPackGo !",
+      "opponent": "Frost Warning",
+      "Wins": 5,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 7,
+      "Record": "5-2"
+    },
+    {
+      "team": "GoPackGo !",
+      "opponent": "JJ Bailey",
+      "Wins": 2,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "2-0"
+    },
+    {
+      "team": "GoPackGo !",
+      "opponent": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "Wins": 4,
+      "Losses": 5,
+      "Ties": 0,
+      "Total_Games": 9,
+      "Record": "4-5"
+    },
+    {
+      "team": "GoPackGo !",
+      "opponent": "L\u00d8ST H\u00d8PE",
+      "Wins": 4,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "4-0"
+    },
+    {
+      "team": "GoPackGo !",
+      "opponent": "Mac Attack",
+      "Wins": 2,
+      "Losses": 3,
+      "Ties": 0,
+      "Total_Games": 5,
+      "Record": "2-3"
+    },
+    {
+      "team": "GoPackGo !",
+      "opponent": "New Rhules",
+      "Wins": 5,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 5,
+      "Record": "5-0"
+    },
+    {
+      "team": "GoPackGo !",
+      "opponent": "OCD  Mama",
+      "Wins": 6,
+      "Losses": 6,
+      "Ties": 0,
+      "Total_Games": 12,
+      "Record": "6-6"
+    },
+    {
+      "team": "GoPackGo !",
+      "opponent": "Riddled With ANXIETY ",
+      "Wins": 7,
+      "Losses": 5,
+      "Ties": 0,
+      "Total_Games": 12,
+      "Record": "7-5"
+    },
+    {
+      "team": "GoPackGo !",
+      "opponent": "S\u00e9nior Quack",
+      "Wins": 3,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 5,
+      "Record": "3-2"
+    },
+    {
+      "team": "GoPackGo !",
+      "opponent": "Triple-T-",
+      "Wins": 3,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "3-0"
+    },
+    {
+      "team": "GoPackGo !",
+      "opponent": "\u0110R\u0118\u0104M \u00c7R\u0172\u015eH\u0118R\ud83c\udf1f",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "Holm Girl",
+      "opponent": "-Ladiesman217-",
+      "Wins": 1,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "1-2"
+    },
+    {
+      "team": "Holm Girl",
+      "opponent": "Bandito Burrito",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "Holm Girl",
+      "opponent": "Blatant Rule Breaker",
+      "Wins": 2,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "2-0"
+    },
+    {
+      "team": "Holm Girl",
+      "opponent": "Cherry Bombs",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "Holm Girl",
+      "opponent": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "Wins": 2,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "2-0"
+    },
+    {
+      "team": "Holm Girl",
+      "opponent": "New Rhules",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "Holm Girl",
+      "opponent": "OCD  Mama",
+      "Wins": 1,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "1-2"
+    },
+    {
+      "team": "Holm Girl",
+      "opponent": "Radical",
+      "Wins": 2,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "2-0"
+    },
+    {
+      "team": "Holm Girl",
+      "opponent": "S\u00e9nior Quack",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "JJ Bailey",
+      "opponent": "- Apex",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "JJ Bailey",
+      "opponent": "1.21 JJWatts",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "JJ Bailey",
+      "opponent": "Bandito Burrito",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "JJ Bailey",
+      "opponent": "Fantasy Legend",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "JJ Bailey",
+      "opponent": "Frost Warning",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "JJ Bailey",
+      "opponent": "GoPackGo !",
+      "Wins": 0,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "0-2"
+    },
+    {
+      "team": "JJ Bailey",
+      "opponent": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "Wins": 2,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "2-1"
+    },
+    {
+      "team": "JJ Bailey",
+      "opponent": "L\u00d8ST H\u00d8PE",
+      "Wins": 0,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "0-2"
+    },
+    {
+      "team": "JJ Bailey",
+      "opponent": "Mac Attack",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "JJ Bailey",
+      "opponent": "OCD  Mama",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "JJ Bailey",
+      "opponent": "Riddled With ANXIETY ",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "opponent": "- Apex",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "opponent": "- HORIZON -",
+      "Wins": 1,
+      "Losses": 3,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "1-3"
+    },
+    {
+      "team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "opponent": "- pAtRiOtS fAn",
+      "Wins": 6,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 8,
+      "Record": "6-2"
+    },
+    {
+      "team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "opponent": "-Ladiesman217-",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "opponent": "1.21 JJWatts",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "opponent": "2020 Quaran-team",
+      "Wins": 0,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "0-2"
+    },
+    {
+      "team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "opponent": "Bandito Burrito",
+      "Wins": 2,
+      "Losses": 7,
+      "Ties": 0,
+      "Total_Games": 9,
+      "Record": "2-7"
+    },
+    {
+      "team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "opponent": "Blatant Rule Breaker",
+      "Wins": 1,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "1-2"
+    },
+    {
+      "team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "opponent": "Cherry Bombs",
+      "Wins": 1,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "1-2"
+    },
+    {
+      "team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "opponent": "Fantasy Legend",
+      "Wins": 7,
+      "Losses": 4,
+      "Ties": 0,
+      "Total_Games": 11,
+      "Record": "7-4"
+    },
+    {
+      "team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "opponent": "Fitz Like a Glove",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "opponent": "Frost Warning",
+      "Wins": 2,
+      "Losses": 4,
+      "Ties": 0,
+      "Total_Games": 6,
+      "Record": "2-4"
+    },
+    {
+      "team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "opponent": "GoPackGo !",
+      "Wins": 5,
+      "Losses": 4,
+      "Ties": 0,
+      "Total_Games": 9,
+      "Record": "5-4"
+    },
+    {
+      "team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "opponent": "Holm Girl",
+      "Wins": 0,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "0-2"
+    },
+    {
+      "team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "opponent": "JJ Bailey",
+      "Wins": 1,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "1-2"
+    },
+    {
+      "team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "opponent": "L\u00d8ST H\u00d8PE",
+      "Wins": 1,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "1-2"
+    },
+    {
+      "team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "opponent": "Mac Attack",
+      "Wins": 3,
+      "Losses": 5,
+      "Ties": 0,
+      "Total_Games": 8,
+      "Record": "3-5"
+    },
+    {
+      "team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "opponent": "New Rhules",
+      "Wins": 1,
+      "Losses": 6,
+      "Ties": 0,
+      "Total_Games": 7,
+      "Record": "1-6"
+    },
+    {
+      "team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "opponent": "OCD  Mama",
+      "Wins": 4,
+      "Losses": 8,
+      "Ties": 0,
+      "Total_Games": 12,
+      "Record": "4-8"
+    },
+    {
+      "team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "opponent": "Radical",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "opponent": "Riddled With ANXIETY ",
+      "Wins": 2,
+      "Losses": 6,
+      "Ties": 0,
+      "Total_Games": 8,
+      "Record": "2-6"
+    },
+    {
+      "team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "opponent": "S\u00e9nior Quack",
+      "Wins": 4,
+      "Losses": 6,
+      "Ties": 0,
+      "Total_Games": 10,
+      "Record": "4-6"
+    },
+    {
+      "team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "opponent": "Triple-T-",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "opponent": "\u0110R\u0118\u0104M \u00c7R\u0172\u015eH\u0118R\ud83c\udf1f",
+      "Wins": 2,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "2-0"
+    },
+    {
+      "team": "L\u00d8ST H\u00d8PE",
+      "opponent": "- Apex",
+      "Wins": 0,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "0-2"
+    },
+    {
+      "team": "L\u00d8ST H\u00d8PE",
+      "opponent": "- pAtRiOtS fAn",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "L\u00d8ST H\u00d8PE",
+      "opponent": "1.21 JJWatts",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "L\u00d8ST H\u00d8PE",
+      "opponent": "2020 Quaran-team",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "L\u00d8ST H\u00d8PE",
+      "opponent": "Bandito Burrito",
+      "Wins": 4,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "4-0"
+    },
+    {
+      "team": "L\u00d8ST H\u00d8PE",
+      "opponent": "Fantasy Legend",
+      "Wins": 1,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "1-2"
+    },
+    {
+      "team": "L\u00d8ST H\u00d8PE",
+      "opponent": "Frost Warning",
+      "Wins": 1,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "1-2"
+    },
+    {
+      "team": "L\u00d8ST H\u00d8PE",
+      "opponent": "GoPackGo !",
+      "Wins": 0,
+      "Losses": 4,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "0-4"
+    },
+    {
+      "team": "L\u00d8ST H\u00d8PE",
+      "opponent": "JJ Bailey",
+      "Wins": 2,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "2-0"
+    },
+    {
+      "team": "L\u00d8ST H\u00d8PE",
+      "opponent": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "Wins": 2,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "2-1"
+    },
+    {
+      "team": "L\u00d8ST H\u00d8PE",
+      "opponent": "Mac Attack",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "L\u00d8ST H\u00d8PE",
+      "opponent": "OCD  Mama",
+      "Wins": 2,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "2-1"
+    },
+    {
+      "team": "L\u00d8ST H\u00d8PE",
+      "opponent": "Riddled With ANXIETY ",
+      "Wins": 3,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "3-0"
+    },
+    {
+      "team": "Mac Attack",
+      "opponent": "- Apex",
+      "Wins": 0,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "0-2"
+    },
+    {
+      "team": "Mac Attack",
+      "opponent": "- HORIZON -",
+      "Wins": 1,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "1-2"
+    },
+    {
+      "team": "Mac Attack",
+      "opponent": "1.21 JJWatts",
+      "Wins": 2,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "2-1"
+    },
+    {
+      "team": "Mac Attack",
+      "opponent": "Bandito Burrito",
+      "Wins": 5,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 6,
+      "Record": "5-1"
+    },
+    {
+      "team": "Mac Attack",
+      "opponent": "Fantasy Legend",
+      "Wins": 2,
+      "Losses": 6,
+      "Ties": 0,
+      "Total_Games": 8,
+      "Record": "2-6"
+    },
+    {
+      "team": "Mac Attack",
+      "opponent": "Frost Warning",
+      "Wins": 0,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "0-2"
+    },
+    {
+      "team": "Mac Attack",
+      "opponent": "GoPackGo !",
+      "Wins": 3,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 5,
+      "Record": "3-2"
+    },
+    {
+      "team": "Mac Attack",
+      "opponent": "JJ Bailey",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "Mac Attack",
+      "opponent": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "Wins": 5,
+      "Losses": 3,
+      "Ties": 0,
+      "Total_Games": 8,
+      "Record": "5-3"
+    },
+    {
+      "team": "Mac Attack",
+      "opponent": "L\u00d8ST H\u00d8PE",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Mac Attack",
+      "opponent": "New Rhules",
+      "Wins": 3,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "3-1"
+    },
+    {
+      "team": "Mac Attack",
+      "opponent": "OCD  Mama",
+      "Wins": 5,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 6,
+      "Record": "5-1"
+    },
+    {
+      "team": "Mac Attack",
+      "opponent": "Riddled With ANXIETY ",
+      "Wins": 6,
+      "Losses": 3,
+      "Ties": 0,
+      "Total_Games": 9,
+      "Record": "6-3"
+    },
+    {
+      "team": "Mac Attack",
+      "opponent": "S\u00e9nior Quack",
+      "Wins": 2,
+      "Losses": 5,
+      "Ties": 0,
+      "Total_Games": 7,
+      "Record": "2-5"
+    },
+    {
+      "team": "Mac Attack",
+      "opponent": "Triple-T-",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "New Rhules",
+      "opponent": "- HORIZON -",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "New Rhules",
+      "opponent": "-Ladiesman217-",
+      "Wins": 2,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "2-0"
+    },
+    {
+      "team": "New Rhules",
+      "opponent": "Bandito Burrito",
+      "Wins": 2,
+      "Losses": 5,
+      "Ties": 0,
+      "Total_Games": 7,
+      "Record": "2-5"
+    },
+    {
+      "team": "New Rhules",
+      "opponent": "Blatant Rule Breaker",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "New Rhules",
+      "opponent": "Cherry Bombs",
+      "Wins": 2,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "2-0"
+    },
+    {
+      "team": "New Rhules",
+      "opponent": "Fantasy Legend",
+      "Wins": 1,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "1-2"
+    },
+    {
+      "team": "New Rhules",
+      "opponent": "GoPackGo !",
+      "Wins": 0,
+      "Losses": 5,
+      "Ties": 0,
+      "Total_Games": 5,
+      "Record": "0-5"
+    },
+    {
+      "team": "New Rhules",
+      "opponent": "Holm Girl",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "New Rhules",
+      "opponent": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "Wins": 6,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 7,
+      "Record": "6-1"
+    },
+    {
+      "team": "New Rhules",
+      "opponent": "Mac Attack",
+      "Wins": 1,
+      "Losses": 3,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "1-3"
+    },
+    {
+      "team": "New Rhules",
+      "opponent": "OCD  Mama",
+      "Wins": 2,
+      "Losses": 3,
+      "Ties": 0,
+      "Total_Games": 5,
+      "Record": "2-3"
+    },
+    {
+      "team": "New Rhules",
+      "opponent": "Radical",
+      "Wins": 2,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "2-0"
+    },
+    {
+      "team": "New Rhules",
+      "opponent": "Riddled With ANXIETY ",
+      "Wins": 3,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "3-1"
+    },
+    {
+      "team": "New Rhules",
+      "opponent": "S\u00e9nior Quack",
+      "Wins": 2,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "2-2"
+    },
+    {
+      "team": "New Rhules",
+      "opponent": "Triple-T-",
+      "Wins": 2,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "2-0"
+    },
+    {
+      "team": "OCD  Mama",
+      "opponent": "- Apex",
+      "Wins": 0,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "0-2"
+    },
+    {
+      "team": "OCD  Mama",
+      "opponent": "- HORIZON -",
+      "Wins": 0,
+      "Losses": 3,
+      "Ties": 1,
+      "Total_Games": 4,
+      "Record": "0-3-1"
+    },
+    {
+      "team": "OCD  Mama",
+      "opponent": "- pAtRiOtS fAn",
+      "Wins": 2,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "2-2"
+    },
+    {
+      "team": "OCD  Mama",
+      "opponent": "-Ladiesman217-",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "OCD  Mama",
+      "opponent": "1.21 JJWatts",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "OCD  Mama",
+      "opponent": "2020 Quaran-team",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "OCD  Mama",
+      "opponent": "Bandito Burrito",
+      "Wins": 8,
+      "Losses": 9,
+      "Ties": 0,
+      "Total_Games": 17,
+      "Record": "8-9"
+    },
+    {
+      "team": "OCD  Mama",
+      "opponent": "Blatant Rule Breaker",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "OCD  Mama",
+      "opponent": "Cherry Bombs",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "OCD  Mama",
+      "opponent": "Fantasy Legend",
+      "Wins": 5,
+      "Losses": 5,
+      "Ties": 0,
+      "Total_Games": 10,
+      "Record": "5-5"
+    },
+    {
+      "team": "OCD  Mama",
+      "opponent": "Fitz Like a Glove",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "OCD  Mama",
+      "opponent": "Frost Warning",
+      "Wins": 3,
+      "Losses": 4,
+      "Ties": 0,
+      "Total_Games": 7,
+      "Record": "3-4"
+    },
+    {
+      "team": "OCD  Mama",
+      "opponent": "GoPackGo !",
+      "Wins": 6,
+      "Losses": 6,
+      "Ties": 0,
+      "Total_Games": 12,
+      "Record": "6-6"
+    },
+    {
+      "team": "OCD  Mama",
+      "opponent": "Holm Girl",
+      "Wins": 2,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "2-1"
+    },
+    {
+      "team": "OCD  Mama",
+      "opponent": "JJ Bailey",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "OCD  Mama",
+      "opponent": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "Wins": 8,
+      "Losses": 4,
+      "Ties": 0,
+      "Total_Games": 12,
+      "Record": "8-4"
+    },
+    {
+      "team": "OCD  Mama",
+      "opponent": "L\u00d8ST H\u00d8PE",
+      "Wins": 1,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "1-2"
+    },
+    {
+      "team": "OCD  Mama",
+      "opponent": "Mac Attack",
+      "Wins": 1,
+      "Losses": 5,
+      "Ties": 0,
+      "Total_Games": 6,
+      "Record": "1-5"
+    },
+    {
+      "team": "OCD  Mama",
+      "opponent": "New Rhules",
+      "Wins": 3,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 5,
+      "Record": "3-2"
+    },
+    {
+      "team": "OCD  Mama",
+      "opponent": "Radical",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "OCD  Mama",
+      "opponent": "Riddled With ANXIETY ",
+      "Wins": 2,
+      "Losses": 9,
+      "Ties": 0,
+      "Total_Games": 11,
+      "Record": "2-9"
+    },
+    {
+      "team": "OCD  Mama",
+      "opponent": "S\u00e9nior Quack",
+      "Wins": 3,
+      "Losses": 4,
+      "Ties": 0,
+      "Total_Games": 7,
+      "Record": "3-4"
+    },
+    {
+      "team": "OCD  Mama",
+      "opponent": "Triple-T-",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "OCD  Mama",
+      "opponent": "\u0110R\u0118\u0104M \u00c7R\u0172\u015eH\u0118R\ud83c\udf1f",
+      "Wins": 2,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "2-0"
+    },
+    {
+      "team": "Radical",
+      "opponent": "-Ladiesman217-",
+      "Wins": 0,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "0-2"
+    },
+    {
+      "team": "Radical",
+      "opponent": "Bandito Burrito",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "Radical",
+      "opponent": "Blatant Rule Breaker",
+      "Wins": 2,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "2-1"
+    },
+    {
+      "team": "Radical",
+      "opponent": "Cherry Bombs",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Radical",
+      "opponent": "Holm Girl",
+      "Wins": 0,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "0-2"
+    },
+    {
+      "team": "Radical",
+      "opponent": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Radical",
+      "opponent": "New Rhules",
+      "Wins": 0,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "0-2"
+    },
+    {
+      "team": "Radical",
+      "opponent": "OCD  Mama",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Radical",
+      "opponent": "S\u00e9nior Quack",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "Riddled With ANXIETY ",
+      "opponent": "- Apex",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "Riddled With ANXIETY ",
+      "opponent": "- HORIZON -",
+      "Wins": 3,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 5,
+      "Record": "3-2"
+    },
+    {
+      "team": "Riddled With ANXIETY ",
+      "opponent": "- pAtRiOtS fAn",
+      "Wins": 4,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "4-0"
+    },
+    {
+      "team": "Riddled With ANXIETY ",
+      "opponent": "1.21 JJWatts",
+      "Wins": 0,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "0-2"
+    },
+    {
+      "team": "Riddled With ANXIETY ",
+      "opponent": "2020 Quaran-team",
+      "Wins": 2,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "2-0"
+    },
+    {
+      "team": "Riddled With ANXIETY ",
+      "opponent": "Bandito Burrito",
+      "Wins": 5,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 7,
+      "Record": "5-2"
+    },
+    {
+      "team": "Riddled With ANXIETY ",
+      "opponent": "Fantasy Legend",
+      "Wins": 5,
+      "Losses": 5,
+      "Ties": 0,
+      "Total_Games": 10,
+      "Record": "5-5"
+    },
+    {
+      "team": "Riddled With ANXIETY ",
+      "opponent": "Fitz Like a Glove",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Riddled With ANXIETY ",
+      "opponent": "Frost Warning",
+      "Wins": 7,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 8,
+      "Record": "7-1"
+    },
+    {
+      "team": "Riddled With ANXIETY ",
+      "opponent": "GoPackGo !",
+      "Wins": 5,
+      "Losses": 7,
+      "Ties": 0,
+      "Total_Games": 12,
+      "Record": "5-7"
+    },
+    {
+      "team": "Riddled With ANXIETY ",
+      "opponent": "JJ Bailey",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Riddled With ANXIETY ",
+      "opponent": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "Wins": 6,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 8,
+      "Record": "6-2"
+    },
+    {
+      "team": "Riddled With ANXIETY ",
+      "opponent": "L\u00d8ST H\u00d8PE",
+      "Wins": 0,
+      "Losses": 3,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "0-3"
+    },
+    {
+      "team": "Riddled With ANXIETY ",
+      "opponent": "Mac Attack",
+      "Wins": 3,
+      "Losses": 6,
+      "Ties": 0,
+      "Total_Games": 9,
+      "Record": "3-6"
+    },
+    {
+      "team": "Riddled With ANXIETY ",
+      "opponent": "New Rhules",
+      "Wins": 1,
+      "Losses": 3,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "1-3"
+    },
+    {
+      "team": "Riddled With ANXIETY ",
+      "opponent": "OCD  Mama",
+      "Wins": 9,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 11,
+      "Record": "9-2"
+    },
+    {
+      "team": "Riddled With ANXIETY ",
+      "opponent": "S\u00e9nior Quack",
+      "Wins": 1,
+      "Losses": 4,
+      "Ties": 0,
+      "Total_Games": 5,
+      "Record": "1-4"
+    },
+    {
+      "team": "Riddled With ANXIETY ",
+      "opponent": "Triple-T-",
+      "Wins": 2,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "2-1"
+    },
+    {
+      "team": "Riddled With ANXIETY ",
+      "opponent": "\u0110R\u0118\u0104M \u00c7R\u0172\u015eH\u0118R\ud83c\udf1f",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "S\u00e9nior Quack",
+      "opponent": "- HORIZON -",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "S\u00e9nior Quack",
+      "opponent": "-Ladiesman217-",
+      "Wins": 2,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "2-1"
+    },
+    {
+      "team": "S\u00e9nior Quack",
+      "opponent": "Bandito Burrito",
+      "Wins": 7,
+      "Losses": 5,
+      "Ties": 0,
+      "Total_Games": 12,
+      "Record": "7-5"
+    },
+    {
+      "team": "S\u00e9nior Quack",
+      "opponent": "Blatant Rule Breaker",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "S\u00e9nior Quack",
+      "opponent": "Cherry Bombs",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "S\u00e9nior Quack",
+      "opponent": "Fantasy Legend",
+      "Wins": 2,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "2-2"
+    },
+    {
+      "team": "S\u00e9nior Quack",
+      "opponent": "Frost Warning",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "S\u00e9nior Quack",
+      "opponent": "GoPackGo !",
+      "Wins": 2,
+      "Losses": 3,
+      "Ties": 0,
+      "Total_Games": 5,
+      "Record": "2-3"
+    },
+    {
+      "team": "S\u00e9nior Quack",
+      "opponent": "Holm Girl",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "S\u00e9nior Quack",
+      "opponent": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "Wins": 6,
+      "Losses": 4,
+      "Ties": 0,
+      "Total_Games": 10,
+      "Record": "6-4"
+    },
+    {
+      "team": "S\u00e9nior Quack",
+      "opponent": "Mac Attack",
+      "Wins": 5,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 7,
+      "Record": "5-2"
+    },
+    {
+      "team": "S\u00e9nior Quack",
+      "opponent": "New Rhules",
+      "Wins": 2,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 4,
+      "Record": "2-2"
+    },
+    {
+      "team": "S\u00e9nior Quack",
+      "opponent": "OCD  Mama",
+      "Wins": 4,
+      "Losses": 3,
+      "Ties": 0,
+      "Total_Games": 7,
+      "Record": "4-3"
+    },
+    {
+      "team": "S\u00e9nior Quack",
+      "opponent": "Radical",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "S\u00e9nior Quack",
+      "opponent": "Riddled With ANXIETY ",
+      "Wins": 4,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 5,
+      "Record": "4-1"
+    },
+    {
+      "team": "S\u00e9nior Quack",
+      "opponent": "Triple-T-",
+      "Wins": 1,
+      "Losses": 0,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "1-0"
+    },
+    {
+      "team": "Triple-T-",
+      "opponent": "Bandito Burrito",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Triple-T-",
+      "opponent": "Fantasy Legend",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Triple-T-",
+      "opponent": "GoPackGo !",
+      "Wins": 0,
+      "Losses": 3,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "0-3"
+    },
+    {
+      "team": "Triple-T-",
+      "opponent": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "Triple-T-",
+      "opponent": "Mac Attack",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "Triple-T-",
+      "opponent": "New Rhules",
+      "Wins": 0,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "0-2"
+    },
+    {
+      "team": "Triple-T-",
+      "opponent": "OCD  Mama",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "Triple-T-",
+      "opponent": "Riddled With ANXIETY ",
+      "Wins": 1,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "1-2"
+    },
+    {
+      "team": "Triple-T-",
+      "opponent": "S\u00e9nior Quack",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "\u0110R\u0118\u0104M \u00c7R\u0172\u015eH\u0118R\ud83c\udf1f",
+      "opponent": "- pAtRiOtS fAn",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "\u0110R\u0118\u0104M \u00c7R\u0172\u015eH\u0118R\ud83c\udf1f",
+      "opponent": "Bandito Burrito",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "\u0110R\u0118\u0104M \u00c7R\u0172\u015eH\u0118R\ud83c\udf1f",
+      "opponent": "Fantasy Legend",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    },
+    {
+      "team": "\u0110R\u0118\u0104M \u00c7R\u0172\u015eH\u0118R\ud83c\udf1f",
+      "opponent": "Fitz Like a Glove",
+      "Wins": 0,
+      "Losses": 3,
+      "Ties": 0,
+      "Total_Games": 3,
+      "Record": "0-3"
+    },
+    {
+      "team": "\u0110R\u0118\u0104M \u00c7R\u0172\u015eH\u0118R\ud83c\udf1f",
+      "opponent": "Frost Warning",
+      "Wins": 0,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "0-2"
+    },
+    {
+      "team": "\u0110R\u0118\u0104M \u00c7R\u0172\u015eH\u0118R\ud83c\udf1f",
+      "opponent": "GoPackGo !",
+      "Wins": 0,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 1,
+      "Record": "0-1"
+    },
+    {
+      "team": "\u0110R\u0118\u0104M \u00c7R\u0172\u015eH\u0118R\ud83c\udf1f",
+      "opponent": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+      "Wins": 0,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "0-2"
+    },
+    {
+      "team": "\u0110R\u0118\u0104M \u00c7R\u0172\u015eH\u0118R\ud83c\udf1f",
+      "opponent": "OCD  Mama",
+      "Wins": 0,
+      "Losses": 2,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "0-2"
+    },
+    {
+      "team": "\u0110R\u0118\u0104M \u00c7R\u0172\u015eH\u0118R\ud83c\udf1f",
+      "opponent": "Riddled With ANXIETY ",
+      "Wins": 1,
+      "Losses": 1,
+      "Ties": 0,
+      "Total_Games": 2,
+      "Record": "1-1"
+    }
+  ],
+  "records": {
+    "highest_scores": [
+      {
+        "year": 2025,
+        "week": 4,
+        "team": "S\u00e9nior Quack",
+        "opponent": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+        "score": 213.35
+      },
+      {
+        "year": 2020,
+        "week": 1,
+        "team": "GoPackGo !",
+        "opponent": "2020 Quaran-team",
+        "score": 194.82
+      },
+      {
+        "year": 2025,
+        "week": 6,
+        "team": "Bandito Burrito",
+        "opponent": "Holm Girl",
+        "score": 192.55
+      },
+      {
+        "year": 2023,
+        "week": 4,
+        "team": "Fantasy Legend",
+        "opponent": "Mac Attack",
+        "score": 190.98
+      },
+      {
+        "year": 2021,
+        "week": 17,
+        "team": "- Apex",
+        "opponent": "GoPackGo !",
+        "score": 190.04
+      }
+    ],
+    "bad_beats": [
+      {
+        "year": 2019,
+        "week": 3,
+        "team": "Riddled With ANXIETY ",
+        "opponent": "GoPackGo !",
+        "score": 169.54,
+        "opp_score": 169.94
+      },
+      {
+        "year": 2020,
+        "week": 3,
+        "team": "OCD  Mama",
+        "opponent": "Bandito Burrito",
+        "score": 162.18,
+        "opp_score": 171.68
+      },
+      {
+        "year": 2024,
+        "week": 16,
+        "team": "Bandito Burrito",
+        "opponent": "S\u00e9nior Quack",
+        "score": 160.0,
+        "opp_score": 166.4
+      },
+      {
+        "year": 2024,
+        "week": 15,
+        "team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+        "opponent": "New Rhules",
+        "score": 156.15,
+        "opp_score": 158.7
+      },
+      {
+        "year": 2020,
+        "week": 12,
+        "team": "OCD  Mama",
+        "opponent": "Bandito Burrito",
+        "score": 155.86,
+        "opp_score": 157.2
+      }
+    ],
+    "lucky_wins": [
+      {
+        "year": 2022,
+        "week": 17,
+        "team": "Frost Warning",
+        "opponent": "Bandito Burrito",
+        "score": 71.8,
+        "opp_score": 68.7
+      },
+      {
+        "year": 2022,
+        "week": 17,
+        "team": "GoPackGo !",
+        "opponent": "- HORIZON -",
+        "score": 79.22,
+        "opp_score": 71.2
+      },
+      {
+        "year": 2024,
+        "week": 10,
+        "team": "Triple-T-",
+        "opponent": "Fantasy Legend",
+        "score": 86.3,
+        "opp_score": 81.4
+      },
+      {
+        "year": 2021,
+        "week": 3,
+        "team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+        "opponent": "1.21 JJWatts",
+        "score": 86.92,
+        "opp_score": 84.68
+      },
+      {
+        "year": 2023,
+        "week": 9,
+        "team": "Riddled With ANXIETY ",
+        "opponent": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+        "score": 89.74,
+        "opp_score": 88.58
+      }
+    ],
+    "blowouts": [
+      {
+        "year": 2021,
+        "week": 11,
+        "winner": "Mac Attack",
+        "home_team": "JJ Bailey",
+        "away_team": "Mac Attack",
+        "home_score": 31.1,
+        "away_score": 154.48,
+        "margin": 123.38
+      },
+      {
+        "year": 2025,
+        "week": 6,
+        "winner": "Bandito Burrito",
+        "home_team": "Holm Girl",
+        "away_team": "Bandito Burrito",
+        "home_score": 72.7,
+        "away_score": 192.55,
+        "margin": 119.85000000000001
+      },
+      {
+        "year": 2021,
+        "week": 13,
+        "winner": "L\u00d8ST H\u00d8PE",
+        "home_team": "JJ Bailey",
+        "away_team": "L\u00d8ST H\u00d8PE",
+        "home_score": 39.3,
+        "away_score": 150.96,
+        "margin": 111.66000000000001
+      },
+      {
+        "year": 2023,
+        "week": 4,
+        "winner": "Fantasy Legend",
+        "home_team": "Mac Attack",
+        "away_team": "Fantasy Legend",
+        "home_score": 82.92,
+        "away_score": 190.98,
+        "margin": 108.05999999999999
+      },
+      {
+        "year": 2024,
+        "week": 7,
+        "winner": "S\u00e9nior Quack",
+        "home_team": "Fantasy Legend",
+        "away_team": "S\u00e9nior Quack",
+        "home_score": 64.7,
+        "away_score": 148.65,
+        "margin": 83.95
+      }
+    ]
+  }
+}

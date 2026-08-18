@@ -1,0 +1,21 @@
+# Virtual Environment
+venv/
+ENV/
+env/
+.env
+
+# Python Bytecode & Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.ipynb_checkpoints
+
+# Local Databases (Keep raw credentials & DB local if desired)
+league_history.db
+league_history.db-journal
+
+# OS & Editor Artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
