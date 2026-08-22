@@ -1,16 +1,31 @@
 import os
 import sqlite3
+import sys
 import requests
 from espn_api.football import League
 
-# Read from GitHub Secrets / Environment variables, with local fallbacks
-LEAGUE_ID = int(os.getenv("ESPN_LEAGUE_ID", "12345678"))  # Replace default with your League ID
-SWID = os.getenv("ESPN_SWID", "{YOUR-LOCAL-SWID}")        # Replace default for local runs
-ESPN_S2 = os.getenv("ESPN_S2", "YOUR-LOCAL-ESPN_S2")      # Replace default for local runs
-YEARS = list(range(2017, 2026))  # 9+ years of data
+# Force UTF-8 encoding for standard output on Windows
+if sys.stdout.encoding != 'utf-8':
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except AttributeError:
+        pass
 
-# 1. MAP TEAM NAMES DIRECTLY TO MANAGERS (Case-Insensitive Fallback for 2017-2018)
-# Add any other 2017/2018 team names here if needed:
+# Read from Environment variables with local fallbacks
+LEAGUE_ID = int(os.getenv("ESPN_LEAGUE_ID", "12345678"))
+SWID = os.getenv("ESPN_SWID", "{YOUR-LOCAL-SWID}")
+ESPN_S2 = os.getenv("ESPN_S2", "YOUR-LOCAL-ESPN_S2")
+YEARS = list(range(2017, 2026))
+
+# Credential guardrail
+if LEAGUE_ID == 12345678 or "YOUR-LOCAL-ESPN_S2" in ESPN_S2 or "{YOUR-LOCAL-SWID}" in SWID:
+    print("\n[ERROR] ESPN credentials not found in environment variables!")
+    print("Please export your credentials before running:")
+    print('  export ESPN_LEAGUE_ID="your_id"')
+    print('  export ESPN_SWID="{your_swid}"')
+    print('  export ESPN_S2="your_s2"\n')
+    sys.exit(1)
+
 KNOWN_TEAM_OWNERS = {
     "riddled with anxiety": "Marlene Holm",
     "team dez x": "Desmon Holton",
@@ -19,34 +34,28 @@ KNOWN_TEAM_OWNERS = {
     "fantasy legend": "David Holm",
     "ocd mama": "Julie Mikesell",
     "arizona big girls": "Ashton Anderson",
-    "freight train": "bryce mikesell",
+    "freight train": "Bryce Mikesell",
     "frost warning": "Jordan Iden",
     "LÃ¸CK DÃ¸WN": "Desmon Holton",
+    "lock down": "Desmon Holton",
     "team anderson": "Jeff Anderson",
     "team outlawed": "Michael Searcy",
-    "WÄ¯Â§h DÃ¸ctÃ¸r": "bryce mikesell",
-    # "another old team name": "Manager Name",
+    "WÄ¯Â§h DÃ¸ctÃ¸r": "Bryce Mikesell",
+    "wish doctor": "Bryce Mikesell",
 }
 
-# OPTIONAL MANUAL OVERRIDES FOR CO-MANAGERS: (year, team_id) -> "Manager Name"
-MANUAL_OVERRIDES = {
-    # (2021, 4): "Cody",
-}
+MANUAL_OVERRIDES = {}
 
-# MANUAL OVERRIDES FOR HISTORICAL PODIUM/FINISHES:
-# Format: (year, "Owner Name") -> final_rank  OR  (year, team_id) -> final_rank
 STANDINGS_OVERRIDES = {
     (2017, "Desmon Holton"): 1,
     (2017, "Darin Mikesell"): 2,
-    (2017, "Dave Holm"): 3,
+    (2017, "David Holm"): 3,
     (2018, "Marlene Holm"): 1,
     (2018, "Trenton Holm"): 2,
     (2018, "Darin Mikesell"): 3,
     (2019, "Marlene Holm"): 1,
     (2019, "Jordan Iden"): 2,
     (2019, "Julie Mikesell"): 3,
-    # Add any other known 2nd/3rd place finishes if ESPN lost them:
-    # (2017, "Runner Up Name"): 2,
 }
 
 POS_MAP = {1: 'QB', 2: 'RB', 3: 'WR', 4: 'TE', 5: 'K', 16: 'D/ST'}
@@ -59,6 +68,7 @@ cursor.execute('DROP TABLE IF EXISTS teams_history')
 cursor.execute('DROP TABLE IF EXISTS matchups')
 cursor.execute('DROP TABLE IF EXISTS player_box_scores')
 cursor.execute('DROP TABLE IF EXISTS transactions')
+cursor.execute('DROP TABLE IF EXISTS draft_picks')
 
 cursor.execute('''
 CREATE TABLE teams_history (
@@ -99,6 +109,7 @@ CREATE TABLE player_box_scores (
     team_name TEXT,
     owner_name TEXT,
     player_name TEXT,
+    player_id INTEGER,
     position TEXT,
     slot_position TEXT,
     points REAL,
@@ -119,7 +130,24 @@ CREATE TABLE transactions (
 )
 ''')
 
+cursor.execute('''
+CREATE TABLE draft_picks (
+    year INTEGER,
+    round_num INTEGER,
+    round_pick INTEGER,
+    overall_pick INTEGER,
+    team_id INTEGER,
+    team_name TEXT,
+    owner_name TEXT,
+    player_name TEXT,
+    player_id INTEGER,
+    bid_amount INTEGER
+)
+''')
+
 global_member_map = {}
+global_player_map = {}
+
 print("Harvesting league member directory across seasons...")
 for yr in reversed(YEARS):
     try:
@@ -181,24 +209,39 @@ def extract_owners_list(raw_owners, team_name, year, team_id, local_member_map=N
     return [str(team_name).strip()]
 
 
-def extract_pre2019_direct(year):
-    url = f"https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/leagueHistory/{LEAGUE_ID}"
-    params = {
-        "seasonId": year,
-        "view": ["mTeam", "mMatchup", "mRoster", "mSettings", "mBoxscore", "mMatchupScore", "mTransactions2"]
-    }
+def extract_full_season(year):
     cookies = {"espn_s2": ESPN_S2, "SWID": SWID}
     headers = {"Accept": "application/json"}
 
-    res = requests.get(url, params=params, cookies=cookies, headers=headers)
+    # Step A: Fetch League Structure, Teams, Members & Draft Detail
+    if year < 2019:
+        url_base = f"https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/leagueHistory/{LEAGUE_ID}"
+        params_overview = {
+            "seasonId": year,
+            "view": ["mTeam", "mMatchup", "mSettings", "mTransactions2", "mDraftDetail", "kona_player_info"]
+        }
+    else:
+        url_base = f"https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/{year}/segments/0/leagues/{LEAGUE_ID}"
+        params_overview = {
+            "view": ["mTeam", "mMatchup", "mSettings", "mTransactions2", "mDraftDetail", "kona_player_info"]
+        }
+
+    res = requests.get(url_base, params=params_overview, cookies=cookies, headers=headers)
     if res.status_code != 200:
         return False
 
-    data_list = res.json()
-    if not data_list or not isinstance(data_list, list):
-        return False
+    raw_json = res.json()
+    season_data = next((s for s in raw_json if s.get('seasonId') == year), raw_json[0]) if isinstance(raw_json, list) else raw_json
 
-    season_data = next((s for s in data_list if s.get('seasonId') == year), data_list[0])
+    local_player_map = {}
+    for p in season_data.get('players', []):
+        p_obj = p.get('player', p)
+        p_id = p_obj.get('id')
+        p_name = p_obj.get('fullName')
+        pos = POS_MAP.get(p_obj.get('defaultPositionId'), 'FLEX')
+        if p_id and p_name:
+            local_player_map[p_id] = (p_name, pos)
+            global_player_map[p_id] = (p_name, pos)
 
     local_member_map = {}
     for m in season_data.get('members', []):
@@ -208,6 +251,7 @@ def extract_pre2019_direct(year):
             local_member_map[m_id] = name
 
     team_raw_owners = {}
+    team_lookup = {}
     for t in season_data.get('teams', []):
         t_id = t['id']
         t_name = t.get('name') or f"{t.get('location', '')} {t.get('nickname', '')}".strip() or f"Team {t_id}"
@@ -216,7 +260,6 @@ def extract_pre2019_direct(year):
 
     claimed_solo = {owners[0] for t_id, (name, raw_o, owners) in team_raw_owners.items() if len(owners) == 1}
 
-    team_lookup = {}
     for t in season_data.get('teams', []):
         t_id = t['id']
         t_name, owners, resolved_owners = team_raw_owners[t_id]
@@ -240,9 +283,13 @@ def extract_pre2019_direct(year):
         cursor.execute('INSERT OR REPLACE INTO teams_history VALUES (?, ?, ?, ?, ?, ?)',
                        (year, t_id, t_name, str(owners), final_owner, int(final_rank)))
 
-    matchup_count = 0
-    for match in season_data.get('schedule', []):
+    # Matchups Schedule
+    schedule = season_data.get('schedule', [])
+    max_week = 1
+    for match in schedule:
         week = match.get('matchupPeriodId', 1)
+        if week > max_week:
+            max_week = week
         home, away = match.get('home'), match.get('away')
         if not home or not away:
             continue
@@ -275,163 +322,91 @@ def extract_pre2019_direct(year):
         cursor.execute('INSERT INTO matchups VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
                        (year, week, m_type, h_id, h_name, h_owner, h_score,
                         a_id, a_name, a_owner, a_score, w_id, w_name, w_owner, margin))
-        matchup_count += 1
 
-        for side, t_name, t_owner in [(home, h_name, h_owner), (away, a_name, a_owner)]:
-            r_data = side.get('rosterForCurrentScoringPeriod') or side.get('rosterForMatchupPeriod') or {}
-            for entry in r_data.get('entries', []):
-                p = entry.get('playerPoolEntry', {}).get('player', {})
-                p_name = p.get('fullName', 'Unknown Player')
-                pos = POS_MAP.get(p.get('defaultPositionId'), 'FLEX')
-                slot = SLOT_MAP.get(entry.get('lineupSlotId'), 'BE')
-                pts = float(entry.get('appliedStatTotal', 0.0))
-                cursor.execute('INSERT INTO player_box_scores VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
-                               (year, week, t_name, t_owner, p_name, pos, slot, pts, 0.0))
+    # Draft Detail
+    draft_picks = season_data.get('draftDetail', {}).get('picks', [])
+    for pick in draft_picks:
+        r_num = pick.get('roundId', 1)
+        r_pick = pick.get('roundPickNumber', 1)
+        overall = pick.get('overallPickNumber', 1)
+        t_id = pick.get('teamId', 0)
+        bid = pick.get('bidAmount', 0)
+        p_id = pick.get('playerId', 0)
 
-    # Transactions extraction (Trades & Drops/Adds)
-    for trans in season_data.get('transactions', []):
-        t_type = trans.get('type', 'WAIVER')
-        period = trans.get('scoringPeriodId', 1)
-        bid = trans.get('bidAmount', 0)
-        for item in trans.get('items', []):
-            t_id = item.get('toTeamId') or item.get('fromTeamId')
-            t_name, o_name = team_lookup.get(t_id, (f"Team {t_id}", f"Owner {t_id}"))
-            p_id = item.get('playerPoolEntry', {}).get('player', {}).get('fullName', f"Player {item.get('playerId', '')}")
-            cursor.execute('INSERT INTO transactions VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
-                           (year, period, t_type, t_id, t_name, o_name, p_id, bid))
+        p_info = local_player_map.get(p_id) or global_player_map.get(p_id)
+        p_name = p_info[0] if p_info else (pick.get('playerPoolEntry', {}).get('player', {}).get('fullName') or f"Player {p_id}")
+        t_name, o_name = team_lookup.get(t_id, (f"Team {t_id}", f"Owner {t_id}"))
 
-    return matchup_count > 0
+        cursor.execute('INSERT INTO draft_picks VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                       (year, r_num, r_pick, overall, t_id, t_name, o_name, p_name, p_id, bid))
+
+    # Step B: Loop through EVERY WEEK (1 to max_week) to extract complete player box scores
+    print(f"   --> Harvesting weekly box scores for weeks 1 to {max_week}...")
+    for wk in range(1, max_week + 1):
+        if year < 2019:
+            params_wk = {
+                "seasonId": year,
+                "scoringPeriodId": wk,
+                "view": ["mBoxscore", "mMatchupScore", "mRoster"]
+            }
+        else:
+            params_wk = {
+                "scoringPeriodId": wk,
+                "view": ["mBoxscore", "mMatchupScore", "mRoster"]
+            }
+
+        res_wk = requests.get(url_base, params=params_wk, cookies=cookies, headers=headers)
+        if res_wk.status_code != 200:
+            continue
+
+        wk_json = res_wk.json()
+        wk_data = next((s for s in wk_json if s.get('seasonId') == year), wk_json[0]) if isinstance(wk_json, list) else wk_json
+
+        for match in wk_data.get('schedule', []):
+            if match.get('matchupPeriodId') != wk:
+                continue
+            home, away = match.get('home'), match.get('away')
+            if not home or not away:
+                continue
+
+            h_id, a_id = home.get('teamId'), away.get('teamId')
+            h_name, h_owner = team_lookup.get(h_id, (f"Team {h_id}", f"Owner {h_id}"))
+            a_name, a_owner = team_lookup.get(a_id, (f"Team {a_id}", f"Owner {a_id}"))
+            h_score = float(home.get('totalPoints', 0.0))
+            a_score = float(away.get('totalPoints', 0.0))
+
+            if h_score > 0 or a_score > 0:
+                for side, t_name, t_owner in [(home, h_name, h_owner), (away, a_name, a_owner)]:
+                    r_data = side.get('rosterForCurrentScoringPeriod') or side.get('rosterForMatchupPeriod') or {}
+                    for entry in r_data.get('entries', []):
+                        p_pool = entry.get('playerPoolEntry', {})
+                        p = p_pool.get('player', {})
+                        p_id = p.get('id', entry.get('playerId', 0))
+                        p_name = p.get('fullName') or local_player_map.get(p_id, ("Unknown Player", "FLEX"))[0]
+                        pos = POS_MAP.get(p.get('defaultPositionId'), 'FLEX')
+                        slot = SLOT_MAP.get(entry.get('lineupSlotId'), 'BE')
+
+                        raw_pts = p_pool.get('appliedStatTotal', entry.get('appliedStatTotal', 0.0))
+                        pts = float(raw_pts if raw_pts is not None else 0.0)
+
+                        if p_id and p_name != 'Unknown Player':
+                            local_player_map[p_id] = (p_name, pos)
+                            global_player_map[p_id] = (p_name, pos)
+
+                        cursor.execute('INSERT INTO player_box_scores VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                                       (year, wk, t_name, t_owner, p_name, p_id, pos, slot, pts, 0.0))
+
+    return True
 
 
-# --- STEP 2: MAIN INGESTION LOOP ---
+# --- MAIN INGESTION LOOP ---
 for year in YEARS:
     print(f"--> Extracting season {year}...")
-    success = False
-
-    if year < 2019:
-        try:
-            if extract_pre2019_direct(year):
-                success = True
-                print(f"   [✓] Season {year} extracted via direct leagueHistory API")
-        except Exception as e:
-            print(f"   [!] Direct fallback error on {year}: {e}")
-
-    if not success:
-        try:
-            league = League(league_id=LEAGUE_ID, year=year, espn_s2=ESPN_S2, swid=SWID)
-
-            local_member_map = {}
-            if hasattr(league, 'members') and league.members:
-                for m in league.members:
-                    if isinstance(m, dict):
-                        m_id = str(m.get('id', '')).strip('{}').upper()
-                        first = str(m.get('firstName', '')).strip()
-                        last = str(m.get('lastName', '')).strip()
-                        full = f"{first} {last}".strip() or str(m.get('displayName', '')).strip()
-                    else:
-                        m_id = str(getattr(m, 'id', '')).strip('{}').upper()
-                        first = str(getattr(m, 'first_name', '')).strip()
-                        last = str(getattr(m, 'last_name', '')).strip()
-                        full = f"{first} {last}".strip() or str(getattr(m, 'display_name', '')).strip()
-                    if m_id and full:
-                        local_member_map[m_id] = full
-
-            team_raw_owners = {}
-            for team in league.teams:
-                raw_owners = getattr(team, 'owners', [])
-                team_raw_owners[team.team_id] = extract_owners_list(raw_owners, team.team_name, year, team.team_id, local_member_map)
-
-            claimed_solo = set()
-            for t_id, owners in team_raw_owners.items():
-                if (year, t_id) in MANUAL_OVERRIDES:
-                    claimed_solo.add(MANUAL_OVERRIDES[(year, t_id)])
-                elif len(owners) == 1:
-                    claimed_solo.add(owners[0])
-
-            team_owner_lookup = {}
-            for team in league.teams:
-                t_id = team.team_id
-                resolved_owners = team_raw_owners[t_id]
-
-                if (year, t_id) in MANUAL_OVERRIDES:
-                    final_owner = MANUAL_OVERRIDES[(year, t_id)]
-                elif len(resolved_owners) == 1:
-                    final_owner = resolved_owners[0]
-                else:
-                    unique_co = [o for o in resolved_owners if o not in claimed_solo]
-                    final_owner = unique_co[0] if unique_co else resolved_owners[0]
-
-                final_rank = getattr(team, 'final_standing', getattr(team, 'standing', 0))
-                for (ov_yr, ov_key), ov_rank in STANDINGS_OVERRIDES.items():
-                    if ov_yr == year:
-                        if (isinstance(ov_key, int) and ov_key == t_id) or (isinstance(ov_key, str) and ov_key.strip().lower() == final_owner.strip().lower()):
-                            final_rank = ov_rank
-                            break
-
-                team_owner_lookup[t_id] = final_owner
-                cursor.execute('INSERT OR REPLACE INTO teams_history VALUES (?, ?, ?, ?, ?, ?)',
-                               (year, t_id, team.team_name, str(getattr(team, 'owners', '')), final_owner, int(final_rank)))
-
-            max_weeks = getattr(league.settings, 'matchup_period_count', 17)
-            matchup_count = 0
-            for week in range(1, max_weeks + 1):
-                try:
-                    box_scores = league.box_scores(week=week)
-                except Exception:
-                    continue
-
-                for match in box_scores:
-                    if not match.away_team:
-                        continue
-
-                    h_id, h_name = match.home_team.team_id, match.home_team.team_name
-                    a_id, a_name = match.away_team.team_id, match.away_team.team_name
-                    h_owner = team_owner_lookup.get(h_id, h_name)
-                    a_owner = team_owner_lookup.get(a_id, a_name)
-                    h_score, a_score = match.home_score, match.away_score
-                    margin = round(abs(h_score - a_score), 2)
-
-                    if h_score > a_score:
-                        w_id, w_name, w_owner = h_id, h_name, h_owner
-                    elif a_score > h_score:
-                        w_id, w_name, w_owner = a_id, a_name, a_owner
-                    else:
-                        w_id, w_name, w_owner = 0, "TIE", "TIE"
-
-                    raw_type = str(getattr(match, 'matchup_type', 'REGULAR')).upper().strip()
-                    if 'WINNERS_BRACKET' in raw_type:
-                        m_type = "PLAYOFF"
-                    elif any(k in raw_type for k in ['LOSER', 'CONSOLATION', 'LADDER', 'TOILET']):
-                        m_type = "CONSOLATION"
-                    elif raw_type in ['NONE', 'REGULAR', '']:
-                        m_type = "REGULAR"
-                    else:
-                        m_type = "PLAYOFF"
-
-                    cursor.execute('INSERT INTO matchups VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-                                   (year, week, m_type, h_id, h_name, h_owner, h_score,
-                                    a_id, a_name, a_owner, a_score, w_id, w_name, w_owner, margin))
-                    matchup_count += 1
-
-                    if hasattr(match, 'home_lineup') and match.home_lineup:
-                        for p in match.home_lineup:
-                            cursor.execute('INSERT INTO player_box_scores VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
-                                           (year, week, h_name, h_owner, p.name, p.position, p.slot_position, p.points, p.projected_points))
-
-                    if hasattr(match, 'away_lineup') and match.away_lineup:
-                        for p in match.away_lineup:
-                            cursor.execute('INSERT INTO player_box_scores VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
-                                           (year, week, a_name, a_owner, p.name, p.position, p.slot_position, p.points, p.projected_points))
-
-            if matchup_count > 0:
-                print(f"   [✓] Season {year} extracted via espn-api ({matchup_count} matchups)")
-            else:
-                extract_pre2019_direct(year)
-                print(f"   [✓] Season {year} extracted via direct leagueHistory fallback")
-        except Exception:
-            extract_pre2019_direct(year)
-            print(f"   [✓] Season {year} extracted via direct leagueHistory fallback")
-
+    try:
+        if extract_full_season(year):
+            print(f"   [OK] Season {year} extracted successfully")
+    except Exception as e:
+        print(f"   [!] Error on {year}: {e}")
     conn.commit()
 
 conn.close()
