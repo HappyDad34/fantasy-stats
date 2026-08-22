@@ -26,6 +26,11 @@
     th:hover {
       color: #34d399; /* Tailwind emerald-400 */
     }
+    .sort-arrow {
+      display: inline-block;
+      min-width: 12px;
+      font-size: 10px;
+    }
   </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans">
@@ -67,11 +72,11 @@
       
       <!-- HUB 1: Standings & History -->
       <div class="relative group">
-        <button id="hub-btn-history" class="hub-btn px-3 py-2 rounded-lg font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 flex items-center gap-1.5 transition">
+        <button onclick="toggleHubDropdown('hub-menu-history', 'standings')" id="hub-btn-history" class="hub-btn px-3 py-2 rounded-lg font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 flex items-center gap-1.5 transition">
           <span>🏆 Standings & History</span>
           <svg class="w-3.5 h-3.5 text-slate-400 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
-        <div class="absolute left-0 top-full hidden group-hover:block group-focus-within:block bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-1.5 min-w-[220px] z-50 space-y-1">
+        <div id="hub-menu-history" class="hub-menu absolute left-0 top-full hidden group-hover:block group-focus-within:block bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-1.5 min-w-[220px] z-50 space-y-1">
           <button onclick="switchTab('standings')" id="nav-standings" class="nav-sub-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition flex items-center justify-between">
             <span>All-Time Standings</span>
             <span class="text-[10px] text-slate-500 font-mono">W-L / Luck</span>
@@ -93,11 +98,11 @@
 
       <!-- HUB 2: Matchups & Rivalries -->
       <div class="relative group">
-        <button id="hub-btn-rivalries" class="hub-btn px-3 py-2 rounded-lg font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 flex items-center gap-1.5 transition">
+        <button onclick="toggleHubDropdown('hub-menu-rivalries', 'rivalry')" id="hub-btn-rivalries" class="hub-btn px-3 py-2 rounded-lg font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 flex items-center gap-1.5 transition">
           <span>🥊 Matchups & Rivalries</span>
           <svg class="w-3.5 h-3.5 text-slate-400 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
-        <div class="absolute left-0 top-full hidden group-hover:block group-focus-within:block bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-1.5 min-w-[220px] z-50 space-y-1">
+        <div id="hub-menu-rivalries" class="hub-menu absolute left-0 top-full hidden group-hover:block group-focus-within:block bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-1.5 min-w-[220px] z-50 space-y-1">
           <button onclick="switchTab('rivalry')" id="nav-rivalry" class="nav-sub-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition flex items-center justify-between">
             <span>Tale of the Tape</span>
             <span class="text-[10px] text-rose-400 font-mono">H2H Deep Dive</span>
@@ -115,11 +120,11 @@
 
       <!-- HUB 3: Draft & Rosters -->
       <div class="relative group">
-        <button id="hub-btn-rosters" class="hub-btn px-3 py-2 rounded-lg font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 flex items-center gap-1.5 transition">
+        <button onclick="toggleHubDropdown('hub-menu-rosters', 'drafts')" id="hub-btn-rosters" class="hub-btn px-3 py-2 rounded-lg font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 flex items-center gap-1.5 transition">
           <span>🎯 Draft & Rosters</span>
           <svg class="w-3.5 h-3.5 text-slate-400 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
-        <div class="absolute left-0 top-full hidden group-hover:block group-focus-within:block bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-1.5 min-w-[220px] z-50 space-y-1">
+        <div id="hub-menu-rosters" class="hub-menu absolute left-0 top-full hidden group-hover:block group-focus-within:block bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-1.5 min-w-[220px] z-50 space-y-1">
           <button onclick="switchTab('drafts')" id="nav-drafts" class="nav-sub-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition flex items-center justify-between">
             <span>Draft Vault & ROI</span>
             <span class="text-[10px] text-emerald-400 font-mono">Steals / Busts</span>
@@ -141,11 +146,11 @@
 
       <!-- HUB 4: Weekly & Records -->
       <div class="relative group">
-        <button id="hub-btn-weekly" class="hub-btn px-3 py-2 rounded-lg font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 flex items-center gap-1.5 transition">
+        <button onclick="toggleHubDropdown('hub-menu-weekly', 'recap')" id="hub-btn-weekly" class="hub-btn px-3 py-2 rounded-lg font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 flex items-center gap-1.5 transition">
           <span>⚡ Weekly & Records</span>
           <svg class="w-3.5 h-3.5 text-slate-400 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
-        <div class="absolute left-0 top-full hidden group-hover:block group-focus-within:block bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-1.5 min-w-[220px] z-50 space-y-1">
+        <div id="hub-menu-weekly" class="hub-menu absolute left-0 top-full hidden group-hover:block group-focus-within:block bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-1.5 min-w-[220px] z-50 space-y-1">
           <button onclick="switchTab('recap')" id="nav-recap" class="nav-sub-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition flex items-center justify-between">
             <span>Weekly Recap & Ladder</span>
             <span class="text-[10px] text-amber-400 font-mono">👑 King / Blunders</span>
@@ -167,11 +172,11 @@
 
       <!-- HUB 5: Tools & Analysis -->
       <div class="relative group">
-        <button id="hub-btn-tools" class="hub-btn px-3 py-2 rounded-lg font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 flex items-center gap-1.5 transition">
+        <button onclick="toggleHubDropdown('hub-menu-tools', 'simulator')" id="hub-btn-tools" class="hub-btn px-3 py-2 rounded-lg font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 flex items-center gap-1.5 transition">
           <span>🛠️ Tools & Analysis</span>
           <svg class="w-3.5 h-3.5 text-slate-400 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
-        <div class="absolute right-0 sm:left-0 top-full hidden group-hover:block group-focus-within:block bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-1.5 min-w-[220px] z-50 space-y-1">
+        <div id="hub-menu-tools" class="hub-menu absolute right-0 sm:left-0 top-full hidden group-hover:block group-focus-within:block bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-1.5 min-w-[220px] z-50 space-y-1">
           <button onclick="switchTab('simulator')" id="nav-simulator" class="nav-sub-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition flex items-center justify-between">
             <span>Playoff Simulator</span>
             <span class="text-[10px] text-cyan-400 font-mono">10,000 Sims</span>
