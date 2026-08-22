@@ -4,9 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ESPN Fantasy League History & Analytics</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+  
   <!-- Mobile & PWA Configuration -->
   <meta name="theme-color" content="#0f172a" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -14,14 +12,17 @@
   <meta name="apple-mobile-web-app-title" content="League Vault" />
   <link rel="manifest" href="manifest.json" />
   <link rel="apple-touch-icon" href="icon-192.png" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans">
 
   <!-- Header -->
-  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex flex-wrap justify-between items-center gap-4">
+  <header class="border-b border-slate-800 bg-slate-900/90 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-4">
       <div>
-        <h1 class="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+        <h1 class="text-xl sm:text-2xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
           League History & Stat Vault
         </h1>
         <p class="text-xs text-slate-400">Historical Archives & Analytics</p>
@@ -49,23 +50,131 @@
       </div>
     </div>
 
-    <!-- Navigation Tabs -->
-    <nav class="max-w-7xl mx-auto px-4 flex gap-6 text-sm border-t border-slate-800/60 overflow-x-auto">
-      <button onclick="switchTab('standings')" id="tab-standings" class="tab-btn py-3 border-b-2 border-emerald-400 font-medium text-emerald-400 whitespace-nowrap">All-Time Standings</button>
-      <button onclick="switchTab('brackets')" id="tab-brackets" class="tab-btn py-3 border-b-2 border-transparent font-medium text-slate-400 hover:text-slate-200 whitespace-nowrap">🌿 Playoff Brackets</button>
-      <button onclick="switchTab('trades')" id="tab-trades" class="tab-btn py-3 border-b-2 border-transparent font-medium text-slate-400 hover:text-slate-200 whitespace-nowrap">🔄 Trade Ledger</button>
-      <button onclick="switchTab('storylines')" id="tab-storylines" class="tab-btn py-3 border-b-2 border-transparent font-medium text-slate-400 hover:text-slate-200 whitespace-nowrap">📖 Storylines & Streaks</button>
-      <button onclick="switchTab('dreamteam')" id="tab-dreamteam" class="tab-btn py-3 border-b-2 border-transparent font-medium text-slate-400 hover:text-slate-200 whitespace-nowrap">🌟 Dream Team</button>
-      <button onclick="switchTab('charts')" id="tab-charts" class="tab-btn py-3 border-b-2 border-transparent font-medium text-slate-400 hover:text-slate-200 whitespace-nowrap">📈 Visual Analytics</button>
-      <button onclick="switchTab('recap')" id="tab-recap" class="tab-btn py-3 border-b-2 border-transparent font-medium text-slate-400 hover:text-slate-200 whitespace-nowrap">⚡ Weekly Recap</button>
-      <button onclick="switchTab('badbeats')" id="tab-badbeats" class="tab-btn py-3 border-b-2 border-transparent font-medium text-slate-400 hover:text-slate-200 whitespace-nowrap">💔 Bad Beats</button>
-      <button onclick="switchTab('keepers')" id="tab-keepers" class="tab-btn py-3 border-b-2 border-transparent font-medium text-slate-400 hover:text-slate-200 whitespace-nowrap">🛡️ Keepers & Cornerstones</button>
-      <button onclick="switchTab('finishes')" id="tab-finishes" class="tab-btn py-3 border-b-2 border-transparent font-medium text-slate-400 hover:text-slate-200 whitespace-nowrap">🏆 Trophy Room & Finishes</button>
-      <button onclick="switchTab('h2h')" id="tab-h2h" class="tab-btn py-3 border-b-2 border-transparent font-medium text-slate-400 hover:text-slate-200 whitespace-nowrap">Head-to-Head Matrix</button>
-      <button onclick="switchTab('records')" id="tab-records" class="tab-btn py-3 border-b-2 border-transparent font-medium text-slate-400 hover:text-slate-200 whitespace-nowrap">Superlatives & Records</button>
-      <button onclick="switchTab('efficiency')" id="tab-efficiency" class="tab-btn py-3 border-b-2 border-transparent font-medium text-slate-400 hover:text-slate-200 whitespace-nowrap">Start/Sit IQ</button>
-      <button onclick="switchTab('positions')" id="tab-positions" class="tab-btn py-3 border-b-2 border-transparent font-medium text-slate-400 hover:text-slate-200 whitespace-nowrap">Positional Value</button>
-      <button onclick="switchTab('query')" id="tab-query" class="tab-btn py-3 border-b-2 border-transparent font-medium text-slate-400 hover:text-slate-200 whitespace-nowrap">Custom Query Builder</button>
+    <!-- 5 Consolidated Navigation Hubs -->
+    <nav class="max-w-7xl mx-auto px-4 flex flex-wrap gap-2 sm:gap-4 text-sm border-t border-slate-800/80 py-2">
+      
+      <!-- HUB 1: Standings & History -->
+      <div class="relative group">
+        <button id="hub-btn-history" class="hub-btn px-3 py-2 rounded-lg font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 flex items-center gap-1.5 transition">
+          <span>🏆 Standings & History</span>
+          <svg class="w-3.5 h-3.5 text-slate-400 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="absolute left-0 top-full hidden group-hover:block group-focus-within:block bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-1.5 min-w-[220px] z-50 space-y-1">
+          <button onclick="switchTab('standings')" id="nav-standings" class="nav-sub-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition flex items-center justify-between">
+            <span>All-Time Standings</span>
+            <span class="text-[10px] text-slate-500 font-mono">W-L / Luck</span>
+          </button>
+          <button onclick="switchTab('finishes')" id="nav-finishes" class="nav-sub-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition flex items-center justify-between">
+            <span>Trophy Room & Finishes</span>
+            <span class="text-[10px] text-amber-400 font-mono">🥇 🥈 🥉</span>
+          </button>
+          <button onclick="switchTab('storylines')" id="nav-storylines" class="nav-sub-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition flex items-center justify-between">
+            <span>Storylines & Streaks</span>
+            <span class="text-[10px] text-cyan-400 font-mono">Records</span>
+          </button>
+          <button onclick="switchTab('keepers')" id="nav-keepers" class="nav-sub-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition flex items-center justify-between">
+            <span>Keepers & Cornerstones</span>
+            <span class="text-[10px] text-slate-500 font-mono">Tenure</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- HUB 2: Matchups & Rivalries -->
+      <div class="relative group">
+        <button id="hub-btn-rivalries" class="hub-btn px-3 py-2 rounded-lg font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 flex items-center gap-1.5 transition">
+          <span>🥊 Matchups & Rivalries</span>
+          <svg class="w-3.5 h-3.5 text-slate-400 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="absolute left-0 top-full hidden group-hover:block group-focus-within:block bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-1.5 min-w-[220px] z-50 space-y-1">
+          <button onclick="switchTab('rivalry')" id="nav-rivalry" class="nav-sub-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition flex items-center justify-between">
+            <span>Tale of the Tape</span>
+            <span class="text-[10px] text-rose-400 font-mono">H2H Deep Dive</span>
+          </button>
+          <button onclick="switchTab('brackets')" id="nav-brackets" class="nav-sub-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition flex items-center justify-between">
+            <span>Playoff Brackets</span>
+            <span class="text-[10px] text-amber-400 font-mono">Tree View</span>
+          </button>
+          <button onclick="switchTab('h2h')" id="nav-h2h" class="nav-sub-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition flex items-center justify-between">
+            <span>Head-to-Head Matrix</span>
+            <span class="text-[10px] text-slate-500 font-mono">N x N Grid</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- HUB 3: Draft & Rosters -->
+      <div class="relative group">
+        <button id="hub-btn-rosters" class="hub-btn px-3 py-2 rounded-lg font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 flex items-center gap-1.5 transition">
+          <span>🎯 Draft & Rosters</span>
+          <svg class="w-3.5 h-3.5 text-slate-400 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="absolute left-0 top-full hidden group-hover:block group-focus-within:block bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-1.5 min-w-[220px] z-50 space-y-1">
+          <button onclick="switchTab('drafts')" id="nav-drafts" class="nav-sub-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition flex items-center justify-between">
+            <span>Draft Vault & ROI</span>
+            <span class="text-[10px] text-emerald-400 font-mono">Steals / Busts</span>
+          </button>
+          <button onclick="switchTab('trades')" id="nav-trades" class="nav-sub-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition flex items-center justify-between">
+            <span>Trade Ledger</span>
+            <span class="text-[10px] text-cyan-400 font-mono">Impact ROI</span>
+          </button>
+          <button onclick="switchTab('dreamteam')" id="nav-dreamteam" class="nav-sub-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition flex items-center justify-between">
+            <span>All-Time Dream Team</span>
+            <span class="text-[10px] text-amber-400 font-mono">GOAT Lineup</span>
+          </button>
+          <button onclick="switchTab('positions')" id="nav-positions" class="nav-sub-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition flex items-center justify-between">
+            <span>Positional Scoring Value</span>
+            <span class="text-[10px] text-slate-500 font-mono">QB/RB/WR</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- HUB 4: Weekly & Records -->
+      <div class="relative group">
+        <button id="hub-btn-weekly" class="hub-btn px-3 py-2 rounded-lg font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 flex items-center gap-1.5 transition">
+          <span>⚡ Weekly & Records</span>
+          <svg class="w-3.5 h-3.5 text-slate-400 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="absolute left-0 top-full hidden group-hover:block group-focus-within:block bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-1.5 min-w-[220px] z-50 space-y-1">
+          <button onclick="switchTab('recap')" id="nav-recap" class="nav-sub-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition flex items-center justify-between">
+            <span>Weekly Recap & Ladder</span>
+            <span class="text-[10px] text-amber-400 font-mono">👑 King / Blunders</span>
+          </button>
+          <button onclick="switchTab('badbeats')" id="nav-badbeats" class="nav-sub-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition flex items-center justify-between">
+            <span>Bad Beat Hall of Fame</span>
+            <span class="text-[10px] text-rose-400 font-mono">Pain Index</span>
+          </button>
+          <button onclick="switchTab('efficiency')" id="nav-efficiency" class="nav-sub-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition flex items-center justify-between">
+            <span>Start/Sit IQ</span>
+            <span class="text-[10px] text-indigo-400 font-mono">Efficiency %</span>
+          </button>
+          <button onclick="switchTab('records')" id="nav-records" class="nav-sub-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition flex items-center justify-between">
+            <span>Superlatives & Records</span>
+            <span class="text-[10px] text-slate-500 font-mono">Blowouts / Highs</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- HUB 5: Tools & Analysis -->
+      <div class="relative group">
+        <button id="hub-btn-tools" class="hub-btn px-3 py-2 rounded-lg font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 flex items-center gap-1.5 transition">
+          <span>🛠️ Tools & Analysis</span>
+          <svg class="w-3.5 h-3.5 text-slate-400 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="absolute right-0 sm:left-0 top-full hidden group-hover:block group-focus-within:block bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-1.5 min-w-[220px] z-50 space-y-1">
+          <button onclick="switchTab('simulator')" id="nav-simulator" class="nav-sub-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition flex items-center justify-between">
+            <span>Playoff Simulator</span>
+            <span class="text-[10px] text-cyan-400 font-mono">10,000 Sims</span>
+          </button>
+          <button onclick="switchTab('charts')" id="nav-charts" class="nav-sub-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition flex items-center justify-between">
+            <span>Visual Analytics</span>
+            <span class="text-[10px] text-emerald-400 font-mono">Charts</span>
+          </button>
+          <button onclick="switchTab('query')" id="nav-query" class="nav-sub-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition flex items-center justify-between">
+            <span>Custom Query Builder</span>
+            <span class="text-[10px] text-slate-500 font-mono">Filters</span>
+          </button>
+        </div>
+      </div>
+
     </nav>
   </header>
 
@@ -94,8 +203,11 @@
 
       <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow">
         <div class="p-4 border-b border-slate-800 flex justify-between items-center">
-          <h2 class="font-semibold text-slate-200">Cumulative Performance & Luck Analysis</h2>
-          <span class="text-xs text-slate-400">All-Play Luck = Expected Wins vs Actual Wins</span>
+          <div>
+            <h2 class="font-semibold text-slate-200">Cumulative Performance & Luck Analysis</h2>
+            <p class="text-xs text-slate-400 mt-0.5">Click any manager to open their comprehensive Franchise Dossier.</p>
+          </div>
+          <span class="text-xs text-slate-400 font-mono">All-Play Luck = Expected Wins vs Actual</span>
         </div>
         <div class="overflow-x-auto">
           <table class="w-full text-left text-sm text-slate-300">
@@ -118,7 +230,336 @@
       </div>
     </section>
 
-    <!-- VIEW 2: INTERACTIVE BRACKET TREE -->
+    <!-- VIEW 2: MONTE CARLO PLAYOFF SIMULATOR -->
+    <section id="view-simulator" class="hidden space-y-6">
+      <div class="bg-gradient-to-r from-slate-900 via-slate-850 to-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-slate-800">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-black text-white flex items-center gap-2">
+              <span>🎲</span> Monte Carlo Playoff & Seeding Simulator
+            </h2>
+            <p class="text-xs text-slate-400 mt-0.5">Simulate 10,000 iterations of remaining unplayed matchups using scoring variance and PPG.</p>
+          </div>
+          <button onclick="runMonteCarloSimulation()" class="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-slate-950 font-black text-xs uppercase tracking-wider px-5 py-2.5 rounded-xl shadow-lg transition flex items-center gap-2">
+            <span>⚡</span> Run 10,000 Sims
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+          <div>
+            <label class="text-[11px] uppercase font-bold text-slate-400 block mb-1">Target Season</label>
+            <select id="sim-season-select" onchange="onSimSeasonChange()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm font-bold text-white focus:ring-1 focus:ring-emerald-400"></select>
+          </div>
+          <div>
+            <label class="text-[11px] uppercase font-bold text-slate-400 block mb-1">Simulate Forward From</label>
+            <select id="sim-cutoff-select" onchange="runMonteCarloSimulation()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm font-bold text-white focus:ring-1 focus:ring-emerald-400"></select>
+          </div>
+          <div>
+            <label class="text-[11px] uppercase font-bold text-slate-400 block mb-1">Iteration Sample Size</label>
+            <select id="sim-iterations-select" onchange="runMonteCarloSimulation()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm font-bold text-white focus:ring-1 focus:ring-emerald-400">
+              <option value="10000">10,000 Simulations (High Precision)</option>
+              <option value="5000">5,000 Simulations (Fast)</option>
+              <option value="1000">1,000 Simulations (Instant)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl shadow">
+          <div class="text-xs text-amber-400 font-bold uppercase tracking-wider">👑 Projected #1 Overall Seed</div>
+          <div id="sim-top-seed-name" class="text-lg font-extrabold text-white mt-1">--</div>
+          <div id="sim-top-seed-desc" class="text-xs text-slate-400">--</div>
+        </div>
+        <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl shadow">
+          <div class="text-xs text-cyan-400 font-bold uppercase tracking-wider">🔥 Playoff Lock (&gt;99% Odds)</div>
+          <div id="sim-locks-list" class="text-sm font-bold text-white mt-1 truncate">--</div>
+          <div id="sim-locks-desc" class="text-xs text-slate-400">Guaranteed championship contention</div>
+        </div>
+        <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl shadow">
+          <div class="text-xs text-rose-400 font-bold uppercase tracking-wider">⚠️ On the Playoff Bubble</div>
+          <div id="sim-bubble-list" class="text-sm font-bold text-white mt-1 truncate">--</div>
+          <div id="sim-bubble-desc" class="text-xs text-slate-400">--</div>
+        </div>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow">
+        <div class="p-4 border-b border-slate-800 flex justify-between items-center bg-slate-850">
+          <div>
+            <h3 class="font-bold text-slate-200 text-sm flex items-center gap-2">
+              <span>📊</span> Projected Standings & Playoff Qualification Odds
+            </h3>
+            <p class="text-xs text-slate-400 mt-0.5">Top 6 qualify for the championship bracket; Top 2 receive a 1st round bye.</p>
+          </div>
+          <span id="sim-status-badge" class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20">10,000 Sims Complete</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-sm text-slate-300">
+            <thead class="bg-slate-800/60 text-xs uppercase tracking-wider text-slate-400">
+              <tr>
+                <th class="p-3">Proj Seed</th>
+                <th class="p-3">Manager</th>
+                <th class="p-3 text-center">Baseline Record</th>
+                <th class="p-3 text-center font-bold text-white">Proj Record</th>
+                <th class="p-3 text-right">Proj PF</th>
+                <th class="p-3 text-center text-amber-400 font-bold">#1 Seed %</th>
+                <th class="p-3 text-center text-cyan-400 font-bold">Top 2 Bye %</th>
+                <th class="p-3 text-left font-bold text-emerald-400 min-w-[160px]">Make Playoffs %</th>
+                <th class="p-3 text-center text-rose-400 font-bold">Toilet Bowl %</th>
+              </tr>
+            </thead>
+            <tbody id="sim-results-body" class="divide-y divide-slate-800"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 3: DRAFT VAULT -->
+    <section id="view-drafts" class="hidden space-y-6">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="bg-gradient-to-br from-emerald-500/10 to-slate-900 border border-emerald-500/20 p-4 rounded-2xl shadow">
+          <div class="text-xs text-emerald-400 font-extrabold uppercase tracking-wider flex items-center gap-1.5">
+            <span>💎</span> All-Time Steal of the Century
+          </div>
+          <div id="draft-top-steal-name" class="text-lg font-black text-white mt-1">--</div>
+          <div id="draft-top-steal-desc" class="text-xs text-slate-400 font-mono mt-0.5">--</div>
+        </div>
+
+        <div class="bg-gradient-to-br from-rose-500/10 to-slate-900 border border-rose-500/20 p-4 rounded-2xl shadow">
+          <div class="text-xs text-rose-400 font-extrabold uppercase tracking-wider flex items-center gap-1.5">
+            <span>🧊</span> Cruelest First-Round Bust
+          </div>
+          <div id="draft-top-bust-name" class="text-lg font-black text-white mt-1">--</div>
+          <div id="draft-top-bust-desc" class="text-xs text-slate-400 font-mono mt-0.5">--</div>
+        </div>
+
+        <div class="bg-gradient-to-br from-cyan-500/10 to-slate-900 border border-cyan-500/20 p-4 rounded-2xl shadow">
+          <div class="text-xs text-cyan-400 font-extrabold uppercase tracking-wider flex items-center gap-1.5">
+            <span>🧠</span> Best All-Time Draft GM
+          </div>
+          <div id="draft-top-gm-name" class="text-lg font-black text-white mt-1">--</div>
+          <div id="draft-top-gm-desc" class="text-xs text-slate-400 font-mono mt-0.5">--</div>
+        </div>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow space-y-4">
+        <div class="pb-3 border-b border-slate-800">
+          <h3 class="font-bold text-slate-100 flex items-center gap-2">
+            <span class="text-cyan-400">📊</span> Manager Lifetime Draft Hit Rate & ROI Matrix
+          </h3>
+          <p class="text-xs text-slate-400">Hit Rate = Drafted picks that made ≥ 6 starting lineup appearances. Early Hit Rate = Rounds 1-3.</p>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-sm text-slate-300">
+            <thead class="bg-slate-800/60 text-xs uppercase text-slate-400">
+              <tr>
+                <th class="p-2.5">Rank</th>
+                <th class="p-2.5">Manager</th>
+                <th class="p-2.5 text-center">Total Picks</th>
+                <th class="p-2.5 text-center font-bold text-emerald-400">Hit Rate %</th>
+                <th class="p-2.5 text-center font-bold text-cyan-400">Rds 1-3 Hit Rate</th>
+                <th class="p-2.5 text-right font-mono">Avg Started Pts/Pick</th>
+                <th class="p-2.5">Signature Draft Steal</th>
+              </tr>
+            </thead>
+            <tbody id="draft-manager-roi-body" class="divide-y divide-slate-800"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow space-y-4">
+          <div class="pb-3 border-b border-slate-800 flex items-center justify-between">
+            <div>
+              <h3 class="font-bold text-emerald-400 flex items-center gap-2">
+                <span>💎</span> All-Time Late-Round Steals
+              </h3>
+              <p class="text-xs text-slate-400">Round 6+ draft selections producing maximum started points.</p>
+            </div>
+            <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Round 6+</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs text-slate-300">
+              <thead class="bg-slate-800/60 uppercase text-slate-400">
+                <tr>
+                  <th class="p-2">Pick</th>
+                  <th class="p-2">Player</th>
+                  <th class="p-2">Drafted By</th>
+                  <th class="p-2 text-center">Year</th>
+                  <th class="p-2 text-right font-bold text-emerald-400">Started Pts</th>
+                </tr>
+              </thead>
+              <tbody id="draft-steals-table-body" class="divide-y divide-slate-800"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow space-y-4">
+          <div class="pb-3 border-b border-slate-800 flex items-center justify-between">
+            <div>
+              <h3 class="font-bold text-rose-400 flex items-center gap-2">
+                <span>🧊</span> High-Draft-Capital Busts
+              </h3>
+              <p class="text-xs text-slate-400">Rounds 1-3 draft picks producing fewer than 6 starts.</p>
+            </div>
+            <span class="text-xs font-mono text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded border border-rose-500/20">Rounds 1-3</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs text-slate-300">
+              <thead class="bg-slate-800/60 uppercase text-slate-400">
+                <tr>
+                  <th class="p-2">Pick</th>
+                  <th class="p-2">Player</th>
+                  <th class="p-2">Drafted By</th>
+                  <th class="p-2 text-center">Year</th>
+                  <th class="p-2 text-right font-bold text-rose-400">Started Pts</th>
+                </tr>
+              </thead>
+              <tbody id="draft-busts-table-body" class="divide-y divide-slate-800"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-3 border-b border-slate-800">
+          <div>
+            <h3 class="font-bold text-slate-100 flex items-center gap-2">
+              <span class="text-amber-400">📜</span> Pick-by-Pick Season Draft Ledger
+            </h3>
+            <p class="text-xs text-slate-400">Inspect the full chronological draft order and return on investment for any season.</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <select id="draft-year-select" onchange="renderSeasonDraftBoard()" class="bg-slate-800 text-xs border border-slate-700 rounded px-3 py-1.5 text-white focus:ring-1 focus:ring-emerald-400"></select>
+            <select id="draft-round-filter" onchange="renderSeasonDraftBoard()" class="bg-slate-800 text-xs border border-slate-700 rounded px-3 py-1.5 text-white focus:ring-1 focus:ring-emerald-400">
+              <option value="ALL">All Rounds</option>
+              <option value="1">Round 1 Only</option>
+              <option value="2">Round 2 Only</option>
+              <option value="3">Round 3 Only</option>
+              <option value="LATE">Late Rounds (Rd 8+)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-sm text-slate-300">
+            <thead class="bg-slate-800/60 text-xs uppercase tracking-wider text-slate-400">
+              <tr>
+                <th class="p-3">Overall</th>
+                <th class="p-3">Rd (Pk)</th>
+                <th class="p-3">Player</th>
+                <th class="p-3">Pos</th>
+                <th class="p-3">Drafting Franchise</th>
+                <th class="p-3 text-center">Starts</th>
+                <th class="p-3 text-right font-bold text-emerald-400">Started Points</th>
+                <th class="p-3 text-right font-bold text-slate-300">Total Points</th>
+              </tr>
+            </thead>
+            <tbody id="draft-board-table-body" class="divide-y divide-slate-800"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 4: TALE OF THE TAPE RIVALRY INSPECTOR -->
+    <section id="view-rivalry" class="hidden space-y-6">
+      <div class="bg-gradient-to-r from-slate-900 via-slate-850 to-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
+        <div class="text-center pb-4">
+          <h2 class="text-xl sm:text-2xl font-black text-white flex items-center justify-center gap-2">
+            <span>🥊</span> Tale of the Tape: Head-to-Head Rivalry
+          </h2>
+          <p class="text-xs text-slate-400 mt-1">Direct lifetime matchup history, series records, and bragging rights.</p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-2xl mx-auto">
+          <div class="w-full sm:flex-1">
+            <label class="text-[11px] uppercase font-bold text-cyan-400 block mb-1">Corner A</label>
+            <select id="rivalry-mgr1" onchange="renderRivalry()" class="w-full bg-slate-950 border border-cyan-500/40 rounded-xl px-3 py-2.5 text-sm font-bold text-white focus:ring-2 focus:ring-cyan-400 focus:outline-none"></select>
+          </div>
+          <div class="flex items-center justify-center">
+            <span class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 text-xs font-black text-amber-400 flex items-center justify-center shadow">VS</span>
+          </div>
+          <div class="w-full sm:flex-1">
+            <label class="text-[11px] uppercase font-bold text-rose-400 block mb-1 text-right">Corner B</label>
+            <select id="rivalry-mgr2" onchange="renderRivalry()" class="w-full bg-slate-950 border border-rose-500/40 rounded-xl px-3 py-2.5 text-sm font-bold text-white focus:ring-2 focus:ring-rose-400 focus:outline-none text-right"></select>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow">
+        <div class="p-4 border-b border-slate-800 flex justify-between items-center bg-slate-850">
+          <h3 class="font-bold text-slate-200 text-sm flex items-center gap-2">
+            <span>📊</span> Lifetime Series Breakdown
+          </h3>
+          <span id="rivalry-active-streak-badge" class="text-xs font-mono font-bold px-2.5 py-0.5 rounded border">--</span>
+        </div>
+        <div class="divide-y divide-slate-800 text-sm">
+          <div class="grid grid-cols-3 p-3.5 items-center hover:bg-slate-800/30 transition">
+            <div id="rivalry-m1-record" class="font-mono font-extrabold text-cyan-400 text-base text-left">--</div>
+            <div class="text-xs uppercase font-bold text-slate-400 text-center tracking-wider">Series Record</div>
+            <div id="rivalry-m2-record" class="font-mono font-extrabold text-rose-400 text-base text-right">--</div>
+          </div>
+          <div class="grid grid-cols-3 p-3.5 items-center hover:bg-slate-800/30 transition">
+            <div id="rivalry-m1-winpct" class="font-mono font-bold text-slate-200 text-left">--</div>
+            <div class="text-xs uppercase font-bold text-slate-400 text-center tracking-wider">Win Rate</div>
+            <div id="rivalry-m2-winpct" class="font-mono font-bold text-slate-200 text-right">--</div>
+          </div>
+          <div class="grid grid-cols-3 p-3.5 items-center hover:bg-slate-800/30 transition">
+            <div id="rivalry-m1-totalpts" class="font-mono font-bold text-slate-200 text-left">--</div>
+            <div class="text-xs uppercase font-bold text-slate-400 text-center tracking-wider">Total Points Scored</div>
+            <div id="rivalry-m2-totalpts" class="font-mono font-bold text-slate-200 text-right">--</div>
+          </div>
+          <div class="grid grid-cols-3 p-3.5 items-center hover:bg-slate-800/30 transition">
+            <div id="rivalry-m1-ppg" class="font-mono font-bold text-slate-200 text-left">--</div>
+            <div class="text-xs uppercase font-bold text-slate-400 text-center tracking-wider">Average PPG in Series</div>
+            <div id="rivalry-m2-ppg" class="font-mono font-bold text-slate-200 text-right">--</div>
+          </div>
+          <div class="grid grid-cols-3 p-3.5 items-center hover:bg-slate-800/30 transition">
+            <div id="rivalry-m1-reg" class="font-mono text-slate-300 text-left">--</div>
+            <div class="text-xs uppercase font-bold text-slate-400 text-center tracking-wider">Regular Season</div>
+            <div id="rivalry-m2-reg" class="font-mono text-slate-300 text-right">--</div>
+          </div>
+          <div class="grid grid-cols-3 p-3.5 items-center hover:bg-slate-800/30 transition">
+            <div id="rivalry-m1-playoffs" class="font-mono font-bold text-amber-400 text-left">--</div>
+            <div class="text-xs uppercase font-bold text-amber-400 text-center tracking-wider">Playoffs / Postseason</div>
+            <div id="rivalry-m2-playoffs" class="font-mono font-bold text-amber-400 text-right">--</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl shadow">
+          <div class="text-xs text-amber-400 font-bold uppercase tracking-wider">⚡ Biggest Blowout</div>
+          <div id="rivalry-sup-blowout-match" class="text-sm font-bold text-white mt-1 truncate">--</div>
+          <div id="rivalry-sup-blowout-desc" class="text-xs font-mono text-slate-400">--</div>
+        </div>
+        <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl shadow">
+          <div class="text-xs text-cyan-400 font-bold uppercase tracking-wider">🎯 Closest Game</div>
+          <div id="rivalry-sup-closest-match" class="text-sm font-bold text-white mt-1 truncate">--</div>
+          <div id="rivalry-sup-closest-desc" class="text-xs font-mono text-slate-400">--</div>
+        </div>
+        <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl shadow">
+          <div class="text-xs text-emerald-400 font-bold uppercase tracking-wider">🔥 Highest Combined Score</div>
+          <div id="rivalry-sup-high-score" class="text-sm font-bold text-white mt-1 truncate">--</div>
+          <div id="rivalry-sup-high-desc" class="text-xs font-mono text-slate-400">--</div>
+        </div>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow space-y-4">
+        <div class="pb-3 border-b border-slate-800 flex items-center justify-between">
+          <div>
+            <h3 class="font-bold text-slate-100 flex items-center gap-2">
+              <span class="text-emerald-400">📜</span> All-Time Meeting Log
+            </h3>
+            <p class="text-xs text-slate-400">Every head-to-head game played in chronological order. Click any team to inspect the weekly box score.</p>
+          </div>
+          <span id="rivalry-total-meetings-count" class="text-xs font-mono text-slate-400 bg-slate-800 px-2.5 py-1 rounded border border-slate-700">-- Matches</span>
+        </div>
+        <div id="rivalry-gamelog-list" class="space-y-3"></div>
+      </div>
+    </section>
+
+    <!-- VIEW 5: PLAYOFF BRACKETS -->
     <section id="view-brackets" class="hidden space-y-6">
       <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 flex flex-wrap items-center justify-between gap-4">
         <div>
@@ -135,15 +576,11 @@
           <select id="bracketYearSelect" onchange="renderBrackets()" class="bg-slate-800 text-xs border border-slate-700 rounded px-3 py-1.5 text-white focus:ring-1 focus:ring-emerald-400"></select>
         </div>
       </div>
-
-      <!-- Bracket Columns Flow -->
       <div id="bracket-tree-container" class="overflow-x-auto pb-4"></div>
     </section>
 
-    <!-- VIEW 3: TRADE & TRANSACTION LEDGER -->
+    <!-- VIEW 6: TRADE LEDGER -->
     <section id="view-trades" class="hidden space-y-6">
-      
-      <!-- Summary KPI Cards -->
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl shadow">
           <div class="text-xs text-cyan-400 font-bold uppercase tracking-wider">🔄 Lifetime Blockbusters</div>
@@ -162,7 +599,6 @@
         </div>
       </div>
 
-      <!-- Trade Ledger Feed -->
       <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow space-y-4">
         <div class="flex flex-wrap items-center justify-between gap-4 pb-3 border-b border-slate-800">
           <div>
@@ -194,10 +630,9 @@
           </table>
         </div>
       </div>
-
     </section>
 
-    <!-- VIEW 4: STORYLINES & STREAKS -->
+    <!-- VIEW 7: STORYLINES & STREAKS -->
     <section id="view-storylines" class="hidden space-y-6">
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl shadow">
@@ -286,7 +721,7 @@
       </div>
     </section>
 
-    <!-- VIEW 5: DREAM TEAM -->
+    <!-- VIEW 8: DREAM TEAM -->
     <section id="view-dreamteam" class="hidden space-y-6">
       <div class="bg-gradient-to-r from-amber-500/10 via-slate-900 to-cyan-500/10 border border-slate-800 rounded-2xl p-6 shadow-xl flex flex-wrap items-center justify-between gap-4">
         <div>
@@ -346,7 +781,7 @@
       </div>
     </section>
 
-    <!-- VIEW 6: CHARTS -->
+    <!-- VIEW 9: CHARTS -->
     <section id="view-charts" class="hidden space-y-6">
       <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow space-y-4">
         <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-800">
@@ -404,7 +839,7 @@
       </div>
     </section>
 
-    <!-- VIEW 7: RECAP -->
+    <!-- VIEW 10: RECAP -->
     <section id="view-recap" class="hidden space-y-6">
       <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 flex flex-wrap items-center justify-between gap-4">
         <div>
@@ -501,7 +936,7 @@
       </div>
     </section>
 
-    <!-- VIEW 8: BAD BEATS -->
+    <!-- VIEW 11: BAD BEATS -->
     <section id="view-badbeats" class="hidden space-y-6">
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl shadow">
@@ -527,7 +962,7 @@
             <h3 class="font-bold text-slate-100 flex items-center gap-2">
               <span class="text-rose-400">🌧️</span> Manager Bad Beat Pain Index
             </h3>
-            <p class="text-xs text-slate-400">Ranks managers by painful defeats: high-scoring losses, nail-biters, and goose eggs.</p>
+            <p class="text-xs text-slate-400">Ranks managers by painful defeats.</p>
           </div>
         </div>
         <div class="overflow-x-auto">
@@ -595,7 +1030,7 @@
       </div>
     </section>
 
-    <!-- VIEW 9: KEEPERS -->
+    <!-- VIEW 12: KEEPERS -->
     <section id="view-keepers" class="hidden space-y-6">
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl shadow">
@@ -655,7 +1090,7 @@
       </div>
     </section>
 
-    <!-- VIEW 10: FINISHES -->
+    <!-- VIEW 13: FINISHES -->
     <section id="view-finishes" class="hidden space-y-4">
       <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 overflow-hidden shadow">
         <div class="pb-3 border-b border-slate-800 mb-4">
@@ -685,7 +1120,7 @@
       </div>
     </section>
 
-    <!-- VIEW 11: H2H -->
+    <!-- VIEW 14: H2H -->
     <section id="view-h2h" class="hidden space-y-4">
       <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 overflow-x-auto">
         <h2 class="font-semibold text-slate-200 mb-2">All-Time Head-to-Head Matchup Matrix</h2>
@@ -694,7 +1129,7 @@
       </div>
     </section>
 
-    <!-- VIEW 12: RECORDS -->
+    <!-- VIEW 15: RECORDS -->
     <section id="view-records" class="hidden grid grid-cols-1 md:grid-cols-2 gap-6">
       <div class="bg-slate-900 border border-slate-800 rounded-xl p-4">
         <h3 class="font-semibold text-emerald-400 mb-3">🔥 Highest Weekly Scores</h3>
@@ -714,7 +1149,7 @@
       </div>
     </section>
 
-    <!-- VIEW 13: EFFICIENCY -->
+    <!-- VIEW 16: EFFICIENCY -->
     <section id="view-efficiency" class="hidden space-y-4">
       <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 overflow-hidden shadow">
         <div class="pb-3 border-b border-slate-800 mb-4">
@@ -741,7 +1176,7 @@
       </div>
     </section>
 
-    <!-- VIEW 14: POSITIONAL VALUE -->
+    <!-- VIEW 17: POSITIONAL VALUE -->
     <section id="view-positions" class="hidden space-y-4">
       <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 overflow-hidden shadow">
         <div class="pb-3 border-b border-slate-800 mb-4">
@@ -769,7 +1204,7 @@
       </div>
     </section>
 
-    <!-- VIEW 15: CUSTOM QUERY -->
+    <!-- VIEW 18: CUSTOM QUERY -->
     <section id="view-query" class="hidden space-y-4">
       <div class="bg-slate-900 border border-slate-800 rounded-xl p-4">
         <h2 class="font-semibold text-slate-200 mb-2">Visual Query Builder</h2>
@@ -825,6 +1260,103 @@
     </section>
 
   </main>
+
+  <!-- FRANCHISE DOSSIER MODAL -->
+  <div id="manager-dossier-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-3xl max-h-[92vh] overflow-y-auto shadow-2xl p-6 space-y-6">
+      <div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-slate-800">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">🛡️</span>
+            <h3 id="dossier-mgr-name" class="text-2xl font-black text-white tracking-tight">--</h3>
+          </div>
+          <div id="dossier-aliases-list" class="text-xs text-slate-400 mt-1 max-w-lg">--</div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div id="dossier-podium-badges" class="flex items-center gap-1.5 bg-slate-950 px-3 py-1.5 rounded-xl border border-slate-800 text-xs font-mono">--</div>
+          <button onclick="closeManagerDossier()" class="text-slate-400 hover:text-white text-2xl font-bold p-1 leading-none">&times;</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+        <div class="bg-slate-950/60 border border-slate-800 p-3 rounded-xl">
+          <div class="text-[10px] uppercase font-bold text-slate-400">Career Record</div>
+          <div id="dossier-stat-record" class="text-base font-extrabold text-white mt-0.5 font-mono">--</div>
+          <div id="dossier-stat-winpct" class="text-[11px] font-mono text-cyan-400">--</div>
+        </div>
+        <div class="bg-slate-950/60 border border-slate-800 p-3 rounded-xl">
+          <div class="text-[10px] uppercase font-bold text-slate-400">Total Points & PPG</div>
+          <div id="dossier-stat-pf" class="text-base font-extrabold text-emerald-400 mt-0.5 font-mono">--</div>
+          <div id="dossier-stat-ppg" class="text-[11px] font-mono text-slate-400">-- PPG</div>
+        </div>
+        <div class="bg-slate-950/60 border border-slate-800 p-3 rounded-xl">
+          <div class="text-[10px] uppercase font-bold text-slate-400">Career Luck Factor</div>
+          <div id="dossier-stat-luck" class="text-base font-extrabold text-amber-400 mt-0.5 font-mono">--</div>
+          <div id="dossier-stat-exp" class="text-[11px] font-mono text-slate-400">Exp Record</div>
+        </div>
+        <div class="bg-slate-950/60 border border-slate-800 p-3 rounded-xl">
+          <div class="text-[10px] uppercase font-bold text-slate-400">Best / Worst Streak</div>
+          <div id="dossier-stat-win-streak" class="text-base font-extrabold text-emerald-400 mt-0.5 font-mono">--</div>
+          <div id="dossier-stat-loss-streak" class="text-[11px] font-mono text-rose-400">--</div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-rose-500/5 border border-rose-500/20 rounded-xl p-4 flex items-center justify-between">
+          <div>
+            <div class="text-[10px] uppercase font-bold tracking-wider text-rose-400 flex items-center gap-1.5">
+              <span>☠️</span> Franchise Nemesis (Kryptonite)
+            </div>
+            <div id="dossier-nemesis-name" class="text-base font-extrabold text-white mt-1">--</div>
+            <div id="dossier-nemesis-desc" class="text-xs text-slate-400 font-mono mt-0.5">--</div>
+          </div>
+          <div id="dossier-nemesis-record" class="text-lg font-black font-mono text-rose-400">--</div>
+        </div>
+
+        <div class="bg-emerald-500/5 border border-emerald-500/20 rounded-xl p-4 flex items-center justify-between">
+          <div>
+            <div class="text-[10px] uppercase font-bold tracking-wider text-emerald-400 flex items-center gap-1.5">
+              <span>🎯</span> Favorite Matchup (Punching Bag)
+            </div>
+            <div id="dossier-bunny-name" class="text-base font-extrabold text-white mt-1">--</div>
+            <div id="dossier-bunny-desc" class="text-xs text-slate-400 font-mono mt-0.5">--</div>
+          </div>
+          <div id="dossier-bunny-record" class="text-lg font-black font-mono text-emerald-400">--</div>
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <h4 class="text-xs uppercase font-bold tracking-wider text-slate-300 flex items-center gap-1.5">
+          <span>🗿</span> Franchise Mount Rushmore (Top 4 Point Producers)
+        </h4>
+        <div id="dossier-rushmore-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3"></div>
+      </div>
+
+      <div class="space-y-3">
+        <h4 class="text-xs uppercase font-bold tracking-wider text-slate-300 flex items-center gap-1.5">
+          <span>📜</span> Season-by-Season Historical Ledger
+        </h4>
+        <div class="overflow-x-auto rounded-xl border border-slate-800">
+          <table class="w-full text-left text-xs text-slate-300">
+            <thead class="bg-slate-800/60 uppercase text-slate-400">
+              <tr>
+                <th class="p-2.5">Season</th>
+                <th class="p-2.5">Team Name Used</th>
+                <th class="p-2.5 text-center">Reg Season</th>
+                <th class="p-2.5 text-right">Points For</th>
+                <th class="p-2.5 text-right font-bold text-slate-200">Final Rank</th>
+              </tr>
+            </thead>
+            <tbody id="dossier-seasons-body" class="divide-y divide-slate-800/60"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="pt-2 flex justify-end">
+        <button onclick="closeManagerDossier()" class="bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition">Close Dossier</button>
+      </div>
+    </div>
+  </div>
 
   <!-- LINEUP MODAL -->
   <div id="lineup-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
@@ -888,7 +1420,6 @@
   </div>
 
   <script src="app.js"></script>
-
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
