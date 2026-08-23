@@ -944,8 +944,8 @@ function initBracketControls() {
     select.add(new Option(`${yr} Postseason`, yr));
   });
   
-  // Force Brackets to draw immediately on load
-  setTimeout(() => renderBrackets(), 50); 
+  // Forces the bracket to actually draw when the page loads
+  setTimeout(() => renderBrackets(), 50);
 }
 
 function initTradeControls() {

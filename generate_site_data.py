@@ -400,45 +400,56 @@ if not df_matchups.empty:
             'consolation_rounds': structure_bracket(consol_matches)
         }
 
-# 7. Trades Data (VERIFIED TRADES ONLY)
+# 7. Trades Data
 trades_data = []
-if not df_trans.empty:
-    for _, t in df_trans.iterrows():
-        yr = int(t['year'])
-        wk = int(t['week'])
-        p_name = str(t['player_name'])
-        to_owner = str(t['to_owner'])
-        from_owner = str(t['from_owner'])
+potential_moves = []
 
-        pts_after = 0.0
-        starts_after = 0
-        pos = "FLEX"
+if not df_players.empty:
+    for (year, player_name), p_group in df_players.groupby(['year', 'player_name']):
+        owners_in_order = []
+        for _, r in p_group.sort_values(by='week').iterrows():
+            if not owners_in_order or owners_in_order[-1]['owner'] != r['owner_name']:
+                owners_in_order.append({'owner': r['owner_name'], 'team': r['team_name'], 'week': int(r['week'])})
+        
+        if len(owners_in_order) >= 2:
+            for i in range(len(owners_in_order) - 1):
+                prev = owners_in_order[i]
+                new = owners_in_order[i+1]
+                trade_week = new['week']
 
-        if not df_players.empty:
-            post_trade_entries = df_players[
-                (df_players['year'] == yr) &
-                (df_players['player_name'] == p_name) &
-                (df_players['owner_name'] == to_owner) &
-                (df_players['week'] >= wk)
-            ]
-            if not post_trade_entries.empty:
-                pos = str(post_trade_entries['position'].iloc[0])
-                starters = post_trade_entries[~post_trade_entries['slot_position'].isin(bench_slots)]
-                pts_after = float(starters['points'].sum())
-                starts_after = int(len(starters))
+                pts_before = float(p_group[(p_group['owner_name'] == prev['owner']) & (p_group['week'] < trade_week)]['points'].sum())
+                pts_after = float(p_group[(p_group['owner_name'] == new['owner']) & (p_group['week'] >= trade_week)]['points'].sum())
+                starts_after = int(len(p_group[(p_group['owner_name'] == new['owner']) & (p_group['week'] >= trade_week) & (~p_group['slot_position'].isin(bench_slots))]))
 
-        trades_data.append({
-            'year': int(yr),
-            'week': int(wk),
-            'player': p_name,
-            'pos': pos,
-            'from_owner': from_owner,
-            'to_owner': to_owner,
-            'pts_produced': round(pts_after, 1),
-            'starts': int(starts_after)
-        })
+                potential_moves.append({
+                    'year': int(year),
+                    'week': int(trade_week),
+                    'player': player_name,
+                    'pos': p_group['position'].iloc[0],
+                    'from_owner': prev['owner'],
+                    'to_owner': new['owner'],
+                    'pts_produced': round(pts_after, 1),
+                    'starts': starts_after,
+                    'pts_before': round(pts_before, 1)
+                })
 
-    trades_data.sort(key=lambda x: (x['year'], x['week']), reverse=True)
+# Filter out likely waiver wire moves
+# A true trade highly correlates with 2 or more players moving between the same two teams in the same week
+valid_trades = []
+from collections import defaultdict
+moves_by_match = defaultdict(list)
+
+for m in potential_moves:
+    # Sort the two teams alphabetically so A->B and B->A group together perfectly
+    teams = tuple(sorted([m['from_owner'], m['to_owner']]))
+    key = (m['year'], m['week'], teams)
+    moves_by_match[key].append(m)
+
+for key, moves in moves_by_match.items():
+    if len(moves) >= 2:
+        valid_trades.extend(moves)
+
+trades_data = sorted(valid_trades, key=lambda x: (x['year'], x['week']), reverse=True)
 
 # 8. DRAFT VAULT & TRUE KEEPERS
 draft_vault_payload = {
