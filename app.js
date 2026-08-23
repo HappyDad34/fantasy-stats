@@ -2768,3 +2768,154 @@ document.addEventListener('click', (e) => {
     closeManagerDossier();
   }
 });
+
+// ----------------------------------------------------
+// PAGE HELP & GLOSSARY SYSTEM
+// ----------------------------------------------------
+const PAGE_HELP = {
+  standings: `
+    <p class="mb-3">This page breaks down all-time regular season performance, including expected records and how lucky each manager has been.</p>
+    <ul class="list-disc pl-5 space-y-2 text-slate-400">
+      <li><strong class="text-slate-200">Exp W-L (Expected Record):</strong> Calculates your "All-Play" record. If you scored the 2nd most points in a week, you earn 10 Wins and 1 Loss, regardless of who you actually played.</li>
+      <li><strong class="text-slate-200">Luck Rating:</strong> Actual Wins minus Expected Wins. <span class="text-emerald-400">+ numbers</span> indicate an easy schedule. <span class="text-rose-400">- numbers</span> indicate bad luck.</li>
+    </ul>`,
+  finishes: `
+    <p class="mb-3">A historical tracker of final season standings and podium appearances.</p>
+    <ul class="list-disc pl-5 space-y-2 text-slate-400">
+      <li><strong class="text-slate-200">Top 3 Rate:</strong> The percentage of active seasons a manager finished in 1st, 2nd, or 3rd place.</li>
+    </ul>`,
+  drafts: `
+    <p class="mb-3">The Draft Vault tracks draft capital return on investment (ROI), historical steals, and total busts.</p>
+    <ul class="list-disc pl-5 space-y-2 text-slate-400">
+      <li><strong class="text-slate-200">Hit Rate %:</strong> The percentage of drafted players that made 6 or more appearances in a manager's starting lineup.</li>
+      <li><strong class="text-slate-200">Early Hit Rate:</strong> The hit rate specifically for premium players drafted in Rounds 1 through 3.</li>
+      <li><strong class="text-slate-200">Round MVPs:</strong> The highest-scoring player ever drafted in that specific round across all seasons.</li>
+    </ul>`,
+  efficiency: `
+    <p class="mb-3">Evaluates weekly lineup decisions to see who maximizes their roster and who leaves points on the bench.</p>
+    <ul class="list-disc pl-5 space-y-2 text-slate-400">
+      <li><strong class="text-slate-200">Start/Sit IQ (Bench Ratio):</strong> The ratio of bench points to starter points. A lower percentage indicates a highly efficient manager who rarely benches their best performers.</li>
+    </ul>`,
+  badbeats: `
+    <p class="mb-3">The Hall of Pain measures heartbreak, narrow losses, and starting lineup goose eggs.</p>
+    <ul class="list-disc pl-5 space-y-2 text-slate-400">
+      <li><strong class="text-slate-200">Pain Score:</strong> A weighted metric. Losses scoring over 130 pts are worth 3x pain; losses by less than 3 points are 2x pain; starting a goose egg is 1.5x pain.</li>
+    </ul>`,
+  simulator: `
+    <p class="mb-3">A Monte Carlo engine that simulates the remainder of the current regular season 10,000 times.</p>
+    <ul class="list-disc pl-5 space-y-2 text-slate-400">
+      <li><strong class="text-slate-200">Methodology:</strong> It calculates each team's average PPG and variance (standard deviation) to simulate future matchups using random Gaussian distributions.</li>
+      <li><strong class="text-slate-200">Make Playoffs %:</strong> The likelihood a team clinches a top-6 seed.</li>
+      <li><strong class="text-slate-200">Toilet Bowl %:</strong> The likelihood a team misses the playoffs entirely.</li>
+    </ul>`,
+  keepers: `
+    <p class="mb-3">Tracks franchise loyalty and long-term roster retention.</p>
+    <ul class="list-disc pl-5 space-y-2 text-slate-400">
+      <li><strong class="text-slate-200">Official Retained Keepers:</strong> Players formally tagged with the 'Keeper' status by ESPN prior to the draft.</li>
+      <li><strong class="text-slate-200">Multi-Year Cornerstones:</strong> Players who have remained on the same manager's roster for multiple years, regardless of how they were acquired.</li>
+    </ul>`
+};
+
+function openPageHelp(viewId) {
+  const body = document.getElementById('help-modal-body');
+  const title = document.getElementById('help-modal-title');
+  if (body && title) {
+    const formattedTitle = viewId.charAt(0).toUpperCase() + viewId.slice(1).replace('-', ' ');
+    title.innerText = "Guide: " + formattedTitle;
+    body.innerHTML = PAGE_HELP[viewId] || `<p>Click any column header to instantly sort the data. Use the global filters at the top of the page to adjust the timeframe.</p>`;
+    document.getElementById('page-help-modal').classList.remove('hidden');
+  }
+}
+
+function closePageHelp() {
+  const modal = document.getElementById('page-help-modal');
+  if (modal) modal.classList.add('hidden');
+}
+
+// Auto-inject "?" buttons next to all major section headers
+setTimeout(() => {
+  document.querySelectorAll('section > div > div > h2').forEach(h2 => {
+    if (!h2.querySelector('.help-btn')) {
+      const btn = document.createElement('button');
+      btn.className = "help-btn ml-3 text-slate-400 hover:text-cyan-400 hover:bg-slate-800 border border-slate-700 rounded-full w-6 h-6 inline-flex items-center justify-center text-[12px] font-bold transition focus:outline-none";
+      btn.innerText = "?";
+      btn.title = "View Page Definitions";
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        const section = h2.closest('section');
+        if (section) {
+          const viewId = section.id.replace('view-', '');
+          openPageHelp(viewId);
+        }
+      };
+      h2.appendChild(btn);
+    }
+  });
+}, 500);
+
+// Close modal on escape key or outside click
+window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePageHelp(); });
+document.addEventListener('click', (e) => {
+  const hm = document.getElementById('page-help-modal');
+  if (hm && !hm.classList.contains('hidden') && e.target === hm) closePageHelp();
+});
+
+// Auto-inject hover tooltips for complex column headers
+setTimeout(() => {
+  const COLUMN_TOOLTIPS = {
+    // Standings & Simulator
+    "Expected Record": "What your record would be if you played every team every week (All-Play).",
+    "Luck Rating": "Actual Wins minus Expected Wins. Positive means an easy schedule!",
+    "Baseline Record": "Current regular season record.",
+    "Proj Record": "Projected final regular season record based on 10,000 simulations.",
+    "Proj PF": "Projected final Points For.",
+    "#1 Seed %": "Odds of securing the number one overall seed.",
+    "Top 2 Bye %": "Odds of securing a first-round playoff bye.",
+    "Make Playoffs %": "Odds of making the playoffs (Top 6).",
+    "Toilet Bowl %": "Odds of missing the playoffs entirely.",
+    
+    // Draft Vault & Keepers
+    "Hit Rate %": "Percentage of drafted players who started 6+ games for this manager.",
+    "Rds 1-3 Hit Rate": "Hit rate specifically for premium players drafted in Rounds 1-3.",
+    "Avg Started Pts/Pick": "Average starting lineup points produced per drafted player.",
+    "Signature Draft Steal": "The best late-round pick (Round 6+) based on starter points.",
+    "Started Points": "Total points this player produced while in a starting lineup spot.",
+    "Total Points": "Total points this player produced (including bench points).",
+    "Tenure": "Number of seasons this player has been kept or rostered.",
+    "Tenure Years": "The specific years this player was on the roster.",
+    
+    // Efficiency & Positions
+    "Avg Starter PPG": "Average points scored by the starting lineup.",
+    "Avg Bench PPG": "Average points left on the bench.",
+    "Bench-to-Starter Ratio": "Ratio of bench points to starter points. Lower means fewer points wasted on the bench.",
+    "QB PPG": "Average starting points per game from Quarterbacks.",
+    "RB PPG": "Average starting points per game from Running Backs.",
+    "WR PPG": "Average starting points per game from Wide Receivers.",
+    "TE PPG": "Average starting points per game from Tight Ends.",
+    "K & D/ST PPG": "Average starting points per game from Kickers and Defenses.",
+    "Total Starter PPG": "Average points per game from the entire starting lineup.",
+    
+    // Streaks, Finishes & Bad Beats
+    "Podium Rate": "Percentage of seasons finishing in 1st, 2nd, or 3rd place.",
+    "Max Win Streak": "Longest consecutive winning streak.",
+    "Max Loss Skid": "Longest consecutive losing streak.",
+    "Active Streak": "Current consecutive wins or losses.",
+    "Last 5 Games": "Results from the most recent 5 matchups.",
+    "Pain Index": "Weighted score: 130+ pt losses (3x) + <3 pt losses (2x) + goose eggs (1.5x).",
+    "Losses ≥ 130 pts": "Number of times a manager lost despite scoring 130 or more points.",
+    "Nail-Biters (< 3 pts)": "Number of times a manager lost by less than 3 points.",
+    "Starter Goose Eggs": "Number of times a starting player scored 0 or negative points.",
+    
+    // Trades
+    "Pts Produced": "Total points produced for the new manager post-trade.",
+    "Post-Trade Output": "Total points produced for the new manager post-trade."
+  };
+
+  document.querySelectorAll('th').forEach(th => {
+    const headerText = th.innerText.trim();
+    if (COLUMN_TOOLTIPS[headerText]) {
+      th.title = COLUMN_TOOLTIPS[headerText];
+      th.classList.add('cursor-help'); // Changes the mouse pointer to a '?' when hovering over the word
+    }
+  });
+}, 500);
