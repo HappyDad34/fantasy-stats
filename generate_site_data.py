@@ -25,7 +25,7 @@ except Exception:
     df_players = pd.DataFrame()
 
 try:
-    df_transactions = pd.read_sql_query("SELECT * FROM transactions", conn)
+    df_trans = pd.read_sql_query("SELECT * FROM transactions WHERE trans_type = 'TRADE_ACCEPT'", conn)
 except Exception:
     df_transactions = pd.DataFrame()
 
