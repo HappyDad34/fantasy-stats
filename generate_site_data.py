@@ -16,23 +16,16 @@ class NpEncoder(json.JSONEncoder):
         return super().default(obj)
 
 conn = sqlite3.connect("league_history.db")
-df_matchups = pd.read_sql_query("SELECT * FROM matchups", conn)
-df_teams_hist = pd.read_sql_query("SELECT * FROM teams_history", conn)
+cursor = conn.cursor()
 
-try:
-    df_players = pd.read_sql_query("SELECT * FROM player_box_scores", conn)
-except Exception:
-    df_players = pd.DataFrame()
+# Check which tables exist in the database
+existing_tables = [r[0] for r in cursor.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()]
 
-try:
-    df_trans = pd.read_sql_query("SELECT * FROM transactions WHERE trans_type = 'TRADE_ACCEPT'", conn)
-except Exception:
-    df_transactions = pd.DataFrame()
-
-try:
-    df_draft = pd.read_sql_query("SELECT * FROM draft_picks", conn)
-except Exception:
-    df_draft = pd.DataFrame()
+df_matchups = pd.read_sql_query("SELECT * FROM matchups", conn) if "matchups" in existing_tables else pd.DataFrame()
+df_teams_hist = pd.read_sql_query("SELECT * FROM teams_history", conn) if "teams_history" in existing_tables else pd.DataFrame()
+df_players = pd.read_sql_query("SELECT * FROM player_box_scores", conn) if "player_box_scores" in existing_tables else pd.DataFrame()
+df_trans = pd.read_sql_query("SELECT * FROM transactions", conn) if "transactions" in existing_tables else pd.DataFrame()
+df_draft = pd.read_sql_query("SELECT * FROM draft_picks", conn) if "draft_picks" in existing_tables else pd.DataFrame()
 
 conn.close()
 
@@ -46,12 +39,14 @@ def normalize_matchup_type(val):
         return 'PLAYOFF'
     return 'REGULAR'
 
-df_matchups['matchup_type'] = df_matchups['matchup_type'].apply(normalize_matchup_type)
+if not df_matchups.empty:
+    df_matchups['matchup_type'] = df_matchups['matchup_type'].apply(normalize_matchup_type)
 
 matchup_type_map = {}
-for _, row in df_matchups.iterrows():
-    matchup_type_map[(int(row['year']), int(row['week']), str(row['home_owner']).strip())] = row['matchup_type']
-    matchup_type_map[(int(row['year']), int(row['week']), str(row['away_owner']).strip())] = row['matchup_type']
+if not df_matchups.empty:
+    for _, row in df_matchups.iterrows():
+        matchup_type_map[(int(row['year']), int(row['week']), str(row['home_owner']).strip())] = row['matchup_type']
+        matchup_type_map[(int(row['year']), int(row['week']), str(row['away_owner']).strip())] = row['matchup_type']
 
 # Robust Years Extraction
 years_m = [int(y) for y in df_matchups["year"].dropna().unique()] if not df_matchups.empty else []
@@ -62,25 +57,26 @@ if not all_years:
     all_years = list(range(2017, 2026))
 
 manager_profiles = {}
-for owner_name, group in df_teams_hist.groupby("owner_name"):
-    unique_names = group["team_name"].unique().tolist()
-    latest_name = group.sort_values(by="year", ascending=False).iloc[0]["team_name"]
-    years_active = sorted(group["year"].unique().tolist())
+if not df_teams_hist.empty:
+    for owner_name, group in df_teams_hist.groupby("owner_name"):
+        unique_names = group["team_name"].unique().tolist()
+        latest_name = group.sort_values(by="year", ascending=False).iloc[0]["team_name"]
+        years_active = sorted(group["year"].unique().tolist())
 
-    aliases_with_years = []
-    for name in unique_names:
-        years_used = group[group["team_name"] == name]["year"].tolist()
-        if len(years_used) == 1:
-            aliases_with_years.append(f"{name} ('{str(years_used[0])[-2:]})")
-        else:
-            aliases_with_years.append(f"{name} ('{str(min(years_used))[-2:]}-'{str(max(years_used))[-2:]})")
+        aliases_with_years = []
+        for name in unique_names:
+            years_used = group[group["team_name"] == name]["year"].tolist()
+            if len(years_used) == 1:
+                aliases_with_years.append(f"{name} ('{str(years_used[0])[-2:]})")
+            else:
+                aliases_with_years.append(f"{name} ('{str(min(years_used))[-2:]}-'{str(max(years_used))[-2:]})")
 
-    manager_profiles[owner_name] = {
-        "manager_name": owner_name,
-        "latest_team_name": latest_name,
-        "years_active": [int(y) for y in years_active],
-        "all_aliases": aliases_with_years
-    }
+        manager_profiles[owner_name] = {
+            "manager_name": owner_name,
+            "latest_team_name": latest_name,
+            "years_active": [int(y) for y in years_active],
+            "all_aliases": aliases_with_years
+        }
 
 bench_slots = {'BE', 'IR', 'O', 'Taxi'}
 roster_weekly = []
@@ -240,198 +236,218 @@ if not df_players.empty:
             })
 
 # 4. Streaks Data
-df_sorted_match = df_matchups.sort_values(by=['year', 'week']).copy()
 streaks_data = {}
+if not df_matchups.empty:
+    df_sorted_match = df_matchups.sort_values(by=['year', 'week']).copy()
+    for manager in manager_profiles.keys():
+        mgr_matches = df_sorted_match[(df_sorted_match['home_owner'] == manager) | (df_sorted_match['away_owner'] == manager)]
+        results = []
+        for _, row in mgr_matches.iterrows():
+            won = bool(row['winner_owner'] == manager)
+            tied = bool(row['winner_owner'] in ['TIE', '0'])
+            score = row['home_score'] if row['home_owner'] == manager else row['away_score']
+            opp_score = row['away_score'] if row['home_owner'] == manager else row['home_score']
+            opp = row['away_owner'] if row['home_owner'] == manager else row['home_owner']
 
-for manager in manager_profiles.keys():
-    mgr_matches = df_sorted_match[(df_sorted_match['home_owner'] == manager) | (df_sorted_match['away_owner'] == manager)]
-    results = []
-    for _, row in mgr_matches.iterrows():
-        won = bool(row['winner_owner'] == manager)
-        tied = bool(row['winner_owner'] in ['TIE', '0'])
-        score = row['home_score'] if row['home_owner'] == manager else row['away_score']
-        opp_score = row['away_score'] if row['home_owner'] == manager else row['home_score']
-        opp = row['away_owner'] if row['home_owner'] == manager else row['home_owner']
+            outcome = 'T' if tied else ('W' if won else 'L')
+            results.append({
+                'year': int(row['year']),
+                'week': int(row['week']),
+                'type': row['matchup_type'],
+                'outcome': outcome,
+                'score': float(score),
+                'opp_score': float(opp_score),
+                'opp': opp,
+                'margin': float(row['margin'])
+            })
 
-        outcome = 'T' if tied else ('W' if won else 'L')
-        results.append({
-            'year': int(row['year']),
-            'week': int(row['week']),
-            'type': row['matchup_type'],
-            'outcome': outcome,
-            'score': float(score),
-            'opp_score': float(opp_score),
-            'opp': opp,
-            'margin': float(row['margin'])
-        })
+        max_w, cur_w, max_l, cur_l = 0, 0, 0, 0
+        for r in results:
+            if r['outcome'] == 'W':
+                cur_w += 1
+                cur_l = 0
+                if cur_w > max_w:
+                    max_w = cur_w
+            elif r['outcome'] == 'L':
+                cur_l += 1
+                cur_w = 0
+                if cur_l > max_l:
+                    max_l = cur_l
+            else:
+                cur_w, cur_l = 0, 0
 
-    max_w, cur_w, max_l, cur_l = 0, 0, 0, 0
-    for r in results:
-        if r['outcome'] == 'W':
-            cur_w += 1
-            cur_l = 0
-            if cur_w > max_w: max_w = cur_w
-        elif r['outcome'] == 'L':
-            cur_l += 1
-            cur_w = 0
-            if cur_l > max_l: max_l = cur_l
-        else:
-            cur_w, cur_l = 0, 0
+        active_type = results[-1]['outcome'] if results else 'N/A'
+        active_count = 0
+        if results:
+            for r in reversed(results):
+                if r['outcome'] == active_type:
+                    active_count += 1
+                else:
+                    break
 
-    active_type = results[-1]['outcome'] if results else 'N/A'
-    active_count = 0
-    if results:
-        for r in reversed(results):
-            if r['outcome'] == active_type: active_count += 1
-            else: break
+        last_5 = [r['outcome'] for r in results[-5:]] if len(results) >= 5 else [r['outcome'] for r in results]
 
-    last_5 = [r['outcome'] for r in results[-5:]] if len(results) >= 5 else [r['outcome'] for r in results]
-
-    streaks_data[manager] = {
-        'manager': manager,
-        'longest_win_streak': int(max_w),
-        'longest_loss_streak': int(max_l),
-        'active_type': active_type,
-        'active_count': int(active_count),
-        'last_5': last_5,
-        'total_games': int(len(results))
-    }
+        streaks_data[manager] = {
+            'manager': manager,
+            'longest_win_streak': int(max_w),
+            'longest_loss_streak': int(max_l),
+            'active_type': active_type,
+            'active_count': int(active_count),
+            'last_5': last_5,
+            'total_games': int(len(results))
+        }
 
 # 5. Season Narratives
 season_narratives = {}
-for yr in all_years:
-    yr_matches = df_matchups[df_matchups['year'] == yr]
-    yr_reg = yr_matches[yr_matches['matchup_type'] == 'REGULAR']
-    if yr_reg.empty: continue
+if not df_matchups.empty:
+    for yr in all_years:
+        yr_matches = df_matchups[df_matchups['year'] == yr]
+        yr_reg = yr_matches[yr_matches['matchup_type'] == 'REGULAR']
+        if yr_reg.empty:
+            continue
 
-    season_stats = {}
-    for _, row in yr_reg.iterrows():
-        h, a = row['home_owner'], row['away_owner']
-        for o, s, opp_s in [(h, row['home_score'], row['away_score']), (a, row['away_score'], row['home_score'])]:
-            if o not in season_stats:
-                season_stats[o] = {'owner': o, 'wins': 0, 'losses': 0, 'pf': 0.0, 'pa': 0.0, 'games': 0, 'exp_wins': 0.0, 'close_wins': 0, 'close_losses': 0}
-            season_stats[o]['games'] += 1
-            season_stats[o]['pf'] += float(s)
-            season_stats[o]['pa'] += float(opp_s)
-            if s > opp_s:
-                season_stats[o]['wins'] += 1
-                if abs(s - opp_s) < 5.0: season_stats[o]['close_wins'] += 1
-            elif s < opp_s:
-                season_stats[o]['losses'] += 1
-                if abs(s - opp_s) < 5.0: season_stats[o]['close_losses'] += 1
+        season_stats = {}
+        for _, row in yr_reg.iterrows():
+            h, a = row['home_owner'], row['away_owner']
+            for o, s, opp_s in [(h, row['home_score'], row['away_score']), (a, row['away_score'], row['home_score'])]:
+                if o not in season_stats:
+                    season_stats[o] = {'owner': o, 'wins': 0, 'losses': 0, 'pf': 0.0, 'pa': 0.0, 'games': 0, 'exp_wins': 0.0, 'close_wins': 0, 'close_losses': 0}
+                season_stats[o]['games'] += 1
+                season_stats[o]['pf'] += float(s)
+                season_stats[o]['pa'] += float(opp_s)
+                if s > opp_s:
+                    season_stats[o]['wins'] += 1
+                    if abs(s - opp_s) < 5.0:
+                        season_stats[o]['close_wins'] += 1
+                elif s < opp_s:
+                    season_stats[o]['losses'] += 1
+                    if abs(s - opp_s) < 5.0:
+                        season_stats[o]['close_losses'] += 1
 
-    for wk, wk_group in yr_reg.groupby('week'):
-        scores = []
-        for _, r in wk_group.iterrows():
-            scores.append((r['home_owner'], r['home_score']))
-            scores.append((r['away_owner'], r['away_score']))
-        for i in range(len(scores)):
-            for j in range(len(scores)):
-                if i != j and scores[i][0] in season_stats:
-                    if scores[i][1] > scores[j][1]:
-                        season_stats[scores[i][0]]['exp_wins'] += 1.0 / (len(scores) - 1)
+        for wk, wk_group in yr_reg.groupby('week'):
+            scores = []
+            for _, r in wk_group.iterrows():
+                scores.append((r['home_owner'], r['home_score']))
+                scores.append((r['away_owner'], r['away_score']))
+            for i in range(len(scores)):
+                for j in range(len(scores)):
+                    if i != j and scores[i][0] in season_stats:
+                        if scores[i][1] > scores[j][1]:
+                            season_stats[scores[i][0]]['exp_wins'] += 1.0 / (len(scores) - 1)
 
-    stat_list = list(season_stats.values())
-    if not stat_list: continue
+        stat_list = list(season_stats.values())
+        if not stat_list:
+            continue
 
-    stat_list.sort(key=lambda x: (x['wins'] - x['exp_wins']), reverse=True)
-    overachiever = stat_list[0]
-    underachiever = stat_list[-1]
-    juggernaut = sorted(stat_list, key=lambda x: x['pf'], reverse=True)[0]
-    iron_curtain = sorted(stat_list, key=lambda x: x['pa'])[0]
-    cardiac = sorted(stat_list, key=lambda x: x['close_wins'], reverse=True)[0]
-    heartbreak = sorted(stat_list, key=lambda x: x['close_losses'], reverse=True)[0]
+        stat_list.sort(key=lambda x: (x['wins'] - x['exp_wins']), reverse=True)
+        overachiever = stat_list[0]
+        underachiever = stat_list[-1]
+        juggernaut = sorted(stat_list, key=lambda x: x['pf'], reverse=True)[0]
+        iron_curtain = sorted(stat_list, key=lambda x: x['pa'])[0]
+        cardiac = sorted(stat_list, key=lambda x: x['close_wins'], reverse=True)[0]
+        heartbreak = sorted(stat_list, key=lambda x: x['close_losses'], reverse=True)[0]
 
-    season_narratives[int(yr)] = {
-        'overachiever': { 'owner': overachiever['owner'], 'wins': int(overachiever['wins']), 'exp_wins': round(float(overachiever['exp_wins']), 1), 'diff': round(float(overachiever['wins'] - overachiever['exp_wins']), 1) },
-        'underachiever': { 'owner': underachiever['owner'], 'wins': int(underachiever['wins']), 'exp_wins': round(float(underachiever['exp_wins']), 1), 'diff': round(float(underachiever['wins'] - underachiever['exp_wins']), 1) },
-        'juggernaut': { 'owner': juggernaut['owner'], 'pf': round(float(juggernaut['pf']), 1), 'ppg': round(float(juggernaut['pf']) / juggernaut['games'], 1) if juggernaut['games'] > 0 else 0.0 },
-        'iron_curtain': { 'owner': iron_curtain['owner'], 'pa': round(float(iron_curtain['pa']), 1), 'ppg': round(float(iron_curtain['pa']) / iron_curtain['games'], 1) if iron_curtain['games'] > 0 else 0.0 },
-        'cardiac': { 'owner': cardiac['owner'], 'close_wins': int(cardiac['close_wins']) },
-        'heartbreak': { 'owner': heartbreak['owner'], 'close_losses': int(heartbreak['close_losses']) },
-        'regular_standings': sorted(stat_list, key=lambda x: (x['wins'], x['pf']), reverse=True)
-    }
+        season_narratives[int(yr)] = {
+            'overachiever': { 'owner': overachiever['owner'], 'wins': int(overachiever['wins']), 'exp_wins': round(float(overachiever['exp_wins']), 1), 'diff': round(float(overachiever['wins'] - overachiever['exp_wins']), 1) },
+            'underachiever': { 'owner': underachiever['owner'], 'wins': int(underachiever['wins']), 'exp_wins': round(float(underachiever['exp_wins']), 1), 'diff': round(float(underachiever['wins'] - underachiever['exp_wins']), 1) },
+            'juggernaut': { 'owner': juggernaut['owner'], 'pf': round(float(juggernaut['pf']), 1), 'ppg': round(float(juggernaut['pf']) / juggernaut['games'], 1) if juggernaut['games'] > 0 else 0.0 },
+            'iron_curtain': { 'owner': iron_curtain['owner'], 'pa': round(float(iron_curtain['pa']), 1), 'ppg': round(float(iron_curtain['pa']) / iron_curtain['games'], 1) if iron_curtain['games'] > 0 else 0.0 },
+            'cardiac': { 'owner': cardiac['owner'], 'close_wins': int(cardiac['close_wins']) },
+            'heartbreak': { 'owner': heartbreak['owner'], 'close_losses': int(heartbreak['close_losses']) },
+            'regular_standings': sorted(stat_list, key=lambda x: (x['wins'], x['pf']), reverse=True)
+        }
 
 # 6. Playoff Brackets
 brackets_by_season = {}
-for yr in all_years:
-    playoff_matches = df_matchups[(df_matchups['year'] == yr) & (df_matchups['matchup_type'] == 'PLAYOFF')].sort_values(by='week')
-    consol_matches = df_matchups[(df_matchups['year'] == yr) & (df_matchups['matchup_type'] == 'CONSOLATION')].sort_values(by='week')
+if not df_matchups.empty:
+    for yr in all_years:
+        playoff_matches = df_matchups[(df_matchups['year'] == yr) & (df_matchups['matchup_type'] == 'PLAYOFF')].sort_values(by='week')
+        consol_matches = df_matchups[(df_matchups['year'] == yr) & (df_matchups['matchup_type'] == 'CONSOLATION')].sort_values(by='week')
 
-    def structure_bracket(matches):
-        weeks = sorted(matches['week'].unique().tolist())
-        rounds = []
-        for idx, wk in enumerate(weeks):
-            wk_matches = matches[matches['week'] == wk]
-            match_list = []
-            for _, m in wk_matches.iterrows():
-                match_list.append({
-                    'home_owner': m['home_owner'],
-                    'home_team': m['home_team_name'],
-                    'home_score': float(m['home_score']),
-                    'away_owner': m['away_owner'],
-                    'away_team': m['away_team_name'],
-                    'away_score': float(m['away_score']),
-                    'winner_owner': m['winner_owner'],
-                    'margin': float(m['margin']),
-                    'week': int(m['week']),
-                    'year': int(m['year'])
-                })
-            
-            if len(weeks) == 3:
-                r_name = "Quarterfinals (Rd 1)" if idx == 0 else ("Semifinals (Rd 2)" if idx == 1 else "Championship & Podium (Rd 3)")
-            elif len(weeks) == 2:
-                r_name = "Semifinals (Rd 1)" if idx == 0 else "Championship Finals (Rd 2)"
-            else:
-                r_name = f"Playoff Round {idx + 1}"
+        def structure_bracket(matches):
+            weeks = sorted(matches['week'].unique().tolist())
+            rounds = []
+            for idx, wk in enumerate(weeks):
+                wk_matches = matches[matches['week'] == wk]
+                match_list = []
+                for _, m in wk_matches.iterrows():
+                    match_list.append({
+                        'home_owner': m['home_owner'],
+                        'home_team': m['home_team_name'],
+                        'home_score': float(m['home_score']),
+                        'away_owner': m['away_owner'],
+                        'away_team': m['away_team_name'],
+                        'away_score': float(m['away_score']),
+                        'winner_owner': m['winner_owner'],
+                        'margin': float(m['margin']),
+                        'week': int(m['week']),
+                        'year': int(m['year'])
+                    })
+                
+                if len(weeks) == 3:
+                    r_name = "Quarterfinals (Rd 1)" if idx == 0 else ("Semifinals (Rd 2)" if idx == 1 else "Championship & Podium (Rd 3)")
+                elif len(weeks) == 2:
+                    r_name = "Semifinals (Rd 1)" if idx == 0 else "Championship Finals (Rd 2)"
+                else:
+                    r_name = f"Playoff Round {idx + 1}"
 
-            rounds.append({'round_name': r_name, 'week': int(wk), 'matches': match_list})
-        return rounds
+                rounds.append({'round_name': r_name, 'week': int(wk), 'matches': match_list})
+            return rounds
 
-    brackets_by_season[int(yr)] = {
-        'playoff_rounds': structure_bracket(playoff_matches),
-        'consolation_rounds': structure_bracket(consol_matches)
-    }
+        brackets_by_season[int(yr)] = {
+            'playoff_rounds': structure_bracket(playoff_matches),
+            'consolation_rounds': structure_bracket(consol_matches)
+        }
 
-# 7. Trades Data
+# 7. Trades Data (Accurate Verified Trades from Transactions Table)
 trades_data = []
-if not df_players.empty:
-    for (year, player_name), p_group in df_players.groupby(['year', 'player_name']):
-        owners_in_order = []
-        for _, r in p_group.sort_values(by='week').iterrows():
-            if not owners_in_order or owners_in_order[-1]['owner'] != r['owner_name']:
-                owners_in_order.append({'owner': r['owner_name'], 'team': r['team_name'], 'week': int(r['week'])})
-        
-        if len(owners_in_order) >= 2:
-            prev = owners_in_order[0]
-            new = owners_in_order[1]
-            trade_week = new['week']
+if not df_trans.empty:
+    for _, t in df_trans.iterrows():
+        yr = int(t['year'])
+        wk = int(t['week'])
+        p_name = str(t['player_name'])
+        to_owner = str(t['to_owner'])
+        from_owner = str(t['from_owner'])
 
-            pts_before = float(p_group[(p_group['owner_name'] == prev['owner']) & (p_group['week'] < trade_week)]['points'].sum())
-            pts_after = float(p_group[(p_group['owner_name'] == new['owner']) & (p_group['week'] >= trade_week)]['points'].sum())
-            starts_after = int(len(p_group[(p_group['owner_name'] == new['owner']) & (p_group['week'] >= trade_week) & (~p_group['slot_position'].isin(bench_slots))]))
+        pts_after = 0.0
+        starts_after = 0
+        pos = "FLEX"
 
-            trades_data.append({
-                'year': int(year),
-                'week': int(trade_week),
-                'player': player_name,
-                'pos': p_group['position'].iloc[0],
-                'from_owner': prev['owner'],
-                'to_owner': new['owner'],
-                'pts_produced': round(pts_after, 1),
-                'starts': starts_after,
-                'pts_before': round(pts_before, 1)
-            })
+        if not df_players.empty:
+            post_trade_entries = df_players[
+                (df_players['year'] == yr) &
+                (df_players['player_name'] == p_name) &
+                (df_players['owner_name'] == to_owner) &
+                (df_players['week'] >= wk)
+            ]
+            if not post_trade_entries.empty:
+                pos = str(post_trade_entries['position'].iloc[0])
+                starters = post_trade_entries[~post_trade_entries['slot_position'].isin(bench_slots)]
+                pts_after = float(starters['points'].sum())
+                starts_after = int(len(starters))
 
-trades_data.sort(key=lambda x: (x['year'], x['week']), reverse=True)
+        trades_data.append({
+            'year': int(yr),
+            'week': int(wk),
+            'player': p_name,
+            'pos': pos,
+            'from_owner': from_owner,
+            'to_owner': to_owner,
+            'pts_produced': round(pts_after, 1),
+            'starts': int(starts_after)
+        })
 
-# 8. DRAFT VAULT & DRAFT DAY ROI COMPILER
+    trades_data.sort(key=lambda x: (x['year'], x['week']), reverse=True)
+
+# 8. DRAFT VAULT & TRUE KEEPERS
 draft_vault_payload = {
     'steals': [],
     'busts': [],
     'manager_draft_roi': [],
-    'drafts_by_season': {}
+    'drafts_by_season': {},
+    'round_mvps': []
 }
+true_keepers = []
 
 if not df_draft.empty:
     season_games_count = {}
@@ -476,6 +492,7 @@ if not df_draft.empty:
         r_num = int(row['round_num'])
         overall = int(row['overall_pick'])
         bid = int(row.get('bid_amount', 0) or 0)
+        is_keeper = bool(row.get('keeper', 0))
 
         perf = perf_by_id.get((yr, p_id)) or perf_by_name.get((yr, player.lower())) or {
             'starter_pts': 0.0,
@@ -504,10 +521,24 @@ if not df_draft.empty:
             'starter_pts': starter_pts,
             'total_pts': total_pts,
             'starts': starts,
-            'has_played': has_played_season
+            'has_played': has_played_season,
+            'is_keeper': is_keeper
         }
 
         all_draft_picks_enriched.append(pick_record)
+
+        if is_keeper:
+            true_keepers.append({
+                'year': int(yr),
+                'owner': owner,
+                'team': str(row['team_name']),
+                'player': player,
+                'pos': pos,
+                'round_num': int(r_num),
+                'overall_pick': int(overall),
+                'starter_pts': starter_pts,
+                'starts': starts
+            })
 
         if has_played_season:
             if owner not in manager_roi_agg:
@@ -572,11 +603,20 @@ if not df_draft.empty:
         season_picks.sort(key=lambda x: x['overall_pick'])
         drafts_by_season[int(yr)] = season_picks
 
+    round_mvps = []
+    for r_num in range(1, 18):
+        round_picks = [p for p in all_draft_picks_enriched if p['round_num'] == r_num and p['has_played']]
+        if round_picks:
+            top_pick = max(round_picks, key=lambda x: x['starter_pts'])
+            if top_pick['starter_pts'] > 0:
+                round_mvps.append(top_pick)
+
     draft_vault_payload = {
         'steals': steals[:30],
         'busts': busts[:30],
         'manager_draft_roi': manager_roi_list,
-        'drafts_by_season': drafts_by_season
+        'drafts_by_season': drafts_by_season,
+        'round_mvps': round_mvps
     }
 
 web_payload = {
@@ -587,6 +627,7 @@ web_payload = {
     "roster_stats": roster_weekly,
     "weekly_players": weekly_top_players,
     "cornerstone_stats": cornerstones,
+    "true_keepers": true_keepers,
     "goose_eggs": goose_eggs,
     "player_seasons": player_seasons,
     "streaks_data": streaks_data,
@@ -599,4 +640,4 @@ web_payload = {
 with open("data.json", "w") as f:
     json.dump(web_payload, f, indent=2, cls=NpEncoder)
 
-print(f"Generated data.json successfully with {len(all_years)} active seasons and {len(all_draft_picks_enriched)} draft picks parsed!")
+print(f"Generated data.json successfully with {len(all_years)} active seasons, {len(true_keepers)} true keepers, and {len(all_draft_picks_enriched)} draft picks parsed!")

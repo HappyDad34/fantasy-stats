@@ -44,6 +44,26 @@ KNOWN_TEAM_OWNERS = {
     "wish doctor": "Bryce Mikesell",
 }
 
+# ESPN purges retired players from their active database; this maps their IDs back to their names
+KNOWN_PLAYERS = {
+    11289: "Jordy Nelson",
+    10447: "Drew Brees",
+    11237: "Matt Forte",
+    2580: "Tom Brady",
+    11270: "Jamaal Charles",
+    11288: "DeSean Jackson",
+    8439: "Aaron Rodgers",
+    5536: "Antonio Brown",
+    13994: "Julio Jones",
+    16732: "Kelvin Benjamin",
+    10452: "Marshawn Lynch",
+    15795: "Le'Veon Bell",
+    13982: "DeMarco Murray",
+    13981: "A.J. Green",
+    14001: "Randall Cobb",
+    11283: "LeSean McCoy"
+}
+
 MANUAL_OVERRIDES = {}
 
 STANDINGS_OVERRIDES = {
@@ -120,13 +140,12 @@ CREATE TABLE player_box_scores (
 cursor.execute('''
 CREATE TABLE transactions (
     year INTEGER,
-    period_id INTEGER,
+    week INTEGER,
     trans_type TEXT,
-    team_id INTEGER,
-    team_name TEXT,
-    owner_name TEXT,
     player_name TEXT,
-    bid_amount INTEGER
+    player_id INTEGER,
+    from_owner TEXT,
+    to_owner TEXT
 )
 ''')
 
@@ -141,7 +160,8 @@ CREATE TABLE draft_picks (
     owner_name TEXT,
     player_name TEXT,
     player_id INTEGER,
-    bid_amount INTEGER
+    bid_amount INTEGER,
+    keeper INTEGER
 )
 ''')
 
@@ -323,7 +343,7 @@ def extract_full_season(year):
                        (year, week, m_type, h_id, h_name, h_owner, h_score,
                         a_id, a_name, a_owner, a_score, w_id, w_name, w_owner, margin))
 
-    # Draft Detail
+    # Draft Detail & Keepers
     draft_picks = season_data.get('draftDetail', {}).get('picks', [])
     for pick in draft_picks:
         r_num = pick.get('roundId', 1)
@@ -332,13 +352,45 @@ def extract_full_season(year):
         t_id = pick.get('teamId', 0)
         bid = pick.get('bidAmount', 0)
         p_id = pick.get('playerId', 0)
+        is_keeper = 1 if pick.get('keeper') is True or pick.get('reservedForKeeper') is True else 0
 
         p_info = local_player_map.get(p_id) or global_player_map.get(p_id)
-        p_name = p_info[0] if p_info else (pick.get('playerPoolEntry', {}).get('player', {}).get('fullName') or f"Player {p_id}")
+        if p_info:
+            p_name = p_info[0]
+        elif p_id in KNOWN_PLAYERS:
+            p_name = KNOWN_PLAYERS[p_id]
+        else:
+            p_name = pick.get('playerPoolEntry', {}).get('player', {}).get('fullName') or f"Player {p_id}"
+
         t_name, o_name = team_lookup.get(t_id, (f"Team {t_id}", f"Owner {t_id}"))
 
-        cursor.execute('INSERT INTO draft_picks VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-                       (year, r_num, r_pick, overall, t_id, t_name, o_name, p_name, p_id, bid))
+        cursor.execute('INSERT INTO draft_picks VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                       (year, r_num, r_pick, overall, t_id, t_name, o_name, p_name, p_id, bid, is_keeper))
+
+    # Actual Verified Trades
+    for trans in season_data.get('transactions', []):
+        if trans.get('type') == 'TRADE_ACCEPT':
+            week = trans.get('scoringPeriodId', 1)
+            for item in trans.get('items', []):
+                from_id = item.get('fromTeamId')
+                to_id = item.get('toTeamId')
+                p_id = item.get('playerId')
+                if not from_id or not to_id or not p_id or item.get('type') == 'LINEUP':
+                    continue
+
+                p_info = local_player_map.get(p_id) or global_player_map.get(p_id)
+                if p_info:
+                    p_name = p_info[0]
+                elif p_id in KNOWN_PLAYERS:
+                    p_name = KNOWN_PLAYERS[p_id]
+                else:
+                    p_name = f"Player {p_id}"
+
+                from_name, from_owner = team_lookup.get(from_id, (f"Team {from_id}", f"Owner {from_id}"))
+                to_name, to_owner = team_lookup.get(to_id, (f"Team {to_id}", f"Owner {to_id}"))
+
+                cursor.execute('INSERT INTO transactions VALUES (?, ?, ?, ?, ?, ?, ?)',
+                               (year, week, 'TRADE_ACCEPT', p_name, p_id, from_owner, to_owner))
 
     # Step B: Loop through EVERY WEEK (1 to max_week) to extract complete player box scores
     print(f"   --> Harvesting weekly box scores for weeks 1 to {max_week}...")
@@ -382,7 +434,14 @@ def extract_full_season(year):
                         p_pool = entry.get('playerPoolEntry', {})
                         p = p_pool.get('player', {})
                         p_id = p.get('id', entry.get('playerId', 0))
-                        p_name = p.get('fullName') or local_player_map.get(p_id, ("Unknown Player", "FLEX"))[0]
+
+                        if p.get('fullName'):
+                            p_name = p.get('fullName')
+                        elif p_id in KNOWN_PLAYERS:
+                            p_name = KNOWN_PLAYERS[p_id]
+                        else:
+                            p_name = local_player_map.get(p_id, ("Unknown Player", "FLEX"))[0]
+
                         pos = POS_MAP.get(p.get('defaultPositionId'), 'FLEX')
                         slot = SLOT_MAP.get(entry.get('lineupSlotId'), 'BE')
 
