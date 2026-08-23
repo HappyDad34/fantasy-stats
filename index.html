@@ -359,6 +359,26 @@
         </div>
       </div>
 
+      <!-- Round MVPs Table -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow space-y-4">
+        <div class="pb-3 border-b border-slate-800">
+          <h3 class="font-bold text-amber-400 flex items-center gap-2">
+            <span>🏆</span> All-Time Round-by-Round MVPs
+          </h3>
+          <p class="text-xs text-slate-400">The absolute highest-scoring player drafted in each specific round across all seasons.</p>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-sm text-slate-300">
+            <thead class="bg-slate-800/60 text-xs uppercase text-slate-400">
+              <tr>
+                <th class="p-2.5">Round</th><th class="p-2.5">Overall Pick</th><th class="p-2.5">Player</th><th class="p-2.5">Pos</th><th class="p-2.5">Manager</th><th class="p-2.5 text-center">Season</th><th class="p-2.5 text-right font-bold text-emerald-400">Started Pts</th>
+              </tr>
+            </thead>
+            <tbody id="draft-round-mvps-body" class="divide-y divide-slate-800"></tbody>
+          </table>
+        </div>
+      </div>
+
       <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow space-y-4">
         <div class="pb-3 border-b border-slate-800">
           <h3 class="font-bold text-slate-100 flex items-center gap-2">
@@ -1049,60 +1069,48 @@
 
     <!-- VIEW 12: KEEPERS -->
     <section id="view-keepers" class="hidden space-y-6">
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl shadow">
-          <div class="text-xs text-amber-400 font-bold uppercase tracking-wider">👑 Franchise All-Time GOAT</div>
-          <div id="keeper-goat-player" class="text-lg font-extrabold text-white mt-1">--</div>
-          <div id="keeper-goat-desc" class="text-xs text-slate-400">--</div>
+      <div class="flex flex-wrap items-center justify-between gap-4 bg-slate-900 border border-slate-800 p-4 rounded-xl">
+        <div>
+          <h2 class="font-bold text-slate-100 flex items-center gap-2">
+            <span class="text-emerald-400">🛡️</span> Keepers & Cornerstones
+          </h2>
+          <p class="text-xs text-slate-400">Official draft keepers vs. organically retained multi-year cornerstones.</p>
         </div>
-        <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl shadow">
-          <div class="text-xs text-cyan-400 font-bold uppercase tracking-wider">⏳ Longest Franchise Tenure</div>
-          <div id="keeper-tenure-player" class="text-lg font-extrabold text-white mt-1">--</div>
-          <div id="keeper-tenure-desc" class="text-xs text-slate-400">--</div>
-        </div>
-        <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl shadow">
-          <div class="text-xs text-emerald-400 font-bold uppercase tracking-wider">🛡️ Multi-Year Cornerstones</div>
-          <div id="keeper-total-count" class="text-2xl font-extrabold text-white mt-1">--</div>
-          <div class="text-xs text-slate-400">Players with ≥ 2 seasons with same manager</div>
+        <div class="flex flex-wrap items-center gap-3">
+          <select id="keeper-manager-filter" onchange="renderKeepers()" class="bg-slate-800 text-xs border border-slate-700 rounded px-2.5 py-1.5 text-white"></select>
         </div>
       </div>
 
-      <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow space-y-4">
-        <div class="flex flex-wrap items-center justify-between gap-4 pb-3 border-b border-slate-800">
-          <div>
-            <h2 class="font-bold text-slate-100 flex items-center gap-2">
-              <span class="text-emerald-400">🛡️</span> Franchise Cornerstones (Multi-Year)
-            </h2>
-            <p class="text-xs text-slate-400">Players rostered and started across multiple seasons by the same franchise.</p>
-          </div>
-          <div class="flex flex-wrap items-center gap-3">
-            <select id="keeper-manager-filter" onchange="renderKeepers()" class="bg-slate-800 text-xs border border-slate-700 rounded px-2.5 py-1.5 text-white focus:ring-1 focus:ring-emerald-400"></select>
-            <select id="keeper-min-seasons" onchange="renderKeepers()" class="bg-slate-800 text-xs border border-slate-700 rounded px-2.5 py-1.5 text-white focus:ring-1 focus:ring-emerald-400">
-              <option value="2">≥ 2 Seasons</option>
-              <option value="3">≥ 3 Seasons</option>
-              <option value="4">≥ 4 Seasons</option>
-              <option value="1">All Tenures (≥ 1)</option>
-            </select>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- True Keepers -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow space-y-4">
+          <h3 class="font-bold text-amber-400 border-b border-slate-800 pb-2">Official Retained Keepers</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm text-slate-300">
+              <thead class="bg-slate-800/60 text-xs uppercase text-slate-400">
+                <tr><th class="p-3">Season</th><th class="p-3">Player</th><th class="p-3">Pos</th><th class="p-3">Manager</th><th class="p-3 text-center">Cost</th><th class="p-3 text-right">Pts Produced</th></tr>
+              </thead>
+              <tbody id="true-keepers-body" class="divide-y divide-slate-800"></tbody>
+            </table>
           </div>
         </div>
 
-        <div class="overflow-x-auto">
-          <table class="w-full text-left text-sm text-slate-300">
-            <thead class="bg-slate-800/60 text-xs uppercase tracking-wider text-slate-400">
-              <tr>
-                <th class="p-3">Rank</th>
-                <th class="p-3">Player</th>
-                <th class="p-3">Pos</th>
-                <th class="p-3">Franchise Owner</th>
-                <th class="p-3 text-center">Seasons</th>
-                <th class="p-3">Tenure Years</th>
-                <th class="p-3 text-center">Starts</th>
-                <th class="p-3 text-right font-bold text-slate-200">Total Pts Produced</th>
-                <th class="p-3 text-right">Avg PPG</th>
-              </tr>
-            </thead>
-            <tbody id="keepers-table-body" class="divide-y divide-slate-800"></tbody>
-          </table>
+        <!-- Cornerstones -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow space-y-4">
+          <div class="flex justify-between items-center border-b border-slate-800 pb-2">
+            <h3 class="font-bold text-emerald-400">Multi-Year Cornerstones</h3>
+            <select id="keeper-min-seasons" onchange="renderKeepers()" class="bg-slate-800 text-xs border border-slate-700 rounded px-2 text-white focus:ring-1 focus:ring-emerald-400">
+              <option value="2">≥ 2 Seasons</option><option value="3">≥ 3 Seasons</option><option value="4">≥ 4 Seasons</option>
+            </select>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm text-slate-300">
+              <thead class="bg-slate-800/60 text-xs uppercase text-slate-400">
+                <tr><th class="p-3">Rank</th><th class="p-3">Player</th><th class="p-3">Pos</th><th class="p-3">Manager</th><th class="p-3 text-center">Tenure</th><th class="p-3 text-right">Total Pts</th></tr>
+              </thead>
+              <tbody id="keepers-table-body" class="divide-y divide-slate-800"></tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>

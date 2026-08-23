@@ -603,6 +603,26 @@ function renderDraftVault() {
     `).join('');
   }
 
+  const roundMvpsBody = document.getElementById('draft-round-mvps-body');
+  if (roundMvpsBody && draftData.round_mvps) {
+    roundMvpsBody.innerHTML = draftData.round_mvps.map(m => {
+      const safeMgr = m.owner.replace(/'/g, "\\'");
+      return `
+        <tr class="hover:bg-slate-800/40 transition">
+          <td class="p-2.5 font-mono font-bold text-amber-400">Round ${m.round_num}</td>
+          <td class="p-2.5 font-mono text-slate-400">#${m.overall_pick}</td>
+          <td class="p-2.5 font-bold text-white">${m.player}</td>
+          <td class="p-2.5 font-mono text-xs text-slate-400">${m.pos}</td>
+          <td class="p-2.5 font-semibold text-slate-200">
+            <button onclick="openManagerDossier('${safeMgr}')" class="hover:text-emerald-400 transition">${m.owner}</button>
+          </td>
+          <td class="p-2.5 text-center font-mono text-slate-400">${m.year}</td>
+          <td class="p-2.5 text-right font-mono font-bold text-emerald-400">${m.starter_pts.toFixed(1)} pts</td>
+        </tr>
+      `;
+    }).join('');
+  }
+
   renderSeasonDraftBoard();
 }
 
@@ -923,6 +943,8 @@ function initBracketControls() {
   years.slice().reverse().forEach(yr => {
     select.add(new Option(`${yr} Postseason`, yr));
   });
+
+  renderBrackets(); // <--- ADD THIS EXACT LINE
 }
 
 function initTradeControls() {
@@ -1927,62 +1949,56 @@ function renderBadBeats(matches, gooseEggs) {
 // FRANCHISE CORNERSTONES (MULTI-YEAR)
 // ----------------------------------------------------
 function renderKeepers() {
-  const tbody = document.getElementById('keepers-table-body');
-  if (!tbody || !RAW_DATA?.cornerstone_stats) return;
+  const tbCorner = document.getElementById('keepers-table-body');
+  const tbTrue = document.getElementById('true-keepers-body');
 
-  const minYr = parseInt(document.getElementById('startYear')?.value || 0);
-  const maxYr = parseInt(document.getElementById('endYear')?.value || 9999);
+  const minYr = parseInt(document.getElementById('startYear')?.value) || 0;
+  const maxYr = parseInt(document.getElementById('endYear')?.value) || 9999;
   const selectedManager = document.getElementById('keeper-manager-filter')?.value || 'all';
-  const minSeasons = parseInt(document.getElementById('keeper-min-seasons')?.value || 2);
 
-  const filtered = RAW_DATA.cornerstone_stats.filter(c => {
-    if (selectedManager !== 'all' && c.owner !== selectedManager) return false;
-    if (c.seasons < minSeasons) return false;
-    const hasYearOverlap = (c.years_list || []).some(y => y >= minYr && y <= maxYr);
-    return hasYearOverlap;
-  }).sort((a, b) => b.starter_pts - a.starter_pts || b.seasons - a.seasons);
+  if (tbCorner && RAW_DATA?.cornerstone_stats) {
+    const minS = parseInt(document.getElementById('keeper-min-seasons')?.value) || 2;
+    const filteredC = RAW_DATA.cornerstone_stats.filter(c => {
+      if (selectedManager !== 'all' && c.owner !== selectedManager) return false;
+      if (c.seasons < minS) return false;
+      return (c.years_list || []).some(y => y >= minYr && y <= maxYr);
+    }).sort((a, b) => b.starter_pts - a.starter_pts || b.seasons - a.seasons);
 
-  const allMultiYear = RAW_DATA.cornerstone_stats.filter(c => c.seasons >= 2);
-  const setInner = (id, val) => { const el = document.getElementById(id); if (el) el.innerText = val; };
-  setInner('keeper-total-count', allMultiYear.length);
-
-  if (allMultiYear.length > 0) {
-    const goat = [...allMultiYear].sort((a, b) => b.starter_pts - a.starter_pts)[0];
-    const longestTenure = [...allMultiYear].sort((a, b) => b.seasons - a.seasons || b.starter_pts - a.starter_pts)[0];
-
-    if (goat) {
-      setInner('keeper-goat-player', `${goat.player} (${goat.pos})`);
-      setInner('keeper-goat-desc', `${goat.starter_pts.toFixed(1)} starter pts for ${goat.owner} (${goat.years_display})`);
-    }
-
-    if (longestTenure) {
-      setInner('keeper-tenure-player', `${longestTenure.player} (${longestTenure.pos})`);
-      setInner('keeper-tenure-desc', `${longestTenure.seasons} Seasons with ${longestTenure.owner} (${longestTenure.years_display})`);
+    if (!filteredC.length) {
+      tbCorner.innerHTML = `<tr><td colspan="6" class="p-4 text-center text-slate-500">No cornerstones found.</td></tr>`;
+    } else {
+      tbCorner.innerHTML = filteredC.map((c, i) => `
+        <tr class="hover:bg-slate-800/40 transition">
+          <td class="p-3 font-semibold text-slate-500">#${i + 1}</td>
+          <td class="p-3 font-bold text-white">${c.player}</td>
+          <td class="p-3 font-mono text-xs text-slate-400">${c.pos}</td>
+          <td class="p-3">${c.owner}</td>
+          <td class="p-3 text-center text-emerald-400 font-bold">${c.seasons}</td>
+          <td class="p-3 text-right text-emerald-400 font-bold">${c.starter_pts.toFixed(1)}</td>
+        </tr>`).join('');
     }
   }
 
-  if (!filtered.length) {
-    tbody.innerHTML = `<tr><td colspan="9" class="p-6 text-center text-slate-500">No franchise cornerstones found matching this filter criteria.</td></tr>`;
-    return;
-  }
+  if (tbTrue && RAW_DATA?.true_keepers) {
+    const filteredK = RAW_DATA.true_keepers.filter(k => {
+      if (selectedManager !== 'all' && k.owner !== selectedManager) return false;
+      return k.year >= minYr && k.year <= maxYr;
+    }).sort((a, b) => b.year - a.year || b.starter_pts - a.starter_pts);
 
-  tbody.innerHTML = filtered.map((c, idx) => `
-    <tr class="hover:bg-slate-800/40 transition">
-      <td class="p-3 font-semibold text-slate-500">#${idx + 1}</td>
-      <td class="p-3 font-bold text-slate-100">${c.player}</td>
-      <td class="p-3 font-mono text-xs text-slate-400">${c.pos}</td>
-      <td class="p-3 font-medium text-slate-200">${c.owner}</td>
-      <td class="p-3 text-center font-mono font-bold ${c.seasons >= 3 ? 'text-amber-400 bg-amber-500/10 rounded' : 'text-slate-300'}">${c.seasons}</td>
-      <td class="p-3">
-        <div class="flex flex-wrap gap-1">
-          ${(c.years_list || []).map(y => `<span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">'${String(y).slice(-2)}</span>`).join('')}
-        </div>
-      </td>
-      <td class="p-3 text-center font-mono text-slate-400">${c.starter_games}</td>
-      <td class="p-3 text-right font-mono font-bold text-emerald-400">${c.starter_pts.toFixed(1)}</td>
-      <td class="p-3 text-right font-mono text-slate-300">${c.starter_ppg.toFixed(1)}</td>
-    </tr>
-  `).join('');
+    if (!filteredK.length) {
+      tbTrue.innerHTML = `<tr><td colspan="6" class="p-4 text-center text-slate-500">No official keepers found.</td></tr>`;
+    } else {
+      tbTrue.innerHTML = filteredK.map(k => `
+        <tr class="hover:bg-slate-800/40 transition">
+          <td class="p-3 font-mono text-slate-400">'${String(k.year).slice(-2)}</td>
+          <td class="p-3 font-bold text-white">${k.player}</td>
+          <td class="p-3 font-mono text-xs text-slate-400">${k.pos}</td>
+          <td class="p-3">${k.owner}</td>
+          <td class="p-3 text-center font-mono text-amber-400">Rd ${k.round_num}</td>
+          <td class="p-3 text-right font-mono font-bold text-emerald-400">${k.starter_pts.toFixed(1)} pts</td>
+        </tr>`).join('');
+    }
+  }
 }
 
 // ----------------------------------------------------
