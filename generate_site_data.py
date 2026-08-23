@@ -362,14 +362,55 @@ if not df_matchups.empty:
 brackets_by_season = {}
 if not df_matchups.empty:
     for yr in all_years:
-        playoff_matches = df_matchups[(df_matchups['year'] == yr) & (df_matchups['matchup_type'] == 'PLAYOFF')].sort_values(by='week')
-        consol_matches = df_matchups[(df_matchups['year'] == yr) & (df_matchups['matchup_type'] == 'CONSOLATION')].sort_values(by='week')
+        yr_matches = df_matchups[df_matchups['year'] == yr]
+        
+        # Identify the Top 6 teams from the regular season to isolate the Championship bracket
+        yr_narrative = season_narratives.get(int(yr))
+        if yr_narrative and 'regular_standings' in yr_narrative:
+            playoff_owners = [s['owner'] for s in yr_narrative['regular_standings'][:6]]
+        else:
+            playoff_owners = []
 
-        def structure_bracket(matches):
-            weeks = sorted(matches['week'].unique().tolist())
+        playoff_matches = []
+        consol_matches = []
+
+        for _, m in yr_matches.iterrows():
+            is_postseason = False
+            wk = int(m['week'])
+            
+            # Force ESPN schedule transitions (pre-2021 was 16 games; post-2021 is 17 games)
+            if int(yr) <= 2020 and wk >= 14:
+                is_postseason = True
+            elif int(yr) > 2020 and wk >= 15:
+                is_postseason = True
+                
+            # Catch explicit database flags just in case
+            if m['matchup_type'] in ['PLAYOFF', 'CONSOLATION']:
+                is_postseason = True
+                
+            if is_postseason:
+                # Isolate Top 6 into Championship Bracket, Bottom teams into Toilet Bowl
+                if playoff_owners:
+                    if m['home_owner'] in playoff_owners or m['away_owner'] in playoff_owners:
+                        playoff_matches.append(m)
+                    else:
+                        consol_matches.append(m)
+                else:
+                    # Fallback if no standings are available
+                    if m['matchup_type'] == 'PLAYOFF':
+                        playoff_matches.append(m)
+                    else:
+                        consol_matches.append(m)
+
+        playoff_df = pd.DataFrame(playoff_matches) if playoff_matches else pd.DataFrame()
+        consol_df = pd.DataFrame(consol_matches) if consol_matches else pd.DataFrame()
+
+        def structure_bracket(matches_df):
+            if matches_df.empty: return []
+            weeks = sorted(matches_df['week'].unique().tolist())
             rounds = []
             for idx, wk in enumerate(weeks):
-                wk_matches = matches[matches['week'] == wk]
+                wk_matches = matches_df[matches_df['week'] == wk]
                 match_list = []
                 for _, m in wk_matches.iterrows():
                     match_list.append({
@@ -385,19 +426,20 @@ if not df_matchups.empty:
                         'year': int(m['year'])
                     })
                 
+                # Dynamic round naming based on how many playoff weeks exist
                 if len(weeks) == 3:
-                    r_name = "Quarterfinals (Rd 1)" if idx == 0 else ("Semifinals (Rd 2)" if idx == 1 else "Championship & Podium (Rd 3)")
+                    r_name = "Quarterfinals (Rd 1)" if idx == 0 else ("Semifinals (Rd 2)" if idx == 1 else "Championship & Podium Games")
                 elif len(weeks) == 2:
-                    r_name = "Semifinals (Rd 1)" if idx == 0 else "Championship Finals (Rd 2)"
+                    r_name = "Semifinals (Rd 1)" if idx == 0 else "Championship Finals"
                 else:
-                    r_name = f"Playoff Round {idx + 1}"
+                    r_name = f"Postseason Round {idx + 1}"
 
                 rounds.append({'round_name': r_name, 'week': int(wk), 'matches': match_list})
             return rounds
 
         brackets_by_season[int(yr)] = {
-            'playoff_rounds': structure_bracket(playoff_matches),
-            'consolation_rounds': structure_bracket(consol_matches)
+            'playoff_rounds': structure_bracket(playoff_df),
+            'consolation_rounds': structure_bracket(consol_df)
         }
 
 # 7. Trades Data
