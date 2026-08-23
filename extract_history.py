@@ -352,7 +352,6 @@ def extract_full_season(year):
         t_id = pick.get('teamId', 0)
         bid = pick.get('bidAmount', 0)
         p_id = pick.get('playerId', 0)
-        
         is_keeper = 1 if pick.get('keeper') is True or pick.get('reservedForKeeper') is True else 0
 
         p_info = local_player_map.get(p_id) or global_player_map.get(p_id)
@@ -436,14 +435,14 @@ def extract_full_season(year):
                         p_pool = entry.get('playerPoolEntry', {})
                         p = p_pool.get('player', {})
                         p_id = p.get('id', entry.get('playerId', 0))
-                        
+
                         if p.get('fullName'):
                             p_name = p.get('fullName')
                         elif p_id in KNOWN_PLAYERS:
                             p_name = KNOWN_PLAYERS[p_id]
                         else:
                             p_name = local_player_map.get(p_id, ("Unknown Player", "FLEX"))[0]
-                            
+
                         pos = POS_MAP.get(p.get('defaultPositionId'), 'FLEX')
                         slot = SLOT_MAP.get(entry.get('lineupSlotId'), 'BE')
 

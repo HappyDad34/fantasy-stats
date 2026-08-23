@@ -246284,40 +246284,1852 @@
   },
   "brackets_by_season": {
     "2017": {
-      "playoff_rounds": [],
-      "consolation_rounds": []
+      "playoff_rounds": [
+        {
+          "round_name": "Semifinals (Rd 1)",
+          "week": 14,
+          "matches": [
+            {
+              "home_owner": "Darin Mikesell",
+              "home_team": "Bandito Burrito",
+              "home_score": 141.98,
+              "away_owner": "bryce mikesell",
+              "away_team": "Freight Train",
+              "away_score": 137.32,
+              "winner_owner": "Darin Mikesell",
+              "margin": 4.66,
+              "week": 14,
+              "year": 2017
+            },
+            {
+              "home_owner": "David Holm",
+              "home_team": "Fantasy Legend",
+              "home_score": 106.74,
+              "away_owner": "Desmon Holton",
+              "away_team": "Team Dez  X",
+              "away_score": 150.34,
+              "winner_owner": "Desmon Holton",
+              "margin": 43.6,
+              "week": 14,
+              "year": 2017
+            },
+            {
+              "home_owner": "Julie Mikesell",
+              "home_team": "OCD  Mama",
+              "home_score": 112.14,
+              "away_owner": "Trenton Holm",
+              "away_team": "- pAtRiOtS fAn",
+              "away_score": 114.62,
+              "winner_owner": "Trenton Holm",
+              "margin": 2.48,
+              "week": 14,
+              "year": 2017
+            }
+          ]
+        },
+        {
+          "round_name": "Championship Finals",
+          "week": 15,
+          "matches": [
+            {
+              "home_owner": "Darin Mikesell",
+              "home_team": "Bandito Burrito",
+              "home_score": 140.78,
+              "away_owner": "Desmon Holton",
+              "away_team": "Team Dez  X",
+              "away_score": 160.64,
+              "winner_owner": "Desmon Holton",
+              "margin": 19.86,
+              "week": 15,
+              "year": 2017
+            },
+            {
+              "home_owner": "David Holm",
+              "home_team": "Fantasy Legend",
+              "home_score": 135.28,
+              "away_owner": "bryce mikesell",
+              "away_team": "Freight Train",
+              "away_score": 80.88,
+              "winner_owner": "David Holm",
+              "margin": 54.4,
+              "week": 15,
+              "year": 2017
+            },
+            {
+              "home_owner": "Trenton Holm",
+              "home_team": "- pAtRiOtS fAn",
+              "home_score": 135.24,
+              "away_owner": "Michael Searcy",
+              "away_team": "Team Outlawed",
+              "away_score": 83.88,
+              "winner_owner": "Trenton Holm",
+              "margin": 51.36,
+              "week": 15,
+              "year": 2017
+            },
+            {
+              "home_owner": "Julie Mikesell",
+              "home_team": "OCD  Mama",
+              "home_score": 124.94,
+              "away_owner": "Marlene Holm",
+              "away_team": "Riddled With ANXIETY ",
+              "away_score": 120.98,
+              "winner_owner": "Julie Mikesell",
+              "margin": 3.96,
+              "week": 15,
+              "year": 2017
+            }
+          ]
+        }
+      ],
+      "consolation_rounds": [
+        {
+          "round_name": "Postseason Round 1",
+          "week": 14,
+          "matches": [
+            {
+              "home_owner": "Marlene Holm",
+              "home_team": "Riddled With ANXIETY ",
+              "home_score": 71.64,
+              "away_owner": "Michael Searcy",
+              "away_team": "Team Outlawed",
+              "away_score": 79.86,
+              "winner_owner": "Michael Searcy",
+              "margin": 8.22,
+              "week": 14,
+              "year": 2017
+            }
+          ]
+        }
+      ]
     },
     "2018": {
-      "playoff_rounds": [],
-      "consolation_rounds": []
+      "playoff_rounds": [
+        {
+          "round_name": "Quarterfinals (Rd 1)",
+          "week": 14,
+          "matches": [
+            {
+              "home_owner": "Trenton Holm",
+              "home_team": "- pAtRiOtS fAn",
+              "home_score": 124.8,
+              "away_owner": "David Holm",
+              "away_team": "Fantasy Legend",
+              "away_score": 121.48,
+              "winner_owner": "Trenton Holm",
+              "margin": 3.32,
+              "week": 14,
+              "year": 2018
+            },
+            {
+              "home_owner": "Desmon Holton",
+              "home_team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+              "home_score": 129.0,
+              "away_owner": "Jordan Iden",
+              "away_team": "Frost Warning",
+              "away_score": 146.02,
+              "winner_owner": "Jordan Iden",
+              "margin": 17.02,
+              "week": 14,
+              "year": 2018
+            },
+            {
+              "home_owner": "Julie Mikesell",
+              "home_team": "OCD  Mama",
+              "home_score": 62.62,
+              "away_owner": "Jeff Anderson",
+              "away_team": "Team Anderson",
+              "away_score": 138.92,
+              "winner_owner": "Jeff Anderson",
+              "margin": 76.3,
+              "week": 14,
+              "year": 2018
+            }
+          ]
+        },
+        {
+          "round_name": "Semifinals (Rd 2)",
+          "week": 15,
+          "matches": [
+            {
+              "home_owner": "Darin Mikesell",
+              "home_team": "Bandito Burrito",
+              "home_score": 109.88,
+              "away_owner": "Trenton Holm",
+              "away_team": "- pAtRiOtS fAn",
+              "away_score": 131.36,
+              "winner_owner": "Trenton Holm",
+              "margin": 21.48,
+              "week": 15,
+              "year": 2018
+            },
+            {
+              "home_owner": "Marlene Holm",
+              "home_team": "Riddled With ANXIETY ",
+              "home_score": 128.52,
+              "away_owner": "Jordan Iden",
+              "away_team": "Frost Warning",
+              "away_score": 49.44,
+              "winner_owner": "Marlene Holm",
+              "margin": 79.08,
+              "week": 15,
+              "year": 2018
+            },
+            {
+              "home_owner": "Desmon Holton",
+              "home_team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+              "home_score": 110.62,
+              "away_owner": "David Holm",
+              "away_team": "Fantasy Legend",
+              "away_score": 138.56,
+              "winner_owner": "David Holm",
+              "margin": 27.94,
+              "week": 15,
+              "year": 2018
+            },
+            {
+              "home_owner": "Jeff Anderson",
+              "home_team": "Team Anderson",
+              "home_score": 129.6,
+              "away_owner": "bryce mikesell",
+              "away_team": "W\u00c4\u00af\u00c2\u00a7h D\u00c3\u00b8ct\u00c3\u00b8r",
+              "away_score": 75.64,
+              "winner_owner": "Jeff Anderson",
+              "margin": 53.96,
+              "week": 15,
+              "year": 2018
+            }
+          ]
+        },
+        {
+          "round_name": "Championship & Podium Games",
+          "week": 16,
+          "matches": [
+            {
+              "home_owner": "Marlene Holm",
+              "home_team": "Riddled With ANXIETY ",
+              "home_score": 141.62,
+              "away_owner": "Trenton Holm",
+              "away_team": "- pAtRiOtS fAn",
+              "away_score": 140.84,
+              "winner_owner": "Marlene Holm",
+              "margin": 0.78,
+              "week": 16,
+              "year": 2018
+            },
+            {
+              "home_owner": "Darin Mikesell",
+              "home_team": "Bandito Burrito",
+              "home_score": 152.08,
+              "away_owner": "Jordan Iden",
+              "away_team": "Frost Warning",
+              "away_score": 117.24,
+              "winner_owner": "Darin Mikesell",
+              "margin": 34.84,
+              "week": 16,
+              "year": 2018
+            },
+            {
+              "home_owner": "Desmon Holton",
+              "home_team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+              "home_score": 111.24,
+              "away_owner": "David Holm",
+              "away_team": "Fantasy Legend",
+              "away_score": 111.36,
+              "winner_owner": "David Holm",
+              "margin": 0.12,
+              "week": 16,
+              "year": 2018
+            },
+            {
+              "home_owner": "Jeff Anderson",
+              "home_team": "Team Anderson",
+              "home_score": 115.92,
+              "away_owner": "Ashton Anderson",
+              "away_team": "Arizona Big Girls",
+              "away_score": 109.64,
+              "winner_owner": "Jeff Anderson",
+              "margin": 6.28,
+              "week": 16,
+              "year": 2018
+            }
+          ]
+        }
+      ],
+      "consolation_rounds": [
+        {
+          "round_name": "Quarterfinals (Rd 1)",
+          "week": 14,
+          "matches": [
+            {
+              "home_owner": "bryce mikesell",
+              "home_team": "W\u00c4\u00af\u00c2\u00a7h D\u00c3\u00b8ct\u00c3\u00b8r",
+              "home_score": 125.1,
+              "away_owner": "Ashton Anderson",
+              "away_team": "Arizona Big Girls",
+              "away_score": 70.74,
+              "winner_owner": "bryce mikesell",
+              "margin": 54.36,
+              "week": 14,
+              "year": 2018
+            }
+          ]
+        },
+        {
+          "round_name": "Semifinals (Rd 2)",
+          "week": 15,
+          "matches": [
+            {
+              "home_owner": "Julie Mikesell",
+              "home_team": "OCD  Mama",
+              "home_score": 65.62,
+              "away_owner": "Ashton Anderson",
+              "away_team": "Arizona Big Girls",
+              "away_score": 88.32,
+              "winner_owner": "Ashton Anderson",
+              "margin": 22.7,
+              "week": 15,
+              "year": 2018
+            }
+          ]
+        },
+        {
+          "round_name": "Championship & Podium Games",
+          "week": 16,
+          "matches": [
+            {
+              "home_owner": "Julie Mikesell",
+              "home_team": "OCD  Mama",
+              "home_score": 75.36,
+              "away_owner": "bryce mikesell",
+              "away_team": "W\u00c4\u00af\u00c2\u00a7h D\u00c3\u00b8ct\u00c3\u00b8r",
+              "away_score": 91.34,
+              "winner_owner": "bryce mikesell",
+              "margin": 15.98,
+              "week": 16,
+              "year": 2018
+            }
+          ]
+        }
+      ]
     },
     "2019": {
-      "playoff_rounds": [],
-      "consolation_rounds": []
+      "playoff_rounds": [
+        {
+          "round_name": "Quarterfinals (Rd 1)",
+          "week": 14,
+          "matches": [
+            {
+              "home_owner": "Jordan Iden",
+              "home_team": "Frost Warning",
+              "home_score": 107.34,
+              "away_owner": "Trenton Holm",
+              "away_team": "- pAtRiOtS fAn",
+              "away_score": 97.6,
+              "winner_owner": "Jordan Iden",
+              "margin": 9.74,
+              "week": 14,
+              "year": 2019
+            },
+            {
+              "home_owner": "Julie Mikesell",
+              "home_team": "OCD  Mama",
+              "home_score": 165.6,
+              "away_owner": "Desmon Holton",
+              "away_team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+              "away_score": 134.44,
+              "winner_owner": "Julie Mikesell",
+              "margin": 31.16,
+              "week": 14,
+              "year": 2019
+            },
+            {
+              "home_owner": "Kevin Bailey",
+              "home_team": "Fitz Like a Glove",
+              "home_score": 135.44,
+              "away_owner": "David Holm",
+              "away_team": "Fantasy Legend",
+              "away_score": 105.9,
+              "winner_owner": "Kevin Bailey",
+              "margin": 29.54,
+              "week": 14,
+              "year": 2019
+            }
+          ]
+        },
+        {
+          "round_name": "Semifinals (Rd 2)",
+          "week": 15,
+          "matches": [
+            {
+              "home_owner": "Keith Orchekowsky",
+              "home_team": "GoPackGo !",
+              "home_score": 110.02,
+              "away_owner": "Jordan Iden",
+              "away_team": "Frost Warning",
+              "away_score": 118.96,
+              "winner_owner": "Jordan Iden",
+              "margin": 8.94,
+              "week": 15,
+              "year": 2019
+            },
+            {
+              "home_owner": "Marlene Holm",
+              "home_team": "Riddled With ANXIETY ",
+              "home_score": 143.02,
+              "away_owner": "Julie Mikesell",
+              "away_team": "OCD  Mama",
+              "away_score": 134.12,
+              "winner_owner": "Marlene Holm",
+              "margin": 8.9,
+              "week": 15,
+              "year": 2019
+            },
+            {
+              "home_owner": "Trenton Holm",
+              "home_team": "- pAtRiOtS fAn",
+              "home_score": 113.44,
+              "away_owner": "Desmon Holton",
+              "away_team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+              "away_score": 158.42,
+              "winner_owner": "Desmon Holton",
+              "margin": 44.98,
+              "week": 15,
+              "year": 2019
+            },
+            {
+              "home_owner": "Kevin Bailey",
+              "home_team": "Fitz Like a Glove",
+              "home_score": 122.0,
+              "away_owner": "Darin Mikesell",
+              "away_team": "Bandito Burrito",
+              "away_score": 129.5,
+              "winner_owner": "Darin Mikesell",
+              "margin": 7.5,
+              "week": 15,
+              "year": 2019
+            }
+          ]
+        },
+        {
+          "round_name": "Championship & Podium Games",
+          "week": 16,
+          "matches": [
+            {
+              "home_owner": "Marlene Holm",
+              "home_team": "Riddled With ANXIETY ",
+              "home_score": 157.76,
+              "away_owner": "Jordan Iden",
+              "away_team": "Frost Warning",
+              "away_score": 113.88,
+              "winner_owner": "Marlene Holm",
+              "margin": 43.88,
+              "week": 16,
+              "year": 2019
+            },
+            {
+              "home_owner": "Keith Orchekowsky",
+              "home_team": "GoPackGo !",
+              "home_score": 114.56,
+              "away_owner": "Julie Mikesell",
+              "away_team": "OCD  Mama",
+              "away_score": 137.54,
+              "winner_owner": "Julie Mikesell",
+              "margin": 22.98,
+              "week": 16,
+              "year": 2019
+            },
+            {
+              "home_owner": "Trenton Holm",
+              "home_team": "- pAtRiOtS fAn",
+              "home_score": 127.06,
+              "away_owner": "Desmon Holton",
+              "away_team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+              "away_score": 64.5,
+              "winner_owner": "Trenton Holm",
+              "margin": 62.56,
+              "week": 16,
+              "year": 2019
+            },
+            {
+              "home_owner": "Kevin Bailey",
+              "home_team": "Fitz Like a Glove",
+              "home_score": 123.46,
+              "away_owner": "bryce mikesell",
+              "away_team": "\u0110R\u0118\u0104M \u00c7R\u0172\u015eH\u0118R\ud83c\udf1f",
+              "away_score": 115.26,
+              "winner_owner": "Kevin Bailey",
+              "margin": 8.2,
+              "week": 16,
+              "year": 2019
+            }
+          ]
+        }
+      ],
+      "consolation_rounds": [
+        {
+          "round_name": "Quarterfinals (Rd 1)",
+          "week": 14,
+          "matches": [
+            {
+              "home_owner": "bryce mikesell",
+              "home_team": "\u0110R\u0118\u0104M \u00c7R\u0172\u015eH\u0118R\ud83c\udf1f",
+              "home_score": 90.8,
+              "away_owner": "Darin Mikesell",
+              "away_team": "Bandito Burrito",
+              "away_score": 96.82,
+              "winner_owner": "Darin Mikesell",
+              "margin": 6.02,
+              "week": 14,
+              "year": 2019
+            }
+          ]
+        },
+        {
+          "round_name": "Semifinals (Rd 2)",
+          "week": 15,
+          "matches": [
+            {
+              "home_owner": "David Holm",
+              "home_team": "Fantasy Legend",
+              "home_score": 108.88,
+              "away_owner": "bryce mikesell",
+              "away_team": "\u0110R\u0118\u0104M \u00c7R\u0172\u015eH\u0118R\ud83c\udf1f",
+              "away_score": 84.44,
+              "winner_owner": "David Holm",
+              "margin": 24.44,
+              "week": 15,
+              "year": 2019
+            }
+          ]
+        },
+        {
+          "round_name": "Championship & Podium Games",
+          "week": 16,
+          "matches": [
+            {
+              "home_owner": "David Holm",
+              "home_team": "Fantasy Legend",
+              "home_score": 130.92,
+              "away_owner": "Darin Mikesell",
+              "away_team": "Bandito Burrito",
+              "away_score": 114.84,
+              "winner_owner": "David Holm",
+              "margin": 16.08,
+              "week": 16,
+              "year": 2019
+            }
+          ]
+        }
+      ]
     },
     "2020": {
-      "playoff_rounds": [],
-      "consolation_rounds": []
+      "playoff_rounds": [
+        {
+          "round_name": "Quarterfinals (Rd 1)",
+          "week": 14,
+          "matches": [
+            {
+              "home_owner": "bryce mikesell",
+              "home_team": "L\u00d8ST H\u00d8PE",
+              "home_score": 144.46,
+              "away_owner": "Kevin Bailey",
+              "away_team": "2020 Quaran-team",
+              "away_score": 134.12,
+              "winner_owner": "bryce mikesell",
+              "margin": 10.34,
+              "week": 14,
+              "year": 2020
+            },
+            {
+              "home_owner": "David Holm",
+              "home_team": "Fantasy Legend",
+              "home_score": 102.0,
+              "away_owner": "Darin Mikesell",
+              "away_team": "Bandito Burrito",
+              "away_score": 122.54,
+              "winner_owner": "Darin Mikesell",
+              "margin": 20.54,
+              "week": 14,
+              "year": 2020
+            },
+            {
+              "home_owner": "Trenton Holm",
+              "home_team": "- pAtRiOtS fAn",
+              "home_score": 101.52,
+              "away_owner": "Desmon Holton",
+              "away_team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+              "away_score": 135.04,
+              "winner_owner": "Desmon Holton",
+              "margin": 33.52,
+              "week": 14,
+              "year": 2020
+            }
+          ]
+        },
+        {
+          "round_name": "Semifinals (Rd 2)",
+          "week": 15,
+          "matches": [
+            {
+              "home_owner": "Keith Orchekowsky",
+              "home_team": "GoPackGo !",
+              "home_score": 142.42,
+              "away_owner": "bryce mikesell",
+              "away_team": "L\u00d8ST H\u00d8PE",
+              "away_score": 122.64,
+              "winner_owner": "Keith Orchekowsky",
+              "margin": 19.78,
+              "week": 15,
+              "year": 2020
+            },
+            {
+              "home_owner": "Marlene Holm",
+              "home_team": "Riddled With ANXIETY ",
+              "home_score": 164.06,
+              "away_owner": "Darin Mikesell",
+              "away_team": "Bandito Burrito",
+              "away_score": 142.4,
+              "winner_owner": "Marlene Holm",
+              "margin": 21.66,
+              "week": 15,
+              "year": 2020
+            },
+            {
+              "home_owner": "David Holm",
+              "home_team": "Fantasy Legend",
+              "home_score": 121.32,
+              "away_owner": "Kevin Bailey",
+              "away_team": "2020 Quaran-team",
+              "away_score": 107.26,
+              "winner_owner": "David Holm",
+              "margin": 14.06,
+              "week": 15,
+              "year": 2020
+            },
+            {
+              "home_owner": "Desmon Holton",
+              "home_team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+              "home_score": 133.84,
+              "away_owner": "Julie Mikesell",
+              "away_team": "OCD  Mama",
+              "away_score": 90.62,
+              "winner_owner": "Desmon Holton",
+              "margin": 43.22,
+              "week": 15,
+              "year": 2020
+            }
+          ]
+        },
+        {
+          "round_name": "Championship & Podium Games",
+          "week": 16,
+          "matches": [
+            {
+              "home_owner": "Keith Orchekowsky",
+              "home_team": "GoPackGo !",
+              "home_score": 145.26,
+              "away_owner": "Marlene Holm",
+              "away_team": "Riddled With ANXIETY ",
+              "away_score": 118.4,
+              "winner_owner": "Keith Orchekowsky",
+              "margin": 26.86,
+              "week": 16,
+              "year": 2020
+            },
+            {
+              "home_owner": "bryce mikesell",
+              "home_team": "L\u00d8ST H\u00d8PE",
+              "home_score": 162.98,
+              "away_owner": "Darin Mikesell",
+              "away_team": "Bandito Burrito",
+              "away_score": 114.82,
+              "winner_owner": "bryce mikesell",
+              "margin": 48.16,
+              "week": 16,
+              "year": 2020
+            },
+            {
+              "home_owner": "David Holm",
+              "home_team": "Fantasy Legend",
+              "home_score": 78.44,
+              "away_owner": "Kevin Bailey",
+              "away_team": "2020 Quaran-team",
+              "away_score": 111.32,
+              "winner_owner": "Kevin Bailey",
+              "margin": 32.88,
+              "week": 16,
+              "year": 2020
+            },
+            {
+              "home_owner": "Trenton Holm",
+              "home_team": "- pAtRiOtS fAn",
+              "home_score": 150.32,
+              "away_owner": "Desmon Holton",
+              "away_team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+              "away_score": 153.3,
+              "winner_owner": "Desmon Holton",
+              "margin": 2.98,
+              "week": 16,
+              "year": 2020
+            }
+          ]
+        }
+      ],
+      "consolation_rounds": [
+        {
+          "round_name": "Quarterfinals (Rd 1)",
+          "week": 14,
+          "matches": [
+            {
+              "home_owner": "Jordan Iden",
+              "home_team": "Frost Warning",
+              "home_score": 109.84,
+              "away_owner": "Julie Mikesell",
+              "away_team": "OCD  Mama",
+              "away_score": 151.22,
+              "winner_owner": "Julie Mikesell",
+              "margin": 41.38,
+              "week": 14,
+              "year": 2020
+            }
+          ]
+        },
+        {
+          "round_name": "Semifinals (Rd 2)",
+          "week": 15,
+          "matches": [
+            {
+              "home_owner": "Trenton Holm",
+              "home_team": "- pAtRiOtS fAn",
+              "home_score": 135.56,
+              "away_owner": "Jordan Iden",
+              "away_team": "Frost Warning",
+              "away_score": 110.3,
+              "winner_owner": "Trenton Holm",
+              "margin": 25.26,
+              "week": 15,
+              "year": 2020
+            }
+          ]
+        },
+        {
+          "round_name": "Championship & Podium Games",
+          "week": 16,
+          "matches": [
+            {
+              "home_owner": "Jordan Iden",
+              "home_team": "Frost Warning",
+              "home_score": 149.74,
+              "away_owner": "Julie Mikesell",
+              "away_team": "OCD  Mama",
+              "away_score": 88.12,
+              "winner_owner": "Jordan Iden",
+              "margin": 61.62,
+              "week": 16,
+              "year": 2020
+            }
+          ]
+        }
+      ]
     },
     "2021": {
-      "playoff_rounds": [],
-      "consolation_rounds": []
+      "playoff_rounds": [
+        {
+          "round_name": "Quarterfinals (Rd 1)",
+          "week": 15,
+          "matches": [
+            {
+              "home_owner": "Keith Orchekowsky",
+              "home_team": "GoPackGo !",
+              "home_score": 111.1,
+              "away_owner": "bryce mikesell",
+              "away_team": "L\u00d8ST H\u00d8PE",
+              "away_score": 89.26,
+              "winner_owner": "Keith Orchekowsky",
+              "margin": 21.84,
+              "week": 15,
+              "year": 2021
+            },
+            {
+              "home_owner": "Kevin Bailey",
+              "home_team": "1.21 JJWatts",
+              "home_score": 103.32,
+              "away_owner": "Jordan Iden",
+              "away_team": "Frost Warning",
+              "away_score": 124.36,
+              "winner_owner": "Jordan Iden",
+              "margin": 21.04,
+              "week": 15,
+              "year": 2021
+            },
+            {
+              "home_owner": "Trenton Holm",
+              "home_team": "- Apex",
+              "home_score": 117.14,
+              "away_owner": "Mackenzie Iden",
+              "away_team": "Mac Attack",
+              "away_score": 110.24,
+              "winner_owner": "Trenton Holm",
+              "margin": 6.9,
+              "week": 15,
+              "year": 2021
+            },
+            {
+              "home_owner": "Darin Mikesell",
+              "home_team": "Bandito Burrito",
+              "home_score": 116.02,
+              "away_owner": "David Holm",
+              "away_team": "Fantasy Legend",
+              "away_score": 84.8,
+              "winner_owner": "Darin Mikesell",
+              "margin": 31.22,
+              "week": 15,
+              "year": 2021
+            },
+            {
+              "home_owner": "Marlene Holm",
+              "home_team": "Riddled With ANXIETY ",
+              "home_score": 112.44,
+              "away_owner": "Desmon Holton",
+              "away_team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+              "away_score": 92.98,
+              "winner_owner": "Marlene Holm",
+              "margin": 19.46,
+              "week": 15,
+              "year": 2021
+            }
+          ]
+        },
+        {
+          "round_name": "Semifinals (Rd 2)",
+          "week": 16,
+          "matches": [
+            {
+              "home_owner": "Keith Orchekowsky",
+              "home_team": "GoPackGo !",
+              "home_score": 110.26,
+              "away_owner": "Jordan Iden",
+              "away_team": "Frost Warning",
+              "away_score": 111.18,
+              "winner_owner": "Jordan Iden",
+              "margin": 0.92,
+              "week": 16,
+              "year": 2021
+            },
+            {
+              "home_owner": "Darin Mikesell",
+              "home_team": "Bandito Burrito",
+              "home_score": 135.38,
+              "away_owner": "Trenton Holm",
+              "away_team": "- Apex",
+              "away_score": 127.4,
+              "winner_owner": "Darin Mikesell",
+              "margin": 7.98,
+              "week": 16,
+              "year": 2021
+            },
+            {
+              "home_owner": "Kevin Bailey",
+              "home_team": "1.21 JJWatts",
+              "home_score": 105.36,
+              "away_owner": "Mackenzie Iden",
+              "away_team": "Mac Attack",
+              "away_score": 78.54,
+              "winner_owner": "Kevin Bailey",
+              "margin": 26.82,
+              "week": 16,
+              "year": 2021
+            },
+            {
+              "home_owner": "Marlene Holm",
+              "home_team": "Riddled With ANXIETY ",
+              "home_score": 122.46,
+              "away_owner": "Janice Bailey",
+              "away_team": "JJ Bailey",
+              "away_score": 104.6,
+              "winner_owner": "Marlene Holm",
+              "margin": 17.86,
+              "week": 16,
+              "year": 2021
+            }
+          ]
+        },
+        {
+          "round_name": "Championship & Podium Games",
+          "week": 17,
+          "matches": [
+            {
+              "home_owner": "Darin Mikesell",
+              "home_team": "Bandito Burrito",
+              "home_score": 124.62,
+              "away_owner": "Jordan Iden",
+              "away_team": "Frost Warning",
+              "away_score": 108.26,
+              "winner_owner": "Darin Mikesell",
+              "margin": 16.36,
+              "week": 17,
+              "year": 2021
+            },
+            {
+              "home_owner": "Keith Orchekowsky",
+              "home_team": "GoPackGo !",
+              "home_score": 110.6,
+              "away_owner": "Trenton Holm",
+              "away_team": "- Apex",
+              "away_score": 190.04,
+              "winner_owner": "Trenton Holm",
+              "margin": 79.44,
+              "week": 17,
+              "year": 2021
+            },
+            {
+              "home_owner": "Kevin Bailey",
+              "home_team": "1.21 JJWatts",
+              "home_score": 110.3,
+              "away_owner": "bryce mikesell",
+              "away_team": "L\u00d8ST H\u00d8PE",
+              "away_score": 123.34,
+              "winner_owner": "bryce mikesell",
+              "margin": 13.04,
+              "week": 17,
+              "year": 2021
+            },
+            {
+              "home_owner": "Marlene Holm",
+              "home_team": "Riddled With ANXIETY ",
+              "home_score": 101.16,
+              "away_owner": "Julie Mikesell",
+              "away_team": "OCD  Mama",
+              "away_score": 85.36,
+              "winner_owner": "Marlene Holm",
+              "margin": 15.8,
+              "week": 17,
+              "year": 2021
+            }
+          ]
+        }
+      ],
+      "consolation_rounds": [
+        {
+          "round_name": "Quarterfinals (Rd 1)",
+          "week": 15,
+          "matches": [
+            {
+              "home_owner": "Julie Mikesell",
+              "home_team": "OCD  Mama",
+              "home_score": 89.8,
+              "away_owner": "Janice Bailey",
+              "away_team": "JJ Bailey",
+              "away_score": 104.48,
+              "winner_owner": "Janice Bailey",
+              "margin": 14.68,
+              "week": 15,
+              "year": 2021
+            }
+          ]
+        },
+        {
+          "round_name": "Semifinals (Rd 2)",
+          "week": 16,
+          "matches": [
+            {
+              "home_owner": "David Holm",
+              "home_team": "Fantasy Legend",
+              "home_score": 87.0,
+              "away_owner": "bryce mikesell",
+              "away_team": "L\u00d8ST H\u00d8PE",
+              "away_score": 161.8,
+              "winner_owner": "bryce mikesell",
+              "margin": 74.8,
+              "week": 16,
+              "year": 2021
+            },
+            {
+              "home_owner": "Desmon Holton",
+              "home_team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+              "home_score": 97.14,
+              "away_owner": "Julie Mikesell",
+              "away_team": "OCD  Mama",
+              "away_score": 102.32,
+              "winner_owner": "Julie Mikesell",
+              "margin": 5.18,
+              "week": 16,
+              "year": 2021
+            }
+          ]
+        },
+        {
+          "round_name": "Championship & Podium Games",
+          "week": 17,
+          "matches": [
+            {
+              "home_owner": "Mackenzie Iden",
+              "home_team": "Mac Attack",
+              "home_score": 101.38,
+              "away_owner": "David Holm",
+              "away_team": "Fantasy Legend",
+              "away_score": 83.4,
+              "winner_owner": "Mackenzie Iden",
+              "margin": 17.98,
+              "week": 17,
+              "year": 2021
+            },
+            {
+              "home_owner": "Desmon Holton",
+              "home_team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+              "home_score": 123.84,
+              "away_owner": "Janice Bailey",
+              "away_team": "JJ Bailey",
+              "away_score": 127.02,
+              "winner_owner": "Janice Bailey",
+              "margin": 3.18,
+              "week": 17,
+              "year": 2021
+            }
+          ]
+        }
+      ]
     },
     "2022": {
-      "playoff_rounds": [],
-      "consolation_rounds": []
+      "playoff_rounds": [
+        {
+          "round_name": "Quarterfinals (Rd 1)",
+          "week": 15,
+          "matches": [
+            {
+              "home_owner": "Mackenzie Iden",
+              "home_team": "Mac Attack",
+              "home_score": 86.08,
+              "away_owner": "Trenton Holm",
+              "away_team": "- HORIZON -",
+              "away_score": 145.36,
+              "winner_owner": "Trenton Holm",
+              "margin": 59.28,
+              "week": 15,
+              "year": 2022
+            },
+            {
+              "home_owner": "Marlene Holm",
+              "home_team": "Riddled With ANXIETY ",
+              "home_score": 129.5,
+              "away_owner": "Julie Mikesell",
+              "away_team": "OCD  Mama",
+              "away_score": 136.52,
+              "winner_owner": "Julie Mikesell",
+              "margin": 7.02,
+              "week": 15,
+              "year": 2022
+            }
+          ]
+        },
+        {
+          "round_name": "Semifinals (Rd 2)",
+          "week": 16,
+          "matches": [
+            {
+              "home_owner": "David Holm",
+              "home_team": "Fantasy Legend",
+              "home_score": 102.62,
+              "away_owner": "Trenton Holm",
+              "away_team": "- HORIZON -",
+              "away_score": 132.88,
+              "winner_owner": "Trenton Holm",
+              "margin": 30.26,
+              "week": 16,
+              "year": 2022
+            },
+            {
+              "home_owner": "Keith Orchekowsky",
+              "home_team": "GoPackGo !",
+              "home_score": 153.76,
+              "away_owner": "Julie Mikesell",
+              "away_team": "OCD  Mama",
+              "away_score": 118.0,
+              "winner_owner": "Keith Orchekowsky",
+              "margin": 35.76,
+              "week": 16,
+              "year": 2022
+            },
+            {
+              "home_owner": "Marlene Holm",
+              "home_team": "Riddled With ANXIETY ",
+              "home_score": 137.9,
+              "away_owner": "Mackenzie Iden",
+              "away_team": "Mac Attack",
+              "away_score": 95.3,
+              "winner_owner": "Marlene Holm",
+              "margin": 42.6,
+              "week": 16,
+              "year": 2022
+            }
+          ]
+        },
+        {
+          "round_name": "Championship & Podium Games",
+          "week": 17,
+          "matches": [
+            {
+              "home_owner": "Keith Orchekowsky",
+              "home_team": "GoPackGo !",
+              "home_score": 79.22,
+              "away_owner": "Trenton Holm",
+              "away_team": "- HORIZON -",
+              "away_score": 71.2,
+              "winner_owner": "Keith Orchekowsky",
+              "margin": 8.02,
+              "week": 17,
+              "year": 2022
+            },
+            {
+              "home_owner": "David Holm",
+              "home_team": "Fantasy Legend",
+              "home_score": 130.26,
+              "away_owner": "Julie Mikesell",
+              "away_team": "OCD  Mama",
+              "away_score": 131.56,
+              "winner_owner": "Julie Mikesell",
+              "margin": 1.3,
+              "week": 17,
+              "year": 2022
+            },
+            {
+              "home_owner": "Marlene Holm",
+              "home_team": "Riddled With ANXIETY ",
+              "home_score": 89.46,
+              "away_owner": "Mackenzie Iden",
+              "away_team": "Mac Attack",
+              "away_score": 125.1,
+              "winner_owner": "Mackenzie Iden",
+              "margin": 35.64,
+              "week": 17,
+              "year": 2022
+            }
+          ]
+        }
+      ],
+      "consolation_rounds": [
+        {
+          "round_name": "Quarterfinals (Rd 1)",
+          "week": 15,
+          "matches": [
+            {
+              "home_owner": "Jordan Iden",
+              "home_team": "Frost Warning",
+              "home_score": 151.0,
+              "away_owner": "Darin Mikesell",
+              "away_team": "Bandito Burrito",
+              "away_score": 112.96,
+              "winner_owner": "Jordan Iden",
+              "margin": 38.04,
+              "week": 15,
+              "year": 2022
+            },
+            {
+              "home_owner": "bryce mikesell",
+              "home_team": "S\u00e9nior Quack",
+              "home_score": 117.42,
+              "away_owner": "Desmon Holton",
+              "away_team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+              "away_score": 126.92,
+              "winner_owner": "Desmon Holton",
+              "margin": 9.5,
+              "week": 15,
+              "year": 2022
+            }
+          ]
+        },
+        {
+          "round_name": "Semifinals (Rd 2)",
+          "week": 16,
+          "matches": [
+            {
+              "home_owner": "Jordan Iden",
+              "home_team": "Frost Warning",
+              "home_score": 107.46,
+              "away_owner": "Desmon Holton",
+              "away_team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+              "away_score": 111.4,
+              "winner_owner": "Desmon Holton",
+              "margin": 3.94,
+              "week": 16,
+              "year": 2022
+            },
+            {
+              "home_owner": "Darin Mikesell",
+              "home_team": "Bandito Burrito",
+              "home_score": 104.2,
+              "away_owner": "bryce mikesell",
+              "away_team": "S\u00e9nior Quack",
+              "away_score": 113.96,
+              "winner_owner": "bryce mikesell",
+              "margin": 9.76,
+              "week": 16,
+              "year": 2022
+            }
+          ]
+        },
+        {
+          "round_name": "Championship & Podium Games",
+          "week": 17,
+          "matches": [
+            {
+              "home_owner": "bryce mikesell",
+              "home_team": "S\u00e9nior Quack",
+              "home_score": 99.4,
+              "away_owner": "Desmon Holton",
+              "away_team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+              "away_score": 85.06,
+              "winner_owner": "bryce mikesell",
+              "margin": 14.34,
+              "week": 17,
+              "year": 2022
+            },
+            {
+              "home_owner": "Jordan Iden",
+              "home_team": "Frost Warning",
+              "home_score": 71.8,
+              "away_owner": "Darin Mikesell",
+              "away_team": "Bandito Burrito",
+              "away_score": 68.7,
+              "winner_owner": "Jordan Iden",
+              "margin": 3.1,
+              "week": 17,
+              "year": 2022
+            }
+          ]
+        }
+      ]
     },
     "2023": {
-      "playoff_rounds": [],
-      "consolation_rounds": []
+      "playoff_rounds": [
+        {
+          "round_name": "Quarterfinals (Rd 1)",
+          "week": 15,
+          "matches": [
+            {
+              "home_owner": "Marlene Holm",
+              "home_team": "Riddled With ANXIETY ",
+              "home_score": 94.22,
+              "away_owner": "Desmon Holton",
+              "away_team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+              "away_score": 80.74,
+              "winner_owner": "Marlene Holm",
+              "margin": 13.48,
+              "week": 15,
+              "year": 2023
+            },
+            {
+              "home_owner": "David Holm",
+              "home_team": "Fantasy Legend",
+              "home_score": 161.32,
+              "away_owner": "Mackenzie Iden",
+              "away_team": "Mac Attack",
+              "away_score": 136.8,
+              "winner_owner": "David Holm",
+              "margin": 24.52,
+              "week": 15,
+              "year": 2023
+            },
+            {
+              "home_owner": "Keith Orchekowsky",
+              "home_team": "GoPackGo !",
+              "home_score": 105.44,
+              "away_owner": "Jordan Iden",
+              "away_team": "New Rhules",
+              "away_score": 101.26,
+              "winner_owner": "Keith Orchekowsky",
+              "margin": 4.18,
+              "week": 15,
+              "year": 2023
+            }
+          ]
+        },
+        {
+          "round_name": "Semifinals (Rd 2)",
+          "week": 16,
+          "matches": [
+            {
+              "home_owner": "Trenton Holm",
+              "home_team": "- HORIZON -",
+              "home_score": 91.14,
+              "away_owner": "Marlene Holm",
+              "away_team": "Riddled With ANXIETY ",
+              "away_score": 105.22,
+              "winner_owner": "Marlene Holm",
+              "margin": 14.08,
+              "week": 16,
+              "year": 2023
+            },
+            {
+              "home_owner": "bryce mikesell",
+              "home_team": "S\u00e9nior Quack",
+              "home_score": 147.62,
+              "away_owner": "David Holm",
+              "away_team": "Fantasy Legend",
+              "away_score": 119.58,
+              "winner_owner": "bryce mikesell",
+              "margin": 28.04,
+              "week": 16,
+              "year": 2023
+            },
+            {
+              "home_owner": "Desmon Holton",
+              "home_team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+              "home_score": 127.8,
+              "away_owner": "Mackenzie Iden",
+              "away_team": "Mac Attack",
+              "away_score": 133.1,
+              "winner_owner": "Mackenzie Iden",
+              "margin": 5.3,
+              "week": 16,
+              "year": 2023
+            },
+            {
+              "home_owner": "Keith Orchekowsky",
+              "home_team": "GoPackGo !",
+              "home_score": 110.58,
+              "away_owner": "Darin Mikesell",
+              "away_team": "Bandito Burrito",
+              "away_score": 120.22,
+              "winner_owner": "Darin Mikesell",
+              "margin": 9.64,
+              "week": 16,
+              "year": 2023
+            }
+          ]
+        },
+        {
+          "round_name": "Championship & Podium Games",
+          "week": 17,
+          "matches": [
+            {
+              "home_owner": "bryce mikesell",
+              "home_team": "S\u00e9nior Quack",
+              "home_score": 107.22,
+              "away_owner": "Marlene Holm",
+              "away_team": "Riddled With ANXIETY ",
+              "away_score": 99.98,
+              "winner_owner": "bryce mikesell",
+              "margin": 7.24,
+              "week": 17,
+              "year": 2023
+            },
+            {
+              "home_owner": "Trenton Holm",
+              "home_team": "- HORIZON -",
+              "home_score": 110.28,
+              "away_owner": "David Holm",
+              "away_team": "Fantasy Legend",
+              "away_score": 145.24,
+              "winner_owner": "David Holm",
+              "margin": 34.96,
+              "week": 17,
+              "year": 2023
+            },
+            {
+              "home_owner": "Desmon Holton",
+              "home_team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+              "home_score": 134.22,
+              "away_owner": "Mackenzie Iden",
+              "away_team": "Mac Attack",
+              "away_score": 80.3,
+              "winner_owner": "Desmon Holton",
+              "margin": 53.92,
+              "week": 17,
+              "year": 2023
+            },
+            {
+              "home_owner": "Keith Orchekowsky",
+              "home_team": "GoPackGo !",
+              "home_score": 121.44,
+              "away_owner": "Jordan Iden",
+              "away_team": "New Rhules",
+              "away_score": 82.0,
+              "winner_owner": "Keith Orchekowsky",
+              "margin": 39.44,
+              "week": 17,
+              "year": 2023
+            }
+          ]
+        }
+      ],
+      "consolation_rounds": [
+        {
+          "round_name": "Quarterfinals (Rd 1)",
+          "week": 15,
+          "matches": [
+            {
+              "home_owner": "Julie Mikesell",
+              "home_team": "OCD  Mama",
+              "home_score": 91.26,
+              "away_owner": "Darin Mikesell",
+              "away_team": "Bandito Burrito",
+              "away_score": 115.72,
+              "winner_owner": "Darin Mikesell",
+              "margin": 24.46,
+              "week": 15,
+              "year": 2023
+            }
+          ]
+        },
+        {
+          "round_name": "Semifinals (Rd 2)",
+          "week": 16,
+          "matches": [
+            {
+              "home_owner": "Jordan Iden",
+              "home_team": "New Rhules",
+              "home_score": 133.0,
+              "away_owner": "Julie Mikesell",
+              "away_team": "OCD  Mama",
+              "away_score": 140.28,
+              "winner_owner": "Julie Mikesell",
+              "margin": 7.28,
+              "week": 16,
+              "year": 2023
+            }
+          ]
+        },
+        {
+          "round_name": "Championship & Podium Games",
+          "week": 17,
+          "matches": [
+            {
+              "home_owner": "Julie Mikesell",
+              "home_team": "OCD  Mama",
+              "home_score": 169.4,
+              "away_owner": "Darin Mikesell",
+              "away_team": "Bandito Burrito",
+              "away_score": 88.48,
+              "winner_owner": "Julie Mikesell",
+              "margin": 80.92,
+              "week": 17,
+              "year": 2023
+            }
+          ]
+        }
+      ]
     },
     "2024": {
-      "playoff_rounds": [],
-      "consolation_rounds": []
+      "playoff_rounds": [
+        {
+          "round_name": "Quarterfinals (Rd 1)",
+          "week": 15,
+          "matches": [
+            {
+              "home_owner": "Desmon Holton",
+              "home_team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+              "home_score": 156.15,
+              "away_owner": "Jordan Iden",
+              "away_team": "New Rhules",
+              "away_score": 158.7,
+              "winner_owner": "Jordan Iden",
+              "margin": 2.55,
+              "week": 15,
+              "year": 2024
+            },
+            {
+              "home_owner": "David Holm",
+              "home_team": "Fantasy Legend",
+              "home_score": 81.7,
+              "away_owner": "Darin Mikesell",
+              "away_team": "Bandito Burrito",
+              "away_score": 139.25,
+              "winner_owner": "Darin Mikesell",
+              "margin": 57.55,
+              "week": 15,
+              "year": 2024
+            },
+            {
+              "home_owner": "Julie Mikesell",
+              "home_team": "OCD  Mama",
+              "home_score": 144.8,
+              "away_owner": "Keith Orchekowsky",
+              "away_team": "GoPackGo !",
+              "away_score": 108.05,
+              "winner_owner": "Julie Mikesell",
+              "margin": 36.75,
+              "week": 15,
+              "year": 2024
+            }
+          ]
+        },
+        {
+          "round_name": "Semifinals (Rd 2)",
+          "week": 16,
+          "matches": [
+            {
+              "home_owner": "Mackenzie Iden",
+              "home_team": "Mac Attack",
+              "home_score": 178.25,
+              "away_owner": "Jordan Iden",
+              "away_team": "New Rhules",
+              "away_score": 127.45,
+              "winner_owner": "Mackenzie Iden",
+              "margin": 50.8,
+              "week": 16,
+              "year": 2024
+            },
+            {
+              "home_owner": "bryce mikesell",
+              "home_team": "S\u00e9nior Quack",
+              "home_score": 166.4,
+              "away_owner": "Darin Mikesell",
+              "away_team": "Bandito Burrito",
+              "away_score": 160.0,
+              "winner_owner": "bryce mikesell",
+              "margin": 6.4,
+              "week": 16,
+              "year": 2024
+            },
+            {
+              "home_owner": "David Holm",
+              "home_team": "Fantasy Legend",
+              "home_score": 124.7,
+              "away_owner": "Desmon Holton",
+              "away_team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+              "away_score": 159.1,
+              "winner_owner": "Desmon Holton",
+              "margin": 34.4,
+              "week": 16,
+              "year": 2024
+            },
+            {
+              "home_owner": "Julie Mikesell",
+              "home_team": "OCD  Mama",
+              "home_score": 140.7,
+              "away_owner": "Marlene Holm",
+              "away_team": "Riddled With ANXIETY ",
+              "away_score": 109.85,
+              "winner_owner": "Julie Mikesell",
+              "margin": 30.85,
+              "week": 16,
+              "year": 2024
+            }
+          ]
+        },
+        {
+          "round_name": "Championship & Podium Games",
+          "week": 17,
+          "matches": [
+            {
+              "home_owner": "Mackenzie Iden",
+              "home_team": "Mac Attack",
+              "home_score": 127.4,
+              "away_owner": "bryce mikesell",
+              "away_team": "S\u00e9nior Quack",
+              "away_score": 172.25,
+              "winner_owner": "bryce mikesell",
+              "margin": 44.85,
+              "week": 17,
+              "year": 2024
+            },
+            {
+              "home_owner": "Jordan Iden",
+              "home_team": "New Rhules",
+              "home_score": 160.25,
+              "away_owner": "Darin Mikesell",
+              "away_team": "Bandito Burrito",
+              "away_score": 130.0,
+              "winner_owner": "Jordan Iden",
+              "margin": 30.25,
+              "week": 17,
+              "year": 2024
+            },
+            {
+              "home_owner": "David Holm",
+              "home_team": "Fantasy Legend",
+              "home_score": 92.65,
+              "away_owner": "Desmon Holton",
+              "away_team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+              "away_score": 148.0,
+              "winner_owner": "Desmon Holton",
+              "margin": 55.35,
+              "week": 17,
+              "year": 2024
+            },
+            {
+              "home_owner": "Julie Mikesell",
+              "home_team": "OCD  Mama",
+              "home_score": 80.8,
+              "away_owner": "Keith Orchekowsky",
+              "away_team": "GoPackGo !",
+              "away_score": 123.65,
+              "winner_owner": "Keith Orchekowsky",
+              "margin": 42.85,
+              "week": 17,
+              "year": 2024
+            }
+          ]
+        }
+      ],
+      "consolation_rounds": [
+        {
+          "round_name": "Quarterfinals (Rd 1)",
+          "week": 15,
+          "matches": [
+            {
+              "home_owner": "Marlene Holm",
+              "home_team": "Riddled With ANXIETY ",
+              "home_score": 127.7,
+              "away_owner": "Trenton Holm",
+              "away_team": "Triple-T-",
+              "away_score": 110.95,
+              "winner_owner": "Marlene Holm",
+              "margin": 16.75,
+              "week": 15,
+              "year": 2024
+            }
+          ]
+        },
+        {
+          "round_name": "Semifinals (Rd 2)",
+          "week": 16,
+          "matches": [
+            {
+              "home_owner": "Keith Orchekowsky",
+              "home_team": "GoPackGo !",
+              "home_score": 132.6,
+              "away_owner": "Trenton Holm",
+              "away_team": "Triple-T-",
+              "away_score": 113.25,
+              "winner_owner": "Keith Orchekowsky",
+              "margin": 19.35,
+              "week": 16,
+              "year": 2024
+            }
+          ]
+        },
+        {
+          "round_name": "Championship & Podium Games",
+          "week": 17,
+          "matches": [
+            {
+              "home_owner": "Marlene Holm",
+              "home_team": "Riddled With ANXIETY ",
+              "home_score": 95.35,
+              "away_owner": "Trenton Holm",
+              "away_team": "Triple-T-",
+              "away_score": 88.3,
+              "winner_owner": "Marlene Holm",
+              "margin": 7.05,
+              "week": 17,
+              "year": 2024
+            }
+          ]
+        }
+      ]
     },
     "2025": {
-      "playoff_rounds": [],
-      "consolation_rounds": []
+      "playoff_rounds": [
+        {
+          "round_name": "Quarterfinals (Rd 1)",
+          "week": 15,
+          "matches": [
+            {
+              "home_owner": "bryce mikesell",
+              "home_team": "S\u00e9nior Quack",
+              "home_score": 119.65,
+              "away_owner": "Trenton Holm",
+              "away_team": "-Ladiesman217-",
+              "away_score": 149.85,
+              "winner_owner": "Trenton Holm",
+              "margin": 30.2,
+              "week": 15,
+              "year": 2025
+            },
+            {
+              "home_owner": "Darin Mikesell",
+              "home_team": "Bandito Burrito",
+              "home_score": 95.0,
+              "away_owner": "Julie Mikesell",
+              "away_team": "OCD  Mama",
+              "away_score": 142.25,
+              "winner_owner": "Julie Mikesell",
+              "margin": 47.25,
+              "week": 15,
+              "year": 2025
+            }
+          ]
+        },
+        {
+          "round_name": "Semifinals (Rd 2)",
+          "week": 16,
+          "matches": [
+            {
+              "home_owner": "Jordan Iden",
+              "home_team": "New Rhules",
+              "home_score": 152.6,
+              "away_owner": "Trenton Holm",
+              "away_team": "-Ladiesman217-",
+              "away_score": 88.8,
+              "winner_owner": "Jordan Iden",
+              "margin": 63.8,
+              "week": 16,
+              "year": 2025
+            },
+            {
+              "home_owner": "Marlene Holm",
+              "home_team": "Holm Girl",
+              "home_score": 143.55,
+              "away_owner": "Julie Mikesell",
+              "away_team": "OCD  Mama",
+              "away_score": 160.3,
+              "winner_owner": "Julie Mikesell",
+              "margin": 16.75,
+              "week": 16,
+              "year": 2025
+            },
+            {
+              "home_owner": "Darin Mikesell",
+              "home_team": "Bandito Burrito",
+              "home_score": 123.9,
+              "away_owner": "bryce mikesell",
+              "away_team": "S\u00e9nior Quack",
+              "away_score": 119.6,
+              "winner_owner": "Darin Mikesell",
+              "margin": 4.3,
+              "week": 16,
+              "year": 2025
+            }
+          ]
+        },
+        {
+          "round_name": "Championship & Podium Games",
+          "week": 17,
+          "matches": [
+            {
+              "home_owner": "Jordan Iden",
+              "home_team": "New Rhules",
+              "home_score": 114.85,
+              "away_owner": "Julie Mikesell",
+              "away_team": "OCD  Mama",
+              "away_score": 158.8,
+              "winner_owner": "Julie Mikesell",
+              "margin": 43.95,
+              "week": 17,
+              "year": 2025
+            },
+            {
+              "home_owner": "Marlene Holm",
+              "home_team": "Holm Girl",
+              "home_score": 99.6,
+              "away_owner": "Trenton Holm",
+              "away_team": "-Ladiesman217-",
+              "away_score": 105.65,
+              "winner_owner": "Trenton Holm",
+              "margin": 6.05,
+              "week": 17,
+              "year": 2025
+            },
+            {
+              "home_owner": "Darin Mikesell",
+              "home_team": "Bandito Burrito",
+              "home_score": 126.05,
+              "away_owner": "bryce mikesell",
+              "away_team": "S\u00e9nior Quack",
+              "away_score": 118.2,
+              "winner_owner": "Darin Mikesell",
+              "margin": 7.85,
+              "week": 17,
+              "year": 2025
+            }
+          ]
+        }
+      ],
+      "consolation_rounds": [
+        {
+          "round_name": "Quarterfinals (Rd 1)",
+          "week": 15,
+          "matches": [
+            {
+              "home_owner": "Valissa Olvera",
+              "home_team": "Cherry Bombs",
+              "home_score": 142.3,
+              "away_owner": "David Holm",
+              "away_team": "Blatant Rule Breaker",
+              "away_score": 90.25,
+              "winner_owner": "Valissa Olvera",
+              "margin": 52.05,
+              "week": 15,
+              "year": 2025
+            },
+            {
+              "home_owner": "Desmon Holton",
+              "home_team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+              "home_score": 103.8,
+              "away_owner": "Rey Igliane",
+              "away_team": "Radical",
+              "away_score": 135.4,
+              "winner_owner": "Rey Igliane",
+              "margin": 31.6,
+              "week": 15,
+              "year": 2025
+            }
+          ]
+        },
+        {
+          "round_name": "Semifinals (Rd 2)",
+          "week": 16,
+          "matches": [
+            {
+              "home_owner": "Valissa Olvera",
+              "home_team": "Cherry Bombs",
+              "home_score": 120.35,
+              "away_owner": "Rey Igliane",
+              "away_team": "Radical",
+              "away_score": 133.65,
+              "winner_owner": "Rey Igliane",
+              "margin": 13.3,
+              "week": 16,
+              "year": 2025
+            },
+            {
+              "home_owner": "David Holm",
+              "home_team": "Blatant Rule Breaker",
+              "home_score": 107.65,
+              "away_owner": "Desmon Holton",
+              "away_team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+              "away_score": 91.7,
+              "winner_owner": "David Holm",
+              "margin": 15.95,
+              "week": 16,
+              "year": 2025
+            }
+          ]
+        },
+        {
+          "round_name": "Championship & Podium Games",
+          "week": 17,
+          "matches": [
+            {
+              "home_owner": "David Holm",
+              "home_team": "Blatant Rule Breaker",
+              "home_score": 85.1,
+              "away_owner": "Rey Igliane",
+              "away_team": "Radical",
+              "away_score": 93.65,
+              "winner_owner": "Rey Igliane",
+              "margin": 8.55,
+              "week": 17,
+              "year": 2025
+            },
+            {
+              "home_owner": "Valissa Olvera",
+              "home_team": "Cherry Bombs",
+              "home_score": 105.35,
+              "away_owner": "Desmon Holton",
+              "away_team": "L\u00c3\u00b8CK D\u00c3\u00b8WN",
+              "away_score": 56.05,
+              "winner_owner": "Valissa Olvera",
+              "margin": 49.3,
+              "week": 17,
+              "year": 2025
+            }
+          ]
+        }
+      ]
     }
   },
   "trades_data": [
