@@ -1423,22 +1423,22 @@ function renderBrackets() {
               const safeHome = m.home_owner.replace(/'/g, "\\'");
               const safeAway = m.away_owner.replace(/'/g, "\\'");
 
-              return \`
+              return `
                 <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 shadow-lg hover:border-slate-700 transition space-y-2">
                   <div class="flex items-center justify-between gap-2">
-                    <button onclick="openLineupModal(\${m.year}, \${m.week}, '\${safeHome}')" class="text-left flex-1 truncate group focus:outline-none">
-                      <span class="font-bold text-xs \${homeWon ? 'text-emerald-400' : 'text-slate-300'} group-hover:text-emerald-300 transition">\${m.home_owner}</span>
+                    <button onclick="openLineupModal(${m.year}, ${m.week}, '${safeHome}')" class="text-left flex-1 truncate group focus:outline-none">
+                      <span class="font-bold text-xs ${homeWon ? 'text-emerald-400' : 'text-slate-300'} group-hover:text-emerald-300 transition">${m.home_owner}</span>
                     </button>
-                    <span class="font-mono text-xs font-bold \${homeWon ? 'text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded' : 'text-slate-500'}">\${m.home_score.toFixed(1)}</span>
+                    <span class="font-mono text-xs font-bold ${homeWon ? 'text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded' : 'text-slate-500'}">${m.home_score.toFixed(1)}</span>
                   </div>
                   <div class="h-px bg-slate-800/80"></div>
                   <div class="flex items-center justify-between gap-2">
-                    <button onclick="openLineupModal(\${m.year}, \${m.week}, '\${safeAway}')" class="text-left flex-1 truncate group focus:outline-none">
-                      <span class="font-bold text-xs \${awayWon ? 'text-emerald-400' : 'text-slate-300'} group-hover:text-emerald-300 transition">\${m.away_owner}</span>
+                    <button onclick="openLineupModal(${m.year}, ${m.week}, '${safeAway}')" class="text-left flex-1 truncate group focus:outline-none">
+                      <span class="font-bold text-xs ${awayWon ? 'text-emerald-400' : 'text-slate-300'} group-hover:text-emerald-300 transition">${m.away_owner}</span>
                     </button>
-                    <span class="font-mono text-xs font-bold \${awayWon ? 'text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded' : 'text-slate-500'}">\${m.away_score.toFixed(1)}</span>
+                    <span class="font-mono text-xs font-bold ${awayWon ? 'text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded' : 'text-slate-500'}">${m.away_score.toFixed(1)}</span>
                   </div>
-                </div>\`;
+                </div>`;
             }).join('')}
           </div>
         </div>
