@@ -18,13 +18,13 @@ class NpEncoder(json.JSONEncoder):
 conn = sqlite3.connect("league_history.db")
 cursor = conn.cursor()
 
-# Check which tables exist in the database
+# Safely check which tables exist
 existing_tables = [r[0] for r in cursor.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()]
 
 df_matchups = pd.read_sql_query("SELECT * FROM matchups", conn) if "matchups" in existing_tables else pd.DataFrame()
 df_teams_hist = pd.read_sql_query("SELECT * FROM teams_history", conn) if "teams_history" in existing_tables else pd.DataFrame()
 df_players = pd.read_sql_query("SELECT * FROM player_box_scores", conn) if "player_box_scores" in existing_tables else pd.DataFrame()
-df_trans = pd.read_sql_query("SELECT * FROM transactions", conn) if "transactions" in existing_tables else pd.DataFrame()
+df_trans = pd.read_sql_query("SELECT * FROM transactions WHERE trans_type = 'TRADE_ACCEPT'", conn) if "transactions" in existing_tables else pd.DataFrame()
 df_draft = pd.read_sql_query("SELECT * FROM draft_picks", conn) if "draft_picks" in existing_tables else pd.DataFrame()
 
 conn.close()
@@ -239,6 +239,7 @@ if not df_players.empty:
 streaks_data = {}
 if not df_matchups.empty:
     df_sorted_match = df_matchups.sort_values(by=['year', 'week']).copy()
+    
     for manager in manager_profiles.keys():
         mgr_matches = df_sorted_match[(df_sorted_match['home_owner'] == manager) | (df_sorted_match['away_owner'] == manager)]
         results = []
@@ -399,7 +400,7 @@ if not df_matchups.empty:
             'consolation_rounds': structure_bracket(consol_matches)
         }
 
-# 7. Trades Data (Accurate Verified Trades from Transactions Table)
+# 7. Trades Data (VERIFIED TRADES ONLY)
 trades_data = []
 if not df_trans.empty:
     for _, t in df_trans.iterrows():

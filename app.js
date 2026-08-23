@@ -943,8 +943,9 @@ function initBracketControls() {
   years.slice().reverse().forEach(yr => {
     select.add(new Option(`${yr} Postseason`, yr));
   });
-
-  renderBrackets(); // <--- ADD THIS EXACT LINE
+  
+  // Force Brackets to draw immediately on load
+  setTimeout(() => renderBrackets(), 50); 
 }
 
 function initTradeControls() {
@@ -1946,7 +1947,7 @@ function renderBadBeats(matches, gooseEggs) {
 }
 
 // ----------------------------------------------------
-// FRANCHISE CORNERSTONES (MULTI-YEAR)
+// KEEPERS AND FRANCHISE CORNERSTONES (MULTI-YEAR)
 // ----------------------------------------------------
 function renderKeepers() {
   const tbCorner = document.getElementById('keepers-table-body');
@@ -1964,19 +1965,20 @@ function renderKeepers() {
       return (c.years_list || []).some(y => y >= minYr && y <= maxYr);
     }).sort((a, b) => b.starter_pts - a.starter_pts || b.seasons - a.seasons);
 
-    if (!filteredC.length) {
-      tbCorner.innerHTML = `<tr><td colspan="6" class="p-4 text-center text-slate-500">No cornerstones found.</td></tr>`;
-    } else {
-      tbCorner.innerHTML = filteredC.map((c, i) => `
-        <tr class="hover:bg-slate-800/40 transition">
-          <td class="p-3 font-semibold text-slate-500">#${i + 1}</td>
-          <td class="p-3 font-bold text-white">${c.player}</td>
-          <td class="p-3 font-mono text-xs text-slate-400">${c.pos}</td>
-          <td class="p-3">${c.owner}</td>
-          <td class="p-3 text-center text-emerald-400 font-bold">${c.seasons}</td>
-          <td class="p-3 text-right text-emerald-400 font-bold">${c.starter_pts.toFixed(1)}</td>
-        </tr>`).join('');
-    }
+    tbCorner.innerHTML = filteredC.map((c, i) => `
+      <tr class="hover:bg-slate-800/40 transition">
+        <td class="p-3 font-semibold text-slate-500">#${i + 1}</td>
+        <td class="p-3 font-bold text-white">${c.player}</td>
+        <td class="p-3 font-mono text-xs text-slate-400">${c.pos}</td>
+        <td class="p-3">${c.owner}</td>
+        <td class="p-3 text-center text-emerald-400 font-bold">${c.seasons}</td>
+        <td class="p-3">
+          <div class="flex flex-wrap gap-1">
+            ${(c.years_list || []).map(y => `<span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">'${String(y).slice(-2)}</span>`).join('')}
+          </div>
+        </td>
+        <td class="p-3 text-right text-emerald-400 font-bold">${c.starter_pts.toFixed(1)}</td>
+      </tr>`).join('');
   }
 
   if (tbTrue && RAW_DATA?.true_keepers) {
@@ -1985,19 +1987,15 @@ function renderKeepers() {
       return k.year >= minYr && k.year <= maxYr;
     }).sort((a, b) => b.year - a.year || b.starter_pts - a.starter_pts);
 
-    if (!filteredK.length) {
-      tbTrue.innerHTML = `<tr><td colspan="6" class="p-4 text-center text-slate-500">No official keepers found.</td></tr>`;
-    } else {
-      tbTrue.innerHTML = filteredK.map(k => `
-        <tr class="hover:bg-slate-800/40 transition">
-          <td class="p-3 font-mono text-slate-400">'${String(k.year).slice(-2)}</td>
-          <td class="p-3 font-bold text-white">${k.player}</td>
-          <td class="p-3 font-mono text-xs text-slate-400">${k.pos}</td>
-          <td class="p-3">${k.owner}</td>
-          <td class="p-3 text-center font-mono text-amber-400">Rd ${k.round_num}</td>
-          <td class="p-3 text-right font-mono font-bold text-emerald-400">${k.starter_pts.toFixed(1)} pts</td>
-        </tr>`).join('');
-    }
+    tbTrue.innerHTML = filteredK.map(k => `
+      <tr class="hover:bg-slate-800/40 transition">
+        <td class="p-3 font-mono text-slate-400">'${String(k.year).slice(-2)}</td>
+        <td class="p-3 font-bold text-white">${k.player}</td>
+        <td class="p-3 font-mono text-xs text-slate-400">${k.pos}</td>
+        <td class="p-3">${k.owner}</td>
+        <td class="p-3 text-center font-mono text-amber-400">Rd ${k.round_num}</td>
+        <td class="p-3 text-right font-mono font-bold text-emerald-400">${k.starter_pts.toFixed(1)} pts</td>
+      </tr>`).join('');
   }
 }
 

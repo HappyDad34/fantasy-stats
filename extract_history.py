@@ -343,7 +343,7 @@ def extract_full_season(year):
                        (year, week, m_type, h_id, h_name, h_owner, h_score,
                         a_id, a_name, a_owner, a_score, w_id, w_name, w_owner, margin))
 
-    # Draft Detail & Keepers
+    # Draft Detail
     draft_picks = season_data.get('draftDetail', {}).get('picks', [])
     for pick in draft_picks:
         r_num = pick.get('roundId', 1)
@@ -352,6 +352,7 @@ def extract_full_season(year):
         t_id = pick.get('teamId', 0)
         bid = pick.get('bidAmount', 0)
         p_id = pick.get('playerId', 0)
+        
         is_keeper = 1 if pick.get('keeper') is True or pick.get('reservedForKeeper') is True else 0
 
         p_info = local_player_map.get(p_id) or global_player_map.get(p_id)
@@ -367,17 +368,18 @@ def extract_full_season(year):
         cursor.execute('INSERT INTO draft_picks VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
                        (year, r_num, r_pick, overall, t_id, t_name, o_name, p_name, p_id, bid, is_keeper))
 
-    # Actual Verified Trades
+    # Verified Trades Extraction
     for trans in season_data.get('transactions', []):
-        if trans.get('type') == 'TRADE_ACCEPT':
+        if trans.get('type') in ['TRADE_ACCEPT', 'TRADE']:
             week = trans.get('scoringPeriodId', 1)
             for item in trans.get('items', []):
                 from_id = item.get('fromTeamId')
                 to_id = item.get('toTeamId')
                 p_id = item.get('playerId')
+                
                 if not from_id or not to_id or not p_id or item.get('type') == 'LINEUP':
                     continue
-
+                    
                 p_info = local_player_map.get(p_id) or global_player_map.get(p_id)
                 if p_info:
                     p_name = p_info[0]
@@ -385,10 +387,10 @@ def extract_full_season(year):
                     p_name = KNOWN_PLAYERS[p_id]
                 else:
                     p_name = f"Player {p_id}"
-
-                from_name, from_owner = team_lookup.get(from_id, (f"Team {from_id}", f"Owner {from_id}"))
-                to_name, to_owner = team_lookup.get(to_id, (f"Team {to_id}", f"Owner {to_id}"))
-
+                    
+                _, from_owner = team_lookup.get(from_id, (f"Team {from_id}", f"Owner {from_id}"))
+                _, to_owner = team_lookup.get(to_id, (f"Team {to_id}", f"Owner {to_id}"))
+                
                 cursor.execute('INSERT INTO transactions VALUES (?, ?, ?, ?, ?, ?, ?)',
                                (year, week, 'TRADE_ACCEPT', p_name, p_id, from_owner, to_owner))
 
@@ -434,14 +436,14 @@ def extract_full_season(year):
                         p_pool = entry.get('playerPoolEntry', {})
                         p = p_pool.get('player', {})
                         p_id = p.get('id', entry.get('playerId', 0))
-
+                        
                         if p.get('fullName'):
                             p_name = p.get('fullName')
                         elif p_id in KNOWN_PLAYERS:
                             p_name = KNOWN_PLAYERS[p_id]
                         else:
                             p_name = local_player_map.get(p_id, ("Unknown Player", "FLEX"))[0]
-
+                            
                         pos = POS_MAP.get(p.get('defaultPositionId'), 'FLEX')
                         slot = SLOT_MAP.get(entry.get('lineupSlotId'), 'BE')
 
