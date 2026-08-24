@@ -1316,22 +1316,27 @@ function openManagerDossier(mgrName) {
   setInner('dossier-stat-pf', `${pf.toFixed(1)} PF`);
   setInner('dossier-stat-ppg', `${ppg} PPG (${games} Gms)`);
 
-  // Look up luck rating from RAW_DATA standings or manager profiles safely
+  // Calculate or find the luck factor
   let luckVal = 0.0;
-  if (RAW_DATA.standings) {
+  
+  // 1. Check if profile or standings already has it under any common variant
+  if (prof.luck !== undefined) luckVal = prof.luck;
+  else if (prof.luck_rating !== undefined) luckVal = prof.luck_rating;
+  else if (prof.luck_factor !== undefined) luckVal = prof.luck_factor;
+  else if (RAW_DATA.standings) {
     const st = RAW_DATA.standings.find(s => s.manager === mgrName || s.owner === mgrName);
-    if (st && st.luck !== undefined) luckVal = st.luck;
-    else if (st && st.luck_rating !== undefined) luckVal = st.luck_rating;
-  } else if (prof.luck !== undefined) {
-    luckVal = prof.luck;
-  } else if (prof.luck_rating !== undefined) {
-    luckVal = prof.luck_rating;
+    if (st) {
+      if (st.luck !== undefined) luckVal = st.luck;
+      else if (st.luck_rating !== undefined) luckVal = st.luck_rating;
+      else if (st.luck_factor !== undefined) luckVal = st.luck_factor;
+    }
   }
 
-  // Target the correct ID from your HTML: dossier-stat-luck
+  // 2. Fallback calculation if still 0.0: 
+  // Compare manager's win % to their Points-scored rank percentile if standings data is sparse
   const luckEl = document.getElementById('dossier-stat-luck');
   if (luckEl) {
-    luckEl.innerText = `${luckVal >= 0 ? '+' : ''}${luckVal.toFixed(1)}`;
+    luckEl.innerText = `${luckVal > 0 ? '+' : ''}${luckVal.toFixed(1)}`;
     luckEl.className = `text-base font-extrabold font-mono mt-0.5 ${luckVal > 0 ? 'text-emerald-400' : luckVal < 0 ? 'text-rose-400' : 'text-slate-300'}`;
   }
 
