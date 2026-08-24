@@ -2895,7 +2895,7 @@ function openPlayerDossier(playerName) {
       <td class="p-2 text-center font-mono text-[10px] ${d.is_keeper ? 'text-emerald-400 border border-emerald-500/20 bg-emerald-500/10 rounded px-1' : 'text-slate-500'}">${d.is_keeper ? 'KEEPER' : 'DRAFT'}</td>
     </tr>`).join('') : `<tr><td colspan="4" class="p-2 text-center text-slate-500">Undrafted / FA</td></tr>`;
 
-  document.getElementById('pd-trade-body').innerHTML = p.trade_log.length ? p.trade_log.map(t => `
+document.getElementById('pd-trade-body').innerHTML = p.trade_log.length ? p.trade_log.map(t => `
     <tr class="hover:bg-slate-800/40">
       <td class="p-2 font-mono text-slate-400">'${String(t.year).slice(-2)} (Wk ${t.week})</td>
       <td class="p-2 text-rose-400 line-through truncate max-w-[100px]">${t.from_owner}</td>

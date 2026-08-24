@@ -675,10 +675,13 @@ if not df_draft.empty:
 
 # 9. PLAYER DIRECTORY & CAREER SEARCH
 player_directory = {}
+player_lookup_by_lower = {}
+
 if not df_players.empty:
     for p_name, p_group in df_players.groupby("player_name"):
-        p_name = str(p_name)
-        if p_name == "Unknown Player": continue
+        clean_name = str(p_name).strip()
+        if clean_name in ["Unknown Player", "", "nan", "None"]:
+            continue
         
         pos = str(p_group["position"].iloc[0])
         starters = p_group[~p_group["slot_position"].isin(bench_slots)]
@@ -687,63 +690,96 @@ if not df_players.empty:
         total_pts = float(p_group["points"].sum())
         starts = len(starters)
         games = len(p_group)
-        managers = list(p_group["owner_name"].unique())
+        managers = list(p_group["owner_name"].dropna().unique())
         
         season_log = []
         for (yr, mgr), sp_group in p_group.groupby(["year", "owner_name"]):
             s_stars = sp_group[~sp_group["slot_position"].isin(bench_slots)]
             season_log.append({
                 "year": int(yr),
-                "manager": str(mgr),
-                "starts": len(s_stars),
-                "games": len(sp_group),
+                "manager": str(mgr).strip(),
+                "starts": int(len(s_stars)),
+                "games": int(len(sp_group)),
                 "starter_pts": round(float(s_stars["points"].sum()), 1),
                 "total_pts": round(float(sp_group["points"].sum()), 1)
             })
         season_log.sort(key=lambda x: x["year"], reverse=True)
         
-        player_directory[p_name] = {
-            "name": p_name,
+        p_obj = {
+            "name": clean_name,
             "pos": pos,
             "starter_pts": round(starter_pts, 1),
             "total_pts": round(total_pts, 1),
             "starts": starts,
             "games": games,
-            "managers": managers,
+            "managers": [str(m).strip() for m in managers],
             "season_log": season_log,
             "draft_log": [],
             "trade_log": []
         }
+        
+        player_directory[clean_name] = p_obj
+        player_lookup_by_lower[clean_name.lower()] = p_obj
 
+# Map Draft & Keeper History into Player Profiles
 if not df_draft.empty:
     for _, d in df_draft.iterrows():
-        p_name = str(d['player_name'])
-        if p_name in player_directory:
-            player_directory[p_name]["draft_log"].append({
+        clean_name = str(d.get('player_name', '')).strip()
+        p_obj = player_lookup_by_lower.get(clean_name.lower())
+        
+        # If drafted player has no box scores yet (e.g. 2026 rookie), create profile
+        if not p_obj and clean_name not in ["Unknown Player", "", "nan", "None"]:
+            p_obj = {
+                "name": clean_name,
+                "pos": "FLEX",
+                "starter_pts": 0.0,
+                "total_pts": 0.0,
+                "starts": 0,
+                "games": 0,
+                "managers": [str(d.get('owner_name', '')).strip()],
+                "season_log": [],
+                "draft_log": [],
+                "trade_log": []
+            }
+            player_directory[clean_name] = p_obj
+            player_lookup_by_lower[clean_name.lower()] = p_obj
+            
+        if p_obj:
+            p_obj["draft_log"].append({
                 "year": int(d["year"]),
                 "round_num": int(d["round_num"]),
                 "overall_pick": int(d["overall_pick"]),
-                "manager": str(d["owner_name"]),
-                "bid_amount": int(d.get("bid_amount", 0)),
+                "manager": str(d.get("owner_name", "")).strip(),
+                "bid_amount": int(d.get("bid_amount", 0) or 0),
                 "is_keeper": bool(d.get("keeper", 0))
             })
 
-if not df_trans.empty:
-    for _, t in df_trans.iterrows():
-        p_name = str(t['player_name'])
-        if p_name in player_directory:
-            player_directory[p_name]["trade_log"].append({
+# Map Verified Trades directly from the clean trades_data list
+for t in trades_data:
+    clean_name = str(t.get('player', '')).strip()
+    p_obj = player_lookup_by_lower.get(clean_name.lower())
+    if p_obj:
+        # Avoid duplicate log entries for the same trade
+        exists = any(
+            x['year'] == int(t['year']) and x['week'] == int(t['week']) and x['to_owner'] == str(t['to_owner']).strip()
+            for x in p_obj["trade_log"]
+        )
+        if not exists:
+            p_obj["trade_log"].append({
                 "year": int(t["year"]),
                 "week": int(t["week"]),
-                "from_owner": str(t["from_owner"]),
-                "to_owner": str(t["to_owner"])
+                "from_owner": str(t.get("from_owner", "")).strip(),
+                "to_owner": str(t.get("to_owner", "")).strip(),
+                "pts_produced": float(t.get("pts_produced", 0.0))
             })
+            if str(t.get("to_owner", "")).strip() not in p_obj["managers"]:
+                p_obj["managers"].append(str(t.get("to_owner", "")).strip())
 
 for p in player_directory.values():
     p["draft_log"].sort(key=lambda x: x["year"], reverse=True)
     p["trade_log"].sort(key=lambda x: (x["year"], x["week"]), reverse=True)
 
-player_directory_list = sorted(list(player_directory.values()), key=lambda x: x["starter_pts"], reverse=True)
+player_directory_list = sorted(list(player_directory.values()), key=lambda x: (x["starter_pts"], x["starts"]), reverse=True)
 
 web_payload = {
     "years": [int(y) for y in all_years],
