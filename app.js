@@ -3174,6 +3174,39 @@ function renderDraftCurveChart() {
   });
 }
 
+// ----------------------------------------------------
+// CSV EXPORT UTILITY
+// ----------------------------------------------------
+function exportTableToCSV(tableId, filename) {
+  const table = document.getElementById(tableId);
+  if (!table) return;
+
+  let csv = [];
+  const rows = table.querySelectorAll("tr");
+
+  for (let i = 0; i < rows.length; i++) {
+    let row = [], cols = rows[i].querySelectorAll("td, th");
+
+    for (let j = 0; j < cols.length; j++) {
+      // Clean up inner text (remove emojis, extra spaces, etc. if desired, or keep as is)
+      let data = cols[j].innerText.replace(/(\r\n|\n|\r)/gm, " ").trim();
+      // Escape double quotes
+      data = data.replace(/"/g, '""');
+      row.push('"' + data + '"');
+    }
+    csv.push(row.join(","));
+  }
+
+  const csvFile = new Blob([csv.join("\n")], { type: "text/csv" });
+  const downloadLink = document.createElement("a");
+  downloadLink.download = filename;
+  downloadLink.href = window.URL.createObjectURL(csvFile);
+  downloadLink.style.display = "none";
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  document.body.removeChild(downloadLink);
+}
+
 // Auto-inject "?" buttons next to all major section headers
 setTimeout(() => {
   document.querySelectorAll('section > div > div > h2').forEach(h2 => {

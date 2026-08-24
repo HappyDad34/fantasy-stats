@@ -232,10 +232,16 @@
             <h2 class="font-semibold text-slate-200">Cumulative Performance & Luck Analysis</h2>
             <p class="text-xs text-slate-400 mt-0.5">Click any manager to open their comprehensive Franchise Dossier.</p>
           </div>
-          <span class="text-xs text-slate-400 font-mono">All-Play Luck = Expected Wins vs Actual</span>
+          <div class="flex flex-col items-end gap-2">
+            <span class="text-xs text-slate-400 font-mono">All-Play Luck = Expected Wins vs Actual</span>
+            <button onclick="exportTableToCSV('standings-table', 'all_time_standings.csv')" class="bg-slate-800 hover:bg-slate-700 text-xs font-bold px-3 py-1.5 rounded text-slate-300 transition flex items-center gap-1.5 shadow">
+              <span>⬇️</span> Export CSV
+            </button>
+          </div>
         </div>
         <div class="overflow-x-auto">
-          <table class="w-full text-left text-sm text-slate-300">
+          <!-- Note the new id="standings-table" added below! -->
+          <table id="standings-table" class="w-full text-left text-sm text-slate-300">
             <thead class="bg-slate-800/60 text-xs uppercase tracking-wider text-slate-400">
               <tr>
                 <th class="p-3">Rank</th>
@@ -673,11 +679,15 @@
           </div>
           <div class="flex flex-wrap items-center gap-3">
             <select id="tradeManagerFilter" onchange="renderTrades()" class="bg-slate-800 text-xs border border-slate-700 rounded px-3 py-1.5 text-white focus:ring-1 focus:ring-emerald-400"></select>
+            <button onclick="exportTableToCSV('trades-table', 'trade_ledger.csv')" class="bg-slate-800 hover:bg-slate-700 text-xs font-bold px-3 py-1.5 rounded text-slate-300 transition flex items-center gap-1.5 shadow">
+              <span>⬇️</span> Export CSV
+            </button>
           </div>
         </div>
 
         <div class="overflow-x-auto">
-          <table class="w-full text-left text-sm text-slate-300">
+          <!-- Note the new id="trades-table" added below! -->
+          <table id="trades-table" class="w-full text-left text-sm text-slate-300">
             <thead class="bg-slate-800/60 text-xs uppercase tracking-wider text-slate-400">
               <tr>
                 <th class="p-3">Season</th>
