@@ -781,6 +781,88 @@ for p in player_directory.values():
 
 player_directory_list = sorted(list(player_directory.values()), key=lambda x: (x["starter_pts"], x["starts"]), reverse=True)
 
+# 10. LINEUP EFFICIENCY & OPTIMAL DELTA (The "Perfect Manager" Metric)
+efficiency_manager_stats = {}
+
+if not df_players.empty:
+    for (yr, wk, t_name, owner), group in df_players.groupby(["year", "week", "team_name", "owner_name"]):
+        if owner in [None, "None", "nan", ""]: continue
+        
+        if owner not in efficiency_manager_stats:
+            efficiency_manager_stats[owner] = {
+                "games": 0,
+                "actual_starter_pts": 0.0,
+                "bench_pts": 0.0,
+                "optimal_pts": 0.0
+            }
+            
+        efficiency_manager_stats[owner]["games"] += 1
+        
+        # Separate starters and bench
+        starters = group[~group["slot_position"].isin(bench_slots)]
+        bench = group[group["slot_position"].isin(bench_slots)]
+        
+        act_pts = float(starters["points"].sum())
+        b_pts = float(bench["points"].sum())
+        
+        efficiency_manager_stats[owner]["actual_starter_pts"] += act_pts
+        efficiency_manager_stats[owner]["bench_pts"] += b_pts
+        
+        # Calculate theoretical optimal score based on standard position availability
+        # We group all rostered players by their default position
+        all_players = group.sort_values(by="points", ascending=False)
+        
+        # Simple optimal slot heuristic based on standard rosters: 1 QB, 2 RB, 2 WR, 1 TE, 1 Flex, 1 D/ST, 1 K
+        pos_limits = {'QB': 1, 'RB': 2, 'WR': 2, 'TE': 1, 'K': 1, 'D/ST': 1, 'FLEX': 1}
+        pos_filled = {'QB': 0, 'RB': 0, 'WR': 0, 'TE': 0, 'K': 0, 'D/ST': 0}
+        flex_candidates = []
+        opt_total = 0.0
+        
+        for _, pl in all_players.iterrows():
+            pos = str(pl['position'])
+            pts = float(pl['points'])
+            
+            if pos in pos_filled and pos_filled[pos] < pos_limits[pos]:
+                pos_filled[pos] += 1
+                opt_total += pts
+            elif pos in ['RB', 'WR', 'TE']:
+                flex_candidates.append(pts)
+                
+        # Fill Flex spots from leftover RB/WR/TE sorted descending
+        flex_limit = pos_limits.get('FLEX', 1)
+        flex_candidates.sort(reverse=True)
+        for f_pts in flex_candidates[:flex_limit]:
+            opt_total += f_pts
+            
+        # Fallback safeguard: Optimal can never be less than actual points started
+        opt_total = max(opt_total, act_pts)
+        efficiency_manager_stats[owner]["optimal_pts"] += opt_total
+
+efficiency_payload = []
+for owner, data in efficiency_manager_stats.items():
+    games = data["games"]
+    if games == 0: continue
+    
+    act_ppg = data["actual_starter_pts"] / games
+    bench_ppg = data["bench_pts"] / games
+    opt_ppg = data["optimal_pts"] / games
+    
+    # Efficiency ratio: Actual PPG / Optimal PPG
+    eff_pct = (act_ppg / opt_ppg * 100.0) if opt_ppg > 0 else 0.0
+    
+    efficiency_payload.append({
+        "manager": owner,
+        "games": games,
+        "actual_ppg": round(act_ppg, 2),
+        "bench_ppg": round(bench_ppg, 2),
+        "optimal_ppg": round(opt_ppg, 2),
+        "efficiency_pct": round(eff_pct, 1),
+        "ratio": round(data["bench_pts"] / max(data["actual_starter_pts"], 1), 3)
+    })
+
+efficiency_payload.sort(key=lambda x: x["efficiency_pct"], reverse=True)
+
+
 web_payload = {
     "years": [int(y) for y in all_years],
     "manager_profiles": manager_profiles,

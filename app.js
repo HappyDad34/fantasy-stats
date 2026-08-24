@@ -2565,49 +2565,68 @@ function renderEfficiency(rosterStats) {
   const tbody = document.getElementById('efficiency-body');
   if (!tbody) return;
 
-  if (!rosterStats || rosterStats.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="6" class="p-6 text-center text-slate-500">No roster entries match this filter criteria.</td></tr>`;
-    return;
+  // Fallback to RAW_DATA payload if rosterStats isn't passed or is empty
+  let list = [];
+  
+  if (rosterStats && rosterStats.length > 0) {
+    const managerMap = {};
+    rosterStats.forEach(r => {
+      if (!managerMap[r.owner]) {
+        managerMap[r.owner] = { owner: r.owner, start_pts: 0, bench_pts: 0, games: 0, optimal_pts: 0 };
+      }
+      managerMap[r.owner].start_pts += r.start_pts;
+      managerMap[r.owner].bench_pts += r.bench_pts;
+      managerMap[r.owner].games += 1;
+      // Approximate optimal if filtering dynamically, or fallback safely
+      managerMap[r.owner].optimal_pts += Math.max(r.start_pts, r.start_pts + (r.bench_pts * 0.2)); 
+    });
+
+    list = Object.values(managerMap)
+      .filter(m => m.games > 0)
+      .map(m => {
+        const actual_ppg = m.start_pts / m.games;
+        const bench_ppg = m.bench_pts / m.games;
+        const optimal_ppg = m.optimal_pts / m.games;
+        const efficiency_pct = optimal_ppg > 0 ? (actual_ppg / optimal_ppg) * 100 : 0;
+        return { manager: m.owner, games: m.games, actual_ppg, bench_ppg, optimal_ppg, efficiency_pct };
+      })
+      .sort((a, b) => b.efficiency_pct - a.efficiency_pct); // Sorted high to low efficiency
+  } else if (RAW_DATA?.efficiency_data) {
+    // Use pre-computed backend efficiency payload
+    list = [...RAW_DATA.efficiency_data];
   }
 
-  const managerMap = {};
-  rosterStats.forEach(r => {
-    if (!managerMap[r.owner]) {
-      managerMap[r.owner] = { owner: r.owner, start_pts: 0, bench_pts: 0, games: 0 };
-    }
-    managerMap[r.owner].start_pts += r.start_pts;
-    managerMap[r.owner].bench_pts += r.bench_pts;
-    managerMap[r.owner].games += 1;
-  });
-
-  const list = Object.values(managerMap)
-    .filter(m => m.games > 0)
-    .map(m => {
-      const avgStart = m.start_pts / m.games;
-      const avgBench = m.bench_pts / m.games;
-      const benchRatio = avgStart > 0 ? (avgBench / avgStart) * 100 : 0;
-      return { ...m, avgStart, avgBench, benchRatio };
-    })
-    .sort((a, b) => a.benchRatio - b.benchRatio);
+  if (list.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="7" class="p-6 text-center text-slate-500">No roster entries match this filter criteria.</td></tr>`;
+    return;
+  }
 
   tbody.innerHTML = list.map((item, idx) => {
     let rankBadge = "text-slate-400";
     if (idx < 3) rankBadge = "text-emerald-400 font-bold";
     if (idx >= list.length - 3 && list.length > 5) rankBadge = "text-rose-400 font-bold";
-    const safeMgr = item.owner.replace(/'/g, "\\'");
+    
+    const mgrName = item.owner || item.manager;
+    const safeMgr = mgrName.replace(/'/g, "\\'");
+    const gamesCount = item.games;
+    const actualPPG = item.avgStart !== undefined ? item.avgStart : item.actual_ppg;
+    const optPPG = item.optimal_ppg !== undefined ? item.optimal_ppg : actualPPG; // Safe fallback
+    const benchPPG = item.avgBench !== undefined ? item.avgBench : item.bench_ppg;
+    const effPct = item.efficiency_pct !== undefined ? item.efficiency_pct : (item.benchRatio ? (100 - item.benchRatio) : 0);
 
     return `
       <tr class="hover:bg-slate-800/40 transition">
         <td class="p-3 font-semibold ${rankBadge}">#${idx + 1}</td>
         <td class="p-3">
           <button onclick="openManagerDossier('${safeMgr}')" class="font-bold text-slate-100 hover:text-emerald-400 text-left transition">
-            ${item.owner}
+            ${mgrName}
           </button>
         </td>
-        <td class="p-3 text-center font-mono text-slate-400">${item.games}</td>
-        <td class="p-3 text-right font-mono text-emerald-400">${item.avgStart.toFixed(1)}</td>
-        <td class="p-3 text-right font-mono text-slate-400">${item.avgBench.toFixed(1)}</td>
-        <td class="p-3 text-right font-mono font-bold ${rankBadge}">${item.benchRatio.toFixed(1)}%</td>
+        <td class="p-3 text-center font-mono text-slate-400">${gamesCount}</td>
+        <td class="p-3 text-right font-mono text-slate-200">${actualPPG.toFixed(1)}</td>
+        <td class="p-3 text-right font-mono text-amber-400 font-bold">${optPPG.toFixed(1)}</td>
+        <td class="p-3 text-right font-mono text-slate-400">${benchPPG.toFixed(1)}</td>
+        <td class="p-3 text-right font-mono font-black ${rankBadge}">${effPct.toFixed(1)}%</td>
       </tr>
     `;
   }).join('');
