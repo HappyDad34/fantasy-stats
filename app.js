@@ -624,6 +624,7 @@ function renderDraftVault() {
   }
 
   renderSeasonDraftBoard();
+  renderDraftCurveChart();
 }
 
 function renderSeasonDraftBoard() {
@@ -3076,6 +3077,84 @@ function renderWhatIf() {
   tb.innerHTML = htmlRows.join('');
   container.classList.remove('hidden');
   container.classList.add('grid');
+}
+
+// ----------------------------------------------------
+// DRAFT PICK VALUE CURVE CHART
+// ----------------------------------------------------
+let draftCurveChartInstance = null;
+
+function renderDraftCurveChart() {
+  const canvas = document.getElementById('draftCurveCanvas');
+  if (!canvas || !RAW_DATA?.draft_vault?.drafts_by_season) return;
+
+  const ctx = canvas.getContext('2d');
+  if (draftCurveChartInstance) draftCurveChartInstance.destroy();
+
+  const scatterData = [];
+  
+  // Flatten all seasons into a single array of data points
+  Object.values(RAW_DATA.draft_vault.drafts_by_season).forEach(seasonPicks => {
+    seasonPicks.forEach(pick => {
+      // Only plot players who actually played and scored points to avoid cluttering 0s at the bottom
+      if (pick.has_played && pick.starter_pts > 0) {
+        scatterData.push({
+          x: pick.overall_pick,
+          y: pick.starter_pts,
+          name: pick.player,
+          manager: pick.owner,
+          year: pick.year
+        });
+      }
+    });
+  });
+
+  draftCurveChartInstance = new Chart(ctx, {
+    type: 'scatter',
+    data: {
+      datasets: [{
+        label: 'Drafted Players',
+        data: scatterData,
+        backgroundColor: 'rgba(52, 211, 153, 0.4)', // Tailwind emerald-400 with opacity
+        borderColor: 'rgba(52, 211, 153, 0.8)',
+        pointRadius: 4,
+        pointHoverRadius: 7
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: 'rgba(15, 23, 42, 0.9)', // slate-900
+          titleColor: '#34d399', // emerald-400
+          bodyColor: '#e2e8f0', // slate-200
+          borderColor: '#1e293b', // slate-800
+          borderWidth: 1,
+          padding: 10,
+          callbacks: {
+            label: function(context) {
+              const pt = context.raw;
+              return `${pt.name} ('${String(pt.year).slice(-2)}) - Pick #${pt.x} | ${pt.y.toFixed(1)} pts (${pt.manager})`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          title: { display: true, text: 'Overall Draft Pick Number', color: '#94a3b8', font: { weight: 'bold' } },
+          ticks: { color: '#64748b' },
+          grid: { color: '#1e293b' }
+        },
+        y: {
+          title: { display: true, text: 'Total Starter Points Produced', color: '#94a3b8', font: { weight: 'bold' } },
+          ticks: { color: '#64748b' },
+          grid: { color: '#1e293b' }
+        }
+      }
+    }
+  });
 }
 
 // Auto-inject "?" buttons next to all major section headers
