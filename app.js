@@ -1319,21 +1319,19 @@ function openManagerDossier(mgrName) {
   // Look up luck rating from RAW_DATA standings or manager profiles safely
   let luckVal = 0.0;
   if (RAW_DATA.standings) {
-    const standingMatch = RAW_DATA.standings.find(s => s.manager === mgrName || s.owner === mgrName);
-    if (standingMatch && standingMatch.luck !== undefined) {
-      luckVal = standingMatch.luck;
-    } else if (standingMatch && standingMatch.luck_rating !== undefined) {
-      luckVal = standingMatch.luck_rating;
-    }
+    const st = RAW_DATA.standings.find(s => s.manager === mgrName || s.owner === mgrName);
+    if (st && st.luck !== undefined) luckVal = st.luck;
+    else if (st && st.luck_rating !== undefined) luckVal = st.luck_rating;
   } else if (prof.luck !== undefined) {
     luckVal = prof.luck;
   } else if (prof.luck_rating !== undefined) {
     luckVal = prof.luck_rating;
   }
 
-  const luckEl = document.getElementById('dossier-luck');
+  // Target the correct ID from your HTML: dossier-stat-luck
+  const luckEl = document.getElementById('dossier-stat-luck');
   if (luckEl) {
-    luckEl.innerText = `${luckVal > 0 ? '+' : ''}${luckVal.toFixed(1)}`;
+    luckEl.innerText = `${luckVal >= 0 ? '+' : ''}${luckVal.toFixed(1)}`;
     luckEl.className = `text-base font-extrabold font-mono mt-0.5 ${luckVal > 0 ? 'text-emerald-400' : luckVal < 0 ? 'text-rose-400' : 'text-slate-300'}`;
   }
 
