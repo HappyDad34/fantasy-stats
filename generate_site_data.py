@@ -782,7 +782,7 @@ for p in player_directory.values():
 player_directory_list = sorted(list(player_directory.values()), key=lambda x: (x["starter_pts"], x["starts"]), reverse=True)
 
 
-# 9.1 CORNERSTONE PLAYERS EXTRACTION (Filtered by 7+ starter games minimum)
+# 9.1 CORNERSTONE PLAYERS EXTRACTION (Multi-Season Roster Tenure)
 cornerstone_payload = []
 
 if not df_players.empty:
@@ -791,29 +791,35 @@ if not df_players.empty:
         clean_name = str(p_name).strip()
         if clean_name in ["Unknown Player", "", "nan", "None"]: continue
         
-        # Filter for starter games only (exclude bench slots)
-        starters_group = p_group[~p_group["slot_position"].isin(bench_slots)].sort_values(by=["year", "week"])
-        total_starter_games = len(starters_group)
+        # Look at all box score entries for this player under this manager (bench or starter)
+        roster_entries = p_group.sort_values(by=["year", "week"])
+        total_games_on_roster = len(roster_entries)
         
-        # Rule: Must have been a starter for at least 7 weeks total under this manager
-        if total_starter_games < 7: continue
+        if total_games_on_roster == 0: continue
         
-        seasons_played = sorted(starters_group["year"].unique())
-        p_pos = str(starters_group["position"].iloc[0])
-        total_starter_pts = float(starters_group["points"].sum())
-        seasons_str = ", ".join([str(s)[-2:] for s in seasons_played])
+        # Get unique seasons they were on this roster
+        seasons_played = sorted(roster_entries["year"].unique())
         
-        cornerstone_payload.append({
-            "owner": owner,
-            "manager": owner, # ensuring both keys work for frontend compatibility
-            "player": clean_name,
-            "pos": p_pos,
-            "starter_games": total_starter_games,
-            "starter_pts": round(total_starter_pts, 1),
-            "seasons": len(seasons_played),
-            "tenure": len(seasons_played), # matching table column name
-            "years_display": seasons_str
-        })
+        # Rule: Must have been on the roster across more than 1 season (2+ seasons)
+        if len(seasons_played) >= 2:
+            p_pos = str(roster_entries["position"].iloc[0])
+            total_starter_pts = float(roster_entries[~roster_entries["slot_position"].isin(bench_slots)]["points"].sum())
+            total_starter_games = len(roster_entries[~roster_entries["slot_position"].isin(bench_slots)])
+            seasons_str = ", ".join([str(s)[-2:] for s in seasons_played])
+            
+            cornerstone_payload.append({
+                "owner": owner,
+                "manager": owner,
+                "player": clean_name,
+                "pos": p_pos,
+                "starter_games": total_starter_games,
+                "games_on_roster": total_games_on_roster,
+                "starter_pts": round(total_starter_pts, 1),
+                "seasons": len(seasons_played),
+                "tenure": len(seasons_played),
+                "years_list": seasons_played,
+                "years_display": seasons_str
+            })
 
 # 10. LINEUP EFFICIENCY & OPTIMAL DELTA (The "Perfect Manager" Metric)
 efficiency_manager_stats = {}

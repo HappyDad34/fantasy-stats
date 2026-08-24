@@ -2091,27 +2091,26 @@ function renderKeepers() {
   const selectedManager = document.getElementById('keeper-manager-filter')?.value || 'all';
 
   if (tbCorner && RAW_DATA?.cornerstone_stats) {
-    // Dropdown now measures minimum starter weeks (defaulting to 7)
-    const minWeeks = parseInt(document.getElementById('keeper-min-seasons')?.value) || 7;
+    const minSeasons = parseInt(document.getElementById('keeper-min-seasons')?.value) || 2;
     
     const filteredC = RAW_DATA.cornerstone_stats.filter(c => {
       const mgr = c.owner || c.manager;
       if (selectedManager !== 'all' && mgr !== selectedManager) return false;
       
-      const gamesCount = c.starter_games !== undefined ? c.starter_games : (c.games || 0);
-      if (gamesCount < minWeeks) return false;
+      const seasonsCount = c.seasons || c.tenure || 0;
+      if (seasonsCount < minSeasons) return false;
       
       const yearsList = c.years_list || (c.years_display ? c.years_display.split(',').map(y => parseInt('20' + y.trim())) : []);
       if (yearsList.length > 0) {
         return yearsList.some(y => y >= minYr && y <= maxYr);
       }
       return true;
-    }).sort((a, b) => (b.starter_pts || 0) - (a.starter_pts || 0) || (b.starter_games || 0) - (a.starter_games || 0));
+    }).sort((a, b) => (b.seasons || 0) - (a.seasons || 0) || (b.starter_pts || 0) - (a.starter_pts || 0));
 
     tbCorner.innerHTML = filteredC.map((c, i) => {
       const mgrName = c.owner || c.manager || '--';
       const safeMgr = mgrName.replace(/'/g, "\\'");
-      const gamesCount = c.starter_games !== undefined ? c.starter_games : (c.games || 0);
+      const seasonsCount = c.seasons || c.tenure || 0;
       const yearsDisplay = c.years_display || (c.years_list || []).map(y => `'${String(y).slice(-2)}`).join(', ');
 
       return `
@@ -2124,7 +2123,7 @@ function renderKeepers() {
               ${mgrName}
             </button>
           </td>
-          <td class="p-3 text-center text-emerald-400 font-bold font-mono">${gamesCount} Games</td>
+          <td class="p-3 text-center text-emerald-400 font-bold font-mono">${seasonsCount} Seasons</td>
           <td class="p-3 text-slate-400 font-mono text-xs">${yearsDisplay}</td>
           <td class="p-3 text-right text-amber-400 font-bold font-mono">${(c.starter_pts || 0).toFixed(1)}</td>
         </tr>`;
