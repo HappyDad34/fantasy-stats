@@ -15,7 +15,7 @@ if sys.stdout.encoding != 'utf-8':
 LEAGUE_ID = int(os.getenv("ESPN_LEAGUE_ID", "12345678"))
 SWID = os.getenv("ESPN_SWID", "{YOUR-LOCAL-SWID}")
 ESPN_S2 = os.getenv("ESPN_S2", "YOUR-LOCAL-ESPN_S2")
-YEARS = list(range(2017, 2026))
+YEARS = list(range(2017, 2027))
 
 # Credential guardrail
 if LEAGUE_ID == 12345678 or "YOUR-LOCAL-ESPN_S2" in ESPN_S2 or "{YOUR-LOCAL-SWID}" in SWID:
