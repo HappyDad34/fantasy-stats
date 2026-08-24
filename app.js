@@ -3086,28 +3086,45 @@ let draftCurveChartInstance = null;
 
 function renderDraftCurveChart() {
   const canvas = document.getElementById('draftCurveCanvas');
-  if (!canvas || !RAW_DATA?.draft_vault?.drafts_by_season) return;
+  const seasonSel = document.getElementById('draftCurveSeason');
+  if (!canvas || !seasonSel || !RAW_DATA?.draft_vault?.drafts_by_season) return;
 
+  // Populate dropdown on first load and default to the most recent season
+  if (seasonSel.options.length === 0) {
+    seasonSel.add(new Option('All Time', 'ALL'));
+    RAW_DATA.years.slice().reverse().forEach(yr => {
+      seasonSel.add(new Option(`${yr} Season`, yr));
+    });
+    // Set default to the latest active year
+    if (RAW_DATA.years.length > 0) {
+      seasonSel.value = RAW_DATA.years[RAW_DATA.years.length - 1];
+    }
+  }
+
+  const selectedYr = seasonSel.value;
   const ctx = canvas.getContext('2d');
   if (draftCurveChartInstance) draftCurveChartInstance.destroy();
 
   const scatterData = [];
   
-  // Flatten all seasons into a single array of data points
-  Object.values(RAW_DATA.draft_vault.drafts_by_season).forEach(seasonPicks => {
+  // Filter the data based on the dropdown selection
+  if (selectedYr === 'ALL') {
+    Object.values(RAW_DATA.draft_vault.drafts_by_season).forEach(seasonPicks => {
+      seasonPicks.forEach(pick => {
+        if (pick.has_played && pick.starter_pts > 0) {
+          scatterData.push({ x: pick.overall_pick, y: pick.starter_pts, name: pick.player, manager: pick.owner, year: pick.year });
+        }
+      });
+    });
+  } else {
+    const yrInt = parseInt(selectedYr);
+    const seasonPicks = RAW_DATA.draft_vault.drafts_by_season[yrInt] || [];
     seasonPicks.forEach(pick => {
-      // Only plot players who actually played and scored points to avoid cluttering 0s at the bottom
       if (pick.has_played && pick.starter_pts > 0) {
-        scatterData.push({
-          x: pick.overall_pick,
-          y: pick.starter_pts,
-          name: pick.player,
-          manager: pick.owner,
-          year: pick.year
-        });
+        scatterData.push({ x: pick.overall_pick, y: pick.starter_pts, name: pick.player, manager: pick.owner, year: pick.year });
       }
     });
-  });
+  }
 
   draftCurveChartInstance = new Chart(ctx, {
     type: 'scatter',
