@@ -1378,7 +1378,7 @@ function openManagerDossier(mgrName) {
     setInner('dossier-bunny-record', "-");
   }
 
-  const managerCornerstones = (RAW_DATA.cornerstone_stats || [])
+  const managerCornerstones = (RAW_DATA.cornerstone_stats_b || [])
     .filter(c => c.owner === mgrName)
     .sort((a, b) => b.starter_pts - a.starter_pts)
     .slice(0, 4);
@@ -3424,7 +3424,7 @@ function renderDossierBadges(mgrName) {
      badges.push(`<span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider flex items-center gap-1" title="Highest Career PPG">🔥 Juggernaut</span>`);
   }
 
-// 5. Horseshoe (Most Lucky) & Snakebitten (Most Unlucky)
+  // 5. Horseshoe (Most Lucky) & Snakebitten (Most Unlucky)
   let maxLuck = -999, minLuck = 999;
   let luckyMgr = null, unluckyMgr = null;
   Object.keys(RAW_DATA.manager_profiles).forEach(m => {
@@ -3465,6 +3465,16 @@ function renderDossierBadges(mgrName) {
     if (maxBlowouts > 0 && blowouts[mgrName] === maxBlowouts) {
       badges.push(`<span class="bg-orange-500/10 text-orange-400 border border-orange-500/20 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider flex items-center gap-1" title="Most blowout victories (40+ pt margins)">💥 The Bully</span>`);
     }
+  }
+
+  // Bad Luck / Snakebitten Badge (Lowest Luck Rating < -5.0)
+  let currentLuck = 0.0;
+  if (RAW_DATA.standings) {
+    const st = RAW_DATA.standings.find(s => s.manager === mgrName || s.owner === mgrName);
+    if (st && st.luck !== undefined) currentLuck = st.luck;
+  }
+  if (currentLuck <= -5.0) {
+    badges.push(`<span class="bg-rose-500/10 text-rose-400 border border-rose-500/20 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider flex items-center gap-1" title="Snakebitten: Over 2 wins below expected record">🌧️ Bad Luck</span>`);
   }
 
   container.innerHTML = badges.join('');

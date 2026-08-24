@@ -781,6 +781,60 @@ for p in player_directory.values():
 
 player_directory_list = sorted(list(player_directory.values()), key=lambda x: (x["starter_pts"], x["starts"]), reverse=True)
 
+
+# 9.1 CORNERSTONE PLAYERS EXTRACTION (Filtered by 8+ total starter games or 7+ consecutive starter games)
+cornerstone_payload = []
+
+if not df_players.empty:
+    for (owner, p_name), p_group in df_players.groupby(["owner_name", "player_name"]):
+        if owner in [None, "None", "nan", ""]: continue
+        clean_name = str(p_name).strip()
+        if clean_name in ["Unknown Player", "", "nan", "None"]: continue
+        
+        # Filter for starter games only (exclude bench slots)
+        starters_group = p_group[~p_group["slot_position"].isin(bench_slots)].sort_values(by=["year", "week"])
+        total_starter_games = len(starters_group)
+        
+        if total_starter_games == 0: continue
+        
+        # Calculate max consecutive games played on this manager's team
+        max_consecutive = 0
+        current_streak = 0
+        last_yr, last_wk = -1, -1
+        
+        for _, row in starters_group.iterrows():
+            yr, wk = int(row["year"]), int(row["week"])
+            if last_yr == -1:
+                current_streak = 1
+            else:
+                # Check sequential weeks within season or across season boundary
+                if yr == last_yr and wk == last_wk + 1:
+                    current_streak += 1
+                elif yr == last_yr + 1 and last_wk >= 14 and wk == 1:
+                    current_streak += 1
+                else:
+                    current_streak = 1
+            max_consecutive = max(max_consecutive, current_streak)
+            last_yr, last_wk = yr, wk
+
+        # Apply strict rule: 8+ total starter games OR 7+ consecutive starter games
+        if total_starter_games >= 8 or max_consecutive >= 7:
+            p_pos = str(starters_group["position"].iloc[0])
+            total_starter_pts = float(starters_group["points"].sum())
+            
+            seasons_played = sorted(starters_group["year"].unique())
+            seasons_str = ", ".join([str(s)[-2:] for s in seasons_played])
+            
+            cornerstone_payload.append({
+                "owner": owner,
+                "player": clean_name,
+                "pos": p_pos,
+                "starter_games": total_starter_games,
+                "starter_pts": round(total_starter_pts, 1),
+                "seasons": len(seasons_played),
+                "years_display": seasons_str
+            })
+
 # 10. LINEUP EFFICIENCY & OPTIMAL DELTA (The "Perfect Manager" Metric)
 efficiency_manager_stats = {}
 
@@ -870,7 +924,8 @@ web_payload = {
     "matchups": df_matchups.to_dict(orient="records"),
     "roster_stats": roster_weekly,
     "weekly_players": weekly_top_players,
-    "cornerstone_stats": cornerstones,
+    "cornerstone_stats_b": cornerstones,
+    "cornerstone_stats": cornerstone_payload,
     "true_keepers": true_keepers,
     "goose_eggs": goose_eggs,
     "player_seasons": player_seasons,
