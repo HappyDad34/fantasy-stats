@@ -1432,9 +1432,6 @@ function openManagerDossier(mgrName) {
 let dossierWinsChartInstance = null;
 let dossierPtsChartInstance = null;
 
-let dossierWinsChartInstance = null;
-let dossierPtsChartInstance = null;
-
 function renderDossierCharts(managerName, seasonMap) {
   const seasons = Object.keys(seasonMap).sort((a, b) => parseInt(a) - parseInt(b));
   const winsData = seasons.map(yr => seasonMap[yr].wins);
@@ -1497,10 +1494,7 @@ function renderDossierCharts(managerName, seasonMap) {
       }
     });
   }
-}
 
-  // Render Points Chart
-  const ctxPts = document.getElementById('dossierChartPts')?.getContext('2d');
   if (ctxPts) {
     if (dossierPtsChartInstance) dossierPtsChartInstance.destroy();
     dossierPtsChartInstance = new Chart(ctxPts, {
