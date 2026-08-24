@@ -1464,8 +1464,8 @@ function renderDossierCharts(managerName, seasonMap) {
         maintainAspectRatio: false,
         plugins: { legend: { display: false }, title: { display: true, text: 'Season Wins', color: '#94a3b8', font: { size: 10 } } },
         scales: {
-          x: { ticks: { color: '#64748b', font: { size: 9 } }, grid: { color: '#1e293b' } },
-          y: { ticks: { color: '#64748b', font: { size: 9 }, stepSize: 2 }, grid: { color: '#1e293b' } }
+          x: { ticks: { color: '#64748b', font: { size: 10 }, maxRotation: 0 }, grid: { color: '#1e293b' } },
+          y: { ticks: { color: '#64748b', font: { size: 10 } }, grid: { color: '#1e293b' } }
         }
       }
     });
