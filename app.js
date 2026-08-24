@@ -1399,6 +1399,8 @@ function openManagerDossier(mgrName) {
     }).join('');
   }
 
+  renderDossierBadges(managerName);
+
   modal.classList.remove('hidden');
 }
 
@@ -3205,6 +3207,75 @@ function exportTableToCSV(tableId, filename) {
   document.body.appendChild(downloadLink);
   downloadLink.click();
   document.body.removeChild(downloadLink);
+}
+
+// ----------------------------------------------------
+// DOSSIER ACHIEVEMENT BADGES
+// ----------------------------------------------------
+function renderDossierBadges(mgrName) {
+  const container = document.getElementById('dossier-achievement-badges');
+  if (!container || !RAW_DATA) return;
+
+  let badges = [];
+
+  // 1. Draft Master (Hit Rate > 55%)
+  if (RAW_DATA.draft_vault && RAW_DATA.draft_vault.manager_roi) {
+    const roi = RAW_DATA.draft_vault.manager_roi.find(m => m.manager === mgrName);
+    if (roi && roi.hit_rate >= 55) {
+      badges.push(`<span class="bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider flex items-center gap-1" title="Draft Hit Rate of 55% or higher">🎯 Draft Master</span>`);
+    }
+  }
+
+  // 2. Wheeler & Dealer (Most Trades) & Diamond Hands (Fewest)
+  if (RAW_DATA.trades_data) {
+    const tradeCounts = {};
+    RAW_DATA.trades_data.forEach(t => {
+      tradeCounts[t.to_owner] = (tradeCounts[t.to_owner] || 0) + 1;
+      tradeCounts[t.from_owner] = (tradeCounts[t.from_owner] || 0) + 1;
+    });
+
+    Object.keys(RAW_DATA.manager_profiles).forEach(m => {
+      if (!tradeCounts[m]) tradeCounts[m] = 0; // Ensure 0-trade managers are counted
+    });
+
+    const maxTrades = Math.max(...Object.values(tradeCounts));
+    const minTrades = Math.min(...Object.values(tradeCounts));
+
+    if (tradeCounts[mgrName] === maxTrades && maxTrades > 0) {
+      badges.push(`<span class="bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider flex items-center gap-1" title="Most lifetime trades executed">🤝 Wheeler & Dealer</span>`);
+    } else if (tradeCounts[mgrName] === minTrades) {
+      badges.push(`<span class="bg-slate-700/50 text-slate-300 border border-slate-600 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider flex items-center gap-1" title="Fewest lifetime trades executed">💎 Diamond Hands</span>`);
+    }
+  }
+
+  // 3. Cardiac Kid (Most narrow heartbreak losses < 3 pts)
+  if (RAW_DATA.matchups) {
+    const closeLosses = {};
+    RAW_DATA.matchups.forEach(m => {
+      if (m.margin < 3 && m.winner_owner !== "TIE") {
+        const loser = m.winner_owner === m.home_owner ? m.away_owner : m.home_owner;
+        closeLosses[loser] = (closeLosses[loser] || 0) + 1;
+      }
+    });
+
+    const maxCloseLosses = Math.max(...Object.values(closeLosses), 0);
+    if (maxCloseLosses > 0 && closeLosses[mgrName] === maxCloseLosses) {
+      badges.push(`<span class="bg-rose-500/10 text-rose-400 border border-rose-500/20 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider flex items-center gap-1" title="Most heartbreaking losses by less than 3 points">💔 Cardiac Kid</span>`);
+    }
+  }
+
+  // 4. Juggernaut (Highest Avg PPG)
+  const ppgMap = {};
+  Object.keys(RAW_DATA.manager_profiles).forEach(m => {
+    const prof = RAW_DATA.manager_profiles[m];
+    if (prof.games > 0) ppgMap[m] = prof.points_for / prof.games;
+  });
+  const maxPPG = Math.max(...Object.values(ppgMap));
+  if (ppgMap[mgrName] === maxPPG) {
+     badges.push(`<span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider flex items-center gap-1" title="Highest Career PPG">🔥 Juggernaut</span>`);
+  }
+
+  container.innerHTML = badges.join('');
 }
 
 // Auto-inject "?" buttons next to all major section headers
