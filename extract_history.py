@@ -61,7 +61,19 @@ KNOWN_PLAYERS = {
     13982: "DeMarco Murray",
     13981: "A.J. Green",
     14001: "Randall Cobb",
-    11283: "LeSean McCoy"
+    11283: "LeSean McCoy",
+    4870808: "Jeremiyah Love",
+    4723086: "Colston Loveland",
+    4685512: "Jadarian Price",
+    4685278: "Luther Burden III",
+    4871023: "Carnell Tate",
+    4870795: "Makai Lemon",
+    4710714: "De'Zhaun Stribling",
+    4870653: "KC Concepcion",
+    4242512: "Malik Willis",
+    4574716: "Harrison Mevis",
+    4870847: "Ja'Kobi Lane",
+    4832800: "Denzel Boston"
 }
 
 MANUAL_OVERRIDES = {}
