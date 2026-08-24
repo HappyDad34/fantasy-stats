@@ -1316,8 +1316,21 @@ function openManagerDossier(mgrName) {
   setInner('dossier-stat-pf', `${pf.toFixed(1)} PF`);
   setInner('dossier-stat-ppg', `${ppg} PPG (${games} Gms)`);
 
-  // Pull Luck Rating from manager profile if available
-  const luckVal = prof.luck_rating !== undefined ? prof.luck_rating : 0.0;
+  // Look up luck rating from RAW_DATA standings or manager profiles safely
+  let luckVal = 0.0;
+  if (RAW_DATA.standings) {
+    const standingMatch = RAW_DATA.standings.find(s => s.manager === mgrName || s.owner === mgrName);
+    if (standingMatch && standingMatch.luck !== undefined) {
+      luckVal = standingMatch.luck;
+    } else if (standingMatch && standingMatch.luck_rating !== undefined) {
+      luckVal = standingMatch.luck_rating;
+    }
+  } else if (prof.luck !== undefined) {
+    luckVal = prof.luck;
+  } else if (prof.luck_rating !== undefined) {
+    luckVal = prof.luck_rating;
+  }
+
   const luckEl = document.getElementById('dossier-luck');
   if (luckEl) {
     luckEl.innerText = `${luckVal > 0 ? '+' : ''}${luckVal.toFixed(1)}`;
