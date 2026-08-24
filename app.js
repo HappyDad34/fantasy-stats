@@ -1399,7 +1399,16 @@ function openManagerDossier(mgrName) {
     }).join('');
   }
 
-  renderDossierBadges(managerName);
+  // Safely attempt to render badges
+  try {
+    const safeName = document.getElementById('dossier-mgr-name').innerText;
+    renderDossierBadges(safeName);
+  } catch (err) {
+    console.error("Badge rendering failed:", err);
+  }
+
+  // Open the modal (Ensure this line exists!)
+  document.getElementById('manager-dossier-modal').classList.remove('hidden');
 
   modal.classList.remove('hidden');
 }
