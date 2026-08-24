@@ -1516,19 +1516,22 @@
       </div>
     </div>
 
-    <!-- Season-over-Season Performance Charts -->
-    <div class="space-y-4 pt-4 border-t border-slate-800">
+    <!-- Season-over-Season Progression Charts -->
+    <div class="space-y-3 pt-4 border-t border-slate-800">
       <h4 class="text-xs uppercase font-bold tracking-wider text-slate-300">📈 Season-over-Season Progression</h4>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="bg-slate-950/60 border border-slate-800 p-4 rounded-xl relative h-48">
-          <canvas id="dossierChartWins"></canvas>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-slate-950/60 border border-slate-800 p-3 rounded-xl">
+          <div class="relative h-40 w-full">
+            <canvas id="dossierChartWins"></canvas>
+          </div>
         </div>
-        <div class="bg-slate-950/60 border border-slate-800 p-4 rounded-xl relative h-48">
-          <canvas id="dossierChartPts"></canvas>
+        <div class="bg-slate-950/60 border border-slate-800 p-3 rounded-xl">
+          <div class="relative h-40 w-full">
+            <canvas id="dossierChartPts"></canvas>
+          </div>
         </div>
       </div>
-    </div>    
-  </div>
+    </div>
 
   <!-- LINEUP MODAL -->
   <div id="lineup-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
