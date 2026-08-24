@@ -1,6 +1,7 @@
 import os
 import sqlite3
 import sys
+import json
 import requests
 from espn_api.football import League
 
@@ -44,36 +45,11 @@ KNOWN_TEAM_OWNERS = {
     "wish doctor": "Bryce Mikesell",
 }
 
-# ESPN purges retired players from their active database; this maps their IDs back to their names
+# We keep a few legacy ones here just in case ESPN totally deletes their server records
 KNOWN_PLAYERS = {
     11289: "Jordy Nelson",
     10447: "Drew Brees",
-    11237: "Matt Forte",
-    2580: "Tom Brady",
-    11270: "Jamaal Charles",
-    11288: "DeSean Jackson",
-    8439: "Aaron Rodgers",
-    5536: "Antonio Brown",
-    13994: "Julio Jones",
-    16732: "Kelvin Benjamin",
-    10452: "Marshawn Lynch",
-    15795: "Le'Veon Bell",
-    13982: "DeMarco Murray",
-    13981: "A.J. Green",
-    14001: "Randall Cobb",
-    11283: "LeSean McCoy",
-    4870808: "Jeremiyah Love",
-    4723086: "Colston Loveland",
-    4685512: "Jadarian Price",
-    4685278: "Luther Burden III",
-    4871023: "Carnell Tate",
-    4870795: "Makai Lemon",
-    4710714: "De'Zhaun Stribling",
-    4870653: "KC Concepcion",
-    4242512: "Malik Willis",
-    4574716: "Harrison Mevis",
-    4870847: "Ja'Kobi Lane",
-    4832800: "Denzel Boston"
+    11237: "Matt Forte"
 }
 
 MANUAL_OVERRIDES = {}
@@ -355,8 +331,47 @@ def extract_full_season(year):
                        (year, week, m_type, h_id, h_name, h_owner, h_score,
                         a_id, a_name, a_owner, a_score, w_id, w_name, w_owner, margin))
 
-    # Draft Detail
+    # --- DYNAMIC MISSING PLAYER INTERCEPTOR ---
+    # Gathers all IDs from drafts and trades that ESPN hasn't mapped yet
+    missing_ids = set()
     draft_picks = season_data.get('draftDetail', {}).get('picks', [])
+    for pick in draft_picks:
+        p_id = pick.get('playerId', 0)
+        if p_id and p_id not in local_player_map and p_id not in global_player_map and p_id not in KNOWN_PLAYERS:
+            missing_ids.add(p_id)
+
+    for trans in season_data.get('transactions', []):
+        if trans.get('type') in ['TRADE_ACCEPT', 'TRADE']:
+            for item in trans.get('items', []):
+                p_id = item.get('playerId', 0)
+                if p_id and p_id not in local_player_map and p_id not in global_player_map and p_id not in KNOWN_PLAYERS:
+                    missing_ids.add(p_id)
+
+    # Bulk fetch them from the hidden master directory
+    if missing_ids:
+        print(f"   --> Fetching {len(missing_ids)} missing player names from ESPN Master Database...")
+        filter_json = {"players": {"filterIds": {"value": list(missing_ids)}}}
+        h = headers.copy()
+        h['x-fantasy-filter'] = json.dumps(filter_json)
+        p_params = {"view": "kona_player_info"} if year >= 2019 else {"seasonId": year, "view": "kona_player_info"}
+        
+        try:
+            p_res = requests.get(url_base, params=p_params, cookies=cookies, headers=h)
+            if p_res.status_code == 200:
+                p_data = p_res.json()
+                p_list = p_data[0].get('players', []) if isinstance(p_data, list) else p_data.get('players', [])
+                for p in p_list:
+                    p_obj = p.get('player', p)
+                    fetched_id = p_obj.get('id')
+                    fetched_name = p_obj.get('fullName')
+                    if fetched_id and fetched_name:
+                        pos = POS_MAP.get(p_obj.get('defaultPositionId'), 'FLEX')
+                        global_player_map[fetched_id] = (fetched_name, pos)
+                        local_player_map[fetched_id] = (fetched_name, pos)
+        except Exception as e:
+            print(f"       [!] Failed to fetch missing players: {e}")
+
+    # Draft Detail Insertion
     for pick in draft_picks:
         r_num = pick.get('roundId', 1)
         r_pick = pick.get('roundPickNumber', 1)
@@ -364,6 +379,7 @@ def extract_full_season(year):
         t_id = pick.get('teamId', 0)
         bid = pick.get('bidAmount', 0)
         p_id = pick.get('playerId', 0)
+        
         is_keeper = 1 if pick.get('keeper') is True or pick.get('reservedForKeeper') is True else 0
 
         p_info = local_player_map.get(p_id) or global_player_map.get(p_id)
@@ -447,14 +463,14 @@ def extract_full_season(year):
                         p_pool = entry.get('playerPoolEntry', {})
                         p = p_pool.get('player', {})
                         p_id = p.get('id', entry.get('playerId', 0))
-
+                        
                         if p.get('fullName'):
                             p_name = p.get('fullName')
                         elif p_id in KNOWN_PLAYERS:
                             p_name = KNOWN_PLAYERS[p_id]
                         else:
                             p_name = local_player_map.get(p_id, ("Unknown Player", "FLEX"))[0]
-
+                            
                         pos = POS_MAP.get(p.get('defaultPositionId'), 'FLEX')
                         slot = SLOT_MAP.get(entry.get('lineupSlotId'), 'BE')
 
