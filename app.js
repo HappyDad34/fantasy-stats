@@ -1429,8 +1429,12 @@ function openManagerDossier(mgrName) {
 // ----------------------------------------------------
 // DOSSIER SEASON-OVER-SEASON CHARTS
 // ----------------------------------------------------
-let dossierWinsChartInstance = null;
-let dossierPtsChartInstance = null;
+if (typeof dossierWinsChartInstance === 'undefined') {
+  var dossierWinsChartInstance = null;
+}
+if (typeof dossierPtsChartInstance === 'undefined') {
+  var dossierPtsChartInstance = null;
+}
 
 function renderDossierCharts(managerName, seasonMap) {
   const seasons = Object.keys(seasonMap).sort((a, b) => parseInt(a) - parseInt(b));
@@ -1490,32 +1494,6 @@ function renderDossierCharts(managerName, seasonMap) {
         scales: {
           x: { ticks: { color: '#64748b', font: { size: 9 } }, grid: { color: '#1e293b' } },
           y: { ticks: { color: '#64748b', font: { size: 9 }, grid: { color: '#1e293b' } } }
-        }
-      }
-    });
-  }
-
-  if (ctxPts) {
-    if (dossierPtsChartInstance) dossierPtsChartInstance.destroy();
-    dossierPtsChartInstance = new Chart(ctxPts, {
-      type: 'bar',
-      data: {
-        labels: seasons,
-        datasets: [{
-          label: 'Points For',
-          data: ptsData,
-          backgroundColor: 'rgba(99, 102, 241, 0.5)', // indigo-500 with opacity
-          borderColor: '#6366f1',
-          borderWidth: 1
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: { legend: { display: false }, title: { display: true, text: 'Total Points Scored', color: '#94a3b8', font: { size: 10 } } },
-        scales: {
-          x: { ticks: { color: '#64748b', font: { size: 9 } }, grid: { color: '#1e293b' } },
-          y: { ticks: { color: '#64748b', font: { size: 9 } }, grid: { color: '#1e293b' } }
         }
       }
     });
