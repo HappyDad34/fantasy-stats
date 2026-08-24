@@ -2914,22 +2914,47 @@ function closePlayerDossier() {
 // ----------------------------------------------------
 function initWhatIf() {
   const seasonSel = document.getElementById('whatif-season');
-  const teamSel = document.getElementById('whatif-team');
-  const schedSel = document.getElementById('whatif-schedule');
-  if (!seasonSel || !teamSel || !schedSel || !RAW_DATA) return;
+  if (!seasonSel || !RAW_DATA) return;
 
-  // Populate drop-downs if empty
+  // Populate seasons only once
   if (seasonSel.options.length === 0) {
     RAW_DATA.years.slice().reverse().forEach(yr => seasonSel.add(new Option(yr, yr)));
   }
-  const mgrs = Object.keys(RAW_DATA.manager_profiles).sort();
-  if (teamSel.options.length === 0) {
-    mgrs.forEach(m => {
-      teamSel.add(new Option(m, m));
-      schedSel.add(new Option(m, m));
-    });
-    if(mgrs.length > 1) schedSel.selectedIndex = 1; // Offset default
-  }
+  
+  updateWhatIfManagers();
+}
+
+function updateWhatIfManagers() {
+  const yr = parseInt(document.getElementById('whatif-season').value);
+  const teamSel = document.getElementById('whatif-team');
+  const schedSel = document.getElementById('whatif-schedule');
+  if (!teamSel || !schedSel || !RAW_DATA) return;
+
+  // Save current selections to restore them if that manager also played in the newly selected year
+  const currTeam = teamSel.value;
+  const currSched = schedSel.value;
+
+  teamSel.innerHTML = '';
+  schedSel.innerHTML = '';
+
+  // Filter managers to only those active in the selected year
+  const activeMgrs = Object.keys(RAW_DATA.manager_profiles).filter(m => 
+    RAW_DATA.manager_profiles[m].years_active.includes(yr)
+  ).sort();
+
+  activeMgrs.forEach(m => {
+    teamSel.add(new Option(m, m));
+    schedSel.add(new Option(m, m));
+  });
+
+  // Smart restoration: Keep their selection if valid, otherwise pick defaults
+  if (activeMgrs.includes(currTeam)) teamSel.value = currTeam;
+  else if (activeMgrs.length > 0) teamSel.selectedIndex = 0;
+
+  if (activeMgrs.includes(currSched)) schedSel.value = currSched;
+  else if (activeMgrs.length > 1) schedSel.selectedIndex = 1;
+  else if (activeMgrs.length > 0) schedSel.selectedIndex = 0;
+
   renderWhatIf();
 }
 
