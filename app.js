@@ -1273,7 +1273,7 @@ function openManagerDossier(mgrName) {
 
   let wins = 0, losses = 0, ties = 0, pf = 0, games = 0;
   const oppMap = {};
-  const seasonStatsMap = {}; // Track wins/pts per year for the charts
+  const seasonStatsMap = {};
 
   allMatches.forEach(m => {
     const isHome = m.home_owner === mgrName;
@@ -1283,8 +1283,7 @@ function openManagerDossier(mgrName) {
     const myScore = isHome ? m.home_score : m.away_score;
     const oppScore = isHome ? m.away_score : m.home_score;
     
-    // Skip unplayed future games
-    if (myScore === 0 && oppScore === 0) return;
+    if (myScore === 0 && oppScore === 0) return; // Skip unplayed
 
     games++;
     pf += myScore;
@@ -1293,7 +1292,6 @@ function openManagerDossier(mgrName) {
     if (!oppMap[opp]) oppMap[opp] = { opp, wins: 0, losses: 0, ties: 0, games: 0 };
     oppMap[opp].games++;
 
-    // Track season-by-season performance for charts
     if (!seasonStatsMap[m.year]) seasonStatsMap[m.year] = { wins: 0, points_for: 0 };
     seasonStatsMap[m.year].points_for += myScore;
 
@@ -1317,6 +1315,14 @@ function openManagerDossier(mgrName) {
   setInner('dossier-stat-winpct', `${(winPct * 100).toFixed(1)}% Win Rate`);
   setInner('dossier-stat-pf', `${pf.toFixed(1)} PF`);
   setInner('dossier-stat-ppg', `${ppg} PPG (${games} Gms)`);
+
+  // Pull Luck Rating from manager profile if available
+  const luckVal = prof.luck_rating !== undefined ? prof.luck_rating : 0.0;
+  const luckEl = document.getElementById('dossier-luck');
+  if (luckEl) {
+    luckEl.innerText = `${luckVal > 0 ? '+' : ''}${luckVal.toFixed(1)}`;
+    luckEl.className = `text-base font-extrabold font-mono mt-0.5 ${luckVal > 0 ? 'text-emerald-400' : luckVal < 0 ? 'text-rose-400' : 'text-slate-300'}`;
+  }
 
   const streakInfo = RAW_DATA.streaks_data?.[mgrName] || { longest_win_streak: 0, longest_loss_streak: 0 };
   setInner('dossier-stat-win-streak', `${streakInfo.longest_win_streak}W Streak`);
@@ -1379,7 +1385,7 @@ function openManagerDossier(mgrName) {
   if (seasonsBody) {
     seasonsBody.innerHTML = sortedHistory.map(t => {
       const yrMatches = allMatches.filter(m => m.year === t.year && m.matchup_type === 'REGULAR' && (m.home_owner === mgrName || m.away_owner === mgrName));
-      let yWins = 0, yLosses = 0, yTies = 0, yPf = 0;
+      let yWins = 0, yLosses = 0, yTies = 0, yPf = 0, yPa = 0;
 
       yrMatches.forEach(m => {
         const isH = m.home_owner === mgrName;
@@ -1387,6 +1393,7 @@ function openManagerDossier(mgrName) {
         const oppS = isH ? m.away_score : m.home_score;
         if (s === 0 && oppS === 0) return; // skip unplayed
         yPf += s;
+        yPa += oppS;
         if (s > oppS) yWins++;
         else if (oppS > s) yLosses++;
         else yTies++;
@@ -1403,20 +1410,19 @@ function openManagerDossier(mgrName) {
           <td class="p-2.5 font-bold text-white">${t.team_name}</td>
           <td class="p-2.5 text-center font-mono text-slate-300">${yWins}-${yLosses}${yTies > 0 ? `-${yTies}` : ''}</td>
           <td class="p-2.5 text-right font-mono text-emerald-400">${yPf > 0 ? yPf.toFixed(1) : '--'}</td>
+          <td class="p-2.5 text-right font-mono text-rose-400">${yPa > 0 ? yPa.toFixed(1) : '--'}</td>
           <td class="p-2.5 text-right">${rankBadge}</td>
         </tr>
       `;
     }).join('');
   }
 
-  // Render Achievement Badges
   try {
     renderDossierBadges(mgrName);
   } catch (err) {
     console.error("Badge rendering failed:", err);
   }
 
-  // Render Season-over-Season Charts
   try {
     renderDossierCharts(mgrName, seasonStatsMap);
   } catch (err) {
