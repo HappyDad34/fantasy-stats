@@ -1132,44 +1132,49 @@
           </div>
         </div>
 
-        <!-- Cornerstones -->
+        <!-- Multi-Year Franchise Cornerstones Card -->
         <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow space-y-4">
           <div class="flex flex-wrap justify-between items-center border-b border-slate-800 pb-2 gap-2">
             <h3 class="font-bold text-emerald-400">Multi-Year Franchise Cornerstones</h3>
-              <div class="flex items-center gap-2">
-                <!-- Seasons Dropdown -->
-                <select id="keeper-min-seasons" onchange="renderKeepers()" class="bg-slate-800 text-xs border border-slate-700 rounded px-2 py-1 text-white focus:ring-1 focus:ring-emerald-400">
-                  <option value="2">≥ 2 Seasons</option>
-                  <option value="3">≥ 3 Seasons</option>
-                  <option value="4">≥ 4 Seasons</option>
-                  <option value="5">≥ 5 Seasons</option>
-                  <option value="6">≥ 6 Seasons</option>
-                  <option value="7">≥ 7 Seasons</option>
-                  <option value="8">≥ 8 Seasons</option>
-                  <option value="9">≥ 9 Seasons</option>
-                  <option value="10">≥ 10 Seasons</option>
-                </select>
-                
-                <!-- Weeks on Roster Dropdown (Starts at 7) -->
-                <select id="keeper-min-weeks" onchange="renderKeepers()" class="bg-slate-800 text-xs border border-slate-700 rounded px-2 py-1 text-white focus:ring-1 focus:ring-emerald-400">
-                  <option value="1">≥ 7 Weeks on Roster</option>
-                  <option value="2">≥ 7 Weeks on Roster</option>
-                  <option value="3">≥ 7 Weeks on Roster</option>
-                  <option value="4">≥ 7 Weeks on Roster</option>
-                  <option value="5">≥ 7 Weeks on Roster</option>
-                  <option value="6">≥ 7 Weeks on Roster</option>
-                  <option value="7">≥ 7 Weeks on Roster</option>
-                  <option value="10">≥ 10 Weeks</option>
-                  <option value="14">≥ 14 Weeks (1 Full Season)</option>
-                </select>
-              </div>
+            <div class="flex items-center gap-2">
+              <!-- Seasons Dropdown -->
+              <select id="keeper-min-seasons" onchange="renderKeepers()" class="bg-slate-800 text-xs border border-slate-700 rounded px-2 py-1 text-white focus:ring-1 focus:ring-emerald-400">
+                <option value="2">≥ 2 Seasons</option>
+                <option value="3">≥ 3 Seasons</option>
+                <option value="4">≥ 4 Seasons</option>
+                <option value="5">≥ 5 Seasons</option>
+                <option value="6">≥ 6 Seasons</option>
+                <option value="7">≥ 7 Seasons</option>
+                <option value="8">≥ 8 Seasons</option>
+                <option value="9">≥ 9 Seasons</option>
+                <option value="10">≥ 10 Seasons</option>
+              </select>
+              
+              <!-- Weeks on Roster Dropdown -->
+              <select id="keeper-min-weeks" onchange="renderKeepers()" class="bg-slate-800 text-xs border border-slate-700 rounded px-2 py-1 text-white focus:ring-1 focus:ring-emerald-400">
+                <option value="7">≥ 7 Weeks on Roster</option>
+                <option value="10">≥ 10 Weeks</option>
+                <option value="14">≥ 14 Weeks (1 Full Season)</option>
+                <option value="20">≥ 20 Weeks</option>
+                <option value="28">≥ 28 Weeks (2 Full Seasons)</option>
+                <option value="40">≥ 40 Weeks</option>
+                <option value="50">≥ 50 Weeks</option>
+              </select>
             </div>
           </div>
+          
+          <!-- MISSING TABLE WRAPPER & TBODY -->
           <div class="overflow-x-auto">
             <table class="w-full text-left text-sm text-slate-300">
               <thead class="bg-slate-800/60 text-xs uppercase text-slate-400">
                 <tr>
-                  <th class="p-3">Rank</th><th class="p-3">Player</th><th class="p-3">Pos</th><th class="p-3">Manager</th><th class="p-3 text-center">Tenure</th><th class="p-3">Tenure Years</th><th class="p-3 text-right">Total Pts</th>
+                  <th class="p-3">Rank</th>
+                  <th class="p-3">Player</th>
+                  <th class="p-3">Pos</th>
+                  <th class="p-3">Manager</th>
+                  <th class="p-3 text-center">Tenure</th>
+                  <th class="p-3">Years</th>
+                  <th class="p-3 text-right">Starter Pts</th>
                 </tr>
               </thead>
               <tbody id="keepers-table-body" class="divide-y divide-slate-800"></tbody>
