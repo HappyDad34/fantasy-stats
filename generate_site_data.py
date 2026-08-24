@@ -818,7 +818,7 @@ if not df_players.empty:
             last_yr, last_wk = yr, wk
 
         # Apply strict rule: 8+ total starter games OR 7+ consecutive starter games
-        if total_starter_games >= 8 or max_consecutive >= 7:
+        if total_starter_games >= 3 or max_consecutive >= 2:
             p_pos = str(starters_group["position"].iloc[0])
             total_starter_pts = float(starters_group["points"].sum())
             

@@ -214284,6 +214284,24 @@
     },
     {
       "owner": "Darin Mikesell",
+      "player": "Adrian Peterson",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 16.8,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Alexander Mattison",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 40.1,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Darin Mikesell",
       "player": "Alvin Kamara",
       "pos": "RB",
       "starter_games": 8,
@@ -214311,6 +214329,15 @@
     },
     {
       "owner": "Darin Mikesell",
+      "player": "Austin Seibert",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 16.0,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Darin Mikesell",
       "player": "Bijan Robinson",
       "pos": "RB",
       "starter_games": 15,
@@ -214329,12 +214356,39 @@
     },
     {
       "owner": "Darin Mikesell",
+      "player": "Brandon Aiyuk",
+      "pos": "WR",
+      "starter_games": 3,
+      "starter_pts": 49.5,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Brock Purdy",
+      "pos": "QB",
+      "starter_games": 2,
+      "starter_pts": 28.1,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Darin Mikesell",
       "player": "Broncos D/ST",
       "pos": "D/ST",
       "starter_games": 13,
       "starter_pts": 91.0,
       "seasons": 2,
       "years_display": "19, 22"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Buccaneers D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 30.0,
+      "seasons": 2,
+      "years_display": "22, 24"
     },
     {
       "owner": "Darin Mikesell",
@@ -214347,10 +214401,37 @@
     },
     {
       "owner": "Darin Mikesell",
+      "player": "Cameron Brate",
+      "pos": "TE",
+      "starter_games": 3,
+      "starter_pts": 21.8,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Darin Mikesell",
       "player": "CeeDee Lamb",
       "pos": "WR",
       "starter_games": 15,
       "starter_pts": 263.4,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Chargers D/ST",
+      "pos": "D/ST",
+      "starter_games": 7,
+      "starter_pts": 77.0,
+      "seasons": 2,
+      "years_display": "17, 24"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Chase McLaughlin",
+      "pos": "K",
+      "starter_games": 6,
+      "starter_pts": 52.0,
       "seasons": 1,
       "years_display": "24"
     },
@@ -214380,6 +214461,24 @@
       "starter_pts": 131.5,
       "seasons": 1,
       "years_display": "22"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Chris Thompson",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 50.6,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Christian Kirk",
+      "pos": "WR",
+      "starter_games": 3,
+      "starter_pts": 19.8,
+      "seasons": 1,
+      "years_display": "21"
     },
     {
       "owner": "Darin Mikesell",
@@ -214419,12 +214518,39 @@
     },
     {
       "owner": "Darin Mikesell",
+      "player": "Curtis Samuel",
+      "pos": "WR",
+      "starter_games": 5,
+      "starter_pts": 47.4,
+      "seasons": 2,
+      "years_display": "20, 23"
+    },
+    {
+      "owner": "Darin Mikesell",
       "player": "D'Andre Swift",
       "pos": "RB",
       "starter_games": 22,
       "starter_pts": 306.9,
       "seasons": 2,
       "years_display": "20, 25"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "DJ Chark Jr.",
+      "pos": "WR",
+      "starter_games": 7,
+      "starter_pts": 89.2,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "DJ Moore",
+      "pos": "WR",
+      "starter_games": 5,
+      "starter_pts": 55.7,
+      "seasons": 1,
+      "years_display": "22"
     },
     {
       "owner": "Darin Mikesell",
@@ -214455,12 +214581,39 @@
     },
     {
       "owner": "Darin Mikesell",
+      "player": "Daniel Jones",
+      "pos": "QB",
+      "starter_games": 3,
+      "starter_pts": 42.5,
+      "seasons": 3,
+      "years_display": "22, 23, 24"
+    },
+    {
+      "owner": "Darin Mikesell",
       "player": "Darrell Henderson Jr.",
       "pos": "RB",
       "starter_games": 9,
       "starter_pts": 101.0,
       "seasons": 2,
       "years_display": "20, 23"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Davante Adams",
+      "pos": "WR",
+      "starter_games": 3,
+      "starter_pts": 50.5,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "David Montgomery",
+      "pos": "RB",
+      "starter_games": 4,
+      "starter_pts": 69.1,
+      "seasons": 1,
+      "years_display": "21"
     },
     {
       "owner": "Darin Mikesell",
@@ -214509,12 +214662,39 @@
     },
     {
       "owner": "Darin Mikesell",
+      "player": "Devin Singletary",
+      "pos": "RB",
+      "starter_games": 5,
+      "starter_pts": 50.8,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Devontae Booker",
+      "pos": "RB",
+      "starter_games": 4,
+      "starter_pts": 58.2,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Darin Mikesell",
       "player": "Drake London",
       "pos": "WR",
       "starter_games": 11,
       "starter_pts": 184.1,
       "seasons": 1,
       "years_display": "25"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Dustin Hopkins",
+      "pos": "K",
+      "starter_games": 3,
+      "starter_pts": 10.0,
+      "seasons": 2,
+      "years_display": "22, 24"
     },
     {
       "owner": "Darin Mikesell",
@@ -214536,6 +214716,24 @@
     },
     {
       "owner": "Darin Mikesell",
+      "player": "Eno Benjamin",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 31.8,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Evan McPherson",
+      "pos": "K",
+      "starter_games": 5,
+      "starter_pts": 50.0,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Darin Mikesell",
       "player": "George Kittle",
       "pos": "TE",
       "starter_games": 13,
@@ -214551,6 +214749,24 @@
       "starter_pts": 413.3,
       "seasons": 2,
       "years_display": "24, 25"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Golden Tate",
+      "pos": "WR",
+      "starter_games": 5,
+      "starter_pts": 65.6,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Graham Gano",
+      "pos": "K",
+      "starter_games": 3,
+      "starter_pts": 15.0,
+      "seasons": 1,
+      "years_display": "20"
     },
     {
       "owner": "Darin Mikesell",
@@ -214572,12 +214788,39 @@
     },
     {
       "owner": "Darin Mikesell",
+      "player": "Jack Doyle",
+      "pos": "TE",
+      "starter_games": 2,
+      "starter_pts": 13.4,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Darin Mikesell",
       "player": "James Conner",
       "pos": "RB",
       "starter_games": 15,
       "starter_pts": 239.4,
       "seasons": 2,
       "years_display": "21, 24"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "James Robinson",
+      "pos": "RB",
+      "starter_games": 4,
+      "starter_pts": 45.2,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Jason Sanders",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 23.0,
+      "seasons": 1,
+      "years_display": "24"
     },
     {
       "owner": "Darin Mikesell",
@@ -214590,10 +214833,37 @@
     },
     {
       "owner": "Darin Mikesell",
+      "player": "Jeff Driskel",
+      "pos": "QB",
+      "starter_games": 2,
+      "starter_pts": 12.6,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Jeff Wilson Jr.",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 34.6,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Darin Mikesell",
       "player": "Jerome Ford",
       "pos": "RB",
       "starter_games": 11,
       "starter_pts": 135.1,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Jerry Jeudy",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 37.0,
       "seasons": 1,
       "years_display": "23"
     },
@@ -214608,6 +214878,15 @@
     },
     {
       "owner": "Darin Mikesell",
+      "player": "Joe Burrow",
+      "pos": "QB",
+      "starter_games": 6,
+      "starter_pts": 88.6,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Darin Mikesell",
       "player": "Joe Mixon",
       "pos": "RB",
       "starter_games": 19,
@@ -214617,10 +214896,82 @@
     },
     {
       "owner": "Darin Mikesell",
+      "player": "Jordan Howard",
+      "pos": "RB",
+      "starter_games": 5,
+      "starter_pts": 35.3,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Jordan Love",
+      "pos": "QB",
+      "starter_games": 3,
+      "starter_pts": 37.9,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "JuJu Smith-Schuster",
+      "pos": "WR",
+      "starter_games": 5,
+      "starter_pts": 67.3,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Justin Fields",
+      "pos": "QB",
+      "starter_games": 3,
+      "starter_pts": 62.4,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Justin Jefferson",
+      "pos": "WR",
+      "starter_games": 6,
+      "starter_pts": 121.0,
+      "seasons": 2,
+      "years_display": "20, 21"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Kenyan Drake",
+      "pos": "RB",
+      "starter_games": 6,
+      "starter_pts": 74.6,
+      "seasons": 2,
+      "years_display": "17, 21"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Kirk Cousins",
+      "pos": "QB",
+      "starter_games": 4,
+      "starter_pts": 55.4,
+      "seasons": 2,
+      "years_display": "17, 19"
+    },
+    {
+      "owner": "Darin Mikesell",
       "player": "Leonard Fournette",
       "pos": "RB",
       "starter_games": 11,
       "starter_pts": 182.8,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Lions D/ST",
+      "pos": "D/ST",
+      "starter_games": 2,
+      "starter_pts": 15.0,
       "seasons": 1,
       "years_display": "17"
     },
@@ -214635,6 +214986,15 @@
     },
     {
       "owner": "Darin Mikesell",
+      "player": "Mason Crosby",
+      "pos": "K",
+      "starter_games": 4,
+      "starter_pts": 46.0,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Darin Mikesell",
       "player": "Matt Gay",
       "pos": "K",
       "starter_games": 23,
@@ -214644,12 +215004,48 @@
     },
     {
       "owner": "Darin Mikesell",
+      "player": "Matt Prater",
+      "pos": "K",
+      "starter_games": 6,
+      "starter_pts": 53.0,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Matthew Stafford",
+      "pos": "QB",
+      "starter_games": 6,
+      "starter_pts": 121.8,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Darin Mikesell",
       "player": "Melvin Gordon",
       "pos": "RB",
       "starter_games": 24,
       "starter_pts": 378.6,
       "seasons": 2,
       "years_display": "17, 19"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Michael Badgley",
+      "pos": "K",
+      "starter_games": 4,
+      "starter_pts": 34.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Michael Gallup",
+      "pos": "WR",
+      "starter_games": 5,
+      "starter_pts": 46.5,
+      "seasons": 1,
+      "years_display": "20"
     },
     {
       "owner": "Darin Mikesell",
@@ -214680,6 +215076,15 @@
     },
     {
       "owner": "Darin Mikesell",
+      "player": "Nick Folk",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 19.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Darin Mikesell",
       "player": "Packers D/ST",
       "pos": "D/ST",
       "starter_games": 11,
@@ -214689,12 +215094,39 @@
     },
     {
       "owner": "Darin Mikesell",
+      "player": "Panthers D/ST",
+      "pos": "D/ST",
+      "starter_games": 3,
+      "starter_pts": 23.0,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Patrick Laird",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 10.2,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Darin Mikesell",
       "player": "Patrick Mahomes",
       "pos": "QB",
       "starter_games": 27,
       "starter_pts": 558.0,
       "seasons": 2,
       "years_display": "19, 24"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Peyton Barber",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 15.4,
+      "seasons": 1,
+      "years_display": "19"
     },
     {
       "owner": "Darin Mikesell",
@@ -214716,12 +215148,66 @@
     },
     {
       "owner": "Darin Mikesell",
+      "player": "Rashaad Penny",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 10.2,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Ravens D/ST",
+      "pos": "D/ST",
+      "starter_games": 3,
+      "starter_pts": 24.0,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Darin Mikesell",
       "player": "Rob Gronkowski",
       "pos": "TE",
       "starter_games": 30,
       "starter_pts": 448.0,
       "seasons": 3,
       "years_display": "17, 20, 21"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Robbie Gould",
+      "pos": "K",
+      "starter_games": 4,
+      "starter_pts": 51.0,
+      "seasons": 2,
+      "years_display": "17, 19"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Robert Tonyan",
+      "pos": "TE",
+      "starter_games": 3,
+      "starter_pts": 27.4,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Ronald Jones II",
+      "pos": "RB",
+      "starter_games": 5,
+      "starter_pts": 46.2,
+      "seasons": 2,
+      "years_display": "19, 21"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Royce Freeman",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 34.4,
+      "seasons": 1,
+      "years_display": "19"
     },
     {
       "owner": "Darin Mikesell",
@@ -214734,12 +215220,30 @@
     },
     {
       "owner": "Darin Mikesell",
+      "player": "Spencer Shrader",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 20.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Darin Mikesell",
       "player": "Stephen Gostkowski",
       "pos": "K",
       "starter_games": 9,
       "starter_pts": 54.0,
       "seasons": 1,
       "years_display": "20"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Taysom Hill",
+      "pos": "TE",
+      "starter_games": 3,
+      "starter_pts": 19.7,
+      "seasons": 1,
+      "years_display": "23"
     },
     {
       "owner": "Darin Mikesell",
@@ -214758,6 +215262,24 @@
       "starter_pts": 114.7,
       "seasons": 1,
       "years_display": "22"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Texans D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 30.0,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Titans D/ST",
+      "pos": "D/ST",
+      "starter_games": 3,
+      "starter_pts": 31.0,
+      "seasons": 2,
+      "years_display": "17, 24"
     },
     {
       "owner": "Darin Mikesell",
@@ -214788,6 +215310,42 @@
     },
     {
       "owner": "Darin Mikesell",
+      "player": "Tutu Atwell",
+      "pos": "WR",
+      "starter_games": 3,
+      "starter_pts": 18.2,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Ty Chandler",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 41.8,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Tyler Bass",
+      "pos": "K",
+      "starter_games": 4,
+      "starter_pts": 26.0,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Tyler Boyd",
+      "pos": "WR",
+      "starter_games": 2,
+      "starter_pts": 12.5,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Darin Mikesell",
       "player": "Tyler Lockett",
       "pos": "WR",
       "starter_games": 15,
@@ -214812,6 +215370,24 @@
       "starter_pts": 111.8,
       "seasons": 2,
       "years_display": "19, 21"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Wayne Gallman",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 46.3,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Darin Mikesell",
+      "player": "Woody Marks",
+      "pos": "RB",
+      "starter_games": 4,
+      "starter_pts": 23.6,
+      "seasons": 1,
+      "years_display": "25"
     },
     {
       "owner": "Darin Mikesell",
@@ -214842,6 +215418,15 @@
     },
     {
       "owner": "David Holm",
+      "player": "49ers D/ST",
+      "pos": "D/ST",
+      "starter_games": 6,
+      "starter_pts": 45.0,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "David Holm",
       "player": "A.J. Brown",
       "pos": "WR",
       "starter_games": 15,
@@ -214869,6 +215454,15 @@
     },
     {
       "owner": "David Holm",
+      "player": "Alex Collins",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 26.0,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "David Holm",
       "player": "Alvin Kamara",
       "pos": "RB",
       "starter_games": 22,
@@ -214887,12 +215481,75 @@
     },
     {
       "owner": "David Holm",
+      "player": "Antonio Brown",
+      "pos": "WR",
+      "starter_games": 6,
+      "starter_pts": 67.4,
+      "seasons": 2,
+      "years_display": "20, 21"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Austin Seferian-Jenkins",
+      "pos": "TE",
+      "starter_games": 5,
+      "starter_pts": 52.2,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Ben Roethlisberger",
+      "pos": "QB",
+      "starter_games": 4,
+      "starter_pts": 77.1,
+      "seasons": 2,
+      "years_display": "17, 20"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Bengals D/ST",
+      "pos": "D/ST",
+      "starter_games": 3,
+      "starter_pts": 13.0,
+      "seasons": 2,
+      "years_display": "21, 24"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Brian Hill",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 10.5,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "David Holm",
       "player": "Browns D/ST",
       "pos": "D/ST",
       "starter_games": 9,
       "starter_pts": 74.0,
       "seasons": 2,
       "years_display": "20, 25"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Calvin Ridley",
+      "pos": "WR",
+      "starter_games": 5,
+      "starter_pts": 71.1,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Cam Akers",
+      "pos": "RB",
+      "starter_games": 4,
+      "starter_pts": 27.9,
+      "seasons": 2,
+      "years_display": "22, 24"
     },
     {
       "owner": "David Holm",
@@ -214914,6 +215571,33 @@
     },
     {
       "owner": "David Holm",
+      "player": "Chargers D/ST",
+      "pos": "D/ST",
+      "starter_games": 3,
+      "starter_pts": 14.0,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Chiefs D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 20.0,
+      "seasons": 2,
+      "years_display": "19, 23"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Chris Boswell",
+      "pos": "K",
+      "starter_games": 3,
+      "starter_pts": 12.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "David Holm",
       "player": "Chris Carson",
       "pos": "RB",
       "starter_games": 14,
@@ -214932,12 +215616,66 @@
     },
     {
       "owner": "David Holm",
+      "player": "Chris Rodriguez Jr.",
+      "pos": "RB",
+      "starter_games": 4,
+      "starter_pts": 19.1,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "David Holm",
       "player": "Christian McCaffrey",
       "pos": "RB",
       "starter_games": 16,
       "starter_pts": 391.3,
       "seasons": 1,
       "years_display": "23"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Christian Watson",
+      "pos": "WR",
+      "starter_games": 2,
+      "starter_pts": 28.2,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Chuba Hubbard",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 16.6,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Coby Fleener",
+      "pos": "TE",
+      "starter_games": 2,
+      "starter_pts": 15.4,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Cole Beasley",
+      "pos": "WR",
+      "starter_games": 5,
+      "starter_pts": 70.3,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Colts D/ST",
+      "pos": "D/ST",
+      "starter_games": 6,
+      "starter_pts": 67.0,
+      "seasons": 2,
+      "years_display": "20, 24"
     },
     {
       "owner": "David Holm",
@@ -214968,6 +215706,15 @@
     },
     {
       "owner": "David Holm",
+      "player": "Dallas Goedert",
+      "pos": "TE",
+      "starter_games": 4,
+      "starter_pts": 43.8,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "David Holm",
       "player": "Dalton Schultz",
       "pos": "TE",
       "starter_games": 9,
@@ -214977,12 +215724,30 @@
     },
     {
       "owner": "David Holm",
+      "player": "Damien Williams",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 13.9,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "David Holm",
       "player": "Daniel Carlson",
       "pos": "K",
       "starter_games": 22,
       "starter_pts": 210.0,
       "seasons": 2,
       "years_display": "20, 22"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Darren Waller",
+      "pos": "TE",
+      "starter_games": 3,
+      "starter_pts": 34.1,
+      "seasons": 1,
+      "years_display": "22"
     },
     {
       "owner": "David Holm",
@@ -215013,6 +215778,15 @@
     },
     {
       "owner": "David Holm",
+      "player": "Dawson Knox",
+      "pos": "TE",
+      "starter_games": 4,
+      "starter_pts": 35.9,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "David Holm",
       "player": "De'Von Achane",
       "pos": "RB",
       "starter_games": 16,
@@ -215028,6 +215802,15 @@
       "starter_pts": 161.7,
       "seasons": 1,
       "years_display": "23"
+    },
+    {
+      "owner": "David Holm",
+      "player": "DeAndre Washington",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 44.4,
+      "seasons": 1,
+      "years_display": "19"
     },
     {
       "owner": "David Holm",
@@ -215049,12 +215832,75 @@
     },
     {
       "owner": "David Holm",
+      "player": "Deshaun Watson",
+      "pos": "QB",
+      "starter_games": 3,
+      "starter_pts": 80.0,
+      "seasons": 2,
+      "years_display": "17, 23"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Diontae Johnson",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 49.7,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Dolphins D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 30.0,
+      "seasons": 2,
+      "years_display": "22, 24"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Eagles D/ST",
+      "pos": "D/ST",
+      "starter_games": 3,
+      "starter_pts": 29.0,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Emmanuel Sanders",
+      "pos": "WR",
+      "starter_games": 6,
+      "starter_pts": 51.4,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "David Holm",
       "player": "Ezekiel Elliott",
       "pos": "RB",
       "starter_games": 19,
       "starter_pts": 268.4,
       "seasons": 2,
       "years_display": "21, 22"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Falcons D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 24.0,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Greg Olsen",
+      "pos": "TE",
+      "starter_games": 6,
+      "starter_pts": 54.2,
+      "seasons": 1,
+      "years_display": "19"
     },
     {
       "owner": "David Holm",
@@ -215085,12 +215931,39 @@
     },
     {
       "owner": "David Holm",
+      "player": "J.K. Dobbins",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 41.9,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Jack Doyle",
+      "pos": "TE",
+      "starter_games": 4,
+      "starter_pts": 41.1,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "David Holm",
       "player": "Jaguars D/ST",
       "pos": "D/ST",
       "starter_games": 11,
       "starter_pts": 126.0,
       "seasons": 2,
       "years_display": "17, 24"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Jake Bates",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 16.0,
+      "seasons": 1,
+      "years_display": "25"
     },
     {
       "owner": "David Holm",
@@ -215103,12 +215976,39 @@
     },
     {
       "owner": "David Holm",
+      "player": "James Conner",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 28.6,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "David Holm",
       "player": "James Robinson",
       "pos": "RB",
       "starter_games": 12,
       "starter_pts": 188.5,
       "seasons": 1,
       "years_display": "20"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Jameson Williams",
+      "pos": "WR",
+      "starter_games": 6,
+      "starter_pts": 57.1,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Jared Cook",
+      "pos": "TE",
+      "starter_games": 2,
+      "starter_pts": 11.1,
+      "seasons": 1,
+      "years_display": "17"
     },
     {
       "owner": "David Holm",
@@ -215130,12 +216030,57 @@
     },
     {
       "owner": "David Holm",
+      "player": "Jets D/ST",
+      "pos": "D/ST",
+      "starter_games": 6,
+      "starter_pts": 37.0,
+      "seasons": 2,
+      "years_display": "19, 24"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Jonathan Taylor",
+      "pos": "RB",
+      "starter_games": 6,
+      "starter_pts": 72.9,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Jordan Howard",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 52.7,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "David Holm",
       "player": "Josh Jacobs",
       "pos": "RB",
       "starter_games": 22,
       "starter_pts": 326.2,
       "seasons": 2,
       "years_display": "19, 20"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Julio Jones",
+      "pos": "WR",
+      "starter_games": 6,
+      "starter_pts": 109.8,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Justin Fields",
+      "pos": "QB",
+      "starter_games": 3,
+      "starter_pts": 16.9,
+      "seasons": 1,
+      "years_display": "21"
     },
     {
       "owner": "David Holm",
@@ -215148,12 +216093,30 @@
     },
     {
       "owner": "David Holm",
+      "player": "K.J. Osborn",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 54.2,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "David Holm",
       "player": "Ka'imi Fairbairn",
       "pos": "K",
       "starter_games": 16,
       "starter_pts": 161.0,
       "seasons": 1,
       "years_display": "24"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Kareem Hunt",
+      "pos": "RB",
+      "starter_games": 4,
+      "starter_pts": 44.4,
+      "seasons": 2,
+      "years_display": "22, 25"
     },
     {
       "owner": "David Holm",
@@ -215211,6 +216174,33 @@
     },
     {
       "owner": "David Holm",
+      "player": "Matt Bryant",
+      "pos": "K",
+      "starter_games": 3,
+      "starter_pts": 33.0,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Matt Gay",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 21.0,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Matt Ryan",
+      "pos": "QB",
+      "starter_games": 2,
+      "starter_pts": 22.2,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "David Holm",
       "player": "Michael Carter",
       "pos": "RB",
       "starter_games": 9,
@@ -215238,10 +216228,46 @@
     },
     {
       "owner": "David Holm",
+      "player": "Mike Evans",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 34.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Odell Beckham Jr.",
+      "pos": "WR",
+      "starter_games": 6,
+      "starter_pts": 69.4,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "David Holm",
       "player": "Puka Nacua",
       "pos": "WR",
       "starter_games": 9,
       "starter_pts": 149.8,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Rams D/ST",
+      "pos": "D/ST",
+      "starter_games": 6,
+      "starter_pts": 69.0,
+      "seasons": 2,
+      "years_display": "20, 22"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Rashee Rice",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 56.1,
       "seasons": 1,
       "years_display": "23"
     },
@@ -215256,12 +216282,30 @@
     },
     {
       "owner": "David Holm",
+      "player": "Rhamondre Stevenson",
+      "pos": "RB",
+      "starter_games": 6,
+      "starter_pts": 67.5,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "David Holm",
       "player": "Rico Dowdle",
       "pos": "RB",
       "starter_games": 9,
       "starter_pts": 162.0,
       "seasons": 1,
       "years_display": "25"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Romeo Doubs",
+      "pos": "WR",
+      "starter_games": 6,
+      "starter_pts": 65.4,
+      "seasons": 1,
+      "years_display": "24"
     },
     {
       "owner": "David Holm",
@@ -215301,12 +216345,75 @@
     },
     {
       "owner": "David Holm",
+      "player": "Sincere McCormick",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 4.5,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Steelers D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 20.0,
+      "seasons": 2,
+      "years_display": "17, 25"
+    },
+    {
+      "owner": "David Holm",
       "player": "T.J. Hockenson",
       "pos": "TE",
       "starter_games": 16,
       "starter_pts": 171.5,
       "seasons": 2,
       "years_display": "19, 20"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Tank Bigsby",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 17.6,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Tank Dell",
+      "pos": "WR",
+      "starter_games": 7,
+      "starter_pts": 57.8,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Texans D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 37.0,
+      "seasons": 2,
+      "years_display": "20, 24"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Titans D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 25.0,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Todd Gurley II",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 24.9,
+      "seasons": 1,
+      "years_display": "20"
     },
     {
       "owner": "David Holm",
@@ -215328,6 +216435,33 @@
     },
     {
       "owner": "David Holm",
+      "player": "Trevor Lawrence",
+      "pos": "QB",
+      "starter_games": 3,
+      "starter_pts": 43.5,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Troy Franklin",
+      "pos": "WR",
+      "starter_games": 7,
+      "starter_pts": 84.6,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Ty Montgomery",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 15.8,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "David Holm",
       "player": "Tyler Boyd",
       "pos": "WR",
       "starter_games": 14,
@@ -215337,12 +216471,57 @@
     },
     {
       "owner": "David Holm",
+      "player": "Tyler Lockett",
+      "pos": "WR",
+      "starter_games": 2,
+      "starter_pts": 28.9,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "David Holm",
       "player": "Tyreek Hill",
       "pos": "WR",
       "starter_games": 27,
       "starter_pts": 392.4,
       "seasons": 2,
       "years_display": "19, 24"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Vikings D/ST",
+      "pos": "D/ST",
+      "starter_games": 5,
+      "starter_pts": 25.0,
+      "seasons": 2,
+      "years_display": "17, 19"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Wayne Gallman",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 29.2,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "David Holm",
+      "player": "Zack Moss",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 15.4,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "49ers D/ST",
+      "pos": "D/ST",
+      "starter_games": 3,
+      "starter_pts": 19.0,
+      "seasons": 1,
+      "years_display": "21"
     },
     {
       "owner": "Desmon Holton",
@@ -215355,12 +216534,39 @@
     },
     {
       "owner": "Desmon Holton",
+      "player": "Aaron Jones Sr.",
+      "pos": "RB",
+      "starter_games": 6,
+      "starter_pts": 65.5,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Aaron Rodgers",
+      "pos": "QB",
+      "starter_games": 6,
+      "starter_pts": 107.7,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Desmon Holton",
       "player": "Amari Cooper",
       "pos": "WR",
       "starter_games": 8,
       "starter_pts": 68.7,
       "seasons": 1,
       "years_display": "17"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Antonio Gibson",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 24.3,
+      "seasons": 1,
+      "years_display": "23"
     },
     {
       "owner": "Desmon Holton",
@@ -215391,6 +216597,24 @@
     },
     {
       "owner": "Desmon Holton",
+      "player": "Brock Bowers",
+      "pos": "TE",
+      "starter_games": 7,
+      "starter_pts": 92.9,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Brock Purdy",
+      "pos": "QB",
+      "starter_games": 7,
+      "starter_pts": 153.3,
+      "seasons": 2,
+      "years_display": "22, 24"
+    },
+    {
+      "owner": "Desmon Holton",
       "player": "Broncos D/ST",
       "pos": "D/ST",
       "starter_games": 12,
@@ -215404,6 +216628,42 @@
       "pos": "D/ST",
       "starter_games": 13,
       "starter_pts": 141.0,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Cairo Santos",
+      "pos": "K",
+      "starter_games": 4,
+      "starter_pts": 35.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Caleb Williams",
+      "pos": "QB",
+      "starter_games": 6,
+      "starter_pts": 141.7,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Calvin Ridley",
+      "pos": "WR",
+      "starter_games": 5,
+      "starter_pts": 88.5,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Cam Akers",
+      "pos": "RB",
+      "starter_games": 4,
+      "starter_pts": 15.2,
       "seasons": 1,
       "years_display": "23"
     },
@@ -215436,12 +216696,75 @@
     },
     {
       "owner": "Desmon Holton",
+      "player": "Chris Boswell",
+      "pos": "K",
+      "starter_games": 5,
+      "starter_pts": 51.0,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Chris Godwin",
+      "pos": "WR",
+      "starter_games": 7,
+      "starter_pts": 61.7,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Desmon Holton",
       "player": "Christian McCaffrey",
       "pos": "RB",
       "starter_games": 21,
       "starter_pts": 387.3,
       "seasons": 2,
       "years_display": "22, 24"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Chuba Hubbard",
+      "pos": "RB",
+      "starter_games": 5,
+      "starter_pts": 64.7,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Clyde Edwards-Helaire",
+      "pos": "RB",
+      "starter_games": 4,
+      "starter_pts": 12.7,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Colts D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 38.0,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Cowboys D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 16.0,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "DJ Chark Jr.",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 56.8,
+      "seasons": 1,
+      "years_display": "20"
     },
     {
       "owner": "Desmon Holton",
@@ -215454,12 +216777,39 @@
     },
     {
       "owner": "Desmon Holton",
+      "player": "Dallas Goedert",
+      "pos": "TE",
+      "starter_games": 2,
+      "starter_pts": 8.7,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Damien Harris",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 11.4,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Desmon Holton",
       "player": "Davante Adams",
       "pos": "WR",
       "starter_games": 28,
       "starter_pts": 427.8,
       "seasons": 2,
       "years_display": "24, 25"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "David Njoku",
+      "pos": "TE",
+      "starter_games": 4,
+      "starter_pts": 47.4,
+      "seasons": 1,
+      "years_display": "22"
     },
     {
       "owner": "Desmon Holton",
@@ -215481,12 +216831,39 @@
     },
     {
       "owner": "Desmon Holton",
+      "player": "DeSean Jackson",
+      "pos": "WR",
+      "starter_games": 2,
+      "starter_pts": 14.8,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Derek Carr",
+      "pos": "QB",
+      "starter_games": 3,
+      "starter_pts": 46.6,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Desmon Holton",
       "player": "Emeka Egbuka",
       "pos": "WR",
       "starter_games": 14,
       "starter_pts": 160.5,
       "seasons": 1,
       "years_display": "25"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Eric Ebron",
+      "pos": "TE",
+      "starter_games": 7,
+      "starter_pts": 43.8,
+      "seasons": 1,
+      "years_display": "19"
     },
     {
       "owner": "Desmon Holton",
@@ -215535,12 +216912,48 @@
     },
     {
       "owner": "Desmon Holton",
+      "player": "Greg Zuerlein",
+      "pos": "K",
+      "starter_games": 4,
+      "starter_pts": 27.0,
+      "seasons": 2,
+      "years_display": "21, 23"
+    },
+    {
+      "owner": "Desmon Holton",
       "player": "Harrison Butker",
       "pos": "K",
       "starter_games": 20,
       "starter_pts": 201.0,
       "seasons": 3,
       "years_display": "19, 21, 25"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Hayden Hurst",
+      "pos": "TE",
+      "starter_games": 4,
+      "starter_pts": 38.5,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Jaguars D/ST",
+      "pos": "D/ST",
+      "starter_games": 3,
+      "starter_pts": 7.0,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Jake Bates",
+      "pos": "K",
+      "starter_games": 3,
+      "starter_pts": 17.0,
+      "seasons": 1,
+      "years_display": "25"
     },
     {
       "owner": "Desmon Holton",
@@ -215559,6 +216972,15 @@
       "starter_pts": 91.8,
       "seasons": 2,
       "years_display": "19, 21"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Jameis Winston",
+      "pos": "QB",
+      "starter_games": 7,
+      "starter_pts": 149.4,
+      "seasons": 2,
+      "years_display": "19, 22"
     },
     {
       "owner": "Desmon Holton",
@@ -215598,6 +217020,15 @@
     },
     {
       "owner": "Desmon Holton",
+      "player": "Jared Goff",
+      "pos": "QB",
+      "starter_games": 7,
+      "starter_pts": 152.0,
+      "seasons": 2,
+      "years_display": "17, 25"
+    },
+    {
+      "owner": "Desmon Holton",
       "player": "Jarvis Landry",
       "pos": "WR",
       "starter_games": 13,
@@ -215622,6 +217053,33 @@
       "starter_pts": 75.4,
       "seasons": 1,
       "years_display": "19"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Jauan Jennings",
+      "pos": "WR",
+      "starter_games": 3,
+      "starter_pts": 30.4,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Javonte Williams",
+      "pos": "RB",
+      "starter_games": 4,
+      "starter_pts": 42.0,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Jayden Daniels",
+      "pos": "QB",
+      "starter_games": 5,
+      "starter_pts": 106.7,
+      "seasons": 1,
+      "years_display": "25"
     },
     {
       "owner": "Desmon Holton",
@@ -215652,12 +217110,39 @@
     },
     {
       "owner": "Desmon Holton",
+      "player": "JuJu Smith-Schuster",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 34.2,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Julio Jones",
+      "pos": "WR",
+      "starter_games": 7,
+      "starter_pts": 48.9,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Desmon Holton",
       "player": "Justin Fields",
       "pos": "QB",
       "starter_games": 9,
       "starter_pts": 161.8,
       "seasons": 1,
       "years_display": "23"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Justin Jackson",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 31.6,
+      "seasons": 1,
+      "years_display": "20"
     },
     {
       "owner": "Desmon Holton",
@@ -215679,6 +217164,24 @@
     },
     {
       "owner": "Desmon Holton",
+      "player": "K.J. Osborn",
+      "pos": "WR",
+      "starter_games": 3,
+      "starter_pts": 6.0,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Kendrick Bourne",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 46.6,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Desmon Holton",
       "player": "Kenneth Gainwell",
       "pos": "RB",
       "starter_games": 10,
@@ -215697,12 +217200,39 @@
     },
     {
       "owner": "Desmon Holton",
+      "player": "Kirk Cousins",
+      "pos": "QB",
+      "starter_games": 5,
+      "starter_pts": 73.4,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Malik Nabers",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 57.1,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Desmon Holton",
       "player": "Mark Ingram",
       "pos": "RB",
       "starter_games": 14,
       "starter_pts": 253.0,
       "seasons": 1,
       "years_display": "17"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Mason Crosby",
+      "pos": "K",
+      "starter_games": 4,
+      "starter_pts": 22.0,
+      "seasons": 1,
+      "years_display": "20"
     },
     {
       "owner": "Desmon Holton",
@@ -215796,12 +217326,84 @@
     },
     {
       "owner": "Desmon Holton",
+      "player": "Rams D/ST",
+      "pos": "D/ST",
+      "starter_games": 5,
+      "starter_pts": 44.0,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Randy Bullock",
+      "pos": "K",
+      "starter_games": 3,
+      "starter_pts": 12.0,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Ravens D/ST",
+      "pos": "D/ST",
+      "starter_games": 3,
+      "starter_pts": 2.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Rishard Matthews",
+      "pos": "WR",
+      "starter_games": 5,
+      "starter_pts": 41.9,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Robert Tonyan",
+      "pos": "TE",
+      "starter_games": 7,
+      "starter_pts": 47.1,
+      "seasons": 2,
+      "years_display": "21, 22"
+    },
+    {
+      "owner": "Desmon Holton",
       "player": "Russell Wilson",
       "pos": "QB",
       "starter_games": 23,
       "starter_pts": 493.1,
       "seasons": 2,
       "years_display": "20, 21"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Saints D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 14.0,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Samaje Perine",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 17.0,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Sammy Watkins",
+      "pos": "WR",
+      "starter_games": 5,
+      "starter_pts": 38.8,
+      "seasons": 1,
+      "years_display": "19"
     },
     {
       "owner": "Desmon Holton",
@@ -215859,6 +217461,15 @@
     },
     {
       "owner": "Desmon Holton",
+      "player": "Tyler Allgeier",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 9.0,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Desmon Holton",
       "player": "Tyler Boyd",
       "pos": "WR",
       "starter_games": 8,
@@ -215903,6 +217514,33 @@
       "years_display": "22"
     },
     {
+      "owner": "Desmon Holton",
+      "player": "Xavier Worthy",
+      "pos": "WR",
+      "starter_games": 7,
+      "starter_pts": 51.3,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Zach Charbonnet",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 26.7,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Desmon Holton",
+      "player": "Zonovan Knight",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 11.0,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
       "owner": "Janice Bailey",
       "player": "Amari Cooper",
       "pos": "WR",
@@ -215913,10 +217551,28 @@
     },
     {
       "owner": "Janice Bailey",
+      "player": "Amon-Ra St. Brown",
+      "pos": "WR",
+      "starter_games": 7,
+      "starter_pts": 117.4,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Janice Bailey",
       "player": "Cole Beasley",
       "pos": "WR",
       "starter_games": 17,
       "starter_pts": 152.2,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Janice Bailey",
+      "player": "Corey Davis",
+      "pos": "WR",
+      "starter_games": 5,
+      "starter_pts": 68.2,
       "seasons": 1,
       "years_display": "21"
     },
@@ -215940,6 +217596,15 @@
     },
     {
       "owner": "Janice Bailey",
+      "player": "Jacoby Brissett",
+      "pos": "QB",
+      "starter_games": 5,
+      "starter_pts": 15.1,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Janice Bailey",
       "player": "James Robinson",
       "pos": "RB",
       "starter_games": 12,
@@ -215953,6 +217618,33 @@
       "pos": "QB",
       "starter_games": 12,
       "starter_pts": 252.6,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Janice Bailey",
+      "player": "Logan Thomas",
+      "pos": "TE",
+      "starter_games": 5,
+      "starter_pts": 33.7,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Janice Bailey",
+      "player": "Nelson Agholor",
+      "pos": "WR",
+      "starter_games": 5,
+      "starter_pts": 24.7,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Janice Bailey",
+      "player": "Salvon Ahmed",
+      "pos": "RB",
+      "starter_games": 5,
+      "starter_pts": 9.0,
       "seasons": 1,
       "years_display": "21"
     },
@@ -215985,6 +217677,15 @@
     },
     {
       "owner": "Jordan Iden",
+      "player": "49ers D/ST",
+      "pos": "D/ST",
+      "starter_games": 6,
+      "starter_pts": 55.0,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Jordan Iden",
       "player": "Adam Thielen",
       "pos": "WR",
       "starter_games": 13,
@@ -215994,12 +217695,48 @@
     },
     {
       "owner": "Jordan Iden",
+      "player": "Allen Robinson II",
+      "pos": "WR",
+      "starter_games": 6,
+      "starter_pts": 44.7,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Jordan Iden",
       "player": "Alvin Kamara",
       "pos": "RB",
       "starter_games": 10,
       "starter_pts": 86.2,
       "seasons": 1,
       "years_display": "25"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Amari Cooper",
+      "pos": "WR",
+      "starter_games": 6,
+      "starter_pts": 92.2,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Antonio Brown",
+      "pos": "WR",
+      "starter_games": 2,
+      "starter_pts": 25.7,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Antonio Gibson",
+      "pos": "RB",
+      "starter_games": 6,
+      "starter_pts": 109.2,
+      "seasons": 1,
+      "years_display": "20"
     },
     {
       "owner": "Jordan Iden",
@@ -216018,6 +217755,15 @@
       "starter_pts": 266.0,
       "seasons": 1,
       "years_display": "24"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Ben Roethlisberger",
+      "pos": "QB",
+      "starter_games": 3,
+      "starter_pts": 57.3,
+      "seasons": 1,
+      "years_display": "20"
     },
     {
       "owner": "Jordan Iden",
@@ -216048,6 +217794,33 @@
     },
     {
       "owner": "Jordan Iden",
+      "player": "Browns D/ST",
+      "pos": "D/ST",
+      "starter_games": 7,
+      "starter_pts": 29.0,
+      "seasons": 2,
+      "years_display": "19, 22"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Cam Newton",
+      "pos": "QB",
+      "starter_games": 2,
+      "starter_pts": 16.7,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Carson Wentz",
+      "pos": "QB",
+      "starter_games": 2,
+      "starter_pts": 25.4,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Jordan Iden",
       "player": "CeeDee Lamb",
       "pos": "WR",
       "starter_games": 15,
@@ -216075,12 +217848,39 @@
     },
     {
       "owner": "Jordan Iden",
+      "player": "Chris Thompson",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 33.6,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Jordan Iden",
       "player": "Clyde Edwards-Helaire",
       "pos": "RB",
       "starter_games": 8,
       "starter_pts": 113.7,
       "seasons": 1,
       "years_display": "20"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Colts D/ST",
+      "pos": "D/ST",
+      "starter_games": 3,
+      "starter_pts": 7.0,
+      "seasons": 2,
+      "years_display": "22, 25"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Commanders D/ST",
+      "pos": "D/ST",
+      "starter_games": 3,
+      "starter_pts": 11.0,
+      "seasons": 1,
+      "years_display": "23"
     },
     {
       "owner": "Jordan Iden",
@@ -216099,6 +217899,15 @@
       "starter_pts": 154.6,
       "seasons": 1,
       "years_display": "25"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Cowboys D/ST",
+      "pos": "D/ST",
+      "starter_games": 2,
+      "starter_pts": 33.0,
+      "seasons": 1,
+      "years_display": "22"
     },
     {
       "owner": "Jordan Iden",
@@ -216165,12 +217974,48 @@
     },
     {
       "owner": "Jordan Iden",
+      "player": "Devin Singletary",
+      "pos": "RB",
+      "starter_games": 5,
+      "starter_pts": 52.9,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Devonta Freeman",
+      "pos": "RB",
+      "starter_games": 5,
+      "starter_pts": 41.4,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Duke Johnson",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 28.9,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Jordan Iden",
       "player": "Eagles D/ST",
       "pos": "D/ST",
       "starter_games": 10,
       "starter_pts": 92.0,
       "seasons": 3,
       "years_display": "19, 20, 24"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Elijah Mitchell",
+      "pos": "RB",
+      "starter_games": 6,
+      "starter_pts": 115.5,
+      "seasons": 1,
+      "years_display": "21"
     },
     {
       "owner": "Jordan Iden",
@@ -216189,6 +218034,42 @@
       "starter_pts": 80.0,
       "seasons": 1,
       "years_display": "24"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Ezekiel Elliott",
+      "pos": "RB",
+      "starter_games": 4,
+      "starter_pts": 69.1,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Falcons D/ST",
+      "pos": "D/ST",
+      "starter_games": 2,
+      "starter_pts": 19.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Gabe Davis",
+      "pos": "WR",
+      "starter_games": 3,
+      "starter_pts": 37.7,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Gardner Minshew II",
+      "pos": "QB",
+      "starter_games": 3,
+      "starter_pts": 47.2,
+      "seasons": 1,
+      "years_display": "20"
     },
     {
       "owner": "Jordan Iden",
@@ -216219,6 +218100,42 @@
     },
     {
       "owner": "Jordan Iden",
+      "player": "Jack Doyle",
+      "pos": "TE",
+      "starter_games": 3,
+      "starter_pts": 28.1,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Jake Elliott",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 19.0,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Jameis Winston",
+      "pos": "QB",
+      "starter_games": 4,
+      "starter_pts": 84.4,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Jared Cook",
+      "pos": "TE",
+      "starter_games": 4,
+      "starter_pts": 59.3,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Jordan Iden",
       "player": "Jason Myers",
       "pos": "K",
       "starter_games": 9,
@@ -216246,12 +218163,39 @@
     },
     {
       "owner": "Jordan Iden",
+      "player": "Jaylen Warren",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 14.5,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Jerick McKinnon",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 35.4,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Jordan Iden",
       "player": "Jets D/ST",
       "pos": "D/ST",
       "starter_games": 11,
       "starter_pts": 58.0,
       "seasons": 1,
       "years_display": "24"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Joe Burrow",
+      "pos": "QB",
+      "starter_games": 5,
+      "starter_pts": 91.4,
+      "seasons": 1,
+      "years_display": "20"
     },
     {
       "owner": "Jordan Iden",
@@ -216264,12 +218208,30 @@
     },
     {
       "owner": "Jordan Iden",
+      "player": "Josh Gordon",
+      "pos": "WR",
+      "starter_games": 3,
+      "starter_pts": 20.2,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Jordan Iden",
       "player": "JuJu Smith-Schuster",
       "pos": "WR",
       "starter_games": 9,
       "starter_pts": 131.0,
       "seasons": 1,
       "years_display": "20"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Justin Herbert",
+      "pos": "QB",
+      "starter_games": 5,
+      "starter_pts": 92.0,
+      "seasons": 1,
+      "years_display": "25"
     },
     {
       "owner": "Jordan Iden",
@@ -216300,6 +218262,15 @@
     },
     {
       "owner": "Jordan Iden",
+      "player": "Kirk Cousins",
+      "pos": "QB",
+      "starter_games": 6,
+      "starter_pts": 107.1,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Jordan Iden",
       "player": "Kyle Pitts",
       "pos": "TE",
       "starter_games": 16,
@@ -216315,6 +218286,15 @@
       "starter_pts": 199.9,
       "seasons": 1,
       "years_display": "22"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Ladd McConkey",
+      "pos": "WR",
+      "starter_games": 7,
+      "starter_pts": 121.4,
+      "seasons": 1,
+      "years_display": "24"
     },
     {
       "owner": "Jordan Iden",
@@ -216345,12 +218325,48 @@
     },
     {
       "owner": "Jordan Iden",
+      "player": "Matt Gay",
+      "pos": "K",
+      "starter_games": 6,
+      "starter_pts": 40.0,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Matt Prater",
+      "pos": "K",
+      "starter_games": 4,
+      "starter_pts": 30.0,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Jordan Iden",
       "player": "Matthew Stafford",
       "pos": "QB",
       "starter_games": 16,
       "starter_pts": 312.2,
       "seasons": 1,
       "years_display": "21"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Michael Carter",
+      "pos": "RB",
+      "starter_games": 4,
+      "starter_pts": 29.3,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Michael Pittman Jr.",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 61.6,
+      "seasons": 1,
+      "years_display": "25"
     },
     {
       "owner": "Jordan Iden",
@@ -216417,6 +218433,15 @@
     },
     {
       "owner": "Jordan Iden",
+      "player": "Randy Bullock",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 17.0,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Jordan Iden",
       "player": "Ravens D/ST",
       "pos": "D/ST",
       "starter_games": 14,
@@ -216435,12 +218460,57 @@
     },
     {
       "owner": "Jordan Iden",
+      "player": "Rodrigo Blankenship",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 19.0,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Russell Wilson",
+      "pos": "QB",
+      "starter_games": 5,
+      "starter_pts": 70.1,
+      "seasons": 2,
+      "years_display": "23, 24"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Ryan Succop",
+      "pos": "K",
+      "starter_games": 4,
+      "starter_pts": 33.0,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Ryan Tannehill",
+      "pos": "QB",
+      "starter_games": 2,
+      "starter_pts": 47.8,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Jordan Iden",
       "player": "Saints D/ST",
       "pos": "D/ST",
       "starter_games": 18,
       "starter_pts": 161.0,
       "seasons": 2,
       "years_display": "19, 23"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Sean Tucker",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 39.6,
+      "seasons": 1,
+      "years_display": "25"
     },
     {
       "owner": "Jordan Iden",
@@ -216462,6 +218532,24 @@
     },
     {
       "owner": "Jordan Iden",
+      "player": "Tarik Cohen",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 33.5,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Taysom Hill",
+      "pos": "QB",
+      "starter_games": 2,
+      "starter_pts": 42.5,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Jordan Iden",
       "player": "Tee Higgins",
       "pos": "WR",
       "starter_games": 21,
@@ -216480,12 +218568,30 @@
     },
     {
       "owner": "Jordan Iden",
+      "player": "Titans D/ST",
+      "pos": "D/ST",
+      "starter_games": 3,
+      "starter_pts": 9.0,
+      "seasons": 3,
+      "years_display": "19, 21, 25"
+    },
+    {
+      "owner": "Jordan Iden",
       "player": "Tyler Bass",
       "pos": "K",
       "starter_games": 16,
       "starter_pts": 133.0,
       "seasons": 2,
       "years_display": "20, 23"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Tyler Higbee",
+      "pos": "TE",
+      "starter_games": 5,
+      "starter_pts": 56.7,
+      "seasons": 2,
+      "years_display": "20, 22"
     },
     {
       "owner": "Jordan Iden",
@@ -216507,12 +218613,39 @@
     },
     {
       "owner": "Jordan Iden",
+      "player": "Vikings D/ST",
+      "pos": "D/ST",
+      "starter_games": 7,
+      "starter_pts": 48.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Jordan Iden",
       "player": "Wil Lutz",
       "pos": "K",
       "starter_games": 15,
       "starter_pts": 153.0,
       "seasons": 1,
       "years_display": "19"
+    },
+    {
+      "owner": "Jordan Iden",
+      "player": "Zack Moss",
+      "pos": "RB",
+      "starter_games": 4,
+      "starter_pts": 22.6,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "49ers D/ST",
+      "pos": "D/ST",
+      "starter_games": 2,
+      "starter_pts": 10.0,
+      "seasons": 1,
+      "years_display": "20"
     },
     {
       "owner": "Julie Mikesell",
@@ -216531,6 +218664,15 @@
       "starter_pts": 142.9,
       "seasons": 1,
       "years_display": "19"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Alexander Mattison",
+      "pos": "RB",
+      "starter_games": 4,
+      "starter_pts": 33.9,
+      "seasons": 1,
+      "years_display": "24"
     },
     {
       "owner": "Julie Mikesell",
@@ -216561,6 +218703,15 @@
     },
     {
       "owner": "Julie Mikesell",
+      "player": "Brandin Cooks",
+      "pos": "WR",
+      "starter_games": 7,
+      "starter_pts": 74.8,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Julie Mikesell",
       "player": "Brandon Aubrey",
       "pos": "K",
       "starter_games": 8,
@@ -216588,12 +218739,75 @@
     },
     {
       "owner": "Julie Mikesell",
+      "player": "Buccaneers D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 44.0,
+      "seasons": 2,
+      "years_display": "19, 23"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Cairo Santos",
+      "pos": "K",
+      "starter_games": 3,
+      "starter_pts": 17.0,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Calvin Ridley",
+      "pos": "WR",
+      "starter_games": 3,
+      "starter_pts": 18.2,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Cardinals D/ST",
+      "pos": "D/ST",
+      "starter_games": 6,
+      "starter_pts": 26.0,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Chargers D/ST",
+      "pos": "D/ST",
+      "starter_games": 6,
+      "starter_pts": 45.0,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Julie Mikesell",
       "player": "Chase Edmonds",
       "pos": "RB",
       "starter_games": 9,
       "starter_pts": 98.1,
       "seasons": 1,
       "years_display": "21"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Chiefs D/ST",
+      "pos": "D/ST",
+      "starter_games": 5,
+      "starter_pts": 21.0,
+      "seasons": 2,
+      "years_display": "19, 24"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Chris Boswell",
+      "pos": "K",
+      "starter_games": 5,
+      "starter_pts": 39.0,
+      "seasons": 2,
+      "years_display": "19, 22"
     },
     {
       "owner": "Julie Mikesell",
@@ -216633,12 +218847,57 @@
     },
     {
       "owner": "Julie Mikesell",
+      "player": "Commanders D/ST",
+      "pos": "D/ST",
+      "starter_games": 5,
+      "starter_pts": 54.0,
+      "seasons": 2,
+      "years_display": "22, 23"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Craig Reynolds",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 11.1,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "D'Onta Foreman",
+      "pos": "RB",
+      "starter_games": 5,
+      "starter_pts": 70.8,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Julie Mikesell",
       "player": "DK Metcalf",
       "pos": "WR",
       "starter_games": 15,
       "starter_pts": 211.7,
       "seasons": 1,
       "years_display": "23"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Dak Prescott",
+      "pos": "QB",
+      "starter_games": 5,
+      "starter_pts": 135.6,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Darius Slayton",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 31.3,
+      "seasons": 1,
+      "years_display": "20"
     },
     {
       "owner": "Julie Mikesell",
@@ -216657,6 +218916,24 @@
       "starter_pts": 572.4,
       "seasons": 2,
       "years_display": "21, 23"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "David Njoku",
+      "pos": "TE",
+      "starter_games": 7,
+      "starter_pts": 79.8,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "DeVante Parker",
+      "pos": "WR",
+      "starter_games": 6,
+      "starter_pts": 45.5,
+      "seasons": 1,
+      "years_display": "20"
     },
     {
       "owner": "Julie Mikesell",
@@ -216705,10 +218982,100 @@
     },
     {
       "owner": "Julie Mikesell",
+      "player": "Drake London",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 33.2,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Julie Mikesell",
       "player": "Drew Brees",
       "pos": "QB",
       "starter_games": 11,
       "starter_pts": 185.6,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Duke Johnson Jr.",
+      "pos": "RB",
+      "starter_games": 6,
+      "starter_pts": 78.8,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Elijah Moore",
+      "pos": "WR",
+      "starter_games": 3,
+      "starter_pts": 57.3,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Evan McPherson",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 12.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Falcons D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 12.0,
+      "seasons": 3,
+      "years_display": "21, 22, 25"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Gabe Davis",
+      "pos": "WR",
+      "starter_games": 2,
+      "starter_pts": 25.1,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Gardner Minshew",
+      "pos": "QB",
+      "starter_games": 2,
+      "starter_pts": 35.7,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "George Kittle",
+      "pos": "TE",
+      "starter_games": 6,
+      "starter_pts": 98.1,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Giants D/ST",
+      "pos": "D/ST",
+      "starter_games": 5,
+      "starter_pts": 50.0,
+      "seasons": 2,
+      "years_display": "20, 25"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Graham Gano",
+      "pos": "K",
+      "starter_games": 4,
+      "starter_pts": 39.0,
       "seasons": 1,
       "years_display": "17"
     },
@@ -216720,6 +219087,33 @@
       "starter_pts": 86.0,
       "seasons": 1,
       "years_display": "21"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Greg Zuerlein",
+      "pos": "K",
+      "starter_games": 4,
+      "starter_pts": 21.0,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Harrison Butker",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 26.0,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Isiah Pacheco",
+      "pos": "RB",
+      "starter_games": 7,
+      "starter_pts": 68.7,
+      "seasons": 2,
+      "years_display": "24, 25"
     },
     {
       "owner": "Julie Mikesell",
@@ -216777,12 +219171,30 @@
     },
     {
       "owner": "Julie Mikesell",
+      "player": "Jamison Crowder",
+      "pos": "WR",
+      "starter_games": 7,
+      "starter_pts": 88.8,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Julie Mikesell",
       "player": "Jared Cook",
       "pos": "TE",
       "starter_games": 10,
       "starter_pts": 58.6,
       "seasons": 1,
       "years_display": "20"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Jared Goff",
+      "pos": "QB",
+      "starter_games": 3,
+      "starter_pts": 57.5,
+      "seasons": 1,
+      "years_display": "24"
     },
     {
       "owner": "Julie Mikesell",
@@ -216795,6 +219207,24 @@
     },
     {
       "owner": "Julie Mikesell",
+      "player": "Jason Sanders",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 31.0,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Jason Witten",
+      "pos": "TE",
+      "starter_games": 4,
+      "starter_pts": 24.7,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Julie Mikesell",
       "player": "Javonte Williams",
       "pos": "RB",
       "starter_games": 9,
@@ -216804,12 +219234,39 @@
     },
     {
       "owner": "Julie Mikesell",
+      "player": "Jerome Ford",
+      "pos": "RB",
+      "starter_games": 5,
+      "starter_pts": 42.2,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Jimmy Garoppolo",
+      "pos": "QB",
+      "starter_games": 4,
+      "starter_pts": 70.9,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Julie Mikesell",
       "player": "John Brown",
       "pos": "WR",
       "starter_games": 7,
       "starter_pts": 97.6,
       "seasons": 1,
       "years_display": "19"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Jonnu Smith",
+      "pos": "TE",
+      "starter_games": 4,
+      "starter_pts": 28.4,
+      "seasons": 1,
+      "years_display": "21"
     },
     {
       "owner": "Julie Mikesell",
@@ -216858,6 +219315,15 @@
     },
     {
       "owner": "Julie Mikesell",
+      "player": "Kai Forbath",
+      "pos": "K",
+      "starter_games": 6,
+      "starter_pts": 42.0,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Julie Mikesell",
       "player": "Kareem Hunt",
       "pos": "RB",
       "starter_games": 8,
@@ -216885,12 +219351,48 @@
     },
     {
       "owner": "Julie Mikesell",
+      "player": "Kyler Murray",
+      "pos": "QB",
+      "starter_games": 6,
+      "starter_pts": 110.5,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Lamar Jackson",
+      "pos": "QB",
+      "starter_games": 6,
+      "starter_pts": 149.1,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Julie Mikesell",
       "player": "Lamar Miller",
       "pos": "RB",
       "starter_games": 12,
       "starter_pts": 168.6,
       "seasons": 1,
       "years_display": "17"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Latavius Murray",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 18.9,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Lions D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 13.0,
+      "seasons": 3,
+      "years_display": "19, 20, 21"
     },
     {
       "owner": "Julie Mikesell",
@@ -216909,6 +219411,24 @@
       "starter_pts": 89.9,
       "seasons": 1,
       "years_display": "21"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Mason Crosby",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 11.0,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Matt Gay",
+      "pos": "K",
+      "starter_games": 5,
+      "starter_pts": 41.0,
+      "seasons": 2,
+      "years_display": "24, 25"
     },
     {
       "owner": "Julie Mikesell",
@@ -216948,12 +219468,39 @@
     },
     {
       "owner": "Julie Mikesell",
+      "player": "Mike Gillislee",
+      "pos": "RB",
+      "starter_games": 6,
+      "starter_pts": 31.6,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Miles Sanders",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 14.8,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Julie Mikesell",
       "player": "Nico Collins",
       "pos": "WR",
       "starter_games": 9,
       "starter_pts": 161.2,
       "seasons": 1,
       "years_display": "23"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Noah Fant",
+      "pos": "TE",
+      "starter_games": 3,
+      "starter_pts": 30.1,
+      "seasons": 2,
+      "years_display": "21, 22"
     },
     {
       "owner": "Julie Mikesell",
@@ -216966,12 +219513,30 @@
     },
     {
       "owner": "Julie Mikesell",
+      "player": "Packers D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 23.0,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Julie Mikesell",
       "player": "Patrick Mahomes",
       "pos": "QB",
       "starter_games": 16,
       "starter_pts": 335.5,
       "seasons": 1,
       "years_display": "21"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Patriots D/ST",
+      "pos": "D/ST",
+      "starter_games": 5,
+      "starter_pts": 20.0,
+      "seasons": 1,
+      "years_display": "23"
     },
     {
       "owner": "Julie Mikesell",
@@ -217002,6 +219567,42 @@
     },
     {
       "owner": "Julie Mikesell",
+      "player": "Raiders D/ST",
+      "pos": "D/ST",
+      "starter_games": 2,
+      "starter_pts": 19.0,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Ravens D/ST",
+      "pos": "D/ST",
+      "starter_games": 7,
+      "starter_pts": 40.0,
+      "seasons": 2,
+      "years_display": "21, 25"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Riley Patterson",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 13.0,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Robbie Gould",
+      "pos": "K",
+      "starter_games": 3,
+      "starter_pts": 35.0,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Julie Mikesell",
       "player": "Robert Woods",
       "pos": "WR",
       "starter_games": 17,
@@ -217011,12 +219612,57 @@
     },
     {
       "owner": "Julie Mikesell",
+      "player": "Rodrigo Blankenship",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 17.0,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Royce Freeman",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 6.7,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Sammy Watkins",
+      "pos": "WR",
+      "starter_games": 3,
+      "starter_pts": 4.8,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Seahawks D/ST",
+      "pos": "D/ST",
+      "starter_games": 3,
+      "starter_pts": 18.0,
+      "seasons": 2,
+      "years_display": "22, 24"
+    },
+    {
+      "owner": "Julie Mikesell",
       "player": "Steelers D/ST",
       "pos": "D/ST",
       "starter_games": 12,
       "starter_pts": 44.0,
       "seasons": 2,
       "years_display": "17, 22"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Sterling Shepard",
+      "pos": "WR",
+      "starter_games": 6,
+      "starter_pts": 8.2,
+      "seasons": 1,
+      "years_display": "21"
     },
     {
       "owner": "Julie Mikesell",
@@ -217038,12 +219684,30 @@
     },
     {
       "owner": "Julie Mikesell",
+      "player": "Titans D/ST",
+      "pos": "D/ST",
+      "starter_games": 2,
+      "starter_pts": 18.0,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Julie Mikesell",
       "player": "Todd Gurley II",
       "pos": "RB",
       "starter_games": 15,
       "starter_pts": 208.5,
       "seasons": 1,
       "years_display": "19"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Trevor Lawrence",
+      "pos": "QB",
+      "starter_games": 3,
+      "starter_pts": 76.6,
+      "seasons": 1,
+      "years_display": "22"
     },
     {
       "owner": "Julie Mikesell",
@@ -217074,12 +219738,30 @@
     },
     {
       "owner": "Julie Mikesell",
+      "player": "Tyler Loop",
+      "pos": "K",
+      "starter_games": 4,
+      "starter_pts": 22.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Julie Mikesell",
       "player": "Tyreek Hill",
       "pos": "WR",
       "starter_games": 16,
       "starter_pts": 342.9,
       "seasons": 1,
       "years_display": "22"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Tyrod Taylor",
+      "pos": "QB",
+      "starter_games": 4,
+      "starter_pts": 41.1,
+      "seasons": 1,
+      "years_display": "17"
     },
     {
       "owner": "Julie Mikesell",
@@ -217092,6 +219774,24 @@
     },
     {
       "owner": "Julie Mikesell",
+      "player": "Washington D/ST",
+      "pos": "D/ST",
+      "starter_games": 3,
+      "starter_pts": 35.0,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Wil Lutz",
+      "pos": "K",
+      "starter_games": 7,
+      "starter_pts": 82.0,
+      "seasons": 2,
+      "years_display": "20, 24"
+    },
+    {
+      "owner": "Julie Mikesell",
       "player": "Will Fuller V",
       "pos": "WR",
       "starter_games": 11,
@@ -217101,12 +219801,30 @@
     },
     {
       "owner": "Julie Mikesell",
+      "player": "Will Reichard",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 20.0,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Julie Mikesell",
       "player": "Zach Ertz",
       "pos": "TE",
       "starter_games": 26,
       "starter_pts": 379.0,
       "seasons": 2,
       "years_display": "17, 19"
+    },
+    {
+      "owner": "Julie Mikesell",
+      "player": "Zack Moss",
+      "pos": "RB",
+      "starter_games": 4,
+      "starter_pts": 47.2,
+      "seasons": 1,
+      "years_display": "24"
     },
     {
       "owner": "Julie Mikesell",
@@ -217123,6 +219841,15 @@
       "pos": "D/ST",
       "starter_games": 8,
       "starter_pts": 51.0,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "AJ Dillon",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 16.2,
       "seasons": 1,
       "years_display": "23"
     },
@@ -217152,6 +219879,15 @@
       "starter_pts": 241.5,
       "seasons": 1,
       "years_display": "22"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Anthony Richardson",
+      "pos": "QB",
+      "starter_games": 3,
+      "starter_pts": 46.9,
+      "seasons": 1,
+      "years_display": "24"
     },
     {
       "owner": "Keith Orchekowsky",
@@ -217218,6 +219954,15 @@
     },
     {
       "owner": "Keith Orchekowsky",
+      "player": "Chris Boswell",
+      "pos": "K",
+      "starter_games": 5,
+      "starter_pts": 34.0,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Keith Orchekowsky",
       "player": "Chris Carson",
       "pos": "RB",
       "starter_games": 8,
@@ -217254,6 +219999,15 @@
     },
     {
       "owner": "Keith Orchekowsky",
+      "player": "Colts D/ST",
+      "pos": "D/ST",
+      "starter_games": 3,
+      "starter_pts": 19.0,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Keith Orchekowsky",
       "player": "Cooper Kupp",
       "pos": "WR",
       "starter_games": 12,
@@ -217272,6 +220026,15 @@
     },
     {
       "owner": "Keith Orchekowsky",
+      "player": "Dak Prescott",
+      "pos": "QB",
+      "starter_games": 7,
+      "starter_pts": 161.2,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Keith Orchekowsky",
       "player": "Dalvin Cook",
       "pos": "RB",
       "starter_games": 26,
@@ -217285,6 +220048,24 @@
       "pos": "RB",
       "starter_games": 13,
       "starter_pts": 175.0,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Dan Arnold",
+      "pos": "TE",
+      "starter_games": 2,
+      "starter_pts": 1.9,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Darrel Williams",
+      "pos": "RB",
+      "starter_games": 6,
+      "starter_pts": 114.7,
       "seasons": 1,
       "years_display": "21"
     },
@@ -217326,12 +220107,39 @@
     },
     {
       "owner": "Keith Orchekowsky",
+      "player": "Devin Singletary",
+      "pos": "RB",
+      "starter_games": 6,
+      "starter_pts": 44.3,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Keith Orchekowsky",
       "player": "Ezekiel Elliott",
       "pos": "RB",
       "starter_games": 14,
       "starter_pts": 261.0,
       "seasons": 1,
       "years_display": "19"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Gerald Everett",
+      "pos": "TE",
+      "starter_games": 4,
+      "starter_pts": 10.8,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Giovani Bernard",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 16.4,
+      "seasons": 1,
+      "years_display": "20"
     },
     {
       "owner": "Keith Orchekowsky",
@@ -217344,12 +220152,57 @@
     },
     {
       "owner": "Keith Orchekowsky",
+      "player": "Harrison Butker",
+      "pos": "K",
+      "starter_games": 4,
+      "starter_pts": 31.0,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Hunter Henry",
+      "pos": "TE",
+      "starter_games": 2,
+      "starter_pts": 27.6,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Isiah Pacheco",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 35.2,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Keith Orchekowsky",
       "player": "Jakobi Meyers",
       "pos": "WR",
       "starter_games": 11,
       "starter_pts": 146.5,
       "seasons": 1,
       "years_display": "23"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Jameson Williams",
+      "pos": "WR",
+      "starter_games": 6,
+      "starter_pts": 75.3,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Jarvis Landry",
+      "pos": "WR",
+      "starter_games": 5,
+      "starter_pts": 72.4,
+      "seasons": 1,
+      "years_display": "20"
     },
     {
       "owner": "Keith Orchekowsky",
@@ -217371,12 +220224,48 @@
     },
     {
       "owner": "Keith Orchekowsky",
+      "player": "Jerick McKinnon",
+      "pos": "RB",
+      "starter_games": 7,
+      "starter_pts": 68.0,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Joe Mixon",
+      "pos": "RB",
+      "starter_games": 6,
+      "starter_pts": 49.7,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Keith Orchekowsky",
       "player": "Jonathan Taylor",
       "pos": "RB",
       "starter_games": 18,
       "starter_pts": 306.3,
       "seasons": 2,
       "years_display": "23, 24"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Jonnu Smith",
+      "pos": "TE",
+      "starter_games": 3,
+      "starter_pts": 18.0,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Jordan Addison",
+      "pos": "WR",
+      "starter_games": 6,
+      "starter_pts": 71.9,
+      "seasons": 1,
+      "years_display": "24"
     },
     {
       "owner": "Keith Orchekowsky",
@@ -217416,12 +220305,30 @@
     },
     {
       "owner": "Keith Orchekowsky",
+      "player": "Kirk Cousins",
+      "pos": "QB",
+      "starter_games": 3,
+      "starter_pts": 42.9,
+      "seasons": 2,
+      "years_display": "23, 24"
+    },
+    {
+      "owner": "Keith Orchekowsky",
       "player": "Lamar Jackson",
       "pos": "QB",
       "starter_games": 15,
       "starter_pts": 303.1,
       "seasons": 1,
       "years_display": "23"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Lions D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 31.0,
+      "seasons": 1,
+      "years_display": "24"
     },
     {
       "owner": "Keith Orchekowsky",
@@ -217443,12 +220350,48 @@
     },
     {
       "owner": "Keith Orchekowsky",
+      "player": "Mason Crosby",
+      "pos": "K",
+      "starter_games": 7,
+      "starter_pts": 59.0,
+      "seasons": 2,
+      "years_display": "19, 21"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Matt Gay",
+      "pos": "K",
+      "starter_games": 4,
+      "starter_pts": 31.0,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Matt Ryan",
+      "pos": "QB",
+      "starter_games": 3,
+      "starter_pts": 57.7,
+      "seasons": 2,
+      "years_display": "20, 21"
+    },
+    {
+      "owner": "Keith Orchekowsky",
       "player": "Michael Carter",
       "pos": "RB",
       "starter_games": 10,
       "starter_pts": 101.2,
       "seasons": 1,
       "years_display": "22"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Michael Pittman Jr.",
+      "pos": "WR",
+      "starter_games": 5,
+      "starter_pts": 51.8,
+      "seasons": 1,
+      "years_display": "24"
     },
     {
       "owner": "Keith Orchekowsky",
@@ -217470,6 +220413,15 @@
     },
     {
       "owner": "Keith Orchekowsky",
+      "player": "O.J. Howard",
+      "pos": "TE",
+      "starter_games": 7,
+      "starter_pts": 28.6,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Keith Orchekowsky",
       "player": "Packers D/ST",
       "pos": "D/ST",
       "starter_games": 8,
@@ -217488,6 +220440,42 @@
     },
     {
       "owner": "Keith Orchekowsky",
+      "player": "Randall Cobb",
+      "pos": "WR",
+      "starter_games": 2,
+      "starter_pts": 21.7,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Rashid Shaheed",
+      "pos": "WR",
+      "starter_games": 2,
+      "starter_pts": 26.9,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Rico Dowdle",
+      "pos": "RB",
+      "starter_games": 7,
+      "starter_pts": 84.7,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Robbie Gould",
+      "pos": "K",
+      "starter_games": 5,
+      "starter_pts": 36.0,
+      "seasons": 2,
+      "years_display": "20, 22"
+    },
+    {
+      "owner": "Keith Orchekowsky",
       "player": "Robby Anderson",
       "pos": "WR",
       "starter_games": 10,
@@ -217497,12 +220485,39 @@
     },
     {
       "owner": "Keith Orchekowsky",
+      "player": "Robert Woods",
+      "pos": "WR",
+      "starter_games": 2,
+      "starter_pts": 12.0,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Keith Orchekowsky",
       "player": "Romeo Doubs",
       "pos": "WR",
       "starter_games": 10,
       "starter_pts": 85.4,
       "seasons": 2,
       "years_display": "22, 23"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Rondale Moore",
+      "pos": "WR",
+      "starter_games": 2,
+      "starter_pts": 9.9,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Saints D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 31.0,
+      "seasons": 1,
+      "years_display": "24"
     },
     {
       "owner": "Keith Orchekowsky",
@@ -217521,6 +220536,15 @@
       "starter_pts": 347.4,
       "seasons": 2,
       "years_display": "22, 23"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Seahawks D/ST",
+      "pos": "D/ST",
+      "starter_games": 2,
+      "starter_pts": 5.0,
+      "seasons": 1,
+      "years_display": "19"
     },
     {
       "owner": "Keith Orchekowsky",
@@ -217551,12 +220575,75 @@
     },
     {
       "owner": "Keith Orchekowsky",
+      "player": "Texans D/ST",
+      "pos": "D/ST",
+      "starter_games": 2,
+      "starter_pts": -1.0,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Keith Orchekowsky",
       "player": "Trey McBride",
       "pos": "TE",
       "starter_games": 13,
       "starter_pts": 201.4,
       "seasons": 1,
       "years_display": "24"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Tyler Allgeier",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 9.7,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Tyler Higbee",
+      "pos": "TE",
+      "starter_games": 5,
+      "starter_pts": 43.8,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Tyler Lockett",
+      "pos": "WR",
+      "starter_games": 6,
+      "starter_pts": 64.8,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Van Jefferson",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 32.0,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Vikings D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 27.0,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Keith Orchekowsky",
+      "player": "Will Fuller V",
+      "pos": "WR",
+      "starter_games": 3,
+      "starter_pts": 64.7,
+      "seasons": 1,
+      "years_display": "19"
     },
     {
       "owner": "Kevin Bailey",
@@ -217573,6 +220660,15 @@
       "pos": "RB",
       "starter_games": 15,
       "starter_pts": 298.5,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Kevin Bailey",
+      "player": "Adam Vinatieri",
+      "pos": "K",
+      "starter_games": 5,
+      "starter_pts": 32.0,
       "seasons": 1,
       "years_display": "19"
     },
@@ -217623,6 +220719,15 @@
     },
     {
       "owner": "Kevin Bailey",
+      "player": "Chase Edmonds",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 24.1,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Kevin Bailey",
       "player": "Chris Godwin",
       "pos": "WR",
       "starter_games": 15,
@@ -217659,12 +220764,30 @@
     },
     {
       "owner": "Kevin Bailey",
+      "player": "Deebo Samuel",
+      "pos": "WR",
+      "starter_games": 3,
+      "starter_pts": 50.1,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Kevin Bailey",
       "player": "Diontae Johnson",
       "pos": "WR",
       "starter_games": 14,
       "starter_pts": 246.5,
       "seasons": 1,
       "years_display": "21"
+    },
+    {
+      "owner": "Kevin Bailey",
+      "player": "Eric Ebron",
+      "pos": "TE",
+      "starter_games": 6,
+      "starter_pts": 62.5,
+      "seasons": 1,
+      "years_display": "20"
     },
     {
       "owner": "Kevin Bailey",
@@ -217686,6 +220809,15 @@
     },
     {
       "owner": "Kevin Bailey",
+      "player": "Jacoby Brissett",
+      "pos": "QB",
+      "starter_games": 6,
+      "starter_pts": 74.2,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Kevin Bailey",
       "player": "Jared Goff",
       "pos": "QB",
       "starter_games": 11,
@@ -217704,6 +220836,15 @@
     },
     {
       "owner": "Kevin Bailey",
+      "player": "Jonathan Taylor",
+      "pos": "RB",
+      "starter_games": 5,
+      "starter_pts": 97.6,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Kevin Bailey",
       "player": "Josh Lambo",
       "pos": "K",
       "starter_games": 10,
@@ -217713,12 +220854,39 @@
     },
     {
       "owner": "Kevin Bailey",
+      "player": "Leonard Fournette",
+      "pos": "RB",
+      "starter_games": 5,
+      "starter_pts": 39.8,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Kevin Bailey",
       "player": "Mark Andrews",
       "pos": "TE",
       "starter_games": 14,
       "starter_pts": 268.9,
       "seasons": 1,
       "years_display": "21"
+    },
+    {
+      "owner": "Kevin Bailey",
+      "player": "Mark Ingram II",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 15.8,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Kevin Bailey",
+      "player": "Marquise Brown",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 29.6,
+      "seasons": 1,
+      "years_display": "20"
     },
     {
       "owner": "Kevin Bailey",
@@ -217767,6 +220935,15 @@
     },
     {
       "owner": "Kevin Bailey",
+      "player": "Noah Fant",
+      "pos": "TE",
+      "starter_games": 2,
+      "starter_pts": 5.9,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Kevin Bailey",
       "player": "Patrick Mahomes",
       "pos": "QB",
       "starter_games": 15,
@@ -217776,10 +220953,28 @@
     },
     {
       "owner": "Kevin Bailey",
+      "player": "Raiders D/ST",
+      "pos": "D/ST",
+      "starter_games": 3,
+      "starter_pts": 15.0,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Kevin Bailey",
       "player": "Robert Woods",
       "pos": "WR",
       "starter_games": 9,
       "starter_pts": 137.2,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Kevin Bailey",
+      "player": "Rondale Moore",
+      "pos": "WR",
+      "starter_games": 3,
+      "starter_pts": 9.0,
       "seasons": 1,
       "years_display": "21"
     },
@@ -217800,6 +220995,33 @@
       "starter_pts": 140.7,
       "seasons": 1,
       "years_display": "21"
+    },
+    {
+      "owner": "Kevin Bailey",
+      "player": "T.J. Hockenson",
+      "pos": "TE",
+      "starter_games": 2,
+      "starter_pts": 46.3,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Kevin Bailey",
+      "player": "T.Y. Hilton",
+      "pos": "WR",
+      "starter_games": 7,
+      "starter_pts": 98.0,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Kevin Bailey",
+      "player": "Texans D/ST",
+      "pos": "D/ST",
+      "starter_games": 3,
+      "starter_pts": 22.0,
+      "seasons": 2,
+      "years_display": "20, 21"
     },
     {
       "owner": "Kevin Bailey",
@@ -217839,12 +221061,39 @@
     },
     {
       "owner": "Mackenzie Iden",
+      "player": "Bengals D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 18.0,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Mackenzie Iden",
+      "player": "Bills D/ST",
+      "pos": "D/ST",
+      "starter_games": 5,
+      "starter_pts": 45.0,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Mackenzie Iden",
       "player": "Brandin Cooks",
       "pos": "WR",
       "starter_games": 8,
       "starter_pts": 114.3,
       "seasons": 1,
       "years_display": "21"
+    },
+    {
+      "owner": "Mackenzie Iden",
+      "player": "Brandon Aiyuk",
+      "pos": "WR",
+      "starter_games": 6,
+      "starter_pts": 92.2,
+      "seasons": 1,
+      "years_display": "22"
     },
     {
       "owner": "Mackenzie Iden",
@@ -217866,12 +221115,48 @@
     },
     {
       "owner": "Mackenzie Iden",
+      "player": "Brian Thomas Jr.",
+      "pos": "WR",
+      "starter_games": 5,
+      "starter_pts": 80.6,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Mackenzie Iden",
+      "player": "Broncos D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 17.0,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Mackenzie Iden",
       "player": "Browns D/ST",
       "pos": "D/ST",
       "starter_games": 14,
       "starter_pts": 78.0,
       "seasons": 2,
       "years_display": "21, 22"
+    },
+    {
+      "owner": "Mackenzie Iden",
+      "player": "Buccaneers D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 14.0,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Mackenzie Iden",
+      "player": "Cairo Santos",
+      "pos": "K",
+      "starter_games": 4,
+      "starter_pts": 41.0,
+      "seasons": 1,
+      "years_display": "23"
     },
     {
       "owner": "Mackenzie Iden",
@@ -217884,12 +221169,48 @@
     },
     {
       "owner": "Mackenzie Iden",
+      "player": "Cameron Dicker",
+      "pos": "K",
+      "starter_games": 4,
+      "starter_pts": 31.0,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Mackenzie Iden",
       "player": "Christian Kirk",
       "pos": "WR",
       "starter_games": 11,
       "starter_pts": 155.3,
       "seasons": 1,
       "years_display": "22"
+    },
+    {
+      "owner": "Mackenzie Iden",
+      "player": "Christian McCaffrey",
+      "pos": "RB",
+      "starter_games": 7,
+      "starter_pts": 127.5,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Mackenzie Iden",
+      "player": "Commanders D/ST",
+      "pos": "D/ST",
+      "starter_games": 2,
+      "starter_pts": 12.0,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Mackenzie Iden",
+      "player": "Craig Reynolds",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 23.1,
+      "seasons": 1,
+      "years_display": "21"
     },
     {
       "owner": "Mackenzie Iden",
@@ -217938,12 +221259,66 @@
     },
     {
       "owner": "Mackenzie Iden",
+      "player": "Devin Singletary",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 43.4,
+      "seasons": 2,
+      "years_display": "23, 24"
+    },
+    {
+      "owner": "Mackenzie Iden",
       "player": "Dolphins D/ST",
       "pos": "D/ST",
       "starter_games": 18,
       "starter_pts": 146.0,
       "seasons": 2,
       "years_display": "22, 23"
+    },
+    {
+      "owner": "Mackenzie Iden",
+      "player": "Evan Engram",
+      "pos": "TE",
+      "starter_games": 3,
+      "starter_pts": 8.3,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Mackenzie Iden",
+      "player": "George Kittle",
+      "pos": "TE",
+      "starter_games": 6,
+      "starter_pts": 84.2,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Mackenzie Iden",
+      "player": "George Pickens",
+      "pos": "WR",
+      "starter_games": 5,
+      "starter_pts": 58.9,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Mackenzie Iden",
+      "player": "Gerald Everett",
+      "pos": "TE",
+      "starter_games": 3,
+      "starter_pts": 33.4,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Mackenzie Iden",
+      "player": "Greg Zuerlein",
+      "pos": "K",
+      "starter_games": 6,
+      "starter_pts": 57.0,
+      "seasons": 1,
+      "years_display": "21"
     },
     {
       "owner": "Mackenzie Iden",
@@ -217974,12 +221349,39 @@
     },
     {
       "owner": "Mackenzie Iden",
+      "player": "Jared Goff",
+      "pos": "QB",
+      "starter_games": 4,
+      "starter_pts": 88.3,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Mackenzie Iden",
+      "player": "Jayden Reed",
+      "pos": "WR",
+      "starter_games": 5,
+      "starter_pts": 39.0,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Mackenzie Iden",
       "player": "Joe Mixon",
       "pos": "RB",
       "starter_games": 28,
       "starter_pts": 468.4,
       "seasons": 2,
       "years_display": "23, 24"
+    },
+    {
+      "owner": "Mackenzie Iden",
+      "player": "Joshua Palmer",
+      "pos": "WR",
+      "starter_games": 2,
+      "starter_pts": 28.3,
+      "seasons": 1,
+      "years_display": "23"
     },
     {
       "owner": "Mackenzie Iden",
@@ -218019,12 +221421,30 @@
     },
     {
       "owner": "Mackenzie Iden",
+      "player": "Marquise Brown",
+      "pos": "WR",
+      "starter_games": 6,
+      "starter_pts": 109.5,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Mackenzie Iden",
       "player": "Matt Prater",
       "pos": "K",
       "starter_games": 9,
       "starter_pts": 53.0,
       "seasons": 1,
       "years_display": "23"
+    },
+    {
+      "owner": "Mackenzie Iden",
+      "player": "Melvin Gordon III",
+      "pos": "RB",
+      "starter_games": 4,
+      "starter_pts": 19.9,
+      "seasons": 1,
+      "years_display": "22"
     },
     {
       "owner": "Mackenzie Iden",
@@ -218091,6 +221511,24 @@
     },
     {
       "owner": "Mackenzie Iden",
+      "player": "Robby Anderson",
+      "pos": "WR",
+      "starter_games": 3,
+      "starter_pts": 21.3,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Mackenzie Iden",
+      "player": "Ryan Succop",
+      "pos": "K",
+      "starter_games": 4,
+      "starter_pts": 32.0,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Mackenzie Iden",
       "player": "Saquon Barkley",
       "pos": "RB",
       "starter_games": 15,
@@ -218109,6 +221547,15 @@
     },
     {
       "owner": "Mackenzie Iden",
+      "player": "Tank Dell",
+      "pos": "WR",
+      "starter_games": 5,
+      "starter_pts": 94.6,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Mackenzie Iden",
       "player": "Terry McLaurin",
       "pos": "WR",
       "starter_games": 11,
@@ -218118,12 +221565,48 @@
     },
     {
       "owner": "Mackenzie Iden",
+      "player": "Titans D/ST",
+      "pos": "D/ST",
+      "starter_games": 5,
+      "starter_pts": 50.0,
+      "seasons": 2,
+      "years_display": "21, 22"
+    },
+    {
+      "owner": "Mackenzie Iden",
       "player": "Tyler Lockett",
       "pos": "WR",
       "starter_games": 12,
       "starter_pts": 170.1,
       "seasons": 1,
       "years_display": "21"
+    },
+    {
+      "owner": "Mackenzie Iden",
+      "player": "Tyrone Tracy Jr.",
+      "pos": "RB",
+      "starter_games": 6,
+      "starter_pts": 83.5,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Mackenzie Iden",
+      "player": "Zach Charbonnet",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 81.9,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "49ers D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 36.0,
+      "seasons": 1,
+      "years_display": "19"
     },
     {
       "owner": "Marlene Holm",
@@ -218163,10 +221646,46 @@
     },
     {
       "owner": "Marlene Holm",
+      "player": "Antonio Gibson",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 13.9,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Marlene Holm",
       "player": "Austin Ekeler",
       "pos": "RB",
       "starter_games": 13,
       "starter_pts": 173.5,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Baker Mayfield",
+      "pos": "QB",
+      "starter_games": 7,
+      "starter_pts": 142.2,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Blair Walsh",
+      "pos": "K",
+      "starter_games": 3,
+      "starter_pts": 19.0,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Blake Grupe",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 11.0,
       "seasons": 1,
       "years_display": "23"
     },
@@ -218199,6 +221718,15 @@
     },
     {
       "owner": "Marlene Holm",
+      "player": "Breece Hall",
+      "pos": "RB",
+      "starter_games": 5,
+      "starter_pts": 77.3,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Marlene Holm",
       "player": "Brock Bowers",
       "pos": "TE",
       "starter_games": 10,
@@ -218208,10 +221736,37 @@
     },
     {
       "owner": "Marlene Holm",
+      "player": "Browns D/ST",
+      "pos": "D/ST",
+      "starter_games": 5,
+      "starter_pts": 41.0,
+      "seasons": 2,
+      "years_display": "19, 24"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "C.J. Anderson",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 23.2,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Marlene Holm",
       "player": "C.J. Stroud",
       "pos": "QB",
       "starter_games": 8,
       "starter_pts": 137.8,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Cade Otton",
+      "pos": "TE",
+      "starter_games": 3,
+      "starter_pts": 18.5,
       "seasons": 1,
       "years_display": "24"
     },
@@ -218253,6 +221808,15 @@
     },
     {
       "owner": "Marlene Holm",
+      "player": "Christian Kirk",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 22.6,
+      "seasons": 2,
+      "years_display": "20, 24"
+    },
+    {
+      "owner": "Marlene Holm",
       "player": "Christian McCaffrey",
       "pos": "RB",
       "starter_games": 26,
@@ -218262,12 +221826,30 @@
     },
     {
       "owner": "Marlene Holm",
+      "player": "Cole Kmet",
+      "pos": "TE",
+      "starter_games": 2,
+      "starter_pts": 14.4,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Marlene Holm",
       "player": "Cordarrelle Patterson",
       "pos": "RB",
       "starter_games": 11,
       "starter_pts": 149.0,
       "seasons": 1,
       "years_display": "21"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Corey Davis",
+      "pos": "WR",
+      "starter_games": 3,
+      "starter_pts": 56.2,
+      "seasons": 1,
+      "years_display": "20"
     },
     {
       "owner": "Marlene Holm",
@@ -218316,10 +221898,28 @@
     },
     {
       "owner": "Marlene Holm",
+      "player": "Dameon Pierce",
+      "pos": "RB",
+      "starter_games": 5,
+      "starter_pts": 29.4,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Marlene Holm",
       "player": "Daniel Carlson",
       "pos": "K",
       "starter_games": 8,
       "starter_pts": 76.0,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Darnell Mooney",
+      "pos": "WR",
+      "starter_games": 6,
+      "starter_pts": 73.5,
       "seasons": 1,
       "years_display": "21"
     },
@@ -218334,12 +221934,39 @@
     },
     {
       "owner": "Marlene Holm",
+      "player": "David Johnson",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 66.2,
+      "seasons": 2,
+      "years_display": "17, 20"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Dawson Knox",
+      "pos": "TE",
+      "starter_games": 2,
+      "starter_pts": 28.2,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Marlene Holm",
       "player": "DeMarco Murray",
       "pos": "RB",
       "starter_games": 8,
       "starter_pts": 70.2,
       "seasons": 1,
       "years_display": "17"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "DeVante Parker",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 95.3,
+      "seasons": 1,
+      "years_display": "19"
     },
     {
       "owner": "Marlene Holm",
@@ -218361,12 +221988,66 @@
     },
     {
       "owner": "Marlene Holm",
+      "player": "Demarcus Robinson",
+      "pos": "WR",
+      "starter_games": 3,
+      "starter_pts": 16.9,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Devin Funchess",
+      "pos": "WR",
+      "starter_games": 2,
+      "starter_pts": 39.8,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Marlene Holm",
       "player": "Devonta Freeman",
       "pos": "RB",
       "starter_games": 8,
       "starter_pts": 129.4,
       "seasons": 2,
       "years_display": "19, 20"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Diontae Johnson",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 61.7,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Dolphins D/ST",
+      "pos": "D/ST",
+      "starter_games": 6,
+      "starter_pts": 41.0,
+      "seasons": 2,
+      "years_display": "20, 21"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Drake Maye",
+      "pos": "QB",
+      "starter_games": 2,
+      "starter_pts": 31.1,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Drew Brees",
+      "pos": "QB",
+      "starter_games": 5,
+      "starter_pts": 82.0,
+      "seasons": 1,
+      "years_display": "20"
     },
     {
       "owner": "Marlene Holm",
@@ -218379,12 +222060,39 @@
     },
     {
       "owner": "Marlene Holm",
+      "player": "Evan McPherson",
+      "pos": "K",
+      "starter_games": 6,
+      "starter_pts": 49.0,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Marlene Holm",
       "player": "Garrett Wilson",
       "pos": "WR",
       "starter_games": 16,
       "starter_pts": 242.8,
       "seasons": 1,
       "years_display": "24"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "George Kittle",
+      "pos": "TE",
+      "starter_games": 5,
+      "starter_pts": 45.2,
+      "seasons": 2,
+      "years_display": "17, 21"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Giovani Bernard",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 43.4,
+      "seasons": 1,
+      "years_display": "20"
     },
     {
       "owner": "Marlene Holm",
@@ -218406,6 +222114,24 @@
     },
     {
       "owner": "Marlene Holm",
+      "player": "Isaac Guerendo",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 38.3,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Jacoby Brissett",
+      "pos": "QB",
+      "starter_games": 5,
+      "starter_pts": 97.5,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Marlene Holm",
       "player": "Jahmyr Gibbs",
       "pos": "RB",
       "starter_games": 15,
@@ -218421,6 +222147,15 @@
       "starter_pts": 85.0,
       "seasons": 3,
       "years_display": "22, 23, 24"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Jake Moody",
+      "pos": "K",
+      "starter_games": 3,
+      "starter_pts": 19.0,
+      "seasons": 2,
+      "years_display": "23, 24"
     },
     {
       "owner": "Marlene Holm",
@@ -218460,12 +222195,48 @@
     },
     {
       "owner": "Marlene Holm",
+      "player": "Jamison Crowder",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 44.3,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Jason Sanders",
+      "pos": "K",
+      "starter_games": 3,
+      "starter_pts": 30.0,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Marlene Holm",
       "player": "Javonte Williams",
       "pos": "RB",
       "starter_games": 13,
       "starter_pts": 141.8,
       "seasons": 1,
       "years_display": "23"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Jay Ajayi",
+      "pos": "RB",
+      "starter_games": 6,
+      "starter_pts": 52.2,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Jerry Jeudy",
+      "pos": "WR",
+      "starter_games": 2,
+      "starter_pts": 20.7,
+      "seasons": 1,
+      "years_display": "25"
     },
     {
       "owner": "Marlene Holm",
@@ -218478,12 +222249,48 @@
     },
     {
       "owner": "Marlene Holm",
+      "player": "Joe Mixon",
+      "pos": "RB",
+      "starter_games": 6,
+      "starter_pts": 99.6,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Joey Slye",
+      "pos": "K",
+      "starter_games": 6,
+      "starter_pts": 41.0,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Marlene Holm",
       "player": "Jonathan Taylor",
       "pos": "RB",
       "starter_games": 7,
       "starter_pts": 131.2,
       "seasons": 1,
       "years_display": "21"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Jordan Addison",
+      "pos": "WR",
+      "starter_games": 6,
+      "starter_pts": 62.9,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Josh Allen",
+      "pos": "QB",
+      "starter_games": 4,
+      "starter_pts": 115.5,
+      "seasons": 1,
+      "years_display": "20"
     },
     {
       "owner": "Marlene Holm",
@@ -218496,12 +222303,30 @@
     },
     {
       "owner": "Marlene Holm",
+      "player": "Joshua Kelley",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 13.1,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Marlene Holm",
       "player": "Justin Herbert",
       "pos": "QB",
       "starter_games": 13,
       "starter_pts": 234.2,
       "seasons": 1,
       "years_display": "23"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Justin Jackson",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 43.3,
+      "seasons": 1,
+      "years_display": "21"
     },
     {
       "owner": "Marlene Holm",
@@ -218514,12 +222339,30 @@
     },
     {
       "owner": "Marlene Holm",
+      "player": "Kareem Hunt",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 38.0,
+      "seasons": 2,
+      "years_display": "19, 23"
+    },
+    {
+      "owner": "Marlene Holm",
       "player": "Keenan Allen",
       "pos": "WR",
       "starter_games": 23,
       "starter_pts": 358.7,
       "seasons": 2,
       "years_display": "20, 22"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Kendre Miller",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 8.0,
+      "seasons": 1,
+      "years_display": "24"
     },
     {
       "owner": "Marlene Holm",
@@ -218532,6 +222375,15 @@
     },
     {
       "owner": "Marlene Holm",
+      "player": "Kenny Golladay",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 48.1,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Marlene Holm",
       "player": "Khalil Shakir",
       "pos": "WR",
       "starter_games": 8,
@@ -218541,12 +222393,75 @@
     },
     {
       "owner": "Marlene Holm",
+      "player": "Kyle Pitts",
+      "pos": "TE",
+      "starter_games": 4,
+      "starter_pts": 25.0,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Lions D/ST",
+      "pos": "D/ST",
+      "starter_games": 2,
+      "starter_pts": 17.0,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Marlon Mack",
+      "pos": "RB",
+      "starter_games": 6,
+      "starter_pts": 64.3,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Martellus Bennett",
+      "pos": "TE",
+      "starter_games": 5,
+      "starter_pts": 39.4,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Mason Crosby",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 10.0,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Matt Gay",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 13.0,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Marlene Holm",
       "player": "Matthew Stafford",
       "pos": "QB",
       "starter_games": 8,
       "starter_pts": 137.7,
       "seasons": 2,
       "years_display": "17, 23"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Michael Thomas",
+      "pos": "WR",
+      "starter_games": 5,
+      "starter_pts": 44.2,
+      "seasons": 1,
+      "years_display": "23"
     },
     {
       "owner": "Marlene Holm",
@@ -218577,6 +222492,15 @@
     },
     {
       "owner": "Marlene Holm",
+      "player": "Nick Chubb",
+      "pos": "RB",
+      "starter_games": 4,
+      "starter_pts": 33.7,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Marlene Holm",
       "player": "Nick Folk",
       "pos": "K",
       "starter_games": 14,
@@ -218586,12 +222510,39 @@
     },
     {
       "owner": "Marlene Holm",
+      "player": "Packers D/ST",
+      "pos": "D/ST",
+      "starter_games": 5,
+      "starter_pts": 42.0,
+      "seasons": 2,
+      "years_display": "20, 24"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Panthers D/ST",
+      "pos": "D/ST",
+      "starter_games": 7,
+      "starter_pts": 63.0,
+      "seasons": 2,
+      "years_display": "19, 21"
+    },
+    {
+      "owner": "Marlene Holm",
       "player": "Patriots D/ST",
       "pos": "D/ST",
       "starter_games": 15,
       "starter_pts": 158.0,
       "seasons": 2,
       "years_display": "21, 25"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Pierre Garcon",
+      "pos": "WR",
+      "starter_games": 3,
+      "starter_pts": 42.0,
+      "seasons": 1,
+      "years_display": "17"
     },
     {
       "owner": "Marlene Holm",
@@ -218613,12 +222564,84 @@
     },
     {
       "owner": "Marlene Holm",
+      "player": "Rashee Rice",
+      "pos": "WR",
+      "starter_games": 7,
+      "starter_pts": 138.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Marlene Holm",
       "player": "Ravens D/ST",
       "pos": "D/ST",
       "starter_games": 12,
       "starter_pts": 96.0,
       "seasons": 3,
       "years_display": "17, 22, 24"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Robbie Gould",
+      "pos": "K",
+      "starter_games": 3,
+      "starter_pts": 21.0,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Russell Wilson",
+      "pos": "QB",
+      "starter_games": 2,
+      "starter_pts": 41.0,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Ryan Fitzpatrick",
+      "pos": "QB",
+      "starter_games": 3,
+      "starter_pts": 69.0,
+      "seasons": 2,
+      "years_display": "19, 20"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Samaje Perine",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 50.2,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Steelers D/ST",
+      "pos": "D/ST",
+      "starter_games": 6,
+      "starter_pts": 45.0,
+      "seasons": 2,
+      "years_display": "23, 24"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Stephen Gostkowski",
+      "pos": "K",
+      "starter_games": 4,
+      "starter_pts": 32.0,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Sterling Shepard",
+      "pos": "WR",
+      "starter_games": 3,
+      "starter_pts": 28.4,
+      "seasons": 2,
+      "years_display": "19, 25"
     },
     {
       "owner": "Marlene Holm",
@@ -218649,6 +222672,15 @@
     },
     {
       "owner": "Marlene Holm",
+      "player": "Tevin Coleman",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 34.5,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Marlene Holm",
       "player": "Texans D/ST",
       "pos": "D/ST",
       "starter_games": 9,
@@ -218676,6 +222708,24 @@
     },
     {
       "owner": "Marlene Holm",
+      "player": "Travis Kelce",
+      "pos": "TE",
+      "starter_games": 7,
+      "starter_pts": 113.7,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Tyrone Tracy Jr.",
+      "pos": "RB",
+      "starter_games": 4,
+      "starter_pts": 28.8,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Marlene Holm",
       "player": "Vernon Davis",
       "pos": "TE",
       "starter_games": 7,
@@ -218685,12 +222735,39 @@
     },
     {
       "owner": "Marlene Holm",
+      "player": "Wan'Dale Robinson",
+      "pos": "WR",
+      "starter_games": 3,
+      "starter_pts": 34.3,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Marlene Holm",
       "player": "Wil Lutz",
       "pos": "K",
       "starter_games": 10,
       "starter_pts": 94.0,
       "seasons": 1,
       "years_display": "17"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Younghoe Koo",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 12.0,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Marlene Holm",
+      "player": "Zack Moss",
+      "pos": "RB",
+      "starter_games": 7,
+      "starter_pts": 63.9,
+      "seasons": 1,
+      "years_display": "23"
     },
     {
       "owner": "Michael Searcy",
@@ -218766,10 +222843,46 @@
     },
     {
       "owner": "Michael Searcy",
+      "player": "Packers D/ST",
+      "pos": "D/ST",
+      "starter_games": 6,
+      "starter_pts": 15.0,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Michael Searcy",
+      "player": "Philip Rivers",
+      "pos": "QB",
+      "starter_games": 4,
+      "starter_pts": 55.9,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Michael Searcy",
       "player": "Rams D/ST",
       "pos": "D/ST",
       "starter_games": 9,
       "starter_pts": 110.0,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Michael Searcy",
+      "player": "Randall Cobb",
+      "pos": "WR",
+      "starter_games": 5,
+      "starter_pts": 39.1,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Michael Searcy",
+      "player": "Stefon Diggs",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 37.5,
       "seasons": 1,
       "years_display": "17"
     },
@@ -218784,10 +222897,73 @@
     },
     {
       "owner": "Rey Igliane",
+      "player": "Ashton Jeanty",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 25.7,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Rey Igliane",
+      "player": "Cam Little",
+      "pos": "K",
+      "starter_games": 3,
+      "starter_pts": 37.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Rey Igliane",
+      "player": "Chimere Dike",
+      "pos": "WR",
+      "starter_games": 3,
+      "starter_pts": 28.2,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Rey Igliane",
+      "player": "Chris Boswell",
+      "pos": "K",
+      "starter_games": 4,
+      "starter_pts": 43.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Rey Igliane",
+      "player": "Dallas Goedert",
+      "pos": "TE",
+      "starter_games": 5,
+      "starter_pts": 67.6,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Rey Igliane",
+      "player": "Eagles D/ST",
+      "pos": "D/ST",
+      "starter_games": 5,
+      "starter_pts": 21.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Rey Igliane",
       "player": "George Kittle",
       "pos": "TE",
       "starter_games": 8,
       "starter_pts": 115.9,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Rey Igliane",
+      "player": "Harrison Butker",
+      "pos": "K",
+      "starter_games": 7,
+      "starter_pts": 51.0,
       "seasons": 1,
       "years_display": "25"
     },
@@ -218802,10 +222978,55 @@
     },
     {
       "owner": "Rey Igliane",
+      "player": "Jared Goff",
+      "pos": "QB",
+      "starter_games": 3,
+      "starter_pts": 54.3,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Rey Igliane",
+      "player": "Juwan Johnson",
+      "pos": "TE",
+      "starter_games": 2,
+      "starter_pts": 16.9,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Rey Igliane",
       "player": "Khalil Shakir",
       "pos": "WR",
       "starter_games": 9,
       "starter_pts": 91.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Rey Igliane",
+      "player": "Kimani Vidal",
+      "pos": "RB",
+      "starter_games": 7,
+      "starter_pts": 64.7,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Rey Igliane",
+      "player": "Lamar Jackson",
+      "pos": "QB",
+      "starter_games": 7,
+      "starter_pts": 154.7,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Rey Igliane",
+      "player": "Lions D/ST",
+      "pos": "D/ST",
+      "starter_games": 3,
+      "starter_pts": 10.0,
       "seasons": 1,
       "years_display": "25"
     },
@@ -218820,12 +223041,93 @@
     },
     {
       "owner": "Rey Igliane",
+      "player": "Matt Prater",
+      "pos": "K",
+      "starter_games": 3,
+      "starter_pts": 28.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Rey Igliane",
+      "player": "Matthew Stafford",
+      "pos": "QB",
+      "starter_games": 6,
+      "starter_pts": 141.2,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Rey Igliane",
+      "player": "Michael Wilson",
+      "pos": "WR",
+      "starter_games": 6,
+      "starter_pts": 115.1,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Rey Igliane",
+      "player": "Nick Chubb",
+      "pos": "RB",
+      "starter_games": 4,
+      "starter_pts": 35.4,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Rey Igliane",
+      "player": "Packers D/ST",
+      "pos": "D/ST",
+      "starter_games": 5,
+      "starter_pts": 15.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Rey Igliane",
+      "player": "Sam LaPorta",
+      "pos": "TE",
+      "starter_games": 2,
+      "starter_pts": 19.5,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Rey Igliane",
       "player": "Tony Pollard",
       "pos": "RB",
       "starter_games": 16,
       "starter_pts": 176.3,
       "seasons": 1,
       "years_display": "25"
+    },
+    {
+      "owner": "Rey Igliane",
+      "player": "Tre Tucker",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 36.9,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Rey Igliane",
+      "player": "Tyreek Hill",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 53.5,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "49ers D/ST",
+      "pos": "D/ST",
+      "starter_games": 5,
+      "starter_pts": 44.0,
+      "seasons": 2,
+      "years_display": "19, 24"
     },
     {
       "owner": "Trenton Holm",
@@ -218835,6 +223137,15 @@
       "starter_pts": 174.1,
       "seasons": 2,
       "years_display": "19, 22"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Alex Smith",
+      "pos": "QB",
+      "starter_games": 4,
+      "starter_pts": 75.1,
+      "seasons": 1,
+      "years_display": "17"
     },
     {
       "owner": "Trenton Holm",
@@ -218856,6 +223167,15 @@
     },
     {
       "owner": "Trenton Holm",
+      "player": "Amon-Ra St. Brown",
+      "pos": "WR",
+      "starter_games": 5,
+      "starter_pts": 82.3,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Trenton Holm",
       "player": "Antonio Gibson",
       "pos": "RB",
       "starter_games": 15,
@@ -218874,12 +223194,30 @@
     },
     {
       "owner": "Trenton Holm",
+      "player": "Bears D/ST",
+      "pos": "D/ST",
+      "starter_games": 2,
+      "starter_pts": 17.0,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Trenton Holm",
       "player": "Bengals D/ST",
       "pos": "D/ST",
       "starter_games": 10,
       "starter_pts": 72.0,
       "seasons": 4,
       "years_display": "17, 21, 22, 24"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Bills D/ST",
+      "pos": "D/ST",
+      "starter_games": 7,
+      "starter_pts": 50.0,
+      "seasons": 1,
+      "years_display": "23"
     },
     {
       "owner": "Trenton Holm",
@@ -218901,12 +223239,66 @@
     },
     {
       "owner": "Trenton Holm",
+      "player": "Bucky Irving",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 32.6,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Cam Little",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 12.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Trenton Holm",
       "player": "Cameron Dicker",
       "pos": "K",
       "starter_games": 9,
       "starter_pts": 95.0,
       "seasons": 2,
       "years_display": "24, 25"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Carson Steele",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 8.0,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Chase McLaughlin",
+      "pos": "K",
+      "starter_games": 7,
+      "starter_pts": 47.0,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Chiefs D/ST",
+      "pos": "D/ST",
+      "starter_games": 5,
+      "starter_pts": 57.0,
+      "seasons": 2,
+      "years_display": "20, 22"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Chris Carson",
+      "pos": "RB",
+      "starter_games": 4,
+      "starter_pts": 48.1,
+      "seasons": 1,
+      "years_display": "21"
     },
     {
       "owner": "Trenton Holm",
@@ -218919,12 +223311,39 @@
     },
     {
       "owner": "Trenton Holm",
+      "player": "Cole Beasley",
+      "pos": "WR",
+      "starter_games": 2,
+      "starter_pts": 11.3,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Trenton Holm",
       "player": "Cooper Kupp",
       "pos": "WR",
       "starter_games": 14,
       "starter_pts": 183.0,
       "seasons": 1,
       "years_display": "20"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Cordarrelle Patterson",
+      "pos": "RB",
+      "starter_games": 6,
+      "starter_pts": 55.3,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Curtis Samuel",
+      "pos": "WR",
+      "starter_games": 7,
+      "starter_pts": 64.3,
+      "seasons": 2,
+      "years_display": "19, 22"
     },
     {
       "owner": "Trenton Holm",
@@ -218946,12 +223365,39 @@
     },
     {
       "owner": "Trenton Holm",
+      "player": "Dallas Goedert",
+      "pos": "TE",
+      "starter_games": 3,
+      "starter_pts": 26.2,
+      "seasons": 2,
+      "years_display": "19, 21"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Daniel Carlson",
+      "pos": "K",
+      "starter_games": 3,
+      "starter_pts": 14.0,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Trenton Holm",
       "player": "Daniel Jones",
       "pos": "QB",
       "starter_games": 12,
       "starter_pts": 215.8,
       "seasons": 2,
       "years_display": "21, 25"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Danny Amendola",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 31.2,
+      "seasons": 1,
+      "years_display": "17"
     },
     {
       "owner": "Trenton Holm",
@@ -218964,6 +223410,24 @@
     },
     {
       "owner": "Trenton Holm",
+      "player": "DeMario Douglas",
+      "pos": "WR",
+      "starter_games": 2,
+      "starter_pts": 17.3,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "DeVante Parker",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 52.4,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Trenton Holm",
       "player": "Deebo Samuel",
       "pos": "WR",
       "starter_games": 14,
@@ -218973,12 +223437,48 @@
     },
     {
       "owner": "Trenton Holm",
+      "player": "Dion Lewis",
+      "pos": "RB",
+      "starter_games": 5,
+      "starter_pts": 50.2,
+      "seasons": 2,
+      "years_display": "17, 20"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Diontae Johnson",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 70.6,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Dolphins D/ST",
+      "pos": "D/ST",
+      "starter_games": 3,
+      "starter_pts": 24.0,
+      "seasons": 2,
+      "years_display": "17, 21"
+    },
+    {
+      "owner": "Trenton Holm",
       "player": "Drake London",
       "pos": "WR",
       "starter_games": 16,
       "starter_pts": 240.1,
       "seasons": 1,
       "years_display": "24"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Eagles D/ST",
+      "pos": "D/ST",
+      "starter_games": 5,
+      "starter_pts": 39.0,
+      "seasons": 3,
+      "years_display": "17, 20, 25"
     },
     {
       "owner": "Trenton Holm",
@@ -219000,12 +223500,75 @@
     },
     {
       "owner": "Trenton Holm",
+      "player": "Falcons D/ST",
+      "pos": "D/ST",
+      "starter_games": 3,
+      "starter_pts": 17.0,
+      "seasons": 3,
+      "years_display": "17, 23, 24"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Frank Gore",
+      "pos": "RB",
+      "starter_games": 5,
+      "starter_pts": 41.6,
+      "seasons": 2,
+      "years_display": "17, 20"
+    },
+    {
+      "owner": "Trenton Holm",
       "player": "George Kittle",
       "pos": "TE",
       "starter_games": 23,
       "starter_pts": 331.0,
       "seasons": 2,
       "years_display": "21, 22"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Giants D/ST",
+      "pos": "D/ST",
+      "starter_games": 6,
+      "starter_pts": 42.0,
+      "seasons": 3,
+      "years_display": "20, 22, 23"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Golden Tate",
+      "pos": "WR",
+      "starter_games": 3,
+      "starter_pts": 51.2,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Greg Olsen",
+      "pos": "TE",
+      "starter_games": 2,
+      "starter_pts": 5.8,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Gus Edwards",
+      "pos": "RB",
+      "starter_games": 4,
+      "starter_pts": 52.7,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Isaiah Crowell",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 21.7,
+      "seasons": 1,
+      "years_display": "17"
     },
     {
       "owner": "Trenton Holm",
@@ -219027,12 +223590,75 @@
     },
     {
       "owner": "Trenton Holm",
+      "player": "Jack Doyle",
+      "pos": "TE",
+      "starter_games": 3,
+      "starter_pts": 46.0,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Jaguars D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 23.0,
+      "seasons": 3,
+      "years_display": "23, 24, 25"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Jake Ferguson",
+      "pos": "TE",
+      "starter_games": 2,
+      "starter_pts": 15.8,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Jakobi Meyers",
+      "pos": "WR",
+      "starter_games": 2,
+      "starter_pts": 22.7,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Trenton Holm",
       "player": "Jalen Hurts",
       "pos": "QB",
       "starter_games": 30,
       "starter_pts": 647.5,
       "seasons": 2,
       "years_display": "23, 24"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "James White",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 12.1,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Jared Cook",
+      "pos": "TE",
+      "starter_games": 2,
+      "starter_pts": 10.2,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Jarvis Landry",
+      "pos": "WR",
+      "starter_games": 2,
+      "starter_pts": 20.8,
+      "seasons": 1,
+      "years_display": "21"
     },
     {
       "owner": "Trenton Holm",
@@ -219045,12 +223671,39 @@
     },
     {
       "owner": "Trenton Holm",
+      "player": "Jason Sanders",
+      "pos": "K",
+      "starter_games": 7,
+      "starter_pts": 37.0,
+      "seasons": 2,
+      "years_display": "20, 23"
+    },
+    {
+      "owner": "Trenton Holm",
       "player": "Javonte Williams",
       "pos": "RB",
       "starter_games": 27,
       "starter_pts": 338.6,
       "seasons": 2,
       "years_display": "24, 25"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Javorius Allen",
+      "pos": "RB",
+      "starter_games": 6,
+      "starter_pts": 77.6,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Jerick McKinnon",
+      "pos": "RB",
+      "starter_games": 5,
+      "starter_pts": 61.9,
+      "seasons": 1,
+      "years_display": "17"
     },
     {
       "owner": "Trenton Holm",
@@ -219063,12 +223716,30 @@
     },
     {
       "owner": "Trenton Holm",
+      "player": "Joe Burrow",
+      "pos": "QB",
+      "starter_games": 2,
+      "starter_pts": 17.8,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Trenton Holm",
       "player": "Joe Mixon",
       "pos": "RB",
       "starter_games": 14,
       "starter_pts": 221.7,
       "seasons": 1,
       "years_display": "22"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Joey Slye",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 15.0,
+      "seasons": 1,
+      "years_display": "19"
     },
     {
       "owner": "Trenton Holm",
@@ -219099,12 +223770,48 @@
     },
     {
       "owner": "Trenton Holm",
+      "player": "Josh Downs",
+      "pos": "WR",
+      "starter_games": 6,
+      "starter_pts": 72.1,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Josh Jacobs",
+      "pos": "RB",
+      "starter_games": 6,
+      "starter_pts": 71.5,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Trenton Holm",
       "player": "Julian Edelman",
       "pos": "WR",
       "starter_games": 17,
       "starter_pts": 267.9,
       "seasons": 2,
       "years_display": "19, 20"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Justin Herbert",
+      "pos": "QB",
+      "starter_games": 6,
+      "starter_pts": 102.2,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Ka'imi Fairbairn",
+      "pos": "K",
+      "starter_games": 4,
+      "starter_pts": 16.0,
+      "seasons": 1,
+      "years_display": "19"
     },
     {
       "owner": "Trenton Holm",
@@ -219117,12 +223824,30 @@
     },
     {
       "owner": "Trenton Holm",
+      "player": "Kelvin Benjamin",
+      "pos": "WR",
+      "starter_games": 2,
+      "starter_pts": 12.9,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Trenton Holm",
       "player": "Kyren Williams",
       "pos": "RB",
       "starter_games": 27,
       "starter_pts": 427.2,
       "seasons": 2,
       "years_display": "24, 25"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Larry Fitzgerald",
+      "pos": "WR",
+      "starter_games": 3,
+      "starter_pts": 38.5,
+      "seasons": 1,
+      "years_display": "19"
     },
     {
       "owner": "Trenton Holm",
@@ -219153,6 +223878,33 @@
     },
     {
       "owner": "Trenton Holm",
+      "player": "Marquise Brown",
+      "pos": "WR",
+      "starter_games": 6,
+      "starter_pts": 55.4,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Marvin Jones Jr.",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 52.4,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Matt Gay",
+      "pos": "K",
+      "starter_games": 6,
+      "starter_pts": 60.0,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "Trenton Holm",
       "player": "Matt Prater",
       "pos": "K",
       "starter_games": 10,
@@ -219171,12 +223923,48 @@
     },
     {
       "owner": "Trenton Holm",
+      "player": "Matthew Stafford",
+      "pos": "QB",
+      "starter_games": 3,
+      "starter_pts": 46.7,
+      "seasons": 2,
+      "years_display": "17, 19"
+    },
+    {
+      "owner": "Trenton Holm",
       "player": "Michael Pittman Jr.",
       "pos": "WR",
       "starter_games": 27,
       "starter_pts": 405.4,
       "seasons": 2,
       "years_display": "22, 23"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Mike Evans",
+      "pos": "WR",
+      "starter_games": 2,
+      "starter_pts": 26.2,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Miles Sanders",
+      "pos": "RB",
+      "starter_games": 7,
+      "starter_pts": 62.6,
+      "seasons": 2,
+      "years_display": "19, 21"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Myles Gaskin",
+      "pos": "RB",
+      "starter_games": 6,
+      "starter_pts": 105.1,
+      "seasons": 1,
+      "years_display": "20"
     },
     {
       "owner": "Trenton Holm",
@@ -219189,12 +223977,30 @@
     },
     {
       "owner": "Trenton Holm",
+      "player": "Patriots D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 42.0,
+      "seasons": 2,
+      "years_display": "17, 20"
+    },
+    {
+      "owner": "Trenton Holm",
       "player": "Raheem Mostert",
       "pos": "RB",
       "starter_games": 13,
       "starter_pts": 161.9,
       "seasons": 2,
       "years_display": "20, 22"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Raiders D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 22.0,
+      "seasons": 3,
+      "years_display": "20, 21, 25"
     },
     {
       "owner": "Trenton Holm",
@@ -219207,12 +224013,39 @@
     },
     {
       "owner": "Trenton Holm",
+      "player": "Rashee Rice",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 64.9,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "Trenton Holm",
       "player": "Rhamondre Stevenson",
       "pos": "RB",
       "starter_games": 13,
       "starter_pts": 137.5,
       "seasons": 2,
       "years_display": "24, 25"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Ricky Pearsall",
+      "pos": "WR",
+      "starter_games": 3,
+      "starter_pts": 43.1,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Robbie Gould",
+      "pos": "K",
+      "starter_games": 4,
+      "starter_pts": 25.0,
+      "seasons": 1,
+      "years_display": "20"
     },
     {
       "owner": "Trenton Holm",
@@ -219234,12 +224067,39 @@
     },
     {
       "owner": "Trenton Holm",
+      "player": "Ryan Succop",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 12.0,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Saints D/ST",
+      "pos": "D/ST",
+      "starter_games": 5,
+      "starter_pts": 32.0,
+      "seasons": 4,
+      "years_display": "17, 19, 20, 21"
+    },
+    {
+      "owner": "Trenton Holm",
       "player": "Saquon Barkley",
       "pos": "RB",
       "starter_games": 12,
       "starter_pts": 223.4,
       "seasons": 1,
       "years_display": "19"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Seahawks D/ST",
+      "pos": "D/ST",
+      "starter_games": 5,
+      "starter_pts": 55.0,
+      "seasons": 3,
+      "years_display": "19, 21, 23"
     },
     {
       "owner": "Trenton Holm",
@@ -219270,6 +224130,15 @@
     },
     {
       "owner": "Trenton Holm",
+      "player": "Sterling Shepard",
+      "pos": "WR",
+      "starter_games": 3,
+      "starter_pts": 28.0,
+      "seasons": 2,
+      "years_display": "19, 20"
+    },
+    {
+      "owner": "Trenton Holm",
       "player": "T.Y. Hilton",
       "pos": "WR",
       "starter_games": 11,
@@ -219279,12 +224148,48 @@
     },
     {
       "owner": "Trenton Holm",
+      "player": "Terrelle Pryor Sr.",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 37.6,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Terry McLaurin",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 36.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Trenton Holm",
       "player": "Tetairoa McMillan",
       "pos": "WR",
       "starter_games": 14,
       "starter_pts": 173.1,
       "seasons": 1,
       "years_display": "25"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Texans D/ST",
+      "pos": "D/ST",
+      "starter_games": 3,
+      "starter_pts": 20.0,
+      "seasons": 3,
+      "years_display": "17, 19, 24"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Titans D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 37.0,
+      "seasons": 2,
+      "years_display": "17, 22"
     },
     {
       "owner": "Trenton Holm",
@@ -219303,6 +224208,15 @@
       "starter_pts": 95.8,
       "seasons": 1,
       "years_display": "24"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Travis Fulgham",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 37.5,
+      "seasons": 1,
+      "years_display": "20"
     },
     {
       "owner": "Trenton Holm",
@@ -219333,6 +224247,24 @@
     },
     {
       "owner": "Trenton Holm",
+      "player": "Vikings D/ST",
+      "pos": "D/ST",
+      "starter_games": 7,
+      "starter_pts": 57.0,
+      "seasons": 2,
+      "years_display": "23, 24"
+    },
+    {
+      "owner": "Trenton Holm",
+      "player": "Washington D/ST",
+      "pos": "D/ST",
+      "starter_games": 3,
+      "starter_pts": 36.0,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "Trenton Holm",
       "player": "Xavier Worthy",
       "pos": "WR",
       "starter_games": 11,
@@ -219351,10 +224283,91 @@
     },
     {
       "owner": "Valissa Olvera",
+      "player": "Andy Borregales",
+      "pos": "K",
+      "starter_games": 4,
+      "starter_pts": 45.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Valissa Olvera",
+      "player": "Brandon McManus",
+      "pos": "K",
+      "starter_games": 3,
+      "starter_pts": 25.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Valissa Olvera",
+      "player": "Buccaneers D/ST",
+      "pos": "D/ST",
+      "starter_games": 5,
+      "starter_pts": 37.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Valissa Olvera",
       "player": "CeeDee Lamb",
       "pos": "WR",
       "starter_games": 13,
       "starter_pts": 199.5,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Valissa Olvera",
+      "player": "Chuba Hubbard",
+      "pos": "RB",
+      "starter_games": 4,
+      "starter_pts": 55.9,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Valissa Olvera",
+      "player": "DJ Moore",
+      "pos": "WR",
+      "starter_games": 5,
+      "starter_pts": 42.9,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Valissa Olvera",
+      "player": "Devin Neal",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 25.6,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Valissa Olvera",
+      "player": "Evan McPherson",
+      "pos": "K",
+      "starter_games": 4,
+      "starter_pts": 23.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Valissa Olvera",
+      "player": "Garrett Wilson",
+      "pos": "WR",
+      "starter_games": 7,
+      "starter_pts": 99.5,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Valissa Olvera",
+      "player": "Jaguars D/ST",
+      "pos": "D/ST",
+      "starter_games": 2,
+      "starter_pts": 20.0,
       "seasons": 1,
       "years_display": "25"
     },
@@ -219378,10 +224391,46 @@
     },
     {
       "owner": "Valissa Olvera",
+      "player": "Joe Flacco",
+      "pos": "QB",
+      "starter_games": 3,
+      "starter_pts": 49.9,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Valissa Olvera",
       "player": "Jonathan Taylor",
       "pos": "RB",
       "starter_games": 16,
       "starter_pts": 356.4,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Valissa Olvera",
+      "player": "Jordan Mason",
+      "pos": "RB",
+      "starter_games": 5,
+      "starter_pts": 59.7,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Valissa Olvera",
+      "player": "Joshua Karty",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 9.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Valissa Olvera",
+      "player": "Kyler Murray",
+      "pos": "QB",
+      "starter_games": 5,
+      "starter_pts": 87.4,
       "seasons": 1,
       "years_display": "25"
     },
@@ -219396,12 +224445,66 @@
     },
     {
       "owner": "Valissa Olvera",
+      "player": "Sam Darnold",
+      "pos": "QB",
+      "starter_games": 3,
+      "starter_pts": 38.1,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Valissa Olvera",
+      "player": "Steelers D/ST",
+      "pos": "D/ST",
+      "starter_games": 2,
+      "starter_pts": 7.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Valissa Olvera",
+      "player": "Trevor Lawrence",
+      "pos": "QB",
+      "starter_games": 4,
+      "starter_pts": 129.1,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "Valissa Olvera",
       "player": "Trey McBride",
       "pos": "TE",
       "starter_games": 16,
       "starter_pts": 302.4,
       "seasons": 1,
       "years_display": "25"
+    },
+    {
+      "owner": "Valissa Olvera",
+      "player": "Wil Lutz",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 12.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "49ers D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 16.0,
+      "seasons": 3,
+      "years_display": "21, 22, 25"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "A.J. Brown",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 71.4,
+      "seasons": 1,
+      "years_display": "20"
     },
     {
       "owner": "bryce mikesell",
@@ -219414,12 +224517,39 @@
     },
     {
       "owner": "bryce mikesell",
+      "player": "Adrian Peterson",
+      "pos": "RB",
+      "starter_games": 4,
+      "starter_pts": 33.8,
+      "seasons": 2,
+      "years_display": "17, 21"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Alex Collins",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 34.8,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "bryce mikesell",
       "player": "Allen Robinson II",
       "pos": "WR",
       "starter_games": 10,
       "starter_pts": 148.0,
       "seasons": 2,
       "years_display": "20, 22"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Alshon Jeffery",
+      "pos": "WR",
+      "starter_games": 6,
+      "starter_pts": 27.9,
+      "seasons": 1,
+      "years_display": "19"
     },
     {
       "owner": "bryce mikesell",
@@ -219459,6 +224589,87 @@
     },
     {
       "owner": "bryce mikesell",
+      "player": "Austin Hooper",
+      "pos": "TE",
+      "starter_games": 4,
+      "starter_pts": 26.0,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Austin Seibert",
+      "pos": "K",
+      "starter_games": 5,
+      "starter_pts": 62.0,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Bengals D/ST",
+      "pos": "D/ST",
+      "starter_games": 5,
+      "starter_pts": 21.0,
+      "seasons": 4,
+      "years_display": "20, 21, 22, 24"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Benny Snell Jr.",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 3.6,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Bills D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 41.0,
+      "seasons": 2,
+      "years_display": "19, 20"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Blair Walsh",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 12.0,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Bo Scarbrough",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 16.1,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Brandin Cooks",
+      "pos": "WR",
+      "starter_games": 2,
+      "starter_pts": 25.0,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Brandon McManus",
+      "pos": "K",
+      "starter_games": 3,
+      "starter_pts": 21.0,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "bryce mikesell",
       "player": "Brett Maher",
       "pos": "K",
       "starter_games": 15,
@@ -219468,12 +224679,48 @@
     },
     {
       "owner": "bryce mikesell",
+      "player": "Brian Thomas Jr.",
+      "pos": "WR",
+      "starter_games": 7,
+      "starter_pts": 74.4,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Broncos D/ST",
+      "pos": "D/ST",
+      "starter_games": 5,
+      "starter_pts": 31.0,
+      "seasons": 2,
+      "years_display": "22, 23"
+    },
+    {
+      "owner": "bryce mikesell",
       "player": "Bucky Irving",
       "pos": "RB",
       "starter_games": 13,
       "starter_pts": 212.3,
       "seasons": 2,
       "years_display": "24, 25"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "C.J. Stroud",
+      "pos": "QB",
+      "starter_games": 3,
+      "starter_pts": 59.1,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Cam Skattebo",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 55.4,
+      "seasons": 1,
+      "years_display": "25"
     },
     {
       "owner": "bryce mikesell",
@@ -219495,12 +224742,75 @@
     },
     {
       "owner": "bryce mikesell",
+      "player": "CeeDee Lamb",
+      "pos": "WR",
+      "starter_games": 6,
+      "starter_pts": 150.9,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Charles Clay",
+      "pos": "TE",
+      "starter_games": 3,
+      "starter_pts": 26.6,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Chase Claypool",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 56.1,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Chase Edmonds",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 20.2,
+      "seasons": 3,
+      "years_display": "19, 20, 22"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Chase McLaughlin",
+      "pos": "K",
+      "starter_games": 4,
+      "starter_pts": 22.0,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Chiefs D/ST",
+      "pos": "D/ST",
+      "starter_games": 7,
+      "starter_pts": 61.0,
+      "seasons": 3,
+      "years_display": "23, 24, 25"
+    },
+    {
+      "owner": "bryce mikesell",
       "player": "Chris Boswell",
       "pos": "K",
       "starter_games": 10,
       "starter_pts": 90.0,
       "seasons": 2,
       "years_display": "20, 21"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Chris Hogan",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 46.4,
+      "seasons": 1,
+      "years_display": "17"
     },
     {
       "owner": "bryce mikesell",
@@ -219513,12 +224823,48 @@
     },
     {
       "owner": "bryce mikesell",
+      "player": "Chris Thompson",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 20.0,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "bryce mikesell",
       "player": "Christian Kirk",
       "pos": "WR",
       "starter_games": 9,
       "starter_pts": 126.1,
       "seasons": 2,
       "years_display": "19, 23"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Colts D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 27.0,
+      "seasons": 2,
+      "years_display": "19, 24"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Commanders D/ST",
+      "pos": "D/ST",
+      "starter_games": 2,
+      "starter_pts": 3.0,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Courtland Sutton",
+      "pos": "WR",
+      "starter_games": 5,
+      "starter_pts": 50.3,
+      "seasons": 1,
+      "years_display": "22"
     },
     {
       "owner": "bryce mikesell",
@@ -219540,12 +224886,75 @@
     },
     {
       "owner": "bryce mikesell",
+      "player": "D'Onta Foreman",
+      "pos": "RB",
+      "starter_games": 5,
+      "starter_pts": 65.8,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "DJ Moore",
+      "pos": "WR",
+      "starter_games": 6,
+      "starter_pts": 116.6,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "bryce mikesell",
       "player": "DK Metcalf",
       "pos": "WR",
       "starter_games": 22,
       "starter_pts": 278.3,
       "seasons": 2,
       "years_display": "22, 25"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Dan Bailey",
+      "pos": "K",
+      "starter_games": 5,
+      "starter_pts": 40.0,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Darnell Mooney",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 45.9,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Darren Waller",
+      "pos": "TE",
+      "starter_games": 2,
+      "starter_pts": 5.4,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "David Montgomery",
+      "pos": "RB",
+      "starter_games": 7,
+      "starter_pts": 106.0,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "David Njoku",
+      "pos": "TE",
+      "starter_games": 3,
+      "starter_pts": 9.6,
+      "seasons": 2,
+      "years_display": "21, 23"
     },
     {
       "owner": "bryce mikesell",
@@ -219576,12 +224985,30 @@
     },
     {
       "owner": "bryce mikesell",
+      "player": "Derek Carr",
+      "pos": "QB",
+      "starter_games": 3,
+      "starter_pts": 54.0,
+      "seasons": 3,
+      "years_display": "19, 21, 22"
+    },
+    {
+      "owner": "bryce mikesell",
       "player": "Derrick Henry",
       "pos": "RB",
       "starter_games": 8,
       "starter_pts": 193.3,
       "seasons": 1,
       "years_display": "21"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Dolphins D/ST",
+      "pos": "D/ST",
+      "starter_games": 5,
+      "starter_pts": 35.0,
+      "seasons": 5,
+      "years_display": "17, 20, 21, 22, 24"
     },
     {
       "owner": "bryce mikesell",
@@ -219594,12 +225021,39 @@
     },
     {
       "owner": "bryce mikesell",
+      "player": "Duke Johnson",
+      "pos": "RB",
+      "starter_games": 4,
+      "starter_pts": 21.8,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "bryce mikesell",
       "player": "Eagles D/ST",
       "pos": "D/ST",
       "starter_games": 12,
       "starter_pts": 149.0,
       "seasons": 4,
       "years_display": "17, 19, 21, 24"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Eddy Pineiro",
+      "pos": "K",
+      "starter_games": 4,
+      "starter_pts": 29.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Emmanuel Sanders",
+      "pos": "WR",
+      "starter_games": 2,
+      "starter_pts": 34.5,
+      "seasons": 1,
+      "years_display": "21"
     },
     {
       "owner": "bryce mikesell",
@@ -219630,12 +225084,66 @@
     },
     {
       "owner": "bryce mikesell",
+      "player": "Graham Gano",
+      "pos": "K",
+      "starter_games": 3,
+      "starter_pts": 12.0,
+      "seasons": 2,
+      "years_display": "20, 21"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Harrison Butker",
+      "pos": "K",
+      "starter_games": 3,
+      "starter_pts": 30.0,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Hunter Henry",
+      "pos": "TE",
+      "starter_games": 6,
+      "starter_pts": 55.1,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "J.D. McKissic",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 43.7,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Jaguars D/ST",
+      "pos": "D/ST",
+      "starter_games": 4,
+      "starter_pts": 12.0,
+      "seasons": 2,
+      "years_display": "19, 25"
+    },
+    {
+      "owner": "bryce mikesell",
       "player": "Jahmyr Gibbs",
       "pos": "RB",
       "starter_games": 27,
       "starter_pts": 469.2,
       "seasons": 2,
       "years_display": "23, 24"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Jake Bates",
+      "pos": "K",
+      "starter_games": 7,
+      "starter_pts": 74.0,
+      "seasons": 1,
+      "years_display": "24"
     },
     {
       "owner": "bryce mikesell",
@@ -219648,6 +225156,15 @@
     },
     {
       "owner": "bryce mikesell",
+      "player": "Jake Moody",
+      "pos": "K",
+      "starter_games": 5,
+      "starter_pts": 27.0,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "bryce mikesell",
       "player": "James Conner",
       "pos": "RB",
       "starter_games": 15,
@@ -219657,12 +225174,75 @@
     },
     {
       "owner": "bryce mikesell",
+      "player": "Jarvis Landry",
+      "pos": "WR",
+      "starter_games": 6,
+      "starter_pts": 99.9,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Jason Sanders",
+      "pos": "K",
+      "starter_games": 3,
+      "starter_pts": 26.0,
+      "seasons": 2,
+      "years_display": "20, 24"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Jaylen Samuels",
+      "pos": "RB",
+      "starter_games": 4,
+      "starter_pts": 39.9,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Jaylen Waddle",
+      "pos": "WR",
+      "starter_games": 7,
+      "starter_pts": 101.5,
+      "seasons": 2,
+      "years_display": "21, 23"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Jeff Wilson Jr.",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 32.3,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Jets D/ST",
+      "pos": "D/ST",
+      "starter_games": 3,
+      "starter_pts": 26.0,
+      "seasons": 2,
+      "years_display": "22, 23"
+    },
+    {
+      "owner": "bryce mikesell",
       "player": "Joe Burrow",
       "pos": "QB",
       "starter_games": 8,
       "starter_pts": 170.2,
       "seasons": 2,
       "years_display": "21, 25"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Joey Slye",
+      "pos": "K",
+      "starter_games": 7,
+      "starter_pts": 42.0,
+      "seasons": 2,
+      "years_display": "19, 20"
     },
     {
       "owner": "bryce mikesell",
@@ -219693,6 +225273,15 @@
     },
     {
       "owner": "bryce mikesell",
+      "player": "Justin Fields",
+      "pos": "QB",
+      "starter_games": 5,
+      "starter_pts": 107.3,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "bryce mikesell",
       "player": "Justin Herbert",
       "pos": "QB",
       "starter_games": 13,
@@ -219711,6 +225300,24 @@
     },
     {
       "owner": "bryce mikesell",
+      "player": "Kerryon Johnson",
+      "pos": "RB",
+      "starter_games": 6,
+      "starter_pts": 68.4,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Kyle Monangai",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 42.4,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "bryce mikesell",
       "player": "Kyle Rudolph",
       "pos": "TE",
       "starter_games": 11,
@@ -219726,6 +225333,51 @@
       "starter_pts": 574.3,
       "seasons": 3,
       "years_display": "20, 23, 24"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Kyren Williams",
+      "pos": "RB",
+      "starter_games": 5,
+      "starter_pts": 97.1,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Lamar Jackson",
+      "pos": "QB",
+      "starter_games": 3,
+      "starter_pts": 59.2,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Larry Fitzgerald",
+      "pos": "WR",
+      "starter_games": 6,
+      "starter_pts": 76.5,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Latavius Murray",
+      "pos": "RB",
+      "starter_games": 5,
+      "starter_pts": 53.7,
+      "seasons": 2,
+      "years_display": "17, 22"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Leonard Fournette",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 33.9,
+      "seasons": 1,
+      "years_display": "22"
     },
     {
       "owner": "bryce mikesell",
@@ -219756,6 +225408,60 @@
     },
     {
       "owner": "bryce mikesell",
+      "player": "Mark Ingram II",
+      "pos": "RB",
+      "starter_games": 2,
+      "starter_pts": 36.1,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Martavis Bryant",
+      "pos": "WR",
+      "starter_games": 3,
+      "starter_pts": 16.2,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Mason Crosby",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 18.0,
+      "seasons": 1,
+      "years_display": "19"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Matt Bryant",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 17.0,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Michael Pittman Jr.",
+      "pos": "WR",
+      "starter_games": 7,
+      "starter_pts": 115.1,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Mike Davis",
+      "pos": "RB",
+      "starter_games": 6,
+      "starter_pts": 78.4,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "bryce mikesell",
       "player": "Mike Evans",
       "pos": "WR",
       "starter_games": 30,
@@ -219774,12 +225480,120 @@
     },
     {
       "owner": "bryce mikesell",
+      "player": "Najee Harris",
+      "pos": "RB",
+      "starter_games": 5,
+      "starter_pts": 60.7,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Noah Fant",
+      "pos": "TE",
+      "starter_games": 4,
+      "starter_pts": 44.7,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Omarion Hampton",
+      "pos": "RB",
+      "starter_games": 5,
+      "starter_pts": 68.6,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Packers D/ST",
+      "pos": "D/ST",
+      "starter_games": 3,
+      "starter_pts": 15.0,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "RJ Harvey",
+      "pos": "RB",
+      "starter_games": 6,
+      "starter_pts": 102.4,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Raheem Mostert",
+      "pos": "RB",
+      "starter_games": 4,
+      "starter_pts": 65.7,
+      "seasons": 2,
+      "years_display": "21, 23"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Raiders D/ST",
+      "pos": "D/ST",
+      "starter_games": 7,
+      "starter_pts": 52.0,
+      "seasons": 3,
+      "years_display": "23, 24, 25"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Ravens D/ST",
+      "pos": "D/ST",
+      "starter_games": 3,
+      "starter_pts": 32.0,
+      "seasons": 2,
+      "years_display": "19, 24"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Rhamondre Stevenson",
+      "pos": "RB",
+      "starter_games": 5,
+      "starter_pts": 66.3,
+      "seasons": 1,
+      "years_display": "24"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Riley Patterson",
+      "pos": "K",
+      "starter_games": 2,
+      "starter_pts": 3.0,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Robby Anderson",
+      "pos": "WR",
+      "starter_games": 4,
+      "starter_pts": 52.6,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "bryce mikesell",
       "player": "Robert Woods",
       "pos": "WR",
       "starter_games": 8,
       "starter_pts": 128.2,
       "seasons": 2,
       "years_display": "17, 20"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Rodrigo Blankenship",
+      "pos": "K",
+      "starter_games": 3,
+      "starter_pts": 16.0,
+      "seasons": 1,
+      "years_display": "20"
     },
     {
       "owner": "bryce mikesell",
@@ -219792,12 +225606,75 @@
     },
     {
       "owner": "bryce mikesell",
+      "player": "Rondale Moore",
+      "pos": "WR",
+      "starter_games": 2,
+      "starter_pts": 33.3,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Russell Wilson",
+      "pos": "QB",
+      "starter_games": 5,
+      "starter_pts": 93.5,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "bryce mikesell",
       "player": "Ryan Succop",
       "pos": "K",
       "starter_games": 10,
       "starter_pts": 88.0,
       "seasons": 1,
       "years_display": "22"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Saints D/ST",
+      "pos": "D/ST",
+      "starter_games": 3,
+      "starter_pts": 40.0,
+      "seasons": 2,
+      "years_display": "24, 25"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Samaje Perine",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 35.1,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Saquon Barkley",
+      "pos": "RB",
+      "starter_games": 6,
+      "starter_pts": 92.5,
+      "seasons": 1,
+      "years_display": "23"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Seahawks D/ST",
+      "pos": "D/ST",
+      "starter_games": 5,
+      "starter_pts": 53.0,
+      "seasons": 2,
+      "years_display": "20, 24"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Sony Michel",
+      "pos": "RB",
+      "starter_games": 3,
+      "starter_pts": 47.3,
+      "seasons": 1,
+      "years_display": "21"
     },
     {
       "owner": "bryce mikesell",
@@ -219819,6 +225696,60 @@
     },
     {
       "owner": "bryce mikesell",
+      "player": "Taysom Hill",
+      "pos": "QB",
+      "starter_games": 4,
+      "starter_pts": 80.6,
+      "seasons": 2,
+      "years_display": "20, 21"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Teddy Bridgewater",
+      "pos": "QB",
+      "starter_games": 3,
+      "starter_pts": 32.9,
+      "seasons": 2,
+      "years_display": "20, 21"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Tee Higgins",
+      "pos": "WR",
+      "starter_games": 2,
+      "starter_pts": 33.2,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Tetairoa McMillan",
+      "pos": "WR",
+      "starter_games": 2,
+      "starter_pts": 27.8,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Titans D/ST",
+      "pos": "D/ST",
+      "starter_games": 6,
+      "starter_pts": 34.0,
+      "seasons": 5,
+      "years_display": "19, 20, 21, 22, 25"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Todd Gurley II",
+      "pos": "RB",
+      "starter_games": 4,
+      "starter_pts": 67.5,
+      "seasons": 1,
+      "years_display": "20"
+    },
+    {
+      "owner": "bryce mikesell",
       "player": "Tom Brady",
       "pos": "QB",
       "starter_games": 10,
@@ -219828,12 +225759,66 @@
     },
     {
       "owner": "bryce mikesell",
+      "player": "Travis Kelce",
+      "pos": "TE",
+      "starter_games": 3,
+      "starter_pts": 54.1,
+      "seasons": 1,
+      "years_display": "22"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Tristan Vizcaino",
+      "pos": "K",
+      "starter_games": 3,
+      "starter_pts": 16.0,
+      "seasons": 1,
+      "years_display": "21"
+    },
+    {
+      "owner": "bryce mikesell",
       "player": "Tua Tagovailoa",
       "pos": "QB",
       "starter_games": 12,
       "starter_pts": 209.5,
       "seasons": 1,
       "years_display": "23"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Tyler Loop",
+      "pos": "K",
+      "starter_games": 6,
+      "starter_pts": 45.0,
+      "seasons": 1,
+      "years_display": "25"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Washington D/ST",
+      "pos": "D/ST",
+      "starter_games": 3,
+      "starter_pts": 26.0,
+      "seasons": 2,
+      "years_display": "19, 20"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Will Fuller V",
+      "pos": "WR",
+      "starter_games": 2,
+      "starter_pts": 34.7,
+      "seasons": 1,
+      "years_display": "17"
+    },
+    {
+      "owner": "bryce mikesell",
+      "player": "Younghoe Koo",
+      "pos": "K",
+      "starter_games": 3,
+      "starter_pts": 29.0,
+      "seasons": 1,
+      "years_display": "19"
     }
   ],
   "true_keepers": [
