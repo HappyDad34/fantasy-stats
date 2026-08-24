@@ -797,32 +797,12 @@ if not df_players.empty:
         
         if total_starter_games == 0: continue
         
-        # Calculate max consecutive games played on this manager's team
-        max_consecutive = 0
-        current_streak = 0
-        last_yr, last_wk = -1, -1
+        seasons_played = sorted(starters_group["year"].unique())
         
-        for _, row in starters_group.iterrows():
-            yr, wk = int(row["year"]), int(row["week"])
-            if last_yr == -1:
-                current_streak = 1
-            else:
-                # Check sequential weeks within season or across season boundary
-                if yr == last_yr and wk == last_wk + 1:
-                    current_streak += 1
-                elif yr == last_yr + 1 and last_wk >= 14 and wk == 1:
-                    current_streak += 1
-                else:
-                    current_streak = 1
-            max_consecutive = max(max_consecutive, current_streak)
-            last_yr, last_wk = yr, wk
-
-        # Apply strict rule: 8+ total starter games OR 7+ consecutive starter games
-        if total_starter_games >= 3 or max_consecutive >= 2:
+        # Classic multi-season filter (played across 2+ seasons for this manager)
+        if len(seasons_played) >= 2:
             p_pos = str(starters_group["position"].iloc[0])
             total_starter_pts = float(starters_group["points"].sum())
-            
-            seasons_played = sorted(starters_group["year"].unique())
             seasons_str = ", ".join([str(s)[-2:] for s in seasons_played])
             
             cornerstone_payload.append({
