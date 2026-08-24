@@ -3284,6 +3284,49 @@ function renderDossierBadges(mgrName) {
      badges.push(`<span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider flex items-center gap-1" title="Highest Career PPG">🔥 Juggernaut</span>`);
   }
 
+// 5. Horseshoe (Most Lucky) & Snakebitten (Most Unlucky)
+  let maxLuck = -999, minLuck = 999;
+  let luckyMgr = null, unluckyMgr = null;
+  Object.keys(RAW_DATA.manager_profiles).forEach(m => {
+    const prof = RAW_DATA.manager_profiles[m];
+    const luck = prof.wins - prof.expected_wins;
+    if (luck > maxLuck) { maxLuck = luck; luckyMgr = m; }
+    if (luck < minLuck) { minLuck = luck; unluckyMgr = m; }
+  });
+  
+  if (mgrName === luckyMgr && maxLuck > 0) {
+    badges.push(`<span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider flex items-center gap-1" title="Highest All-Time Luck Rating">🍀 Horseshoe</span>`);
+  } else if (mgrName === unluckyMgr && minLuck < 0) {
+    badges.push(`<span class="bg-purple-500/10 text-purple-400 border border-purple-500/20 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider flex items-center gap-1" title="Lowest All-Time Luck Rating">🌧️ Snakebitten</span>`);
+  }
+
+  // 6. Galaxy Brain (Best Start/Sit Efficiency)
+  let bestIQ = 999, brainMgr = null;
+  Object.keys(RAW_DATA.manager_profiles).forEach(m => {
+    const prof = RAW_DATA.manager_profiles[m];
+    if (prof.games > 20) { // minimum game threshold
+      const iq = prof.points_bench / prof.points_for;
+      if (iq < bestIQ) { bestIQ = iq; brainMgr = m; }
+    }
+  });
+  if (mgrName === brainMgr) {
+    badges.push(`<span class="bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider flex items-center gap-1" title="Most efficient manager (lowest points left on bench)">🧠 Galaxy Brain</span>`);
+  }
+
+  // 7. The Bully (Most Blowout Wins > 40 pts)
+  if (RAW_DATA.matchups) {
+    const blowouts = {};
+    RAW_DATA.matchups.forEach(m => {
+      if (m.margin >= 40 && m.winner_owner !== "TIE") {
+        blowouts[m.winner_owner] = (blowouts[m.winner_owner] || 0) + 1;
+      }
+    });
+    const maxBlowouts = Math.max(...Object.values(blowouts), 0);
+    if (maxBlowouts > 0 && blowouts[mgrName] === maxBlowouts) {
+      badges.push(`<span class="bg-orange-500/10 text-orange-400 border border-orange-500/20 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider flex items-center gap-1" title="Most blowout victories (40+ pt margins)">💥 The Bully</span>`);
+    }
+  }
+
   container.innerHTML = badges.join('');
 }
 
