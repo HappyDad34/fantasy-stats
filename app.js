@@ -1273,25 +1273,34 @@ function openManagerDossier(mgrName) {
 
   let wins = 0, losses = 0, ties = 0, pf = 0, games = 0;
   const oppMap = {};
+  const seasonStatsMap = {}; // Track wins/pts per year for the charts
 
   allMatches.forEach(m => {
     const isHome = m.home_owner === mgrName;
     const isAway = m.away_owner === mgrName;
     if (!isHome && !isAway) return;
 
-    games++;
     const myScore = isHome ? m.home_score : m.away_score;
     const oppScore = isHome ? m.away_score : m.home_score;
-    const opp = isHome ? m.away_owner : m.home_owner;
+    
+    // Skip unplayed future games
+    if (myScore === 0 && oppScore === 0) return;
 
+    games++;
     pf += myScore;
+    const opp = isHome ? m.away_owner : m.home_owner;
 
     if (!oppMap[opp]) oppMap[opp] = { opp, wins: 0, losses: 0, ties: 0, games: 0 };
     oppMap[opp].games++;
 
+    // Track season-by-season performance for charts
+    if (!seasonStatsMap[m.year]) seasonStatsMap[m.year] = { wins: 0, points_for: 0 };
+    seasonStatsMap[m.year].points_for += myScore;
+
     if (myScore > oppScore) {
       wins++;
       oppMap[opp].wins++;
+      seasonStatsMap[m.year].wins++;
     } else if (oppScore > myScore) {
       losses++;
       oppMap[opp].losses++;
@@ -1376,6 +1385,7 @@ function openManagerDossier(mgrName) {
         const isH = m.home_owner === mgrName;
         const s = isH ? m.home_score : m.away_score;
         const oppS = isH ? m.away_score : m.home_score;
+        if (s === 0 && oppS === 0) return; // skip unplayed
         yPf += s;
         if (s > oppS) yWins++;
         else if (oppS > s) yLosses++;
@@ -1399,18 +1409,123 @@ function openManagerDossier(mgrName) {
     }).join('');
   }
 
-  // Safely attempt to render badges
+  // Render Achievement Badges
   try {
-    const safeName = document.getElementById('dossier-mgr-name').innerText;
-    renderDossierBadges(safeName);
+    renderDossierBadges(mgrName);
   } catch (err) {
     console.error("Badge rendering failed:", err);
   }
 
-  // Open the modal (Ensure this line exists!)
-  document.getElementById('manager-dossier-modal').classList.remove('hidden');
+  // Render Season-over-Season Charts
+  try {
+    renderDossierCharts(mgrName, seasonStatsMap);
+  } catch (err) {
+    console.error("Dossier chart rendering failed:", err);
+  }
 
   modal.classList.remove('hidden');
+}
+
+// ----------------------------------------------------
+// DOSSIER SEASON-OVER-SEASON CHARTS
+// ----------------------------------------------------
+let dossierWinsChartInstance = null;
+let dossierPtsChartInstance = null;
+
+let dossierWinsChartInstance = null;
+let dossierPtsChartInstance = null;
+
+function renderDossierCharts(managerName, seasonMap) {
+  const seasons = Object.keys(seasonMap).sort((a, b) => parseInt(a) - parseInt(b));
+  const winsData = seasons.map(yr => seasonMap[yr].wins);
+  const ptsData = seasons.map(yr => seasonMap[yr].points_for);
+
+  // Wins Line Chart
+  const ctxWins = document.getElementById('dossierChartWins')?.getContext('2d');
+  if (ctxWins) {
+    if (dossierWinsChartInstance) dossierWinsChartInstance.destroy();
+    dossierWinsChartInstance = new Chart(ctxWins, {
+      type: 'line',
+      data: {
+        labels: seasons,
+        datasets: [{
+          label: 'Wins',
+          data: winsData,
+          borderColor: '#34d399',
+          backgroundColor: 'rgba(52, 211, 153, 0.1)',
+          fill: true,
+          tension: 0.2,
+          pointRadius: 3
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false }, title: { display: true, text: 'Season Wins', color: '#94a3b8', font: { size: 10 } } },
+        scales: {
+          x: { ticks: { color: '#64748b', font: { size: 9 } }, grid: { color: '#1e293b' } },
+          y: { ticks: { color: '#64748b', font: { size: 9 }, stepSize: 2 }, grid: { color: '#1e293b' } }
+        }
+      }
+    });
+  }
+
+  // Points Bar Chart
+  const ctxPts = document.getElementById('dossierChartPts')?.getContext('2d');
+  if (ctxPts) {
+    if (dossierPtsChartInstance) dossierPtsChartInstance.destroy();
+    dossierPtsChartInstance = new Chart(ctxPts, {
+      type: 'bar',
+      data: {
+        labels: seasons,
+        datasets: [{
+          label: 'Points For',
+          data: ptsData,
+          backgroundColor: 'rgba(99, 102, 241, 0.5)',
+          borderColor: '#6366f1',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false }, title: { display: true, text: 'Total Points Scored', color: '#94a3b8', font: { size: 10 } } },
+        scales: {
+          x: { ticks: { color: '#64748b', font: { size: 9 } }, grid: { color: '#1e293b' } },
+          y: { ticks: { color: '#64748b', font: { size: 9 }, grid: { color: '#1e293b' } } }
+        }
+      }
+    });
+  }
+}
+
+  // Render Points Chart
+  const ctxPts = document.getElementById('dossierChartPts')?.getContext('2d');
+  if (ctxPts) {
+    if (dossierPtsChartInstance) dossierPtsChartInstance.destroy();
+    dossierPtsChartInstance = new Chart(ctxPts, {
+      type: 'bar',
+      data: {
+        labels: seasons,
+        datasets: [{
+          label: 'Points For',
+          data: ptsData,
+          backgroundColor: 'rgba(99, 102, 241, 0.5)', // indigo-500 with opacity
+          borderColor: '#6366f1',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false }, title: { display: true, text: 'Total Points Scored', color: '#94a3b8', font: { size: 10 } } },
+        scales: {
+          x: { ticks: { color: '#64748b', font: { size: 9 } }, grid: { color: '#1e293b' } },
+          y: { ticks: { color: '#64748b', font: { size: 9 } }, grid: { color: '#1e293b' } }
+        }
+      }
+    });
+  }
 }
 
 function closeManagerDossier() {
