@@ -2091,27 +2091,44 @@ function renderKeepers() {
   const selectedManager = document.getElementById('keeper-manager-filter')?.value || 'all';
 
   if (tbCorner && RAW_DATA?.cornerstone_stats) {
-    const minS = parseInt(document.getElementById('keeper-min-seasons')?.value) || 2;
+    // Dropdown now measures minimum starter weeks (defaulting to 7)
+    const minWeeks = parseInt(document.getElementById('keeper-min-seasons')?.value) || 7;
+    
     const filteredC = RAW_DATA.cornerstone_stats.filter(c => {
-      if (selectedManager !== 'all' && c.owner !== selectedManager) return false;
-      if (c.seasons < minS) return false;
-      return (c.years_list || []).some(y => y >= minYr && y <= maxYr);
-    }).sort((a, b) => b.starter_pts - a.starter_pts || b.seasons - a.seasons);
+      const mgr = c.owner || c.manager;
+      if (selectedManager !== 'all' && mgr !== selectedManager) return false;
+      
+      const gamesCount = c.starter_games !== undefined ? c.starter_games : (c.games || 0);
+      if (gamesCount < minWeeks) return false;
+      
+      const yearsList = c.years_list || (c.years_display ? c.years_display.split(',').map(y => parseInt('20' + y.trim())) : []);
+      if (yearsList.length > 0) {
+        return yearsList.some(y => y >= minYr && y <= maxYr);
+      }
+      return true;
+    }).sort((a, b) => (b.starter_pts || 0) - (a.starter_pts || 0) || (b.starter_games || 0) - (a.starter_games || 0));
 
-    tbCorner.innerHTML = filteredC.map((c, i) => `
-      <tr class="hover:bg-slate-800/40 transition">
-        <td class="p-3 font-semibold text-slate-500">#${i + 1}</td>
-        <td class="p-3 font-bold text-white">${c.player}</td>
-        <td class="p-3 font-mono text-xs text-slate-400">${c.pos}</td>
-        <td class="p-3">${c.owner}</td>
-        <td class="p-3 text-center text-emerald-400 font-bold">${c.seasons}</td>
-        <td class="p-3">
-          <div class="flex flex-wrap gap-1">
-            ${(c.years_list || []).map(y => `<span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">'${String(y).slice(-2)}</span>`).join('')}
-          </div>
-        </td>
-        <td class="p-3 text-right text-emerald-400 font-bold">${c.starter_pts.toFixed(1)}</td>
-      </tr>`).join('');
+    tbCorner.innerHTML = filteredC.map((c, i) => {
+      const mgrName = c.owner || c.manager || '--';
+      const safeMgr = mgrName.replace(/'/g, "\\'");
+      const gamesCount = c.starter_games !== undefined ? c.starter_games : (c.games || 0);
+      const yearsDisplay = c.years_display || (c.years_list || []).map(y => `'${String(y).slice(-2)}`).join(', ');
+
+      return `
+        <tr class="hover:bg-slate-800/40 transition">
+          <td class="p-3 font-semibold text-slate-500">#${i + 1}</td>
+          <td class="p-3 font-bold text-white">${c.player}</td>
+          <td class="p-3 font-mono text-xs text-slate-400">${c.pos}</td>
+          <td class="p-3">
+            <button onclick="openManagerDossier('${safeMgr}')" class="font-bold text-slate-300 hover:text-emerald-400 text-left transition">
+              ${mgrName}
+            </button>
+          </td>
+          <td class="p-3 text-center text-emerald-400 font-bold font-mono">${gamesCount} Games</td>
+          <td class="p-3 text-slate-400 font-mono text-xs">${yearsDisplay}</td>
+          <td class="p-3 text-right text-amber-400 font-bold font-mono">${(c.starter_pts || 0).toFixed(1)}</td>
+        </tr>`;
+    }).join('');
   }
 
   if (tbTrue && RAW_DATA?.true_keepers) {

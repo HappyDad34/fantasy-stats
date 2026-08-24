@@ -782,7 +782,7 @@ for p in player_directory.values():
 player_directory_list = sorted(list(player_directory.values()), key=lambda x: (x["starter_pts"], x["starts"]), reverse=True)
 
 
-# 9.1 CORNERSTONE PLAYERS EXTRACTION (Filtered by 8+ total starter games or 7+ consecutive starter games)
+# 9.1 CORNERSTONE PLAYERS EXTRACTION (Filtered by 7+ starter games minimum)
 cornerstone_payload = []
 
 if not df_players.empty:
@@ -795,25 +795,25 @@ if not df_players.empty:
         starters_group = p_group[~p_group["slot_position"].isin(bench_slots)].sort_values(by=["year", "week"])
         total_starter_games = len(starters_group)
         
-        if total_starter_games == 0: continue
+        # Rule: Must have been a starter for at least 7 weeks total under this manager
+        if total_starter_games < 7: continue
         
         seasons_played = sorted(starters_group["year"].unique())
+        p_pos = str(starters_group["position"].iloc[0])
+        total_starter_pts = float(starters_group["points"].sum())
+        seasons_str = ", ".join([str(s)[-2:] for s in seasons_played])
         
-        # Classic multi-season filter (played across 2+ seasons for this manager)
-        if len(seasons_played) >= 2:
-            p_pos = str(starters_group["position"].iloc[0])
-            total_starter_pts = float(starters_group["points"].sum())
-            seasons_str = ", ".join([str(s)[-2:] for s in seasons_played])
-            
-            cornerstone_payload.append({
-                "owner": owner,
-                "player": clean_name,
-                "pos": p_pos,
-                "starter_games": total_starter_games,
-                "starter_pts": round(total_starter_pts, 1),
-                "seasons": len(seasons_played),
-                "years_display": seasons_str
-            })
+        cornerstone_payload.append({
+            "owner": owner,
+            "manager": owner, # ensuring both keys work for frontend compatibility
+            "player": clean_name,
+            "pos": p_pos,
+            "starter_games": total_starter_games,
+            "starter_pts": round(total_starter_pts, 1),
+            "seasons": len(seasons_played),
+            "tenure": len(seasons_played), # matching table column name
+            "years_display": seasons_str
+        })
 
 # 10. LINEUP EFFICIENCY & OPTIMAL DELTA (The "Perfect Manager" Metric)
 efficiency_manager_stats = {}
