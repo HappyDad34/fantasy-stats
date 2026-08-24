@@ -673,6 +673,78 @@ if not df_draft.empty:
         'round_mvps': round_mvps
     }
 
+# 9. PLAYER DIRECTORY & CAREER SEARCH
+player_directory = {}
+if not df_players.empty:
+    for p_name, p_group in df_players.groupby("player_name"):
+        p_name = str(p_name)
+        if p_name == "Unknown Player": continue
+        
+        pos = str(p_group["position"].iloc[0])
+        starters = p_group[~p_group["slot_position"].isin(bench_slots)]
+        
+        starter_pts = float(starters["points"].sum())
+        total_pts = float(p_group["points"].sum())
+        starts = len(starters)
+        games = len(p_group)
+        managers = list(p_group["owner_name"].unique())
+        
+        season_log = []
+        for (yr, mgr), sp_group in p_group.groupby(["year", "owner_name"]):
+            s_stars = sp_group[~sp_group["slot_position"].isin(bench_slots)]
+            season_log.append({
+                "year": int(yr),
+                "manager": str(mgr),
+                "starts": len(s_stars),
+                "games": len(sp_group),
+                "starter_pts": round(float(s_stars["points"].sum()), 1),
+                "total_pts": round(float(sp_group["points"].sum()), 1)
+            })
+        season_log.sort(key=lambda x: x["year"], reverse=True)
+        
+        player_directory[p_name] = {
+            "name": p_name,
+            "pos": pos,
+            "starter_pts": round(starter_pts, 1),
+            "total_pts": round(total_pts, 1),
+            "starts": starts,
+            "games": games,
+            "managers": managers,
+            "season_log": season_log,
+            "draft_log": [],
+            "trade_log": []
+        }
+
+if not df_draft.empty:
+    for _, d in df_draft.iterrows():
+        p_name = str(d['player_name'])
+        if p_name in player_directory:
+            player_directory[p_name]["draft_log"].append({
+                "year": int(d["year"]),
+                "round_num": int(d["round_num"]),
+                "overall_pick": int(d["overall_pick"]),
+                "manager": str(d["owner_name"]),
+                "bid_amount": int(d.get("bid_amount", 0)),
+                "is_keeper": bool(d.get("keeper", 0))
+            })
+
+if not df_trans.empty:
+    for _, t in df_trans.iterrows():
+        p_name = str(t['player_name'])
+        if p_name in player_directory:
+            player_directory[p_name]["trade_log"].append({
+                "year": int(t["year"]),
+                "week": int(t["week"]),
+                "from_owner": str(t["from_owner"]),
+                "to_owner": str(t["to_owner"])
+            })
+
+for p in player_directory.values():
+    p["draft_log"].sort(key=lambda x: x["year"], reverse=True)
+    p["trade_log"].sort(key=lambda x: (x["year"], x["week"]), reverse=True)
+
+player_directory_list = sorted(list(player_directory.values()), key=lambda x: x["starter_pts"], reverse=True)
+
 web_payload = {
     "years": [int(y) for y in all_years],
     "manager_profiles": manager_profiles,
@@ -688,7 +760,8 @@ web_payload = {
     "season_narratives": season_narratives,
     "brackets_by_season": brackets_by_season,
     "trades_data": trades_data,
-    "draft_vault": draft_vault_payload
+    "draft_vault": draft_vault_payload,
+    "player_directory": player_directory_list
 }
 
 with open("data.json", "w") as f:

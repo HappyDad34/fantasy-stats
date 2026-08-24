@@ -2832,6 +2832,83 @@ function closePageHelp() {
   if (modal) modal.classList.add('hidden');
 }
 
+// ----------------------------------------------------
+// PLAYER DIRECTORY LOGIC
+// ----------------------------------------------------
+function renderPlayerDirectory() {
+  const tb = document.getElementById('player-directory-body');
+  const searchInput = document.getElementById('player-search-input');
+  if (!tb || !RAW_DATA?.player_directory) return;
+
+  const q = (searchInput?.value || '').toLowerCase();
+  
+  // Show top 100 by default, or filter completely by the search string
+  let results = RAW_DATA.player_directory;
+  if (q) {
+    results = results.filter(p => p.name.toLowerCase().includes(q));
+  }
+  results = results.slice(0, 100); 
+
+  if (!results.length) {
+    tb.innerHTML = `<tr><td colspan="5" class="p-4 text-center text-slate-500">No players found matching "${q}".</td></tr>`;
+    return;
+  }
+
+  tb.innerHTML = results.map(p => {
+    const safeName = p.name.replace(/'/g, "\\'");
+    return `
+      <tr class="hover:bg-slate-800/40 transition cursor-pointer group" onclick="openPlayerDossier('${safeName}')">
+        <td class="p-3 font-bold text-white group-hover:text-emerald-400 transition">${p.name}</td>
+        <td class="p-3 font-mono text-xs text-slate-400">${p.pos}</td>
+        <td class="p-3 text-center text-slate-300 font-mono">${p.starts}</td>
+        <td class="p-3 text-right font-mono font-bold text-emerald-400">${p.starter_pts.toFixed(1)}</td>
+        <td class="p-3 text-xs text-slate-500 truncate max-w-[200px]">${p.managers.join(', ')}</td>
+      </tr>`;
+  }).join('');
+}
+
+function openPlayerDossier(playerName) {
+  if (!RAW_DATA?.player_directory) return;
+  const p = RAW_DATA.player_directory.find(x => x.name === playerName);
+  if (!p) return;
+
+  document.getElementById('player-dossier-name').innerText = p.name;
+  document.getElementById('player-dossier-pos').innerText = p.pos;
+  document.getElementById('pd-stat-pts').innerText = p.starter_pts.toFixed(1);
+  document.getElementById('pd-stat-starts').innerText = p.starts;
+  document.getElementById('pd-stat-ppg').innerText = p.starts > 0 ? (p.starter_pts / p.starts).toFixed(1) : '0.0';
+  document.getElementById('pd-stat-franchises').innerText = p.managers.length;
+
+  document.getElementById('pd-season-body').innerHTML = p.season_log.length ? p.season_log.map(s => `
+    <tr class="hover:bg-slate-800/40">
+      <td class="p-2 font-mono text-slate-400">'${String(s.year).slice(-2)}</td>
+      <td class="p-2 text-slate-300">${s.manager}</td>
+      <td class="p-2 text-center font-mono">${s.starts}</td>
+      <td class="p-2 text-right font-mono font-bold text-emerald-400">${s.starter_pts.toFixed(1)}</td>
+    </tr>`).join('') : `<tr><td colspan="4" class="p-2 text-center text-slate-500">No active stats.</td></tr>`;
+
+  document.getElementById('pd-draft-body').innerHTML = p.draft_log.length ? p.draft_log.map(d => `
+    <tr class="hover:bg-slate-800/40">
+      <td class="p-2 font-mono text-slate-400">'${String(d.year).slice(-2)}</td>
+      <td class="p-2 font-mono text-amber-400">Rd ${d.round_num} (#${d.overall_pick})</td>
+      <td class="p-2 text-slate-300">${d.manager}</td>
+      <td class="p-2 text-center font-mono text-[10px] ${d.is_keeper ? 'text-emerald-400 border border-emerald-500/20 bg-emerald-500/10 rounded px-1' : 'text-slate-500'}">${d.is_keeper ? 'KEEPER' : 'DRAFT'}</td>
+    </tr>`).join('') : `<tr><td colspan="4" class="p-2 text-center text-slate-500">Undrafted / FA</td></tr>`;
+
+  document.getElementById('pd-trade-body').innerHTML = p.trade_log.length ? p.trade_log.map(t => `
+    <tr class="hover:bg-slate-800/40">
+      <td class="p-2 font-mono text-slate-400">'${String(t.year).slice(-2)} (Wk ${t.week})</td>
+      <td class="p-2 text-rose-400 line-through truncate max-w-[100px]">${t.from_owner}</td>
+      <td class="p-2 text-emerald-400 font-bold truncate max-w-[100px]">${t.to_owner}</td>
+    </tr>`).join('') : `<tr><td colspan="3" class="p-2 text-center text-slate-500">Never traded.</td></tr>`;
+
+  document.getElementById('player-dossier-modal').classList.remove('hidden');
+}
+
+function closePlayerDossier() {
+  document.getElementById('player-dossier-modal').classList.add('hidden');
+}
+
 // Auto-inject "?" buttons next to all major section headers
 setTimeout(() => {
   document.querySelectorAll('section > div > div > h2').forEach(h2 => {
