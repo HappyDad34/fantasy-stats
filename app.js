@@ -2909,6 +2909,150 @@ function closePlayerDossier() {
   document.getElementById('player-dossier-modal').classList.add('hidden');
 }
 
+// ----------------------------------------------------
+// WHAT IF SCHEDULE MACHINE LOGIC
+// ----------------------------------------------------
+function initWhatIf() {
+  const seasonSel = document.getElementById('whatif-season');
+  const teamSel = document.getElementById('whatif-team');
+  const schedSel = document.getElementById('whatif-schedule');
+  if (!seasonSel || !teamSel || !schedSel || !RAW_DATA) return;
+
+  // Populate drop-downs if empty
+  if (seasonSel.options.length === 0) {
+    RAW_DATA.years.slice().reverse().forEach(yr => seasonSel.add(new Option(yr, yr)));
+  }
+  const mgrs = Object.keys(RAW_DATA.manager_profiles).sort();
+  if (teamSel.options.length === 0) {
+    mgrs.forEach(m => {
+      teamSel.add(new Option(m, m));
+      schedSel.add(new Option(m, m));
+    });
+    if(mgrs.length > 1) schedSel.selectedIndex = 1; // Offset default
+  }
+  renderWhatIf();
+}
+
+function renderWhatIf() {
+  const yr = parseInt(document.getElementById('whatif-season').value);
+  const team = document.getElementById('whatif-team').value;
+  const schedTeam = document.getElementById('whatif-schedule').value;
+  const container = document.getElementById('whatif-results-container');
+  const tb = document.getElementById('whatif-table-body');
+  
+  if (!RAW_DATA?.matchups || !yr || !team || !schedTeam) return;
+
+  if (team === schedTeam) {
+    container.classList.remove('hidden');
+    container.classList.add('grid');
+    document.getElementById('whatif-new-record').innerText = "Same";
+    document.getElementById('whatif-delta').innerText = "Select a different schedule to swap.";
+    document.getElementById('whatif-delta').className = "text-sm font-bold text-slate-500 mt-2";
+    tb.innerHTML = `<tr><td colspan="6" class="p-4 text-center text-slate-500">You selected the same manager for both fields.</td></tr>`;
+    return;
+  }
+
+  // 1. Isolate the regular season games for the selected year
+  const regMatchups = RAW_DATA.matchups.filter(m => m.year === yr && m.matchup_type === 'REGULAR');
+  
+  // 2. Map out "My Team's" actual scores and actual record
+  const teamScores = {};
+  let actualWins = 0, actualLosses = 0, actualTies = 0;
+  regMatchups.forEach(m => {
+    if (m.home_owner === team) {
+      teamScores[m.week] = m.home_score;
+      if (m.home_score > m.away_score) actualWins++;
+      else if (m.home_score < m.away_score) actualLosses++;
+      else actualTies++;
+    } else if (m.away_owner === team) {
+      teamScores[m.week] = m.away_score;
+      if (m.away_score > m.home_score) actualWins++;
+      else if (m.away_score < m.home_score) actualLosses++;
+      else actualTies++;
+    }
+  });
+
+  // 3. Map out the target "Swapped Schedule"
+  const swapSchedule = {};
+  regMatchups.forEach(m => {
+    if (m.home_owner === schedTeam) {
+      swapSchedule[m.week] = { opp: m.away_owner, opp_score: m.away_score };
+    } else if (m.away_owner === schedTeam) {
+      swapSchedule[m.week] = { opp: m.home_owner, opp_score: m.home_score };
+    }
+  });
+
+  if (Object.keys(teamScores).length === 0 || Object.keys(swapSchedule).length === 0) {
+    container.classList.remove('hidden');
+    container.classList.add('grid');
+    document.getElementById('whatif-new-record').innerText = "N/A";
+    document.getElementById('whatif-delta').innerText = "One or both teams didn't play in this season.";
+    document.getElementById('whatif-delta').className = "text-sm font-bold text-slate-500 mt-2";
+    tb.innerHTML = `<tr><td colspan="6" class="p-4 text-center text-slate-500">Missing data for this season.</td></tr>`;
+    return;
+  }
+
+  // 4. Calculate the Alternate Reality
+  let newWins = 0, newLosses = 0, newTies = 0;
+  const htmlRows = [];
+
+  Object.keys(teamScores).sort((a,b) => parseInt(a)-parseInt(b)).forEach(wk => {
+    const myScore = teamScores[wk];
+    const swapData = swapSchedule[wk];
+    if (!swapData) return;
+    
+    let oppName = swapData.opp;
+    let oppScore = swapData.opp_score;
+    
+    // Paradox Catch: If the swapped schedule has you playing YOURSELF, you actually play the manager whose schedule you stole!
+    if (oppName === team) {
+        oppName = schedTeam;
+        const match = regMatchups.find(m => m.week == wk && (m.home_owner === schedTeam || m.away_owner === schedTeam));
+        if (match) {
+            oppScore = (match.home_owner === schedTeam) ? match.home_score : match.away_score;
+        }
+    }
+
+    let result = '', resClass = '';
+    if (myScore > oppScore) { newWins++; result = 'W'; resClass = 'text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded'; }
+    else if (myScore < oppScore) { newLosses++; result = 'L'; resClass = 'text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded'; }
+    else { newTies++; result = 'T'; resClass = 'text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded'; }
+
+    const margin = Math.abs(myScore - oppScore).toFixed(1);
+
+    htmlRows.push(`
+      <tr class="hover:bg-slate-800/40">
+        <td class="p-2 font-mono text-slate-400">Wk ${wk}</td>
+        <td class="p-2 text-right font-mono font-bold text-cyan-400">${myScore.toFixed(1)}</td>
+        <td class="p-2 text-center font-black ${resClass}">${result}</td>
+        <td class="p-2 text-slate-300 truncate max-w-[120px]">${oppName}</td>
+        <td class="p-2 text-right font-mono text-slate-400">${oppScore.toFixed(1)}</td>
+        <td class="p-2 text-right font-mono text-slate-500">${margin}</td>
+      </tr>
+    `);
+  });
+
+  // Render Stats
+  document.getElementById('whatif-new-record').innerText = `${newWins}-${newLosses}${newTies > 0 ? '-'+newTies : ''}`;
+  const winDiff = newWins - actualWins;
+  const deltaEl = document.getElementById('whatif-delta');
+  
+  if (winDiff > 0) {
+    deltaEl.innerText = `+${winDiff} Wins vs Actual Record (${actualWins}-${actualLosses})`;
+    deltaEl.className = "text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-1.5 rounded mt-2";
+  } else if (winDiff < 0) {
+    deltaEl.innerText = `${winDiff} Wins vs Actual Record (${actualWins}-${actualLosses})`;
+    deltaEl.className = "text-xs font-bold bg-rose-500/10 text-rose-400 border border-rose-500/20 px-2.5 py-1.5 rounded mt-2";
+  } else {
+    deltaEl.innerText = `Same as Actual Record (${actualWins}-${actualLosses})`;
+    deltaEl.className = "text-xs font-bold bg-slate-800 text-slate-400 border border-slate-700 px-2.5 py-1.5 rounded mt-2";
+  }
+
+  tb.innerHTML = htmlRows.join('');
+  container.classList.remove('hidden');
+  container.classList.add('grid');
+}
+
 // Auto-inject "?" buttons next to all major section headers
 setTimeout(() => {
   document.querySelectorAll('section > div > div > h2').forEach(h2 => {

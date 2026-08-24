@@ -193,6 +193,10 @@
             <span>Custom Query Builder</span>
             <span class="text-[10px] text-slate-500 font-mono">Filters</span>
           </button>
+          <button onclick="switchTab('whatif'); initWhatIf();" id="nav-whatif" class="nav-sub-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-emerald-400 transition flex items-center justify-between">
+            <span>"What If?" Schedule Machine</span>
+            <span class="text-[10px] text-rose-400 font-mono">Alt Reality</span>
+          </button>
         </div>
       </div>
 
@@ -1319,6 +1323,59 @@
               </tr>
             </thead>
             <tbody id="player-directory-body" class="divide-y divide-slate-800"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 20: WHAT IF SCHEDULE MACHINE -->
+    <section id="view-whatif" class="hidden space-y-6">
+      <div class="bg-gradient-to-r from-slate-900 via-slate-850 to-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
+        <div class="text-center pb-4">
+          <h2 class="text-xl sm:text-2xl font-black text-white flex items-center justify-center gap-2">
+            <span>🔀</span> The "What If?" Schedule Swap Machine
+          </h2>
+          <p class="text-xs text-slate-400 mt-1">Select a season and swap your schedule with another manager to see if you actually had a good team or just got lucky.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto pt-4 border-t border-slate-800">
+          <div>
+            <label class="text-[11px] uppercase font-bold text-slate-400 block mb-1">Season</label>
+            <select id="whatif-season" onchange="renderWhatIf()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm font-bold text-white focus:ring-1 focus:ring-emerald-400"></select>
+          </div>
+          <div>
+            <label class="text-[11px] uppercase font-bold text-cyan-400 block mb-1">My Team</label>
+            <select id="whatif-team" onchange="renderWhatIf()" class="w-full bg-slate-950 border border-cyan-500/40 rounded-xl px-3 py-2 text-sm font-bold text-white focus:ring-2 focus:ring-cyan-400"></select>
+          </div>
+          <div>
+            <label class="text-[11px] uppercase font-bold text-rose-400 block mb-1">Swap With Schedule</label>
+            <select id="whatif-schedule" onchange="renderWhatIf()" class="w-full bg-slate-950 border border-rose-500/40 rounded-xl px-3 py-2 text-sm font-bold text-white focus:ring-2 focus:ring-rose-400"></select>
+          </div>
+        </div>
+      </div>
+
+      <div id="whatif-results-container" class="hidden grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Summary Card -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow flex flex-col justify-center items-center text-center space-y-2 lg:col-span-1">
+          <div class="text-xs uppercase font-bold text-slate-400 tracking-wider">Alternate Reality Record</div>
+          <div id="whatif-new-record" class="text-4xl sm:text-5xl font-black text-white">--</div>
+          <div id="whatif-delta" class="text-sm font-bold rounded px-2 py-1">--</div>
+        </div>
+
+        <!-- Detailed Table -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow lg:col-span-2 overflow-x-auto">
+          <table class="w-full text-left text-sm text-slate-300">
+            <thead class="bg-slate-800/60 text-xs uppercase tracking-wider text-slate-400">
+              <tr>
+                <th class="p-2">Wk</th>
+                <th class="p-2 text-right">My Pts</th>
+                <th class="p-2 text-center">Result</th>
+                <th class="p-2">New Opponent</th>
+                <th class="p-2 text-right">Opp Pts</th>
+                <th class="p-2 text-right">Margin</th>
+              </tr>
+            </thead>
+            <tbody id="whatif-table-body" class="divide-y divide-slate-800"></tbody>
           </table>
         </div>
       </div>
