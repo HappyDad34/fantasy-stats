@@ -29,18 +29,33 @@ df_draft = pd.read_sql_query("SELECT * FROM draft_picks", conn) if "draft_picks"
 
 conn.close()
 
-# -------------------------------------------------------------------------
-# CRITICAL FIX: Filter out unplayed matchups (0-0 scores or active 2026 unplayed games)
-# -------------------------------------------------------------------------
-CURRENT_ACTIVE_SEASON = 2026
-if not df_matchups.empty:
-    # Drop rows where both home and away scores are 0 (unplayed games)
-    df_matchups = df_matchups[~((df_matchups['home_score'] == 0) & (df_matchups['away_score'] == 0))]
-    
-    # Exclude the current ongoing/unplayed season from historical aggregations, streaks, narratives, and simulations
-    df_historical_matchups = df_matchups[df_matchups['year'] != CURRENT_ACTIVE_SEASON]
+
+# AUTOMATIC SEASON STATE DETECTION
+# Look at matchups and find the latest year that has actual recorded scores (> 0)
+played_matches = df_matchups[~((df_matchups['home_score'] == 0) & (df_matchups['away_score'] == 0))] if not df_matchups.empty else pd.DataFrame()
+
+if not played_matches.empty:
+    latest_completed_season = int(played_matches['year'].max())
 else:
-    df_historical_matchups = pd.DataFrame()
+    latest_completed_season = 2025 # Fallback
+
+# If the latest year in your database has unplayed 0-0 games, treat that year as the active ongoing season
+all_db_years = [int(y) for y in df_matchups['year'].dropna().unique()] if not df_matchups.empty else [2026]
+current_active_season = max(all_db_years)
+
+# Check if the max year has any played games yet
+max_year_matches = df_matchups[df_matchups['year'] == current_active_season] if not df_matchups.empty else pd.DataFrame()
+max_year_has_played = not max_year_matches.empty and not ((max_year_matches['home_score'] == 0) & (max_year_matches['away_score'] == 0)).all()
+
+if max_year_has_played:
+    # If games have started playing in the current season, it is no longer strictly "pre-season/unplayed"
+    CURRENT_ACTIVE_SEASON = current_active_season + 1 # points to next unplayed year
+else:
+    # If no games have been played yet for the latest year, treat it as the active unplayed season
+    CURRENT_ACTIVE_SEASON = current_active_season
+
+# Historical matchups for stats/sims strictly exclude the current unplayed/active season
+df_historical_matchups = df_matchups[df_matchups['year'] < CURRENT_ACTIVE_SEASON] if not df_matchups.empty else pd.DataFrame()
 
 
 def normalize_matchup_type(val):
