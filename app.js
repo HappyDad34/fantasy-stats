@@ -157,9 +157,10 @@ function initControls() {
 
   if (!startYear || !endYear) return;
 
-  const years = (RAW_DATA?.years && RAW_DATA.years.length > 0) 
-    ? RAW_DATA.years 
-    : [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025];
+  // Always make sure 2026 is included in the global year filters
+  let years = (RAW_DATA?.years && RAW_DATA.years.length > 0) ? [...RAW_DATA.years] : [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025];
+  if (!years.includes(2026)) years.push(2026);
+  years.sort((a, b) => a - b);
 
   startYear.innerHTML = '';
   endYear.innerHTML = '';
@@ -171,7 +172,7 @@ function initControls() {
   });
 
   startYear.value = years[0];
-  endYear.value = years[years.length - 1];
+  endYear.value = years[years.length - 1]; // This will now automatically select 2026!
 
   if (queryTeam) {
     queryTeam.add(new Option("Any Manager", "all"));
@@ -2142,7 +2143,8 @@ function renderKeepers() {
   if (tbTrue && RAW_DATA?.true_keepers) {
     const filteredK = RAW_DATA.true_keepers.filter(k => {
       if (selectedManager !== 'all' && k.owner !== selectedManager) return false;
-      // Ensure 2026 keepers are included when minYr/maxYr are evaluated
+      // Allow 2026 keepers to show even if historical startYear filters are active
+      if (k.year === 2026) return true;
       return k.year >= minYr && k.year <= maxYr;
     }).sort((a, b) => b.year - a.year || b.starter_pts - a.starter_pts);
 
