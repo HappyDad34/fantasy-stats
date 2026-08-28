@@ -1676,11 +1676,21 @@ function renderStorylines() {
   const tbody = document.getElementById('streaks-table-body');
   if (!tbody || !RAW_DATA?.streaks_data) return;
 
+  const filterMode = document.getElementById('streak-view-filter')?.value || 'active';
+  const activeManagers = new Set(getManagerList());
+
   const streaks = Object.values(RAW_DATA.streaks_data)
-    .filter(s => s.total_games > 0)
+    .filter(s => {
+      if (s.total_games <= 0) return false;
+      if (filterMode === 'active' && !activeManagers.has(s.manager)) return false;
+      return true;
+    })
     .sort((a, b) => b.longest_win_streak - a.longest_win_streak || a.longest_loss_streak - b.longest_loss_streak);
 
-  if (!streaks.length) return;
+  if (!streaks.length) {
+    tbody.innerHTML = `<tr><td colspan="6" class="p-4 text-center text-slate-500">No streak records found for this view.</td></tr>`;
+    return;
+  }
 
   const setInner = (id, val) => { const el = document.getElementById(id); if (el) el.innerText = val; };
 
