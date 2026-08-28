@@ -2583,7 +2583,7 @@ function renderFinishes(teamsHistory) {
     finishMap[m] = { manager: m, seasons: 0, first: 0, second: 0, third: 0, fourth: 0, mid: 0, low: 0 };
   });
 
-  // Only count completed historical seasons (exclude active/unplayed 2026 season)
+  // EXPLICITLY filter out 2026 (and any future active years) so unplayed seasons never corrupt historical podiums
   const completedHistory = teamsHistory.filter(t => Number(t.year) < 2026 && t.final_standing !== null && t.final_standing !== undefined);
 
   completedHistory.forEach(t => {
