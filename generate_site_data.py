@@ -379,7 +379,7 @@ if not df_historical_matchups.empty:
             'regular_standings': sorted(stat_list, key=lambda x: (x['wins'], x['pf']), reverse=True)
         }
 
-# 6. Playoff Brackets (Historical completed seasons only)
+# 6. Playoff Brackets (Structured Tournament Elimination)
 brackets_by_season = {}
 if not df_historical_matchups.empty:
     for yr in all_years:
@@ -421,27 +421,48 @@ if not df_historical_matchups.empty:
         playoff_df = pd.DataFrame(playoff_matches) if playoff_matches else pd.DataFrame()
         consol_df = pd.DataFrame(consol_matches) if consol_matches else pd.DataFrame()
 
-        def structure_bracket(matches_df):
+        def structure_bracket(matches_df, is_championship=True):
             if matches_df.empty: return []
             weeks = sorted(matches_df['week'].unique().tolist())
             rounds = []
+            
+            round1_losers = set()
+
             for idx, wk in enumerate(weeks):
                 wk_matches = matches_df[matches_df['week'] == wk]
                 match_list = []
+
                 for _, m in wk_matches.iterrows():
+                    h_own, a_own = m['home_owner'], m['away_owner']
+                    winner = m['winner_owner']
+                    loser = a_own if winner == h_own else h_own
+
+                    # If this is Round 1 (Quarterfinals), record who lost so we can filter them out of Semis/Champs
+                    if idx == 0 and is_championship:
+                        if winner and winner not in ['TIE', '0']:
+                            round1_losers.add(loser)
+
+                    # If this is Round 2 (Semifinals) or Round 3, block Round 1 losers from appearing in the main bracket tree
+                    if idx > 0 and is_championship:
+                        if h_own in round1_losers or a_own in round1_losers:
+                            continue # Skip early round losers from leaking into Semifinals/Championship columns
+
                     match_list.append({
-                        'home_owner': m['home_owner'],
+                        'home_owner': h_own,
                         'home_team': m['home_team_name'],
                         'home_score': float(m['home_score']),
-                        'away_owner': m['away_owner'],
+                        'away_owner': a_own,
                         'away_team': m['away_team_name'],
                         'away_score': float(m['away_score']),
-                        'winner_owner': m['winner_owner'],
+                        'winner_owner': winner,
                         'margin': float(m['margin']),
-                        'week': int(m['week']),
-                        'year': int(m['year'])
+                        'week': int(wk),
+                        'year': int(yr)
                     })
-                
+
+                if not match_list:
+                    continue
+
                 if len(weeks) == 3:
                     r_name = "Quarterfinals (Rd 1)" if idx == 0 else ("Semifinals (Rd 2)" if idx == 1 else "Championship & Podium Games")
                 elif len(weeks) == 2:
@@ -453,8 +474,8 @@ if not df_historical_matchups.empty:
             return rounds
 
         brackets_by_season[int(yr)] = {
-            'playoff_rounds': structure_bracket(playoff_df),
-            'consolation_rounds': structure_bracket(consol_df)
+            'playoff_rounds': structure_bracket(playoff_df, is_championship=True),
+            'consolation_rounds': structure_bracket(consol_df, is_championship=False)
         }
 
 # 7. Trades Data
