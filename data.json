@@ -251851,72 +251851,6 @@
   "trades_data": [
     {
       "year": 2025,
-      "week": 13,
-      "player": "Emari Demercado",
-      "pos": "RB",
-      "from_owner": "Valissa Olvera",
-      "to_owner": "Jordan Iden",
-      "pts_produced": 3.0,
-      "starts": 0,
-      "pts_before": 4.0
-    },
-    {
-      "year": 2025,
-      "week": 13,
-      "player": "Michael Carter",
-      "pos": "RB",
-      "from_owner": "Valissa Olvera",
-      "to_owner": "Jordan Iden",
-      "pts_produced": 29.3,
-      "starts": 4,
-      "pts_before": 32.3
-    },
-    {
-      "year": 2025,
-      "week": 13,
-      "player": "Mark Andrews",
-      "pos": "TE",
-      "from_owner": "Rey Igliane",
-      "to_owner": "Valissa Olvera",
-      "pts_produced": 8.7,
-      "starts": 1,
-      "pts_before": 10.4
-    },
-    {
-      "year": 2025,
-      "week": 13,
-      "player": "Trevor Lawrence",
-      "pos": "QB",
-      "from_owner": "Rey Igliane",
-      "to_owner": "Valissa Olvera",
-      "pts_produced": 153.1,
-      "starts": 4,
-      "pts_before": 34.1
-    },
-    {
-      "year": 2025,
-      "week": 12,
-      "player": "Bhayshul Tuten",
-      "pos": "RB",
-      "from_owner": "bryce mikesell",
-      "to_owner": "Jordan Iden",
-      "pts_produced": 9.1,
-      "starts": 0,
-      "pts_before": 13.4
-    },
-    {
-      "year": 2025,
-      "week": 12,
-      "player": "Falcons D/ST",
-      "pos": "D/ST",
-      "from_owner": "bryce mikesell",
-      "to_owner": "Jordan Iden",
-      "pts_produced": 19.0,
-      "starts": 2,
-      "pts_before": 3.0
-    },
-    {
-      "year": 2025,
       "week": 11,
       "player": "Brian Robinson Jr.",
       "pos": "RB",
@@ -251961,28 +251895,6 @@
     },
     {
       "year": 2025,
-      "week": 11,
-      "player": "Harrison Butker",
-      "pos": "K",
-      "from_owner": "Desmon Holton",
-      "to_owner": "Rey Igliane",
-      "pts_produced": 30.0,
-      "starts": 4,
-      "pts_before": 12.0
-    },
-    {
-      "year": 2025,
-      "week": 11,
-      "player": "Tyler Allgeier",
-      "pos": "RB",
-      "from_owner": "Desmon Holton",
-      "to_owner": "Rey Igliane",
-      "pts_produced": 15.5,
-      "starts": 1,
-      "pts_before": 21.8
-    },
-    {
-      "year": 2025,
       "week": 10,
       "player": "Alec Pierce",
       "pos": "WR",
@@ -252005,94 +251917,6 @@
     },
     {
       "year": 2025,
-      "week": 10,
-      "player": "Chargers D/ST",
-      "pos": "D/ST",
-      "from_owner": "Valissa Olvera",
-      "to_owner": "Jordan Iden",
-      "pts_produced": 15.0,
-      "starts": 1,
-      "pts_before": 15.0
-    },
-    {
-      "year": 2025,
-      "week": 10,
-      "player": "Steelers D/ST",
-      "pos": "D/ST",
-      "from_owner": "Valissa Olvera",
-      "to_owner": "Jordan Iden",
-      "pts_produced": 5.0,
-      "starts": 1,
-      "pts_before": 7.0
-    },
-    {
-      "year": 2025,
-      "week": 10,
-      "player": "Jared Goff",
-      "pos": "QB",
-      "from_owner": "Rey Igliane",
-      "to_owner": "Desmon Holton",
-      "pts_produced": 168.1,
-      "starts": 6,
-      "pts_before": 83.4
-    },
-    {
-      "year": 2025,
-      "week": 10,
-      "player": "Matt Prater",
-      "pos": "K",
-      "from_owner": "Rey Igliane",
-      "to_owner": "Desmon Holton",
-      "pts_produced": 37.0,
-      "starts": 8,
-      "pts_before": 28.0
-    },
-    {
-      "year": 2025,
-      "week": 10,
-      "player": "Rams D/ST",
-      "pos": "D/ST",
-      "from_owner": "bryce mikesell",
-      "to_owner": "Darin Mikesell",
-      "pts_produced": 48.0,
-      "starts": 8,
-      "pts_before": 10.0
-    },
-    {
-      "year": 2025,
-      "week": 10,
-      "player": "Sam LaPorta",
-      "pos": "TE",
-      "from_owner": "bryce mikesell",
-      "to_owner": "Darin Mikesell",
-      "pts_produced": 10.3,
-      "starts": 1,
-      "pts_before": 21.0
-    },
-    {
-      "year": 2025,
-      "week": 9,
-      "player": "Jake Bates",
-      "pos": "K",
-      "from_owner": "Desmon Holton",
-      "to_owner": "Julie Mikesell",
-      "pts_produced": 78.0,
-      "starts": 9,
-      "pts_before": 17.0
-    },
-    {
-      "year": 2025,
-      "week": 9,
-      "player": "Ravens D/ST",
-      "pos": "D/ST",
-      "from_owner": "Desmon Holton",
-      "to_owner": "Julie Mikesell",
-      "pts_produced": 42.0,
-      "starts": 4,
-      "pts_before": 2.0
-    },
-    {
-      "year": 2025,
       "week": 9,
       "player": "Kareem Hunt",
       "pos": "RB",
@@ -252111,72 +251935,6 @@
       "to_owner": "Rey Igliane",
       "pts_produced": 5.4,
       "starts": 0,
-      "pts_before": 30.0
-    },
-    {
-      "year": 2025,
-      "week": 8,
-      "player": "Aaron Rodgers",
-      "pos": "QB",
-      "from_owner": "Rey Igliane",
-      "to_owner": "Darin Mikesell",
-      "pts_produced": 33.1,
-      "starts": 0,
-      "pts_before": 12.4
-    },
-    {
-      "year": 2025,
-      "week": 8,
-      "player": "Xavier Legette",
-      "pos": "WR",
-      "from_owner": "Rey Igliane",
-      "to_owner": "Darin Mikesell",
-      "pts_produced": 6.9,
-      "starts": 0,
-      "pts_before": 4.0
-    },
-    {
-      "year": 2025,
-      "week": 7,
-      "player": "Falcons D/ST",
-      "pos": "D/ST",
-      "from_owner": "Valissa Olvera",
-      "to_owner": "Julie Mikesell",
-      "pts_produced": 3.0,
-      "starts": 2,
-      "pts_before": 5.0
-    },
-    {
-      "year": 2025,
-      "week": 7,
-      "player": "Matt Gay",
-      "pos": "K",
-      "from_owner": "Valissa Olvera",
-      "to_owner": "Julie Mikesell",
-      "pts_produced": 2.0,
-      "starts": 1,
-      "pts_before": 3.0
-    },
-    {
-      "year": 2025,
-      "week": 7,
-      "player": "Kayshon Boutte",
-      "pos": "WR",
-      "from_owner": "bryce mikesell",
-      "to_owner": "Rey Igliane",
-      "pts_produced": 47.0,
-      "starts": 1,
-      "pts_before": 13.4
-    },
-    {
-      "year": 2025,
-      "week": 7,
-      "player": "Lions D/ST",
-      "pos": "D/ST",
-      "from_owner": "bryce mikesell",
-      "to_owner": "Rey Igliane",
-      "pts_produced": 32.0,
-      "starts": 3,
       "pts_before": 30.0
     },
     {
@@ -252357,28 +252115,6 @@
     },
     {
       "year": 2024,
-      "week": 11,
-      "player": "Quentin Johnston",
-      "pos": "WR",
-      "from_owner": "bryce mikesell",
-      "to_owner": "Julie Mikesell",
-      "pts_produced": 61.9,
-      "starts": 2,
-      "pts_before": 10.4
-    },
-    {
-      "year": 2024,
-      "week": 11,
-      "player": "Ricky Pearsall",
-      "pos": "WR",
-      "from_owner": "bryce mikesell",
-      "to_owner": "Julie Mikesell",
-      "pts_produced": 0.0,
-      "starts": 1,
-      "pts_before": 11.7
-    },
-    {
-      "year": 2024,
       "week": 10,
       "player": "Dalton Kincaid",
       "pos": "TE",
@@ -252543,28 +252279,6 @@
       "pts_before": 5.0
     },
     {
-      "year": 2024,
-      "week": 5,
-      "player": "Ravens D/ST",
-      "pos": "D/ST",
-      "from_owner": "bryce mikesell",
-      "to_owner": "Marlene Holm",
-      "pts_produced": -1.0,
-      "starts": 1,
-      "pts_before": 12.0
-    },
-    {
-      "year": 2024,
-      "week": 5,
-      "player": "Wan'Dale Robinson",
-      "pos": "WR",
-      "from_owner": "bryce mikesell",
-      "to_owner": "Marlene Holm",
-      "pts_produced": 42.3,
-      "starts": 3,
-      "pts_before": 9.8
-    },
-    {
       "year": 2023,
       "week": 11,
       "player": "CeeDee Lamb",
@@ -252673,72 +252387,6 @@
       "pts_produced": 156.4,
       "starts": 11,
       "pts_before": 28.9
-    },
-    {
-      "year": 2022,
-      "week": 11,
-      "player": "Cairo Santos",
-      "pos": "K",
-      "from_owner": "Darin Mikesell",
-      "to_owner": "Julie Mikesell",
-      "pts_produced": 17.0,
-      "starts": 3,
-      "pts_before": 36.0
-    },
-    {
-      "year": 2022,
-      "week": 11,
-      "player": "Commanders D/ST",
-      "pos": "D/ST",
-      "from_owner": "Darin Mikesell",
-      "to_owner": "Julie Mikesell",
-      "pts_produced": 33.0,
-      "starts": 3,
-      "pts_before": 3.0
-    },
-    {
-      "year": 2022,
-      "week": 11,
-      "player": "Daniel Jones",
-      "pos": "QB",
-      "from_owner": "bryce mikesell",
-      "to_owner": "Darin Mikesell",
-      "pts_produced": 142.5,
-      "starts": 1,
-      "pts_before": 9.0
-    },
-    {
-      "year": 2022,
-      "week": 11,
-      "player": "Jets D/ST",
-      "pos": "D/ST",
-      "from_owner": "bryce mikesell",
-      "to_owner": "Darin Mikesell",
-      "pts_produced": 38.0,
-      "starts": 7,
-      "pts_before": 16.0
-    },
-    {
-      "year": 2022,
-      "week": 8,
-      "player": "Tyler Boyd",
-      "pos": "WR",
-      "from_owner": "Marlene Holm",
-      "to_owner": "Desmon Holton",
-      "pts_produced": 61.6,
-      "starts": 4,
-      "pts_before": 19.0
-    },
-    {
-      "year": 2022,
-      "week": 8,
-      "player": "Vikings D/ST",
-      "pos": "D/ST",
-      "from_owner": "Marlene Holm",
-      "to_owner": "Desmon Holton",
-      "pts_produced": 29.0,
-      "starts": 9,
-      "pts_before": 6.0
     },
     {
       "year": 2022,
@@ -252882,138 +252530,6 @@
       "pts_produced": 82.7,
       "starts": 3,
       "pts_before": 8.6
-    },
-    {
-      "year": 2021,
-      "week": 12,
-      "player": "Laviska Shenault Jr.",
-      "pos": "WR",
-      "from_owner": "bryce mikesell",
-      "to_owner": "Jordan Iden",
-      "pts_produced": 8.3,
-      "starts": 1,
-      "pts_before": 62.7
-    },
-    {
-      "year": 2021,
-      "week": 12,
-      "player": "Titans D/ST",
-      "pos": "D/ST",
-      "from_owner": "bryce mikesell",
-      "to_owner": "Jordan Iden",
-      "pts_produced": -2.0,
-      "starts": 1,
-      "pts_before": 8.0
-    },
-    {
-      "year": 2021,
-      "week": 11,
-      "player": "Harrison Butker",
-      "pos": "K",
-      "from_owner": "Marlene Holm",
-      "to_owner": "Jordan Iden",
-      "pts_produced": 8.0,
-      "starts": 1,
-      "pts_before": 66.0
-    },
-    {
-      "year": 2021,
-      "week": 11,
-      "player": "Marquez Callaway",
-      "pos": "WR",
-      "from_owner": "Marlene Holm",
-      "to_owner": "Jordan Iden",
-      "pts_produced": 9.6,
-      "starts": 1,
-      "pts_before": 28.7
-    },
-    {
-      "year": 2021,
-      "week": 10,
-      "player": "Brandon Aiyuk",
-      "pos": "WR",
-      "from_owner": "Marlene Holm",
-      "to_owner": "bryce mikesell",
-      "pts_produced": 98.7,
-      "starts": 2,
-      "pts_before": 18.6
-    },
-    {
-      "year": 2021,
-      "week": 10,
-      "player": "Titans D/ST",
-      "pos": "D/ST",
-      "from_owner": "Marlene Holm",
-      "to_owner": "bryce mikesell",
-      "pts_produced": 8.0,
-      "starts": 2,
-      "pts_before": 9.0
-    },
-    {
-      "year": 2021,
-      "week": 9,
-      "player": "Boston Scott",
-      "pos": "RB",
-      "from_owner": "Trenton Holm",
-      "to_owner": "David Holm",
-      "pts_produced": 38.7,
-      "starts": 0,
-      "pts_before": 0.0
-    },
-    {
-      "year": 2021,
-      "week": 9,
-      "player": "Chris Carson",
-      "pos": "RB",
-      "from_owner": "Trenton Holm",
-      "to_owner": "David Holm",
-      "pts_produced": 0.0,
-      "starts": 0,
-      "pts_before": 48.1
-    },
-    {
-      "year": 2021,
-      "week": 9,
-      "player": "Justin Tucker",
-      "pos": "K",
-      "from_owner": "Julie Mikesell",
-      "to_owner": "David Holm",
-      "pts_produced": 84.0,
-      "starts": 9,
-      "pts_before": 68.0
-    },
-    {
-      "year": 2021,
-      "week": 9,
-      "player": "Ravens D/ST",
-      "pos": "D/ST",
-      "from_owner": "Julie Mikesell",
-      "to_owner": "David Holm",
-      "pts_produced": 23.0,
-      "starts": 4,
-      "pts_before": 4.0
-    },
-    {
-      "year": 2021,
-      "week": 8,
-      "player": "Cowboys D/ST",
-      "pos": "D/ST",
-      "from_owner": "bryce mikesell",
-      "to_owner": "Marlene Holm",
-      "pts_produced": 26.0,
-      "starts": 2,
-      "pts_before": 22.0
-    },
-    {
-      "year": 2021,
-      "week": 8,
-      "player": "Panthers D/ST",
-      "pos": "D/ST",
-      "from_owner": "bryce mikesell",
-      "to_owner": "Marlene Holm",
-      "pts_produced": 48.0,
-      "starts": 2,
-      "pts_before": 2.0
     },
     {
       "year": 2021,
@@ -253205,28 +252721,6 @@
     {
       "year": 2020,
       "week": 12,
-      "player": "Christian Kirk",
-      "pos": "WR",
-      "from_owner": "bryce mikesell",
-      "to_owner": "Marlene Holm",
-      "pts_produced": 4.9,
-      "starts": 1,
-      "pts_before": 1.0
-    },
-    {
-      "year": 2020,
-      "week": 12,
-      "player": "Corey Davis",
-      "pos": "WR",
-      "from_owner": "bryce mikesell",
-      "to_owner": "Marlene Holm",
-      "pts_produced": 66.2,
-      "starts": 3,
-      "pts_before": 11.9
-    },
-    {
-      "year": 2020,
-      "week": 12,
       "player": "Diontae Johnson",
       "pos": "WR",
       "from_owner": "Marlene Holm",
@@ -253300,28 +252794,6 @@
       "pts_produced": 78.4,
       "starts": 6,
       "pts_before": 103.9
-    },
-    {
-      "year": 2020,
-      "week": 10,
-      "player": "DeVante Parker",
-      "pos": "WR",
-      "from_owner": "Trenton Holm",
-      "to_owner": "Julie Mikesell",
-      "pts_produced": 50.6,
-      "starts": 6,
-      "pts_before": 97.1
-    },
-    {
-      "year": 2020,
-      "week": 10,
-      "player": "Giants D/ST",
-      "pos": "D/ST",
-      "from_owner": "Trenton Holm",
-      "to_owner": "Julie Mikesell",
-      "pts_produced": 16.0,
-      "starts": 2,
-      "pts_before": 9.0
     },
     {
       "year": 2020,
@@ -253512,94 +252984,6 @@
     },
     {
       "year": 2020,
-      "week": 9,
-      "player": "Damien Harris",
-      "pos": "RB",
-      "from_owner": "Trenton Holm",
-      "to_owner": "David Holm",
-      "pts_produced": 28.3,
-      "starts": 1,
-      "pts_before": 4.3
-    },
-    {
-      "year": 2020,
-      "week": 9,
-      "player": "Saints D/ST",
-      "pos": "D/ST",
-      "from_owner": "Trenton Holm",
-      "to_owner": "David Holm",
-      "pts_produced": 71.0,
-      "starts": 6,
-      "pts_before": 7.0
-    },
-    {
-      "year": 2020,
-      "week": 8,
-      "player": "Saints D/ST",
-      "pos": "D/ST",
-      "from_owner": "bryce mikesell",
-      "to_owner": "Trenton Holm",
-      "pts_produced": 7.0,
-      "starts": 1,
-      "pts_before": 17.0
-    },
-    {
-      "year": 2020,
-      "week": 8,
-      "player": "Sterling Shepard",
-      "pos": "WR",
-      "from_owner": "bryce mikesell",
-      "to_owner": "Trenton Holm",
-      "pts_produced": 94.8,
-      "starts": 1,
-      "pts_before": 16.2
-    },
-    {
-      "year": 2020,
-      "week": 7,
-      "player": "Buccaneers D/ST",
-      "pos": "D/ST",
-      "from_owner": "Trenton Holm",
-      "to_owner": "Marlene Holm",
-      "pts_produced": 19.0,
-      "starts": 0,
-      "pts_before": 7.0
-    },
-    {
-      "year": 2020,
-      "week": 7,
-      "player": "Cam Newton",
-      "pos": "QB",
-      "from_owner": "Trenton Holm",
-      "to_owner": "Marlene Holm",
-      "pts_produced": -0.2,
-      "starts": 1,
-      "pts_before": 89.9
-    },
-    {
-      "year": 2020,
-      "week": 7,
-      "player": "Eagles D/ST",
-      "pos": "D/ST",
-      "from_owner": "Marlene Holm",
-      "to_owner": "Jordan Iden",
-      "pts_produced": 30.0,
-      "starts": 2,
-      "pts_before": 5.0
-    },
-    {
-      "year": 2020,
-      "week": 7,
-      "player": "Robert Tonyan",
-      "pos": "TE",
-      "from_owner": "Marlene Holm",
-      "to_owner": "Jordan Iden",
-      "pts_produced": 5.2,
-      "starts": 1,
-      "pts_before": 5.5
-    },
-    {
-      "year": 2020,
       "week": 5,
       "player": "Buccaneers D/ST",
       "pos": "D/ST",
@@ -253698,28 +253082,6 @@
       "pts_before": 14.9
     },
     {
-      "year": 2019,
-      "week": 7,
-      "player": "Josh Allen",
-      "pos": "QB",
-      "from_owner": "Trenton Holm",
-      "to_owner": "Jordan Iden",
-      "pts_produced": 205.7,
-      "starts": 8,
-      "pts_before": 44.5
-    },
-    {
-      "year": 2019,
-      "week": 7,
-      "player": "Saints D/ST",
-      "pos": "D/ST",
-      "from_owner": "Trenton Holm",
-      "to_owner": "Jordan Iden",
-      "pts_produced": 65.0,
-      "starts": 6,
-      "pts_before": 4.0
-    },
-    {
       "year": 2017,
       "week": 12,
       "player": "Ben Roethlisberger",
@@ -253740,50 +253102,6 @@
       "pts_produced": 41.1,
       "starts": 4,
       "pts_before": 46.0
-    },
-    {
-      "year": 2017,
-      "week": 10,
-      "player": "Chris Thompson",
-      "pos": "RB",
-      "from_owner": "Darin Mikesell",
-      "to_owner": "bryce mikesell",
-      "pts_produced": 20.0,
-      "starts": 2,
-      "pts_before": 50.6
-    },
-    {
-      "year": 2017,
-      "week": 10,
-      "player": "Panthers D/ST",
-      "pos": "D/ST",
-      "from_owner": "Darin Mikesell",
-      "to_owner": "bryce mikesell",
-      "pts_produced": 2.0,
-      "starts": 1,
-      "pts_before": 23.0
-    },
-    {
-      "year": 2017,
-      "week": 10,
-      "player": "James White",
-      "pos": "RB",
-      "from_owner": "Desmon Holton",
-      "to_owner": "Trenton Holm",
-      "pts_produced": 12.1,
-      "starts": 2,
-      "pts_before": 36.5
-    },
-    {
-      "year": 2017,
-      "week": 10,
-      "player": "Patriots D/ST",
-      "pos": "D/ST",
-      "from_owner": "Desmon Holton",
-      "to_owner": "Trenton Holm",
-      "pts_produced": 13.0,
-      "starts": 1,
-      "pts_before": 2.0
     },
     {
       "year": 2017,
@@ -281247,13 +280565,6 @@
           "from_owner": "Trenton Holm",
           "to_owner": "Marlene Holm",
           "pts_produced": 115.5
-        },
-        {
-          "year": 2019,
-          "week": 7,
-          "from_owner": "Trenton Holm",
-          "to_owner": "Jordan Iden",
-          "pts_produced": 205.7
         }
       ]
     },
@@ -287246,15 +286557,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2025,
-          "week": 8,
-          "from_owner": "Rey Igliane",
-          "to_owner": "Darin Mikesell",
-          "pts_produced": 33.1
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Tyler Lockett",
@@ -288151,13 +287454,6 @@
       ],
       "trade_log": [
         {
-          "year": 2025,
-          "week": 13,
-          "from_owner": "Rey Igliane",
-          "to_owner": "Valissa Olvera",
-          "pts_produced": 8.7
-        },
-        {
           "year": 2021,
           "week": 3,
           "from_owner": "bryce mikesell",
@@ -288549,15 +287845,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2021,
-          "week": 9,
-          "from_owner": "Julie Mikesell",
-          "to_owner": "David Holm",
-          "pts_produced": 84.0
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "DJ Moore",
@@ -289725,25 +289013,11 @@
       ],
       "trade_log": [
         {
-          "year": 2025,
-          "week": 11,
-          "from_owner": "Desmon Holton",
-          "to_owner": "Rey Igliane",
-          "pts_produced": 30.0
-        },
-        {
           "year": 2021,
           "week": 13,
           "from_owner": "Jordan Iden",
           "to_owner": "Desmon Holton",
           "pts_produced": 35.0
-        },
-        {
-          "year": 2021,
-          "week": 11,
-          "from_owner": "Marlene Holm",
-          "to_owner": "Jordan Iden",
-          "pts_produced": 8.0
         }
       ]
     },
@@ -290644,15 +289918,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2025,
-          "week": 10,
-          "from_owner": "Rey Igliane",
-          "to_owner": "Desmon Holton",
-          "pts_produced": 168.1
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Julio Jones",
@@ -292845,13 +292111,6 @@
       "trade_log": [
         {
           "year": 2025,
-          "week": 10,
-          "from_owner": "Valissa Olvera",
-          "to_owner": "Jordan Iden",
-          "pts_produced": 5.0
-        },
-        {
-          "year": 2025,
           "week": 6,
           "from_owner": "David Holm",
           "to_owner": "Valissa Olvera",
@@ -293244,15 +292503,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2017,
-          "week": 10,
-          "from_owner": "Desmon Holton",
-          "to_owner": "Trenton Holm",
-          "pts_produced": 13.0
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Nico Collins",
@@ -294422,32 +293673,11 @@
       ],
       "trade_log": [
         {
-          "year": 2025,
-          "week": 9,
-          "from_owner": "Desmon Holton",
-          "to_owner": "Julie Mikesell",
-          "pts_produced": 42.0
-        },
-        {
           "year": 2024,
           "week": 8,
           "from_owner": "Marlene Holm",
           "to_owner": "bryce mikesell",
           "pts_produced": 0.0
-        },
-        {
-          "year": 2024,
-          "week": 5,
-          "from_owner": "bryce mikesell",
-          "to_owner": "Marlene Holm",
-          "pts_produced": -1.0
-        },
-        {
-          "year": 2021,
-          "week": 9,
-          "from_owner": "Julie Mikesell",
-          "to_owner": "David Holm",
-          "pts_produced": 23.0
         }
       ]
     },
@@ -294846,15 +294076,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2025,
-          "week": 10,
-          "from_owner": "Rey Igliane",
-          "to_owner": "Desmon Holton",
-          "pts_produced": 37.0
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Eagles D/ST",
@@ -295085,15 +294307,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2020,
-          "week": 7,
-          "from_owner": "Marlene Holm",
-          "to_owner": "Jordan Iden",
-          "pts_produced": 30.0
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Brandin Cooks",
@@ -295385,15 +294599,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2022,
-          "week": 8,
-          "from_owner": "Marlene Holm",
-          "to_owner": "Desmon Holton",
-          "pts_produced": 61.6
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Carson Wentz",
@@ -296319,15 +295525,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2021,
-          "week": 10,
-          "from_owner": "Marlene Holm",
-          "to_owner": "bryce mikesell",
-          "pts_produced": 98.7
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Rams D/ST",
@@ -296494,13 +295692,6 @@
         }
       ],
       "trade_log": [
-        {
-          "year": 2025,
-          "week": 10,
-          "from_owner": "bryce mikesell",
-          "to_owner": "Darin Mikesell",
-          "pts_produced": 48.0
-        },
         {
           "year": 2020,
           "week": 10,
@@ -296935,15 +296126,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2025,
-          "week": 7,
-          "from_owner": "Valissa Olvera",
-          "to_owner": "Julie Mikesell",
-          "pts_produced": 2.0
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Brandon Aubrey",
@@ -297209,15 +296392,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2021,
-          "week": 8,
-          "from_owner": "bryce mikesell",
-          "to_owner": "Marlene Holm",
-          "pts_produced": 26.0
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Rachaad White",
@@ -297588,15 +296763,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2021,
-          "week": 9,
-          "from_owner": "Trenton Holm",
-          "to_owner": "David Holm",
-          "pts_produced": 0.0
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Wil Lutz",
@@ -299068,13 +298235,6 @@
       "trade_log": [
         {
           "year": 2020,
-          "week": 7,
-          "from_owner": "Trenton Holm",
-          "to_owner": "Marlene Holm",
-          "pts_produced": 19.0
-        },
-        {
-          "year": 2020,
           "week": 5,
           "from_owner": "Marlene Holm",
           "to_owner": "Trenton Holm",
@@ -299353,29 +298513,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2020,
-          "week": 9,
-          "from_owner": "Trenton Holm",
-          "to_owner": "David Holm",
-          "pts_produced": 71.0
-        },
-        {
-          "year": 2020,
-          "week": 8,
-          "from_owner": "bryce mikesell",
-          "to_owner": "Trenton Holm",
-          "pts_produced": 7.0
-        },
-        {
-          "year": 2019,
-          "week": 7,
-          "from_owner": "Trenton Holm",
-          "to_owner": "Jordan Iden",
-          "pts_produced": 65.0
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Justin Fields",
@@ -299743,15 +298881,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2025,
-          "week": 10,
-          "from_owner": "Valissa Olvera",
-          "to_owner": "Jordan Iden",
-          "pts_produced": 15.0
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "JuJu Smith-Schuster",
@@ -300427,15 +299557,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2020,
-          "week": 12,
-          "from_owner": "bryce mikesell",
-          "to_owner": "Marlene Holm",
-          "pts_produced": 4.9
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Daniel Jones",
@@ -300534,15 +299656,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2022,
-          "week": 11,
-          "from_owner": "bryce mikesell",
-          "to_owner": "Darin Mikesell",
-          "pts_produced": 142.5
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Jordan Love",
@@ -301149,15 +300263,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2025,
-          "week": 13,
-          "from_owner": "Rey Igliane",
-          "to_owner": "Valissa Olvera",
-          "pts_produced": 153.1
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Marquise Brown",
@@ -303712,15 +302818,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2025,
-          "week": 13,
-          "from_owner": "Valissa Olvera",
-          "to_owner": "Jordan Iden",
-          "pts_produced": 29.3
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Taysom Hill",
@@ -305345,15 +304443,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2020,
-          "week": 7,
-          "from_owner": "Trenton Holm",
-          "to_owner": "Marlene Holm",
-          "pts_produced": -0.2
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Clyde Edwards-Helaire",
@@ -306545,15 +305635,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2022,
-          "week": 8,
-          "from_owner": "Marlene Holm",
-          "to_owner": "Desmon Holton",
-          "pts_produced": 29.0
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Brock Bowers",
@@ -306877,22 +305959,7 @@
         }
       ],
       "draft_log": [],
-      "trade_log": [
-        {
-          "year": 2021,
-          "week": 12,
-          "from_owner": "bryce mikesell",
-          "to_owner": "Jordan Iden",
-          "pts_produced": -2.0
-        },
-        {
-          "year": 2021,
-          "week": 10,
-          "from_owner": "Marlene Holm",
-          "to_owner": "bryce mikesell",
-          "pts_produced": 8.0
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Romeo Doubs",
@@ -307066,15 +306133,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2017,
-          "week": 10,
-          "from_owner": "Desmon Holton",
-          "to_owner": "Trenton Holm",
-          "pts_produced": 12.1
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Cardinals D/ST",
@@ -307610,13 +306669,6 @@
           "from_owner": "Darin Mikesell",
           "to_owner": "Jordan Iden",
           "pts_produced": 36.6
-        },
-        {
-          "year": 2020,
-          "week": 10,
-          "from_owner": "Trenton Holm",
-          "to_owner": "Julie Mikesell",
-          "pts_produced": 50.6
         }
       ]
     },
@@ -307787,13 +306839,6 @@
       "trade_log": [
         {
           "year": 2025,
-          "week": 10,
-          "from_owner": "bryce mikesell",
-          "to_owner": "Darin Mikesell",
-          "pts_produced": 10.3
-        },
-        {
-          "year": 2025,
           "week": 6,
           "from_owner": "Rey Igliane",
           "to_owner": "bryce mikesell",
@@ -307882,15 +306927,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2022,
-          "week": 11,
-          "from_owner": "Darin Mikesell",
-          "to_owner": "Julie Mikesell",
-          "pts_produced": 17.0
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Emmanuel Sanders",
@@ -308759,15 +307796,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2020,
-          "week": 9,
-          "from_owner": "Trenton Holm",
-          "to_owner": "David Holm",
-          "pts_produced": 28.3
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "C.J. Stroud",
@@ -308942,15 +307971,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2022,
-          "week": 11,
-          "from_owner": "bryce mikesell",
-          "to_owner": "Darin Mikesell",
-          "pts_produced": 38.0
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Phillip Lindsay",
@@ -309735,15 +308756,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2025,
-          "week": 9,
-          "from_owner": "Desmon Holton",
-          "to_owner": "Julie Mikesell",
-          "pts_produced": 78.0
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Bo Nix",
@@ -310281,13 +309294,6 @@
         }
       ],
       "trade_log": [
-        {
-          "year": 2025,
-          "week": 7,
-          "from_owner": "bryce mikesell",
-          "to_owner": "Rey Igliane",
-          "pts_produced": 32.0
-        },
         {
           "year": 2024,
           "week": 10,
@@ -312792,15 +311798,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2020,
-          "week": 10,
-          "from_owner": "Trenton Holm",
-          "to_owner": "Julie Mikesell",
-          "pts_produced": 16.0
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Mike Gesicki",
@@ -313433,15 +312431,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2022,
-          "week": 11,
-          "from_owner": "Darin Mikesell",
-          "to_owner": "Julie Mikesell",
-          "pts_produced": 33.0
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Jack Doyle",
@@ -313575,15 +312565,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2024,
-          "week": 5,
-          "from_owner": "bryce mikesell",
-          "to_owner": "Marlene Holm",
-          "pts_produced": 42.3
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Corey Davis",
@@ -313684,15 +312666,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2020,
-          "week": 12,
-          "from_owner": "bryce mikesell",
-          "to_owner": "Marlene Holm",
-          "pts_produced": 66.2
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Raiders D/ST",
@@ -314334,22 +313308,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2021,
-          "week": 8,
-          "from_owner": "bryce mikesell",
-          "to_owner": "Marlene Holm",
-          "pts_produced": 48.0
-        },
-        {
-          "year": 2017,
-          "week": 10,
-          "from_owner": "Darin Mikesell",
-          "to_owner": "bryce mikesell",
-          "pts_produced": 2.0
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Latavius Murray",
@@ -315132,15 +314091,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2017,
-          "week": 10,
-          "from_owner": "Darin Mikesell",
-          "to_owner": "bryce mikesell",
-          "pts_produced": 20.0
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Jauan Jennings",
@@ -315338,22 +314289,7 @@
         }
       ],
       "draft_log": [],
-      "trade_log": [
-        {
-          "year": 2025,
-          "week": 12,
-          "from_owner": "bryce mikesell",
-          "to_owner": "Jordan Iden",
-          "pts_produced": 19.0
-        },
-        {
-          "year": 2025,
-          "week": 7,
-          "from_owner": "Valissa Olvera",
-          "to_owner": "Julie Mikesell",
-          "pts_produced": 3.0
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Tyler Higbee",
@@ -316062,13 +314998,6 @@
       "trade_log": [
         {
           "year": 2024,
-          "week": 11,
-          "from_owner": "bryce mikesell",
-          "to_owner": "Julie Mikesell",
-          "pts_produced": 61.9
-        },
-        {
-          "year": 2024,
           "week": 10,
           "from_owner": "David Holm",
           "to_owner": "bryce mikesell",
@@ -316240,15 +315169,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2020,
-          "week": 7,
-          "from_owner": "Marlene Holm",
-          "to_owner": "Jordan Iden",
-          "pts_produced": 5.2
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Allen Lazard",
@@ -317177,15 +316098,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2020,
-          "week": 8,
-          "from_owner": "bryce mikesell",
-          "to_owner": "Trenton Holm",
-          "pts_produced": 94.8
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Alex Collins",
@@ -319886,15 +318799,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2025,
-          "week": 11,
-          "from_owner": "Desmon Holton",
-          "to_owner": "Rey Igliane",
-          "pts_produced": 15.5
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Chris Hogan",
@@ -320071,15 +318976,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2024,
-          "week": 11,
-          "from_owner": "bryce mikesell",
-          "to_owner": "Julie Mikesell",
-          "pts_produced": 0.0
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Michael Badgley",
@@ -323261,15 +322158,7 @@
         }
       ],
       "draft_log": [],
-      "trade_log": [
-        {
-          "year": 2025,
-          "week": 7,
-          "from_owner": "bryce mikesell",
-          "to_owner": "Rey Igliane",
-          "pts_produced": 47.0
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Martavis Bryant",
@@ -324200,15 +323089,7 @@
         }
       ],
       "draft_log": [],
-      "trade_log": [
-        {
-          "year": 2025,
-          "week": 13,
-          "from_owner": "Valissa Olvera",
-          "to_owner": "Jordan Iden",
-          "pts_produced": 3.0
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Chad Ryland",
@@ -324280,15 +323161,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2021,
-          "week": 9,
-          "from_owner": "Trenton Holm",
-          "to_owner": "David Holm",
-          "pts_produced": 38.7
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Marquez Callaway",
@@ -324329,15 +323202,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2021,
-          "week": 11,
-          "from_owner": "Marlene Holm",
-          "to_owner": "Jordan Iden",
-          "pts_produced": 9.6
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Isaiah Likely",
@@ -324613,13 +323478,6 @@
       ],
       "trade_log": [
         {
-          "year": 2025,
-          "week": 8,
-          "from_owner": "Rey Igliane",
-          "to_owner": "Darin Mikesell",
-          "pts_produced": 6.9
-        },
-        {
           "year": 2024,
           "week": 10,
           "from_owner": "bryce mikesell",
@@ -324777,15 +323635,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2021,
-          "week": 12,
-          "from_owner": "bryce mikesell",
-          "to_owner": "Jordan Iden",
-          "pts_produced": 8.3
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Carson Steele",
@@ -326839,15 +325689,7 @@
           "is_keeper": false
         }
       ],
-      "trade_log": [
-        {
-          "year": 2025,
-          "week": 12,
-          "from_owner": "bryce mikesell",
-          "to_owner": "Jordan Iden",
-          "pts_produced": 9.1
-        }
-      ]
+      "trade_log": []
     },
     {
       "name": "Braelon Allen",

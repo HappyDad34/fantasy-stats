@@ -493,7 +493,7 @@ if not df_historical_matchups.empty:
             'consolation_rounds': structure_bracket(consol_df, is_championship=False)
         }
 
-# 7. Trades Data (Robust Regular-Season Roster Swap Filter - Ignores Waivers & Playoffs)
+# 7. Trades Data (Strict Reciprocal Two-Way Exchange Filter)
 trades_data = []
 potential_moves = []
 
@@ -502,23 +502,37 @@ if not df_players.empty:
         yr_int = int(year)
         owners_in_order = []
         
-        for _, r in p_group.sort_values(by='week').iterrows():
+        # Sort all weekly box scores chronologically
+        sorted_entries = p_group.sort_values(by='week')
+        
+        for _, r in sorted_entries.iterrows():
             wk = int(r['week'])
             
-            # Strict regular season filter: Trades only happen in Weeks 1 through 13
+            # Rule 1: Trade deadline gatekeeper (Strictly Weeks 1 through 13)
             if wk > 13:
                 continue
 
             current_owner = str(r['owner_name']).strip()
+            if not current_owner or current_owner in ['None', 'nan', '']:
+                continue
+
             if not owners_in_order or owners_in_order[-1]['owner'] != current_owner:
-                owners_in_order.append({'owner': current_owner, 'team': str(r['team_name']), 'week': wk})
+                owners_in_order.append({
+                    'owner': current_owner,
+                    'team': str(r['team_name']),
+                    'week': wk
+                })
         
-        # If a player changed teams during the regular season, evaluate the move
+        # If the player changed owners during the regular season
         if len(owners_in_order) >= 2:
             for i in range(len(owners_in_order) - 1):
                 prev = owners_in_order[i]
                 new = owners_in_order[i+1]
                 trade_week = new['week']
+
+                # Ignore Week 1 draft assignments
+                if trade_week <= 1:
+                    continue
 
                 pts_before = float(p_group[(p_group['owner_name'] == prev['owner']) & (p_group['week'] < trade_week)]['points'].sum())
                 pts_after = float(p_group[(p_group['owner_name'] == new['owner']) & (p_group['week'] >= trade_week)]['points'].sum())
@@ -536,22 +550,24 @@ if not df_players.empty:
                     'pts_before': round(pts_before, 1)
                 })
 
-# Filter out single waiver wire additions/drops: 
-# A true trade requires reciprocal movement between the same two teams in the same week (e.g., Team A gets X from Team B, Team B gets Y from Team A)
-# OR multiple players moving between the same two teams simultaneously.
-valid_trades = []
+# Rule 2: Strict Two-Way Reciprocal Exchange (The Anti-Waiver Gatekeeper)
 from collections import defaultdict
-moves_by_match = defaultdict(list)
+moves_by_transaction = defaultdict(list)
 
 for m in potential_moves:
-    teams = tuple(sorted([m['from_owner'], m['to_owner']]))
-    key = (m['year'], m['week'], teams)
-    moves_by_match[key].append(m)
+    # Group by (year, week, and the 2 managers involved)
+    team_pair = tuple(sorted([m['from_owner'], m['to_owner']]))
+    key = (m['year'], m['week'], team_pair)
+    moves_by_transaction[key].append(m)
 
-for key, moves in moves_by_match.items():
-    # If 2 or more player movements happened between these two teams in the same week, it's a confirmed multi-player trade.
-    # Alternatively, if there is a direct 1-for-1 swap, len(moves) will be >= 2.
-    if len(moves) >= 2:
+valid_trades = []
+for (yr, wk, (team_a, team_b)), moves in moves_by_transaction.items():
+    # Separate moves by direction
+    a_to_b = [m for m in moves if m['from_owner'] == team_a and m['to_owner'] == team_b]
+    b_to_a = [m for m in moves if m['from_owner'] == team_b and m['to_owner'] == team_a]
+
+    # Both teams MUST send at least 1 player to each other for it to be a real trade
+    if len(a_to_b) >= 1 and len(b_to_a) >= 1:
         valid_trades.extend(moves)
 
 trades_data = sorted(valid_trades, key=lambda x: (x['year'], x['week']), reverse=True)
