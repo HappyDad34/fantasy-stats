@@ -522,7 +522,15 @@ function initDraftControls() {
   const select = document.getElementById('draft-year-select');
   if (!select) return;
 
-  const years = (RAW_DATA?.years && RAW_DATA.years.length > 0) ? RAW_DATA.years : [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025];
+  // Include 2026 explicitly if it exists in draft vaults but is missing from completed years
+  let years = (RAW_DATA?.years && RAW_DATA.years.length > 0) ? [...RAW_DATA.years] : [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025];
+  if (RAW_DATA?.draft_vault?.drafts_by_season) {
+    Object.keys(RAW_DATA.draft_vault.drafts_by_season).forEach(yr => {
+      if (!years.includes(parseInt(yr))) years.push(parseInt(yr));
+    });
+  }
+  years.sort((a, b) => a - b);
+
   select.innerHTML = '';
   years.slice().reverse().forEach(yr => {
     select.add(new Option(`${yr} Draft Board`, yr));
@@ -2087,36 +2095,31 @@ function renderKeepers() {
   const tbTrue = document.getElementById('true-keepers-body');
 
   const minYr = parseInt(document.getElementById('startYear')?.value) || 0;
+  // Ensure the upper limit covers 2026 or defaults safely
   const maxYr = parseInt(document.getElementById('endYear')?.value) || 9999;
   const selectedManager = document.getElementById('keeper-manager-filter')?.value || 'all';
 
   if (tbCorner && RAW_DATA?.cornerstone_stats) {
     const minSeasons = parseInt(document.getElementById('keeper-min-seasons')?.value) || 2;
-    const minWeeks = parseInt(document.getElementById('keeper-min-weeks')?.value) || 7;
     
     const filteredC = RAW_DATA.cornerstone_stats.filter(c => {
       const mgr = c.owner || c.manager;
       if (selectedManager !== 'all' && mgr !== selectedManager) return false;
       
       const seasonsCount = c.seasons || c.tenure || 0;
-      const rosterWeeks = c.games_on_roster || 0;
-
-      // Must satisfy BOTH the season tenure and the minimum roster weeks thresholds
       if (seasonsCount < minSeasons) return false;
-      if (rosterWeeks < minWeeks) return false;
       
-      const yearsList = c.years_list || (c.years_display ? c.years_display.split(',').map(y => parseInt('20' + y.trim())) : []);
+      const yearsList = c.years_list || [];
       if (yearsList.length > 0) {
         return yearsList.some(y => y >= minYr && y <= maxYr);
       }
       return true;
-    }).sort((a, b) => (b.seasons || 0) - (a.seasons || 0) || (b.games_on_roster || 0) - (a.games_on_roster || 0) || (b.starter_pts || 0) - (a.starter_pts || 0));
+    }).sort((a, b) => (b.seasons || 0) - (a.seasons || 0) || (b.starter_pts || 0) - (a.starter_pts || 0));
 
     tbCorner.innerHTML = filteredC.map((c, i) => {
       const mgrName = c.owner || c.manager || '--';
       const safeMgr = mgrName.replace(/'/g, "\\'");
       const seasonsCount = c.seasons || c.tenure || 0;
-      const rosterWeeks = c.games_on_roster || 0;
       const yearsDisplay = c.years_display || (c.years_list || []).map(y => `'${String(y).slice(-2)}`).join(', ');
 
       return `
@@ -2129,7 +2132,7 @@ function renderKeepers() {
               ${mgrName}
             </button>
           </td>
-          <td class="p-3 text-center text-emerald-400 font-bold font-mono">${seasonsCount} Seasons (${rosterWeeks} Wks)</td>
+          <td class="p-3 text-center text-emerald-400 font-bold font-mono">${seasonsCount} Seasons</td>
           <td class="p-3 text-slate-400 font-mono text-xs">${yearsDisplay}</td>
           <td class="p-3 text-right text-amber-400 font-bold font-mono">${(c.starter_pts || 0).toFixed(1)}</td>
         </tr>`;
@@ -2139,6 +2142,7 @@ function renderKeepers() {
   if (tbTrue && RAW_DATA?.true_keepers) {
     const filteredK = RAW_DATA.true_keepers.filter(k => {
       if (selectedManager !== 'all' && k.owner !== selectedManager) return false;
+      // Ensure 2026 keepers are included when minYr/maxYr are evaluated
       return k.year >= minYr && k.year <= maxYr;
     }).sort((a, b) => b.year - a.year || b.starter_pts - a.starter_pts);
 
