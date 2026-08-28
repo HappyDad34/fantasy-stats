@@ -745,7 +745,7 @@ function renderRivalry() {
   const setInner = (id, val) => { const el = document.getElementById(id); if (el) el.innerText = val; };
   setInner('rivalry-total-meetings-count', `${seriesMatches.length} Total Matches`);
 
-  let m1Wins = 0, m2Wins = 0, ties = 0;
+let m1Wins = 0, m2Wins = 0, ties = 0;
   let m1TotalPts = 0, m2TotalPts = 0;
   let m1RegWins = 0, m2RegWins = 0;
   let m1PlayoffWins = 0, m2PlayoffWins = 0;
@@ -762,14 +762,25 @@ function renderRivalry() {
     m1TotalPts += m1Score;
     m2TotalPts += m2Score;
 
+    // Robust check for postseason: check explicit type or week boundaries (Weeks 14/15+)
+    const yr = Number(m.year);
+    const wk = Number(m.week);
+    let isPostseason = m.matchup_type === 'PLAYOFF';
+    if (!isPostseason && ((yr <= 2020 && wk >= 14) || (yr > 2020 && wk >= 15))) {
+      isPostseason = true;
+    }
+
+    const isWinnerM1 = m1Score > m2Score && m.winner_owner === m1;
+    const isWinnerM2 = m2Score > m1Score && m.winner_owner === m2;
+
     if (m1Score > m2Score) {
       m1Wins++;
-      if (m.matchup_type === 'REGULAR') m1RegWins++;
-      if (m.matchup_type === 'PLAYOFF') m1PlayoffWins++;
+      if (isPostseason) m1PlayoffWins++;
+      else m1RegWins++;
     } else if (m2Score > m1Score) {
       m2Wins++;
-      if (m.matchup_type === 'REGULAR') m2RegWins++;
-      if (m.matchup_type === 'PLAYOFF') m2PlayoffWins++;
+      if (isPostseason) m2PlayoffWins++;
+      else m2RegWins++;
     } else {
       ties++;
     }
