@@ -478,69 +478,46 @@ if not df_historical_matchups.empty:
             'consolation_rounds': structure_bracket(consol_df, is_championship=False)
         }
 
-# 7. Trades Data (Strict Regular Season Filter to Exclude Waiver Pickups & Playoffs)
+# 7. Trades Data (Strictly Filtered by Official League Trade Transactions)
 trades_data = []
-potential_moves = []
 
-if not df_players.empty:
-    for (year, player_name), p_group in df_players.groupby(['year', 'player_name']):
-        yr_int = int(year)
-        owners_in_order = []
-        for _, r in p_group.sort_values(by='week').iterrows():
-            wk = int(r['week'])
-            
-            # Determine if this specific week is in the postseason/playoffs
-            is_playoff_week = False
-            if yr_int <= 2020 and wk >= 14:
-                is_playoff_week = True
-            elif yr_int > 2020 and wk >= 15:
-                is_playoff_week = True
-                
-            # Ignore any movement that happens during playoff weeks (prevents waiver claims post-deadline)
-            if is_playoff_week:
-                continue
+if not df_trans.empty and not df_players.empty:
+    # Filter only accepted trades from the transaction log
+    valid_trans = df_trans[df_trans['trans_type'] == 'TRADE_ACCEPT'].copy()
+    
+    # Pre-calculate player performance by year/name for quick lookup
+    player_perf = {}
+    for (year, p_name), p_group in df_players.groupby(['year', 'player_name']):
+        starters = p_group[~p_group['slot_position'].isin(bench_slots)]
+        player_perf[(int(year), str(p_name).strip().lower())] = {
+            'starter_pts': float(starters['points'].sum()),
+            'starts': len(starters),
+            'pos': str(p_group['position'].iloc[0])
+        }
 
-            if not owners_in_order or owners_in_order[-1]['owner'] != r['owner_name']:
-                owners_in_order.append({'owner': r['owner_name'], 'team': r['team_name'], 'week': wk})
+    for _, row in valid_trans.iterrows():
+        yr = int(row['year'])
+        wk = int(row['week'])
+        player_name = str(row.get('player_name', '')).strip()
+        to_owner = str(row.get('to_owner', '')).strip()
+        from_owner = str(row.get('from_owner', '')).strip()
         
-        if len(owners_in_order) >= 2:
-            for i in range(len(owners_in_order) - 1):
-                prev = owners_in_order[i]
-                new = owners_in_order[i+1]
-                trade_week = new['week']
+        # Look up player stats for that season
+        perf = player_perf.get((yr, player_name.lower()), {'starter_pts': 0.0, 'starts': 0, 'pos': 'FLEX'})
+        
+        trades_data.append({
+            'year': yr,
+            'week': wk,
+            'player': player_name,
+            'pos': perf['pos'],
+            'from_owner': from_owner,
+            'to_owner': to_owner,
+            'pts_produced': round(perf['starter_pts'], 1),
+            'starts': perf['starts']
+        })
 
-                pts_before = float(p_group[(p_group['owner_name'] == prev['owner']) & (p_group['week'] < trade_week)]['points'].sum())
-                pts_after = float(p_group[(p_group['owner_name'] == new['owner']) & (p_group['week'] >= trade_week)]['points'].sum())
-                starts_after = int(len(p_group[(p_group['owner_name'] == new['owner']) & (p_group['week'] >= trade_week) & (~p_group['slot_position'].isin(bench_slots))]))
-
-                potential_moves.append({
-                    'year': yr_int,
-                    'week': int(trade_week),
-                    'player': player_name,
-                    'pos': p_group['position'].iloc[0],
-                    'from_owner': prev['owner'],
-                    'to_owner': new['owner'],
-                    'pts_produced': round(pts_after, 1),
-                    'starts': starts_after,
-                    'pts_before': round(pts_before, 1)
-                })
-
-# Filter out single waiver pickups (Require multi-player trades or strict transaction logging)
-valid_trades = []
-from collections import defaultdict
-moves_by_match = defaultdict(list)
-
-for m in potential_moves:
-    teams = tuple(sorted([m['from_owner'], m['to_owner']]))
-    key = (m['year'], m['week'], teams)
-    moves_by_match[key].append(m)
-
-for key, moves in moves_by_match.items():
-    # True trades typically involve reciprocal movement or occur strictly during regular season trade windows.
-    if len(moves) >= 2:
-        valid_trades.extend(moves)
-
-trades_data = sorted(valid_trades, key=lambda x: (x['year'], x['week']), reverse=True)
+# Sort descending by year and week
+trades_data = sorted(trades_data, key=lambda x: (x['year'], x['week']), reverse=True)
 
 # 8. DRAFT VAULT & TRUE KEEPERS
 draft_vault_payload = {
