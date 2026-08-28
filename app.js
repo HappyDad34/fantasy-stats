@@ -1677,7 +1677,18 @@ function renderStorylines() {
   if (!tbody || !RAW_DATA?.streaks_data) return;
 
   const filterMode = document.getElementById('streak-view-filter')?.value || 'active';
-  const activeManagers = new Set(getManagerList());
+  
+  // Dynamically determine strictly active teams (e.g., active in the most recent season, like 2026 or latest year)
+  const latestYear = RAW_DATA.years && RAW_DATA.years.length > 0 ? Math.max(...RAW_DATA.years) : 2026;
+  const activeManagers = new Set();
+  
+  if (RAW_DATA.manager_profiles) {
+    Object.values(RAW_DATA.manager_profiles).forEach(prof => {
+      if (prof.years_active && prof.years_active.includes(latestYear)) {
+        activeManagers.add(prof.manager_name);
+      }
+    });
+  }
 
   const streaks = Object.values(RAW_DATA.streaks_data)
     .filter(s => {
