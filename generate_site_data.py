@@ -478,16 +478,30 @@ if not df_historical_matchups.empty:
             'consolation_rounds': structure_bracket(consol_df, is_championship=False)
         }
 
-# 7. Trades Data
+# 7. Trades Data (Strict Regular Season Filter to Exclude Waiver Pickups & Playoffs)
 trades_data = []
 potential_moves = []
 
 if not df_players.empty:
     for (year, player_name), p_group in df_players.groupby(['year', 'player_name']):
+        yr_int = int(year)
         owners_in_order = []
         for _, r in p_group.sort_values(by='week').iterrows():
+            wk = int(r['week'])
+            
+            # Determine if this specific week is in the postseason/playoffs
+            is_playoff_week = False
+            if yr_int <= 2020 and wk >= 14:
+                is_playoff_week = True
+            elif yr_int > 2020 and wk >= 15:
+                is_playoff_week = True
+                
+            # Ignore any movement that happens during playoff weeks (prevents waiver claims post-deadline)
+            if is_playoff_week:
+                continue
+
             if not owners_in_order or owners_in_order[-1]['owner'] != r['owner_name']:
-                owners_in_order.append({'owner': r['owner_name'], 'team': r['team_name'], 'week': int(r['week'])})
+                owners_in_order.append({'owner': r['owner_name'], 'team': r['team_name'], 'week': wk})
         
         if len(owners_in_order) >= 2:
             for i in range(len(owners_in_order) - 1):
@@ -500,7 +514,7 @@ if not df_players.empty:
                 starts_after = int(len(p_group[(p_group['owner_name'] == new['owner']) & (p_group['week'] >= trade_week) & (~p_group['slot_position'].isin(bench_slots))]))
 
                 potential_moves.append({
-                    'year': int(year),
+                    'year': yr_int,
                     'week': int(trade_week),
                     'player': player_name,
                     'pos': p_group['position'].iloc[0],
@@ -511,6 +525,7 @@ if not df_players.empty:
                     'pts_before': round(pts_before, 1)
                 })
 
+# Filter out single waiver pickups (Require multi-player trades or strict transaction logging)
 valid_trades = []
 from collections import defaultdict
 moves_by_match = defaultdict(list)
@@ -521,6 +536,7 @@ for m in potential_moves:
     moves_by_match[key].append(m)
 
 for key, moves in moves_by_match.items():
+    # True trades typically involve reciprocal movement or occur strictly during regular season trade windows.
     if len(moves) >= 2:
         valid_trades.extend(moves)
 
