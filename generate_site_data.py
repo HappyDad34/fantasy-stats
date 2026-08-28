@@ -29,6 +29,20 @@ df_draft = pd.read_sql_query("SELECT * FROM draft_picks", conn) if "draft_picks"
 
 conn.close()
 
+# -------------------------------------------------------------------------
+# CRITICAL FIX: Filter out unplayed matchups (0-0 scores or active 2026 unplayed games)
+# -------------------------------------------------------------------------
+CURRENT_ACTIVE_SEASON = 2026
+if not df_matchups.empty:
+    # Drop rows where both home and away scores are 0 (unplayed games)
+    df_matchups = df_matchups[~((df_matchups['home_score'] == 0) & (df_matchups['away_score'] == 0))]
+    
+    # Exclude the current ongoing/unplayed season from historical aggregations, streaks, narratives, and simulations
+    df_historical_matchups = df_matchups[df_matchups['year'] != CURRENT_ACTIVE_SEASON]
+else:
+    df_historical_matchups = pd.DataFrame()
+
+
 def normalize_matchup_type(val):
     v = str(val).upper().strip()
     if v in ['REGULAR', 'REG', 'NONE', '', 'NAN']:
@@ -48,13 +62,13 @@ if not df_matchups.empty:
         matchup_type_map[(int(row['year']), int(row['week']), str(row['home_owner']).strip())] = row['matchup_type']
         matchup_type_map[(int(row['year']), int(row['week']), str(row['away_owner']).strip())] = row['matchup_type']
 
-# Robust Years Extraction
-years_m = [int(y) for y in df_matchups["year"].dropna().unique()] if not df_matchups.empty else []
-years_t = [int(y) for y in df_teams_hist["year"].dropna().unique()] if not df_teams_hist.empty else []
-years_p = [int(y) for y in df_players["year"].dropna().unique()] if not df_players.empty else []
+# Robust Years Extraction (restrict completed historical years to those before 2026 or with actual results)
+years_m = [int(y) for y in df_historical_matchups["year"].dropna().unique()] if not df_historical_matchups.empty else []
+years_t = [int(y) for y in df_teams_hist["year"].dropna().unique() if int(y) < CURRENT_ACTIVE_SEASON] if not df_teams_hist.empty else []
+years_p = [int(y) for y in df_players["year"].dropna().unique() if int(y) < CURRENT_ACTIVE_SEASON] if not df_players.empty else []
 all_years = sorted(list(set(years_m + years_t + years_p)))
 if not all_years:
-    all_years = list(range(2017, 2026))
+    all_years = list(range(2017, CURRENT_ACTIVE_SEASON))
 
 manager_profiles = {}
 if not df_teams_hist.empty:
@@ -235,10 +249,10 @@ if not df_players.empty:
                 "ppg": round(starter_pts / starter_games, 1) if starter_games > 0 else 0.0
             })
 
-# 4. Streaks Data
+# 4. Streaks Data (Calculated strictly on historical completed matchups)
 streaks_data = {}
-if not df_matchups.empty:
-    df_sorted_match = df_matchups.sort_values(by=['year', 'week']).copy()
+if not df_historical_matchups.empty:
+    df_sorted_match = df_historical_matchups.sort_values(by=['year', 'week']).copy()
     
     for manager in manager_profiles.keys():
         mgr_matches = df_sorted_match[(df_sorted_match['home_owner'] == manager) | (df_sorted_match['away_owner'] == manager)]
@@ -298,11 +312,11 @@ if not df_matchups.empty:
             'total_games': int(len(results))
         }
 
-# 5. Season Narratives
+# 5. Season Narratives (Completed historical seasons only)
 season_narratives = {}
-if not df_matchups.empty:
+if not df_historical_matchups.empty:
     for yr in all_years:
-        yr_matches = df_matchups[df_matchups['year'] == yr]
+        yr_matches = df_historical_matchups[df_historical_matchups['year'] == yr]
         yr_reg = yr_matches[yr_matches['matchup_type'] == 'REGULAR']
         if yr_reg.empty:
             continue
@@ -358,13 +372,12 @@ if not df_matchups.empty:
             'regular_standings': sorted(stat_list, key=lambda x: (x['wins'], x['pf']), reverse=True)
         }
 
-# 6. Playoff Brackets
+# 6. Playoff Brackets (Historical completed seasons only)
 brackets_by_season = {}
-if not df_matchups.empty:
+if not df_historical_matchups.empty:
     for yr in all_years:
-        yr_matches = df_matchups[df_matchups['year'] == yr]
+        yr_matches = df_historical_matchups[df_historical_matchups['year'] == yr]
         
-        # Identify the Top 6 teams from the regular season to isolate the Championship bracket
         yr_narrative = season_narratives.get(int(yr))
         if yr_narrative and 'regular_standings' in yr_narrative:
             playoff_owners = [s['owner'] for s in yr_narrative['regular_standings'][:6]]
@@ -378,25 +391,21 @@ if not df_matchups.empty:
             is_postseason = False
             wk = int(m['week'])
             
-            # Force ESPN schedule transitions (pre-2021 was 16 games; post-2021 is 17 games)
             if int(yr) <= 2020 and wk >= 14:
                 is_postseason = True
             elif int(yr) > 2020 and wk >= 15:
                 is_postseason = True
                 
-            # Catch explicit database flags just in case
             if m['matchup_type'] in ['PLAYOFF', 'CONSOLATION']:
                 is_postseason = True
                 
             if is_postseason:
-                # Isolate Top 6 into Championship Bracket, Bottom teams into Toilet Bowl
                 if playoff_owners:
                     if m['home_owner'] in playoff_owners or m['away_owner'] in playoff_owners:
                         playoff_matches.append(m)
                     else:
                         consol_matches.append(m)
                 else:
-                    # Fallback if no standings are available
                     if m['matchup_type'] == 'PLAYOFF':
                         playoff_matches.append(m)
                     else:
@@ -426,7 +435,6 @@ if not df_matchups.empty:
                         'year': int(m['year'])
                     })
                 
-                # Dynamic round naming based on how many playoff weeks exist
                 if len(weeks) == 3:
                     r_name = "Quarterfinals (Rd 1)" if idx == 0 else ("Semifinals (Rd 2)" if idx == 1 else "Championship & Podium Games")
                 elif len(weeks) == 2:
@@ -475,14 +483,11 @@ if not df_players.empty:
                     'pts_before': round(pts_before, 1)
                 })
 
-# Filter out likely waiver wire moves
-# A true trade highly correlates with 2 or more players moving between the same two teams in the same week
 valid_trades = []
 from collections import defaultdict
 moves_by_match = defaultdict(list)
 
 for m in potential_moves:
-    # Sort the two teams alphabetically so A->B and B->A group together perfectly
     teams = tuple(sorted([m['from_owner'], m['to_owner']]))
     key = (m['year'], m['week'], teams)
     moves_by_match[key].append(m)
@@ -721,13 +726,11 @@ if not df_players.empty:
         player_directory[clean_name] = p_obj
         player_lookup_by_lower[clean_name.lower()] = p_obj
 
-# Map Draft & Keeper History into Player Profiles
 if not df_draft.empty:
     for _, d in df_draft.iterrows():
         clean_name = str(d.get('player_name', '')).strip()
         p_obj = player_lookup_by_lower.get(clean_name.lower())
         
-        # If drafted player has no box scores yet (e.g. 2026 rookie), create profile
         if not p_obj and clean_name not in ["Unknown Player", "", "nan", "None"]:
             p_obj = {
                 "name": clean_name,
@@ -754,12 +757,10 @@ if not df_draft.empty:
                 "is_keeper": bool(d.get("keeper", 0))
             })
 
-# Map Verified Trades directly from the clean trades_data list
 for t in trades_data:
     clean_name = str(t.get('player', '')).strip()
     p_obj = player_lookup_by_lower.get(clean_name.lower())
     if p_obj:
-        # Avoid duplicate log entries for the same trade
         exists = any(
             x['year'] == int(t['year']) and x['week'] == int(t['week']) and x['to_owner'] == str(t['to_owner']).strip()
             for x in p_obj["trade_log"]
@@ -794,7 +795,6 @@ if not df_players.empty:
         roster_entries = p_group.sort_values(by=["year", "week"])
         if roster_entries.empty: continue
         
-        # Group entries by year and check which seasons meet the 7-week minimum threshold
         valid_seasons = []
         total_roster_weeks_all = 0
         total_starter_games = 0
@@ -804,7 +804,6 @@ if not df_players.empty:
             weeks_in_season = len(yr_group)
             total_roster_weeks_all += weeks_in_season
             
-            # Rule: Must have been on the roster for 7+ weeks *in that specific season* to count
             if weeks_in_season >= 7:
                 valid_seasons.append(int(yr))
                 
@@ -812,7 +811,6 @@ if not df_players.empty:
             total_starter_games += len(starters_in_season)
             total_starter_pts += float(starters_in_season["points"].sum())
         
-        # Rule: Must have accumulated at least 2 valid seasons meeting the criteria
         if len(valid_seasons) >= 2:
             p_pos = str(roster_entries["position"].iloc[0])
             valid_seasons.sort()
@@ -826,13 +824,13 @@ if not df_players.empty:
                 "starter_games": total_starter_games,
                 "games_on_roster": total_roster_weeks_all,
                 "starter_pts": round(total_starter_pts, 1),
-                "seasons": len(valid_seasons), # Count of valid seasons meeting the 7+ week rule
+                "seasons": len(valid_seasons),
                 "tenure": len(valid_seasons),
                 "years_list": valid_seasons,
                 "years_display": seasons_str
             })
 
-# 10. LINEUP EFFICIENCY & OPTIMAL DELTA (The "Perfect Manager" Metric)
+# 10. LINEUP EFFICIENCY & OPTIMAL DELTA
 efficiency_manager_stats = {}
 
 if not df_players.empty:
@@ -849,7 +847,6 @@ if not df_players.empty:
             
         efficiency_manager_stats[owner]["games"] += 1
         
-        # Separate starters and bench
         starters = group[~group["slot_position"].isin(bench_slots)]
         bench = group[group["slot_position"].isin(bench_slots)]
         
@@ -859,11 +856,7 @@ if not df_players.empty:
         efficiency_manager_stats[owner]["actual_starter_pts"] += act_pts
         efficiency_manager_stats[owner]["bench_pts"] += b_pts
         
-        # Calculate theoretical optimal score based on standard position availability
-        # We group all rostered players by their default position
         all_players = group.sort_values(by="points", ascending=False)
-        
-        # Simple optimal slot heuristic based on standard rosters: 1 QB, 2 RB, 2 WR, 1 TE, 1 Flex, 1 D/ST, 1 K
         pos_limits = {'QB': 1, 'RB': 2, 'WR': 2, 'TE': 1, 'K': 1, 'D/ST': 1, 'FLEX': 1}
         pos_filled = {'QB': 0, 'RB': 0, 'WR': 0, 'TE': 0, 'K': 0, 'D/ST': 0}
         flex_candidates = []
@@ -879,13 +872,11 @@ if not df_players.empty:
             elif pos in ['RB', 'WR', 'TE']:
                 flex_candidates.append(pts)
                 
-        # Fill Flex spots from leftover RB/WR/TE sorted descending
         flex_limit = pos_limits.get('FLEX', 1)
         flex_candidates.sort(reverse=True)
         for f_pts in flex_candidates[:flex_limit]:
             opt_total += f_pts
             
-        # Fallback safeguard: Optimal can never be less than actual points started
         opt_total = max(opt_total, act_pts)
         efficiency_manager_stats[owner]["optimal_pts"] += opt_total
 
@@ -897,8 +888,6 @@ for owner, data in efficiency_manager_stats.items():
     act_ppg = data["actual_starter_pts"] / games
     bench_ppg = data["bench_pts"] / games
     opt_ppg = data["optimal_pts"] / games
-    
-    # Efficiency ratio: Actual PPG / Optimal PPG
     eff_pct = (act_ppg / opt_ppg * 100.0) if opt_ppg > 0 else 0.0
     
     efficiency_payload.append({
@@ -937,4 +926,4 @@ web_payload = {
 with open("data.json", "w") as f:
     json.dump(web_payload, f, indent=2, cls=NpEncoder)
 
-print(f"Generated data.json successfully with {len(all_years)} active seasons, {len(true_keepers)} true keepers, and {len(all_draft_picks_enriched)} draft picks parsed!")
+print(f"Generated data.json successfully with {len(all_years)} active completed seasons, {len(true_keepers)} true keepers, and {len(all_draft_picks_enriched)} draft picks parsed!")
