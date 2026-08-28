@@ -66,9 +66,16 @@ if not df_matchups.empty:
 years_m = [int(y) for y in df_historical_matchups["year"].dropna().unique()] if not df_historical_matchups.empty else []
 years_t = [int(y) for y in df_teams_hist["year"].dropna().unique() if int(y) < CURRENT_ACTIVE_SEASON] if not df_teams_hist.empty else []
 years_p = [int(y) for y in df_players["year"].dropna().unique() if int(y) < CURRENT_ACTIVE_SEASON] if not df_players.empty else []
+
 all_years = sorted(list(set(years_m + years_t + years_p)))
 if not all_years:
     all_years = list(range(2017, CURRENT_ACTIVE_SEASON))
+
+# Allow active/current seasons to be included in draft and keeper parsing 
+# even if historical matchup games are filtered out.
+draft_allowed_years = sorted(list(set(all_years + [CURRENT_ACTIVE_SEASON])))
+if not draft_allowed_years:
+    draft_allowed_years = list(range(2017, CURRENT_ACTIVE_SEASON))
 
 manager_profiles = {}
 if not df_teams_hist.empty:
@@ -657,10 +664,11 @@ if not df_draft.empty:
     manager_roi_list.sort(key=lambda x: (x['hit_rate'], x['avg_pts_per_pick']), reverse=True)
 
     drafts_by_season = {}
-    for yr in all_years:
+    for yr in draft_allowed_years:
         season_picks = [p for p in all_draft_picks_enriched if p['year'] == yr]
-        season_picks.sort(key=lambda x: x['overall_pick'])
-        drafts_by_season[int(yr)] = season_picks
+        if season_picks:
+            season_picks.sort(key=lambda x: x['overall_pick'])
+            drafts_by_season[int(yr)] = season_picks
 
     round_mvps = []
     for r_num in range(1, 18):
