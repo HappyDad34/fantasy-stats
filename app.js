@@ -2583,7 +2583,10 @@ function renderFinishes(teamsHistory) {
     finishMap[m] = { manager: m, seasons: 0, first: 0, second: 0, third: 0, fourth: 0, mid: 0, low: 0 };
   });
 
-  teamsHistory.forEach(t => {
+  // Only count completed historical seasons (exclude active/unplayed 2026 season)
+  const completedHistory = teamsHistory.filter(t => Number(t.year) < 2026 && t.final_standing !== null && t.final_standing !== undefined);
+
+  completedHistory.forEach(t => {
     const m = t.owner_name;
     if (!finishMap[m]) finishMap[m] = { manager: m, seasons: 0, first: 0, second: 0, third: 0, fourth: 0, mid: 0, low: 0 };
     finishMap[m].seasons += 1;
