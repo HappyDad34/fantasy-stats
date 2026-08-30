@@ -1021,22 +1021,25 @@ function setBracketMode(mode) {
 }
 
 function getFilteredMatchups() {
-  if (!RAW_DATA?.matchups) return [];
-  const startVal = document.getElementById('startYear')?.value;
-  const endVal = document.getElementById('endYear')?.value;
-  const minYr = startVal ? parseInt(startVal) : 0;
-  const maxYr = endVal ? parseInt(endVal) : 9999;
-  const gameType = document.getElementById('gameType')?.value || 'all';
+    if (!RAW_DATA?.matchups) return [];
+    const startVal = document.getElementById('startYear')?.value;
+    const endVal = document.getElementById('endYear')?.value;
+    const minYr = startVal ? parseInt(startVal) : 0;
+    const maxYr = endVal ? parseInt(endVal) : 9999;
+    const gameType = document.getElementById('gameType')?.value || 'all';
 
-  return RAW_DATA.matchups.filter(m => {
-    const y = Number(m.year);
-    const inYear = (!minYr || isNaN(minYr) || y >= minYr) && (!maxYr || isNaN(maxYr) || y <= maxYr);
-    if (!inYear) return false;
-    if (gameType === 'regular') return m.matchup_type === 'REGULAR';
-    if (gameType === 'playoff') return m.matchup_type === 'PLAYOFF';
-    if (gameType === 'consolation') return m.matchup_type === 'CONSOLATION';
-    return true;
-  });
+    return RAW_DATA.matchups.filter(m => {
+        // IGNORE UNPLAYED GAMES (Prevents 0-0 ties from inflating standings)
+        if (m.home_score === 0 && m.away_score === 0) return false;
+
+        const y = Number(m.year);
+        const inYear = (!minYr || isNaN(minYr) || y >= minYr) && (!maxYr || isNaN(maxYr) || y <= maxYr);
+        if (!inYear) return false;
+        if (gameType === 'regular') return m.matchup_type === 'REGULAR';
+        if (gameType === 'playoff') return m.matchup_type === 'PLAYOFF';
+        if (gameType === 'consolation') return m.matchup_type === 'CONSOLATION';
+        return true;
+    });
 }
 
 function getFilteredRosterStats() {
