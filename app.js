@@ -550,10 +550,10 @@ function renderDraftVault() {
     setInner('draft-top-steal-desc', `Pick #${topSteal.overall_pick} (Rd ${topSteal.round_num}) by ${topSteal.owner} -> ${topSteal.starter_pts.toFixed(1)} pts ('${String(topSteal.year).slice(-2)})`);
   }
 
-  const topBust = draftData.busts?.[0];
+  const topBust = draftData.busts?.find(b => b.round_num === 1);
   if (topBust) {
-    setInner('draft-top-bust-name', `${topBust.player} (${topBust.pos})`);
-    setInner('draft-top-bust-desc', `Pick #${topBust.overall_pick} (Rd ${topBust.round_num}) by ${topBust.owner} -> only ${topBust.starter_pts.toFixed(1)} pts ('${String(topBust.year).slice(-2)})`);
+      setInner('draft-top-bust-name', `${topBust.player} (${topBust.pos})`);
+      setInner('draft-top-bust-desc', `Pick #${topBust.overall_pick} (Rd ${topBust.round_num}) by ${topBust.owner} -> only ${topBust.starter_pts.toFixed(1)} pts ('${String(topBust.year).slice(-2)})`);
   }
 
   const topGM = draftData.manager_draft_roi?.[0];
