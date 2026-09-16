@@ -521,10 +521,10 @@ function runMonteCarloSimulation() {
 // ----------------------------------------------------
 function initDraftControls() {
   const select = document.getElementById('draft-year-select');
+  const bustsSelect = document.getElementById('busts-year-select'); // NEW
   if (!select) return;
 
-  // Include 2026 explicitly if it exists in draft vaults but is missing from completed years
-  let years = (RAW_DATA?.years && RAW_DATA.years.length > 0) ? [...RAW_DATA.years] : [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025];
+  const years = (RAW_DATA?.years && RAW_DATA.years.length > 0) ? [...RAW_DATA.years] : [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025];
   if (RAW_DATA?.draft_vault?.drafts_by_season) {
     Object.keys(RAW_DATA.draft_vault.drafts_by_season).forEach(yr => {
       if (!years.includes(parseInt(yr))) years.push(parseInt(yr));
@@ -533,8 +533,11 @@ function initDraftControls() {
   years.sort((a, b) => a - b);
 
   select.innerHTML = '';
+  if (bustsSelect) bustsSelect.innerHTML = '<option value="ALL">All Time</option>';
+  
   years.slice().reverse().forEach(yr => {
     select.add(new Option(`${yr} Draft Board`, yr));
+    if (bustsSelect) bustsSelect.add(new Option(`${yr} Season`, yr));
   });
 }
 
@@ -600,16 +603,24 @@ function renderDraftVault() {
   }
 
   const bustsTbody = document.getElementById('draft-busts-table-body');
+  const bustsYear = document.getElementById('busts-year-select')?.value || 'ALL';
+
   if (bustsTbody && draftData.busts) {
-    bustsTbody.innerHTML = draftData.busts.slice(0, 15).map(b => `
-      <tr class="hover:bg-slate-800/40 transition">
-        <td class="p-2 font-mono text-slate-400">#${b.overall_pick} <span class="text-slate-500">(R${b.round_num})</span></td>
-        <td class="p-2 font-bold text-slate-200">${b.player} <span class="text-[10px] text-slate-500 font-mono">${b.pos}</span></td>
-        <td class="p-2 text-slate-400">${b.owner}</td>
-        <td class="p-2 text-center font-mono text-slate-400">'${String(b.year).slice(-2)}</td>
-        <td class="p-2 text-right font-mono font-bold text-rose-400">${b.starter_pts.toFixed(1)}</td>
-      </tr>
-    `).join('');
+    const filteredBusts = draftData.busts.filter(b => bustsYear === 'ALL' || b.year === parseInt(bustsYear));
+
+    if (!filteredBusts.length) {
+      bustsTbody.innerHTML = `<tr><td colspan="5" class="p-4 text-center text-slate-500">No busts recorded for this filter.</td></tr>`;
+    } else {
+      bustsTbody.innerHTML = filteredBusts.slice(0, 15).map(b => `
+        <tr class="hover:bg-slate-800/40 transition">
+          <td class="p-2 font-mono text-slate-400">#${b.overall_pick} <span class="text-slate-500">(R${b.round_num})</span></td>
+          <td class="p-2 font-bold text-slate-200">${b.player} <span class="text-[10px] text-slate-500 font-mono">${b.pos}</span></td>
+          <td class="p-2 text-slate-400">${b.owner}</td>
+          <td class="p-2 text-center font-mono text-slate-400">'${String(b.year).slice(-2)}</td>
+          <td class="p-2 text-right font-mono font-bold text-rose-400">${b.starter_pts.toFixed(1)}</td>
+        </tr>
+      `).join('');
+    }
   }
 
   const roundMvpsBody = document.getElementById('draft-round-mvps-body');
@@ -1821,12 +1832,23 @@ function renderNarratives() {
   const badge = document.getElementById('playoff-race-season-badge');
   if (badge) badge.innerText = `${yr} Regular Season`;
 
+  // Check if this is the current active season
+  const isCurrentSeason = (yr === Math.max(...RAW_DATA.years));
+
   if (raceBody && narrative.regular_standings) {
     raceBody.innerHTML = narrative.regular_standings.map((s, idx) => {
       const isPlayoffBound = idx < 6;
-      const statusBadge = isPlayoffBound
-        ? `<span class="px-2 py-0.5 rounded text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">🏆 Clinched Top 6</span>`
-        : `<span class="px-2 py-0.5 rounded text-xs font-bold bg-slate-800 text-slate-500 border border-slate-700">Consolation / Toilet Bowl</span>`;
+      let statusBadge = '';
+
+      if (isCurrentSeason) {
+        statusBadge = isPlayoffBound
+          ? `<span class="px-2 py-0.5 rounded text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">In Playoff Position</span>`
+          : `<span class="px-2 py-0.5 rounded text-xs font-bold bg-slate-800 text-slate-400 border border-slate-700">In the Hunt</span>`;
+      } else {
+        statusBadge = isPlayoffBound
+          ? `<span class="px-2 py-0.5 rounded text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">🏆 Clinched Top 6</span>`
+          : `<span class="px-2 py-0.5 rounded text-xs font-bold bg-slate-800 text-slate-500 border border-slate-700">Consolation / Toilet Bowl</span>`;
+      }
 
       return `
         <tr class="hover:bg-slate-800/40 transition">

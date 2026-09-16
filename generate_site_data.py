@@ -54,8 +54,14 @@ else:
     # If no games have been played yet for the latest year, treat it as the active unplayed season
     CURRENT_ACTIVE_SEASON = current_active_season
 
-# Historical matchups for stats/sims strictly exclude the current unplayed/active season
-df_historical_matchups = df_matchups[df_matchups['year'] < CURRENT_ACTIVE_SEASON] if not df_matchups.empty else pd.DataFrame()
+# -------------------------------------------------------------------------
+# CRITICAL FIX: Globally filter out unplayed matchups (0-0 scores)
+# -------------------------------------------------------------------------
+if not df_matchups.empty:
+    df_matchups = df_matchups[~((df_matchups['home_score'] == 0) & (df_matchups['away_score'] == 0))]
+
+# Since 0-0 games are now gone, it is safe to point historical queries at the main dataframe
+df_historical_matchups = df_matchups.copy()
 
 
 def normalize_matchup_type(val):
@@ -584,10 +590,14 @@ true_keepers = []
 
 if not df_draft.empty:
     season_games_count = {}
+    season_max_week = {} # NEW: Track max week to see if season is over
     for yr in all_years:
         yr_p_df = df_players[df_players['year'] == yr] if not df_players.empty else pd.DataFrame()
         total_pts = float(yr_p_df['points'].sum()) if not yr_p_df.empty else 0.0
         season_games_count[int(yr)] = bool(total_pts > 500.0)
+        
+        yr_m_df = df_matchups[df_matchups['year'] == yr]
+        season_max_week[int(yr)] = int(yr_m_df['week'].max()) if not yr_m_df.empty else 0
 
     perf_by_name = {}
     perf_by_id = {}
@@ -640,6 +650,7 @@ if not df_draft.empty:
         starts = int(perf['starts'])
         pos = str(perf['pos'])
         has_played_season = bool(season_games_count.get(yr, False))
+        is_season_finished = bool(season_max_week.get(yr, 0) >= 14) # NEW
 
         pick_record = {
             'year': int(yr),
@@ -655,6 +666,7 @@ if not df_draft.empty:
             'total_pts': total_pts,
             'starts': starts,
             'has_played': has_played_season,
+            'is_season_finished': is_season_finished, # NEW
             'is_keeper': is_keeper
         }
 
@@ -708,7 +720,8 @@ if not df_draft.empty:
     steals = [p for p in all_draft_picks_enriched if p['has_played'] and p['round_num'] >= 6 and p['starter_pts'] >= 80.0]
     steals.sort(key=lambda x: (x['starter_pts'], x['overall_pick']), reverse=True)
 
-    busts = [p for p in all_draft_picks_enriched if p['has_played'] and p['round_num'] <= 3 and p['starts'] <= 6 and p['starter_pts'] < 80.0]
+    # NEW: Require 'is_season_finished' to be True before classifying as a bust
+    busts = [p for p in all_draft_picks_enriched if p['has_played'] and p['is_season_finished'] and p['round_num'] <= 3 and p['starts'] <= 6 and p['starter_pts'] < 80.0]
     busts.sort(key=lambda x: (x['starter_pts'], -x['overall_pick']))
 
     manager_roi_list = []
