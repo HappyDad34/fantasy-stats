@@ -29,39 +29,21 @@ df_draft = pd.read_sql_query("SELECT * FROM draft_picks", conn) if "draft_picks"
 
 conn.close()
 
-
-# AUTOMATIC SEASON STATE DETECTION
-# Look at matchups and find the latest year that has actual recorded scores (> 0)
-played_matches = df_matchups[~((df_matchups['home_score'] == 0) & (df_matchups['away_score'] == 0))] if not df_matchups.empty else pd.DataFrame()
-
-if not played_matches.empty:
-    latest_completed_season = int(played_matches['year'].max())
-else:
-    latest_completed_season = 2025 # Fallback
-
-# If the latest year in your database has unplayed 0-0 games, treat that year as the active ongoing season
-all_db_years = [int(y) for y in df_matchups['year'].dropna().unique()] if not df_matchups.empty else [2026]
-current_active_season = max(all_db_years)
-
-# Check if the max year has any played games yet
-max_year_matches = df_matchups[df_matchups['year'] == current_active_season] if not df_matchups.empty else pd.DataFrame()
-max_year_has_played = not max_year_matches.empty and not ((max_year_matches['home_score'] == 0) & (max_year_matches['away_score'] == 0)).all()
-
-if max_year_has_played:
-    # If games have started playing in the current season, it is no longer strictly "pre-season/unplayed"
-    CURRENT_ACTIVE_SEASON = current_active_season + 1 # points to next unplayed year
-else:
-    # If no games have been played yet for the latest year, treat it as the active unplayed season
-    CURRENT_ACTIVE_SEASON = current_active_season
-
 # -------------------------------------------------------------------------
-# CRITICAL FIX: Globally filter out unplayed matchups (0-0 scores)
+# 1. DROP UNPLAYED PLACEHOLDER GAMES GLOBALLY
 # -------------------------------------------------------------------------
+# Keep only games where real points were scored (drops future 0.0 vs 0.0 games)
 if not df_matchups.empty:
-    df_matchups = df_matchups[~((df_matchups['home_score'] == 0) & (df_matchups['away_score'] == 0))]
+    df_matchups = df_matchups[
+        (df_matchups['home_score'] > 0) | (df_matchups['away_score'] > 0)
+    ].copy()
 
-# Since 0-0 games are now gone, it is safe to point historical queries at the main dataframe
+# All played games (including 2026 Week 1) are now historical records
 df_historical_matchups = df_matchups.copy()
+
+# Ensure all_years includes 2026
+all_years = sorted([int(y) for y in df_matchups['year'].dropna().unique()])
+CURRENT_ACTIVE_SEASON = 2026
 
 
 def normalize_matchup_type(val):
