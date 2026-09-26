@@ -29,23 +29,7 @@ df_draft = pd.read_sql_query("SELECT * FROM draft_picks", conn) if "draft_picks"
 
 conn.close()
 
-# -------------------------------------------------------------------------
-# 1. DROP UNPLAYED PLACEHOLDER GAMES GLOBALLY
-# -------------------------------------------------------------------------
-# Keep only games where real points were scored (drops future 0.0 vs 0.0 games)
-if not df_matchups.empty:
-    df_matchups = df_matchups[
-        (df_matchups['home_score'] > 0) | (df_matchups['away_score'] > 0)
-    ].copy()
-
-# All played games (including 2026 Week 1) are now historical records
-df_historical_matchups = df_matchups.copy()
-
-# Ensure all_years includes 2026
-all_years = sorted([int(y) for y in df_matchups['year'].dropna().unique()])
-CURRENT_ACTIVE_SEASON = 2026
-
-
+# Normalize matchup types
 def normalize_matchup_type(val):
     v = str(val).upper().strip()
     if v in ['REGULAR', 'REG', 'NONE', '', 'NAN']:
@@ -58,6 +42,17 @@ def normalize_matchup_type(val):
 
 if not df_matchups.empty:
     df_matchups['matchup_type'] = df_matchups['matchup_type'].apply(normalize_matchup_type)
+
+# Historical matchups ONLY include games with recorded scores > 0
+# (Protects streaks, narratives, and head-to-head records from phantom 0-0 ties)
+df_historical_matchups = df_matchups[
+    (df_matchups['home_score'] > 0) | (df_matchups['away_score'] > 0)
+].copy() if not df_matchups.empty else pd.DataFrame()
+
+# Ensure all_years includes all years from matchups (including 2026)
+all_years = sorted([int(y) for y in df_matchups['year'].dropna().unique()]) if not df_matchups.empty else [2026]
+CURRENT_ACTIVE_SEASON = max(all_years)
+draft_allowed_years = all_years
 
 matchup_type_map = {}
 if not df_matchups.empty:
@@ -101,6 +96,16 @@ if not df_teams_hist.empty:
             "years_active": [int(y) for y in years_active],
             "all_aliases": aliases_with_years
         }
+
+# Ensure manager_profiles includes recent years from matchups
+if not df_matchups.empty:
+    for _, row in df_matchups.iterrows():
+        yr = int(row['year'])
+        for own in [str(row['home_owner']).strip(), str(row['away_owner']).strip()]:
+            if own in manager_profiles:
+                if yr not in manager_profiles[own]['years_active']:
+                    manager_profiles[own]['years_active'].append(yr)
+                    manager_profiles[own]['years_active'].sort()
 
 bench_slots = {'BE', 'IR', 'O', 'Taxi'}
 roster_weekly = []
@@ -572,13 +577,13 @@ true_keepers = []
 
 if not df_draft.empty:
     season_games_count = {}
-    season_max_week = {} # NEW: Track max week to see if season is over
+    season_max_week = {} 
     for yr in all_years:
         yr_p_df = df_players[df_players['year'] == yr] if not df_players.empty else pd.DataFrame()
         total_pts = float(yr_p_df['points'].sum()) if not yr_p_df.empty else 0.0
         season_games_count[int(yr)] = bool(total_pts > 500.0)
         
-        yr_m_df = df_matchups[df_matchups['year'] == yr]
+        yr_m_df = df_historical_matchups[df_historical_matchups['year'] == yr]
         season_max_week[int(yr)] = int(yr_m_df['week'].max()) if not yr_m_df.empty else 0
 
     perf_by_name = {}
@@ -702,8 +707,11 @@ if not df_draft.empty:
     steals = [p for p in all_draft_picks_enriched if p['has_played'] and p['round_num'] >= 6 and p['starter_pts'] >= 80.0]
     steals.sort(key=lambda x: (x['starter_pts'], x['overall_pick']), reverse=True)
 
-    # NEW: Require 'is_season_finished' to be True before classifying as a bust
-    busts = [p for p in all_draft_picks_enriched if p['has_played'] and p['is_season_finished'] and p['round_num'] <= 3 and p['starts'] <= 6 and p['starter_pts'] < 80.0]
+    # Require 'is_season_finished' to be True before classifying as a bust
+    busts = [
+        p for p in all_draft_picks_enriched 
+        if p['has_played'] and p['is_season_finished'] and p['round_num'] <= 3 and p['starts'] <= 6 and p['starter_pts'] < 80.0
+    ]
     busts.sort(key=lambda x: (x['starter_pts'], -x['overall_pick']))
 
     manager_roi_list = []

@@ -276,9 +276,12 @@ function onSimSeasonChange() {
   const weeks = [...new Set(regMatches.map(m => m.week))].sort((a, b) => a - b);
   const maxWeek = weeks.length > 0 ? weeks[weeks.length - 1] : 14;
 
-  cutoffSelect.innerHTML = '';
-  const defaultCutoff = Math.max(1, Math.min(maxWeek, 8));
+  // Identify latest played week
+  const playedMatches = regMatches.filter(m => m.home_score > 0 || m.away_score > 0);
+  const playedWeeks = [...new Set(playedMatches.map(m => m.week))].sort((a, b) => a - b);
+  const defaultCutoff = playedWeeks.length > 0 ? playedWeeks[playedWeeks.length - 1] : 1;
 
+  cutoffSelect.innerHTML = '';
   for (let w = 1; w <= maxWeek; w++) {
     const isCurrent = w === defaultCutoff;
     cutoffSelect.add(new Option(`After Week ${w} (${maxWeek - w} weeks remaining)`, w, isCurrent, isCurrent));
@@ -592,7 +595,7 @@ function renderDraftVault() {
   const stealsTbody = document.getElementById('draft-steals-table-body');
   if (stealsTbody && draftData.steals) {
     stealsTbody.innerHTML = draftData.steals.slice(0, 15).map(s => `
-      <tr class="hover:bg-slate-800/40 transition">
+      <tr class="hover:bg-slate-800/40 transition">reca
         <td class="p-2 font-mono text-slate-400">#${s.overall_pick} <span class="text-slate-500">(R${s.round_num})</span></td>
         <td class="p-2 font-bold text-white">${s.player} <span class="text-[10px] text-slate-500 font-mono">${s.pos}</span></td>
         <td class="p-2 text-slate-300">${s.owner}</td>
@@ -999,14 +1002,18 @@ function onRecapYearChange() {
   const recapYear = parseInt(recapYearEl.value);
   if (isNaN(recapYear)) return;
 
-  const weeksForYear = [...new Set(RAW_DATA.matchups.filter(m => m.year === recapYear).map(m => m.week))].sort((a, b) => a - b);
+  // Filter ONLY for weeks that have actually recorded scores > 0
+  const playedMatches = RAW_DATA.matchups.filter(m => m.year === recapYear && (m.home_score > 0 || m.away_score > 0));
+  const weeksForYear = [...new Set(playedMatches.map(m => m.week))].sort((a, b) => a - b);
 
   recapWeek.innerHTML = '';
-  weeksForYear.forEach(w => {
-    recapWeek.add(new Option(`Week ${w}`, w));
-  });
-
-  if (weeksForYear.length > 0) {
+  if (weeksForYear.length === 0) {
+    recapWeek.add(new Option('Week 1', 1));
+  } else {
+    weeksForYear.forEach(w => {
+      recapWeek.add(new Option(`Week ${w}`, w));
+    });
+    // Default to the latest completed week (Week 1 for 2026)
     recapWeek.value = weeksForYear[weeksForYear.length - 1];
   }
 
@@ -2572,7 +2579,8 @@ function renderSeasonBountyBoard(yr) {
   const tbody = document.getElementById('season-bounty-body');
   if (!tbody || !RAW_DATA?.matchups) return;
 
-  const yearMatches = RAW_DATA.matchups.filter(m => m.year === yr && m.matchup_type === 'REGULAR');
+  // Filter only regular season matchups that have actual played scores
+  const yearMatches = RAW_DATA.matchups.filter(m => m.year === yr && m.matchup_type === 'REGULAR' && (m.home_score > 0 || m.away_score > 0));
   const weekGroups = {};
   yearMatches.forEach(m => {
     if (!weekGroups[m.week]) weekGroups[m.week] = [];
@@ -2582,7 +2590,7 @@ function renderSeasonBountyBoard(yr) {
 
   const totalWeeks = Object.keys(weekGroups).length;
   const setInner = (id, val) => { const el = document.getElementById(id); if (el) el.innerText = val; };
-  setInner('recap-season-weeks-count', `${totalWeeks} Regular Season Weeks`);
+  setInner('recap-season-weeks-count', `${totalWeeks} Regular Season Weeks Played`);
 
   const bountyMap = {};
   getManagerList().forEach(m => {
@@ -2591,7 +2599,8 @@ function renderSeasonBountyBoard(yr) {
 
   Object.entries(weekGroups).forEach(([weekNum, scores]) => {
     scores.sort((a, b) => b.score - a.score);
-    if (scores.length > 0) {
+    // ONLY award a bounty if points were scored
+    if (scores.length > 0 && scores[0].score > 0) {
       const top = scores[0];
       if (!bountyMap[top.owner]) {
         bountyMap[top.owner] = { manager: top.owner, count: 0, weeks: [], topScore: 0 };
