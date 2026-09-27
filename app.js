@@ -276,15 +276,22 @@ function onSimSeasonChange() {
   const weeks = [...new Set(regMatches.map(m => m.week))].sort((a, b) => a - b);
   const maxWeek = weeks.length > 0 ? weeks[weeks.length - 1] : 14;
 
-  // Identify latest played week
+  // Identify weeks that have actually recorded scores > 0
   const playedMatches = regMatches.filter(m => m.home_score > 0 || m.away_score > 0);
   const playedWeeks = [...new Set(playedMatches.map(m => m.week))].sort((a, b) => a - b);
-  const defaultCutoff = playedWeeks.length > 0 ? playedWeeks[playedWeeks.length - 1] : 1;
+  const maxPlayedWeek = playedWeeks.length > 0 ? playedWeeks[playedWeeks.length - 1] : 0;
 
   cutoffSelect.innerHTML = '';
-  for (let w = 1; w <= maxWeek; w++) {
-    const isCurrent = w === defaultCutoff;
-    cutoffSelect.add(new Option(`After Week ${w} (${maxWeek - w} weeks remaining)`, w, isCurrent, isCurrent));
+
+  if (maxPlayedWeek === 0) {
+    cutoffSelect.add(new Option(`Pre-Season (${maxWeek} weeks remaining)`, 0, true, true));
+  } else {
+    // Only allow selecting weeks that have actually completed
+    for (let w = 1; w <= maxPlayedWeek; w++) {
+      const remaining = maxWeek - w;
+      const isLatest = (w === maxPlayedWeek);
+      cutoffSelect.add(new Option(`After Week ${w} (${remaining} weeks remaining)`, w, isLatest, isLatest));
+    }
   }
 
   runMonteCarloSimulation();
@@ -3226,8 +3233,12 @@ function renderWhatIf() {
     return;
   }
 
-  // 1. Isolate the regular season games for the selected year
-  const regMatchups = RAW_DATA.matchups.filter(m => m.year === yr && m.matchup_type === 'REGULAR');
+  // 1. Isolate ONLY PLAYED regular season games for the selected year
+  const regMatchups = RAW_DATA.matchups.filter(m => 
+    m.year === yr && 
+    m.matchup_type === 'REGULAR' && 
+    (m.home_score > 0 || m.away_score > 0)
+  );
   
   // 2. Map out "My Team's" actual scores and actual record
   const teamScores = {};
@@ -3278,7 +3289,7 @@ function renderWhatIf() {
     let oppName = swapData.opp;
     let oppScore = swapData.opp_score;
     
-    // Paradox Catch: If the swapped schedule has you playing YOURSELF, you actually play the manager whose schedule you stole!
+    // Paradox Catch: If the swapped schedule has you playing YOURSELF, you play the manager whose schedule you swapped with
     if (oppName === team) {
         oppName = schedTeam;
         const match = regMatchups.find(m => m.week == wk && (m.home_owner === schedTeam || m.away_owner === schedTeam));
