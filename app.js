@@ -721,7 +721,19 @@ function initRivalryControls() {
   const m2 = document.getElementById('rivalry-mgr2');
   if (!m1 || !m2 || !RAW_DATA) return;
 
-  const managers = getManagerList();
+  const currM1 = m1.value;
+  const currM2 = m2.value;
+
+  // Dynamically get managers based strictly on the active global filter
+  const matches = getFilteredMatchups();
+  const activeManagers = new Set();
+  matches.forEach(m => {
+    if (m.home_owner) activeManagers.add(m.home_owner);
+    if (m.away_owner) activeManagers.add(m.away_owner);
+  });
+  
+  const managers = Array.from(activeManagers).sort();
+
   m1.innerHTML = '';
   m2.innerHTML = '';
 
@@ -730,11 +742,18 @@ function initRivalryControls() {
     m2.add(new Option(name, name));
   });
 
-  if (managers.length > 1) {
+  // Restore previous selections if they are still valid in the new timeframe
+  if (managers.includes(currM1)) {
+    m1.value = currM1;
+  } else if (managers.length > 0) {
     m1.value = managers[0];
+  }
+
+  if (managers.includes(currM2)) {
+    m2.value = currM2;
+  } else if (managers.length > 1) {
     m2.value = managers[1];
-  } else if (managers.length === 1) {
-    m1.value = managers[0];
+  } else if (managers.length > 0) {
     m2.value = managers[0];
   }
 }
@@ -1137,6 +1156,9 @@ function renderAll() {
   const teamsHistory = getFilteredTeamsHistory();
   const gooseEggs = getFilteredGooseEggs();
   const playerSeasons = getFilteredPlayerSeasons();
+
+// Ensure Tale of the Tape dropdowns update instantly when global filters change
+  safeExecute("initRivalryControls", initRivalryControls);
 
   safeExecute("renderSummaryCards", () => renderSummaryCards(matches));
   safeExecute("renderStandings", () => renderStandings(matches));
