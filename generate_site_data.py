@@ -29,7 +29,21 @@ df_draft = pd.read_sql_query("SELECT * FROM draft_picks", conn) if "draft_picks"
 
 conn.close()
 
-# Normalize matchup types
+# -------------------------------------------------------------------------
+# 1. SETUP MATCHUPS AND YEARS
+# -------------------------------------------------------------------------
+# The main df_matchups MUST keep unplayed 0-0 games so the Playoff Simulator can use them.
+# However, df_historical_matchups MUST STRICTLY filter out unplayed 0-0 games 
+# so streaks, storylines, and career records are accurate.
+
+df_historical_matchups = df_matchups[
+    (df_matchups['home_score'] > 0) | (df_matchups['away_score'] > 0)
+].copy() if not df_matchups.empty else pd.DataFrame()
+
+all_years = sorted([int(y) for y in df_matchups['year'].dropna().unique()]) if not df_matchups.empty else [2026]
+CURRENT_ACTIVE_SEASON = max(all_years) if all_years else 2026
+draft_allowed_years = all_years
+
 def normalize_matchup_type(val):
     v = str(val).upper().strip()
     if v in ['REGULAR', 'REG', 'NONE', '', 'NAN']:
@@ -43,37 +57,11 @@ def normalize_matchup_type(val):
 if not df_matchups.empty:
     df_matchups['matchup_type'] = df_matchups['matchup_type'].apply(normalize_matchup_type)
 
-# Historical matchups ONLY include games with recorded scores > 0
-# (Protects streaks, narratives, and head-to-head records from phantom 0-0 ties)
-df_historical_matchups = df_matchups[
-    (df_matchups['home_score'] > 0) | (df_matchups['away_score'] > 0)
-].copy() if not df_matchups.empty else pd.DataFrame()
-
-# Ensure all_years includes all years from matchups (including 2026)
-all_years = sorted([int(y) for y in df_matchups['year'].dropna().unique()]) if not df_matchups.empty else [2026]
-CURRENT_ACTIVE_SEASON = max(all_years)
-draft_allowed_years = all_years
-
 matchup_type_map = {}
 if not df_matchups.empty:
     for _, row in df_matchups.iterrows():
         matchup_type_map[(int(row['year']), int(row['week']), str(row['home_owner']).strip())] = row['matchup_type']
         matchup_type_map[(int(row['year']), int(row['week']), str(row['away_owner']).strip())] = row['matchup_type']
-
-# Robust Years Extraction (restrict completed historical years to those before 2026 or with actual results)
-years_m = [int(y) for y in df_historical_matchups["year"].dropna().unique()] if not df_historical_matchups.empty else []
-years_t = [int(y) for y in df_teams_hist["year"].dropna().unique() if int(y) < CURRENT_ACTIVE_SEASON] if not df_teams_hist.empty else []
-years_p = [int(y) for y in df_players["year"].dropna().unique() if int(y) < CURRENT_ACTIVE_SEASON] if not df_players.empty else []
-
-all_years = sorted(list(set(years_m + years_t + years_p)))
-if not all_years:
-    all_years = list(range(2017, CURRENT_ACTIVE_SEASON))
-
-# Allow active/current seasons to be included in draft and keeper parsing 
-# even if historical matchup games are filtered out.
-draft_allowed_years = sorted(list(set(all_years + [CURRENT_ACTIVE_SEASON])))
-if not draft_allowed_years:
-    draft_allowed_years = list(range(2017, CURRENT_ACTIVE_SEASON))
 
 manager_profiles = {}
 if not df_teams_hist.empty:
@@ -97,9 +85,9 @@ if not df_teams_hist.empty:
             "all_aliases": aliases_with_years
         }
 
-# Ensure manager_profiles includes recent years from matchups
-if not df_matchups.empty:
-    for _, row in df_matchups.iterrows():
+# CRITICAL FIX: Ensure manager_profiles recognizes managers active in the current 2026 season!
+if not df_historical_matchups.empty:
+    for _, row in df_historical_matchups.iterrows():
         yr = int(row['year'])
         for own in [str(row['home_owner']).strip(), str(row['away_owner']).strip()]:
             if own in manager_profiles:
@@ -108,6 +96,7 @@ if not df_matchups.empty:
                     manager_profiles[own]['years_active'].sort()
 
 bench_slots = {'BE', 'IR', 'O', 'Taxi'}
+
 roster_weekly = []
 weekly_top_players = {}
 cornerstones = []
@@ -583,6 +572,7 @@ if not df_draft.empty:
         total_pts = float(yr_p_df['points'].sum()) if not yr_p_df.empty else 0.0
         season_games_count[int(yr)] = bool(total_pts > 500.0)
         
+        # Change this line:
         yr_m_df = df_historical_matchups[df_historical_matchups['year'] == yr]
         season_max_week[int(yr)] = int(yr_m_df['week'].max()) if not yr_m_df.empty else 0
 

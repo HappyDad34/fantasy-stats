@@ -1013,7 +1013,7 @@ function onRecapYearChange() {
     weeksForYear.forEach(w => {
       recapWeek.add(new Option(`Week ${w}`, w));
     });
-    // Default to the latest completed week (Week 1 for 2026)
+    // Default to the latest completed week (e.g. Week 2 for 2026)
     recapWeek.value = weeksForYear[weeksForYear.length - 1];
   }
 
@@ -2579,7 +2579,7 @@ function renderSeasonBountyBoard(yr) {
   const tbody = document.getElementById('season-bounty-body');
   if (!tbody || !RAW_DATA?.matchups) return;
 
-  // Filter only regular season matchups that have actual played scores
+  // Replace the yearMatches line with this:
   const yearMatches = RAW_DATA.matchups.filter(m => m.year === yr && m.matchup_type === 'REGULAR' && (m.home_score > 0 || m.away_score > 0));
   const weekGroups = {};
   yearMatches.forEach(m => {
