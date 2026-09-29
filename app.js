@@ -213,6 +213,9 @@ function setupGlobalTableSort() {
     }
     arrow.textContent = newDirection ? ' ▲' : ' ▼';
 
+    // Grab the column header name so we know what we're sorting
+    const headerName = th.innerText.trim().toUpperCase();
+
     const rows = Array.from(tbody.querySelectorAll('tr'));
     rows.sort((rowA, rowB) => {
       const cellA = rowA.children[thIndex]?.innerText.trim() || '';
@@ -224,6 +227,11 @@ function setupGlobalTableSort() {
         if (clean.includes('-')) {
           const parts = clean.split('-').map(Number);
           if (!parts.some(isNaN)) {
+            // Check if this is a record column, and sort strictly by Most Wins (minus losses for tiebreakers)
+            if (headerName.includes('W-L') || headerName.includes('RECORD')) {
+              return parts[0] * 1000 - (parts[1] || 0) + (parts[2] || 0) * 0.5;
+            }
+            // Otherwise, calculate the standard percentage ratio
             const total = parts.reduce((a, b) => a + b, 0);
             return total > 0 ? (parts[0] + (parts[2] || 0) * 0.5) / total : 0;
           }
@@ -684,8 +692,12 @@ function renderSeasonDraftBoard() {
   }
 
   tbody.innerHTML = filtered.map(p => {
-    const isSteal = p.has_played && p.round_num >= 6 && p.starter_pts >= 120.0;
-    const isBust = p.has_played && p.round_num <= 2 && p.starter_pts < 60.0 && p.starts <= 4;
+    // Check if the season has concluded to prevent premature Bust/Steal labels
+    const isFinished = p.is_season_finished !== false && (p.is_season_finished || p.year < Math.max(...RAW_DATA.years));
+    
+    // Both variables now require `isFinished` to be true
+    const isSteal = p.has_played && isFinished && p.round_num >= 6 && p.starter_pts >= 120.0;
+    const isBust = p.has_played && isFinished && p.round_num <= 2 && p.starter_pts < 60.0 && p.starts <= 4;
     const safeMgr = p.owner.replace(/'/g, "\\'");
 
     return `
